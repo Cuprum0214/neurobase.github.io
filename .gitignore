@@ -4,14 +4,13 @@ Thumbs.db
 *.log
 
 # 本地过程文件与历史归档（不参与站点部署）
-.deepworks/archive/
-.deepworks/tmp/
 uploads/
 
 # 本地维护目录（自测脚本、探测输出、历史备份、依赖；含可能的明文探测记录）
 .deepworks/
 .opencode/
 .opencode-router/
+/opencode.jsonc
 
 # 旧 Vue 原型（已归档，不参与原生离线版交付与部署）
 /neurobase/
@@ -24,9 +23,10 @@ uploads/
 /*.jpeg
 /*.cmd
 
-# 打包产物与生成的大图（站点不引用；如需引用请显式加入）
-outputs/*.zip
-outputs/imagegen/*.png
+# outputs/ 只发布站点目录；打包产物、旧实验输出与生成图不入库
+/outputs/*
+!/outputs/neurobase/
+!/outputs/neurobase/**
 
 # ---------------------------------------------------------------------------
 # 凭证与密钥：绝不入库（AGENTS.md「凭证与密钥」硬性约定）
