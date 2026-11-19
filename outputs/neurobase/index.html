@@ -1,0 +1,151 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1e5fa8">
+  <meta name="description" content="NeuroBase —— 面向脑机接口方向的神经与认知科学中英双语学习平台：术语检索 · 科普 · 学习自测 · 互动可视化。">
+  <title>NeuroBase · 神经与认知科学基础知识库</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="assets/css/style.css?v=1194">
+  <!-- 在样式生效前定好主题与正文字号，避免首屏闪烁（两件事各自 try，互不牵连） -->
+  <script>
+    (function () {
+      try {
+        var m = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)').matches : false;
+        var th = localStorage.getItem('nb-theme') || 'system';
+        if (th === 'dark' || (th === 'system' && m)) document.documentElement.classList.add('dark');
+      } catch (e) {}
+      try {
+        var f = parseFloat(localStorage.getItem('nb-font') || '100');
+        if (f >= 25 && f <= 300) document.documentElement.style.setProperty('--nb-font-scale', (f / 100).toFixed(2));
+      } catch (e) {}
+      try {
+        if (localStorage.getItem('nb-motion') === 'off') document.documentElement.classList.add('motion-off');
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="action.skipToContent">跳到主内容</a>
+  <header id="nb-header"></header>
+
+  <main id="main" class="nb-content">
+    <div class="wrap">
+      <div class="home-intro">
+        <h1 data-i18n="home.heroTitle">面向脑机接口方向的神经与认知科学学习平台</h1>
+        <p data-i18n="home.heroDesc">中英双语术语检索 · 科普 · 学习自测 · 互动可视化，内容来源可追溯。</p>
+      </div>
+
+      <section class="hero">
+        <div class="hero-left">
+          <form class="search-form" id="hero-search" action="terms.html" method="get" role="search">
+            <label class="sr-only" for="hero-q" data-i18n="terms.title">术语检索</label>
+            <input class="input" id="hero-q" name="q" type="search" autocomplete="off"
+                   data-i18n-placeholder="home.searchPlaceholder"
+                   placeholder="搜索术语 / 英文缩写 / 拼音，例如 P300、SSVEP、突触">
+            <button class="btn-accent" type="submit" data-i18n="nb.search">检索</button>
+          </form>
+
+          <section class="daily-board" aria-labelledby="daily-title">
+            <div class="daily-head">
+              <h2 id="daily-title" data-i18n="home.dailyTitle">每日一词</h2>
+              <span class="daily-hint" data-i18n="home.dailyDesc">按日期自动选一个核心概念</span>
+              <button class="btn daily-shuffle" id="daily-shuffle" type="button" data-i18n="nb.dailyShuffle">换一个</button>
+            </div>
+            <div id="daily-body"></div>
+          </section>
+        </div>
+
+        <aside class="ck" id="nb-checkin" aria-labelledby="ck-title">
+          <div class="ck-binding" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <div class="ck-head">
+            <div class="ck-head-text">
+              <h2 class="ck-title" id="ck-title" data-i18n="checkin.title">学习打卡</h2>
+              <p class="ck-sub" data-i18n="checkin.sub">一天一页，翻翻看</p>
+            </div>
+            <div class="ck-nav">
+              <button type="button" class="ck-arrow" id="ck-prev"
+                      data-i18n-aria="checkin.prev" data-i18n-title="checkin.prev"
+                      aria-label="上一页（上个月）" title="上一页（上个月）">▲</button>
+              <button type="button" class="ck-arrow" id="ck-next"
+                      data-i18n-aria="checkin.next" data-i18n-title="checkin.next"
+                      aria-label="下一页（下个月）" title="下一页（下个月）">▼</button>
+            </div>
+          </div>
+          <div class="ck-pagewrap">
+            <div class="ck-page" id="ck-page"></div>
+          </div>
+          <div class="ck-foot">
+            <div class="ck-foot-text">
+              <p class="ck-stat" id="ck-stat"></p>
+              <button type="button" class="ck-today" id="ck-today" data-i18n="checkin.today" hidden>回到今天</button>
+            </div>
+            <button type="button" class="ck-sign" id="ck-sign" data-i18n="checkin.sign">签到</button>
+          </div>
+          <p class="ck-note" id="ck-note"></p>
+        </aside>
+      </section>
+
+      <section class="card" aria-labelledby="progress-title">
+
+        <div class="progress-head">
+          <h2 id="progress-title" data-i18n="progress.title">学习进度</h2>
+          <span class="pill pill-slate pill-count-inline" id="progress-badge">0 / 0</span>
+          <button class="btn" id="progress-clear" type="button" data-i18n="progress.clear" hidden>清除进度</button>
+        </div>
+        <div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-labelledby="progress-title">
+          <i id="progress-bar" style="width:0%"></i>
+        </div>
+        <div id="progress-body"></div>
+      </section>
+
+      <section class="card upd-home" aria-labelledby="upd-home-title">
+        <div class="sec-head">
+          <div>
+            <h2 id="upd-home-title" data-i18n="updates.homeTitle">数据来源与最近更新</h2>
+            <p data-i18n="updates.homeDesc">每条词条均登记来源与核验时间；每周自动核对，差异先进入待审队列。</p>
+          </div>
+          <a class="btn btn-primary" href="updates.html" data-i18n="updates.homeCta">查看来源与更新</a>
+        </div>
+        <ol class="upd-list upd-home-list" id="home-updates"></ol>
+      </section>
+
+      <section aria-labelledby="modules-title">
+        <div class="sec-head">
+          <div>
+            <h2 id="modules-title" data-i18n="home.modulesTitle">11 个知识模块</h2>
+            <p data-i18n="home.modulesDesc">从神经元到脑机接口，按模块建立知识体系。</p>
+          </div>
+          <span class="meta" id="modules-target"></span>
+        </div>
+        <ul class="grid-3" id="modules"></ul>
+      </section>
+    </div>
+  </main>
+
+  <footer id="nb-footer"></footer>
+
+  <noscript>
+    <div class="wrap">
+      <p class="notice">本页的模块列表与词条内容由本地脚本渲染，请启用 JavaScript 后再访问。</p>
+    </div>
+  </noscript>
+
+  <script src="assets/js/data/terms.js?v=1194"></script>
+  <script src="assets/js/data/i18n.js?v=1194"></script>
+  <script src="assets/js/data/updates.js?v=1194"></script>
+  <script src="assets/js/core.js?v=1194"></script>
+  <script src="assets/js/cloud-config.js?v=1194"></script>
+  <script src="assets/js/cloud.js?v=1194"></script>
+  <script src="assets/js/auth-ui.js?v=1194"></script>
+  <script src="assets/js/ai-fluid.js?v=1194"></script>
+  <script src="assets/js/ai-tutor.js?v=1194"></script>
+  <script src="assets/js/feedback.js?v=1194"></script>
+  <script src="assets/js/help.js?v=1194"></script>
+  <script src="assets/js/learn.js?v=1194"></script>
+  <script src="assets/js/page-home.js?v=1194"></script>
+  <script src="assets/js/checkin-widget.js?v=1194"></script>
+</body>
+</html>
+

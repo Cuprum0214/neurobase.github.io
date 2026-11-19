@@ -1,0 +1,83 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1e5fa8">
+  <meta name="description" content="NeuroBase 反馈管理：查看访客反馈并回复（本机离线版，数据保存在当前浏览器）。">
+  <title>反馈管理 · NeuroBase</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="assets/css/style.css?v=1194">
+  <script>
+    (function () {
+      try {
+        var m = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)').matches : false;
+        var th = localStorage.getItem('nb-theme') || 'system';
+        if (th === 'dark' || (th === 'system' && m)) document.documentElement.classList.add('dark');
+      } catch (e) {}
+      try {
+        var f = parseFloat(localStorage.getItem('nb-font') || '100');
+        if (f >= 25 && f <= 300) document.documentElement.style.setProperty('--nb-font-scale', (f / 100).toFixed(2));
+      } catch (e) {}
+      try {
+        if (localStorage.getItem('nb-motion') === 'off') document.documentElement.classList.add('motion-off');
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="action.skipToContent">跳到主内容</a>
+  <header id="nb-header"></header>
+
+  <main id="main" class="nb-content">
+    <div class="wrap">
+      <h1 class="page-title" data-i18n="admin.title">反馈管理</h1>
+      <p class="page-lead" data-i18n="admin.desc">查看访客反馈并回复。数据保存在本机浏览器（localStorage）。</p>
+
+      <!-- 口令门：未解锁时只显示此区块，管理内容默认隐藏 -->
+      <section id="nb-admin-gate" class="admin-gate card" aria-labelledby="nb-admin-gate-title">
+        <h2 class="admin-gate-title" id="nb-admin-gate-title" data-i18n="admin.gateTitle">管理员验证</h2>
+        <p class="admin-gate-desc" data-i18n="admin.gateDesc">本页为反馈管理入口，请输入管理员口令后查看与回复。</p>
+        <p class="admin-gate-hint" data-i18n="admin.gateLockedHint">口令为本机离线版「软限制」，仅用于避免误入。</p>
+        <div class="admin-gate-field">
+          <label class="admin-gate-label" for="nb-admin-pass" data-i18n="admin.gatePh">输入口令</label>
+          <input type="password" id="nb-admin-pass" class="fb-input admin-gate-input" autocomplete="off" data-i18n-aria="admin.gatePh" aria-label="输入口令">
+          <button type="button" id="nb-admin-unlock" class="btn btn-primary" data-i18n="admin.gateUnlock">解锁</button>
+        </div>
+        <p id="nb-admin-gerr" class="admin-gate-err" role="alert" hidden></p>
+      </section>
+
+      <div id="nb-admin-app" hidden>
+        <div class="admin-bar card">
+          <div class="admin-stats">
+            <span id="nb-admin-total" class="admin-stat">—</span>
+            <span id="nb-admin-unread" class="admin-stat">—</span>
+          </div>
+          <button type="button" class="btn" id="nb-admin-readall" data-i18n="admin.allRead">全部标为已读</button>
+        </div>
+
+        <div id="nb-admin-list" class="admin-list"></div>
+      </div>
+    </div>
+  </main>
+
+  <footer id="nb-footer"></footer>
+
+  <noscript>
+    <div class="wrap">
+      <p class="notice">本页管理功能由本地脚本驱动，请启用 JavaScript 后再访问。</p>
+    </div>
+  </noscript>
+
+  <script src="assets/js/data/terms.js?v=1194"></script>
+  <script src="assets/js/data/i18n.js?v=1194"></script>
+  <script src="assets/js/core.js?v=1194"></script>
+  <script src="assets/js/cloud-config.js?v=1194"></script>
+  <script src="assets/js/cloud.js?v=1194"></script>
+  <script src="assets/js/auth-ui.js?v=1194"></script>
+  <script src="assets/js/ai-fluid.js?v=1194"></script>
+  <script src="assets/js/ai-tutor.js?v=1194"></script>
+  <script src="assets/js/feedback.js?v=1194"></script>
+  <script src="assets/js/page-admin.js?v=1194"></script>
+</body>
+</html>

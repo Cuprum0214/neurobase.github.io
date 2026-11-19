@@ -1,0 +1,289 @@
+[
+  {
+    "id": "methods-fmri",
+    "module": "methods",
+    "name_zh": "功能性磁共振成像",
+    "name_en": "Functional Magnetic Resonance Imaging",
+    "abbr": "fMRI",
+    "aliases": [
+      "功能磁共振",
+      "BOLD 成像",
+      "功能磁共振成像"
+    ],
+    "pinyin": "gongnengxingcigongzhenchengxiang",
+    "pinyin_initials": "gnxcgzcx",
+    "definition": "利用脱氧血红蛋白的顺磁性差异测量局部血氧水平依赖（BOLD）信号、从而间接反映神经活动的成像技术；空间分辨率高（毫米级）但时间分辨率较低（秒级），是脑功能定位与脑网络研究的主流工具。",
+    "plain": "看“哪里在耗氧、哪里在忙”，空间很清楚但慢半拍。",
+    "difficulty": "intro",
+    "tags": [
+      "脑成像",
+      "方法"
+    ],
+    "related": [
+      "methods-fnirs",
+      "methods-meg",
+      "attention-dorsal-ventral-network",
+      "emotion-prefrontal-amygdala-circuit"
+    ],
+    "engineering_link": "实时 fMRI 神经反馈是脑机接口的一个独特范式（可调制情绪与注意网络），但其时延（约 1–2 s）限制了需要高速控制的场景。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Functional Magnetic Resonance Imaging (Huettel, Song & McCarthy, 3rd ed., 2014)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "methods-meg",
+    "module": "methods",
+    "name_zh": "脑磁图",
+    "name_en": "Magnetoencephalography",
+    "abbr": "MEG",
+    "aliases": [
+      "脑磁",
+      "MEG",
+      "脑磁波",
+      "MEG 系统"
+    ],
+    "pinyin": "naocitu",
+    "pinyin_initials": "nct",
+    "definition": "在颅外以超导量子干涉器（SQUID）或光泵磁强计测量神经元（主要是皮层锥体细胞）胞内电流所形成的微弱磁场，从而以毫秒级时间分辨率无创记录脑活动的技术；对切向电流源敏感，需复杂磁屏蔽。",
+    "plain": "测大脑电流产生的“磁场涟漪”，时间精度很高。",
+    "difficulty": "intermediate",
+    "tags": [
+      "脑成像",
+      "方法"
+    ],
+    "related": [
+      "methods-eeg",
+      "methods-erp",
+      "methods-fmri"
+    ],
+    "engineering_link": "MEG 与 EEG 互为互补（磁信号不受颅骨容积传导影响，定位更优），联合使用可提升脑机接口的空间定位精度。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "MEG: An Introduction to Methods (Hansen, Kringelbach & Salmelin, 2010)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "methods-ecog",
+    "module": "methods",
+    "name_zh": "皮层脑电",
+    "name_en": "Electrocorticography",
+    "abbr": "ECoG",
+    "aliases": [
+      "皮层脑电图",
+      "硬膜下电极",
+      "ECoG 电极"
+    ],
+    "pinyin": "picengnaodian",
+    "pinyin_initials": "pcnd",
+    "definition": "把电极阵列置于硬膜下或硬膜外、直接贴附于皮层表面记录局部场电位与高频活动（如 high-gamma）的技术；信号质量介于无创 EEG 与皮层内记录之间，常用于术前功能定位及临床脑机接口研究。",
+    "plain": "把电极片直接铺在脑表面记录——比头皮脑电清楚得多，但仍需开颅。",
+    "difficulty": "intermediate",
+    "tags": [
+      "脑机接口",
+      "方法"
+    ],
+    "related": [
+      "methods-eeg",
+      "methods-intracortical-recording",
+      "bci-electrode-array",
+      "language-n400"
+    ],
+    "engineering_link": "ECoG 兼具较好空间分辨率与长期稳定性，是语音合成与手部运动解码脑机接口的常用折中方案。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Brain-Computer Interfaces Handbook (Nam, Nijholt & Lotte, 2018)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "methods-intracortical-recording",
+    "module": "methods",
+    "name_zh": "皮层内微电极记录",
+    "name_en": "Intracortical Recording",
+    "aliases": [
+      "单神经元记录",
+      "微电极阵列记录",
+      "皮层内记录"
+    ],
+    "pinyin": "picengneiweidianjijilu",
+    "pinyin_initials": "pcnwdjjl",
+    "definition": "将微电极（如犹他阵列、Neuropixels）插入皮层，记录单个或多个神经元的动作电位（spike）与局部场电位（LFP）的方法；信息量最高，但存在电极长期稳定性、组织反应与侵入风险等挑战。",
+    "plain": "最“贴身”的记录方式：直接把探针插进皮层，听单个神经元说话。",
+    "difficulty": "advanced",
+    "tags": [
+      "脑机接口",
+      "方法"
+    ],
+    "related": [
+      "bci-electrode-array",
+      "methods-ecog",
+      "neuron-action-potential",
+      "motor-corticospinal-tract"
+    ],
+    "engineering_link": "皮层内记录是高位脊髓损伤患者神经假肢（如机械臂控制、打字）解码的核心输入，代表脑机接口信息速率的上限。",
+    "references": [
+      {
+        "type": "paper",
+        "title": "Neuronal ensemble control of prosthetic devices by a human with tetraplegia (Hochberg et al., 2006, Nature)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "methods-fnirs",
+    "module": "methods",
+    "name_zh": "功能性近红外光谱",
+    "name_en": "Functional Near-Infrared Spectroscopy",
+    "abbr": "fNIRS",
+    "aliases": [
+      "近红外脑成像",
+      "fNIRS",
+      "近红外光谱",
+      "NIRS"
+    ],
+    "pinyin": "gongnengxingjinwaiguangpu",
+    "pinyin_initials": "gnxjhwgp",
+    "definition": "利用近红外光（约 700–900 nm）穿透头皮与颅骨，依据氧合/脱氧血红蛋白吸收差异推算皮层血红蛋白浓度变化、间接反映皮层活动的无创光学成像技术；对运动伪迹相对耐受、可穿戴性好，但穿透深度有限（主要反映皮层浅层）。",
+    "plain": "用“红外光”照进脑壳，看哪块皮层的血氧变了——能戴着动。",
+    "difficulty": "intro",
+    "tags": [
+      "脑成像",
+      "方法"
+    ],
+    "related": [
+      "methods-fmri",
+      "methods-eeg",
+      "memory-working-memory",
+      "attention-sustained-attention"
+    ],
+    "engineering_link": "fNIRS 抗运动干扰、可佩戴，适合认知负荷监测、康复训练与人机交互中的“自然场景”脑机接口。",
+    "references": [
+      {
+        "type": "review",
+        "title": "A brief review on the history of human functional near-infrared spectroscopy (fNIRS) (Ferrari & Quaresima, 2012, NeuroImage)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "methods-emg",
+    "module": "methods",
+    "name_zh": "肌电图",
+    "name_en": "Electromyography",
+    "abbr": "EMG",
+    "aliases": [
+      "表面肌电",
+      "sEMG",
+      "肌电"
+    ],
+    "pinyin": "jidiantu",
+    "pinyin_initials": "jdt",
+    "definition": "记录肌肉（或运动单位）电活动的技术：表面肌电（sEMG）在皮肤表面采集多个运动单位动作电位的叠加，针电极肌电可评估单个运动单位的放电与募集特性；常用于临床神经肌肉评估与肌电控制接口。",
+    "plain": "贴几片电极在皮肤上，就能读出你肌肉“在用多大劲”。",
+    "difficulty": "intro",
+    "tags": [
+      "方法",
+      "肌肉"
+    ],
+    "related": [
+      "motor-motor-unit",
+      "motor-muscle-spindle",
+      "bci-signal-processing-pipeline",
+      "motor-motor-imagery"
+    ],
+    "engineering_link": "肌电假肢是已商用的神经接口：它绕开神经电信号的译码难题，直接利用残余肌肉的 EMG 作为控制源，常与脑机接口形成混合方案。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Electromyography: Physiology, Engineering, and Noninvasive Applications (Merletti & Parker, 2004)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "methods-common-spatial-pattern",
+    "module": "methods",
+    "name_zh": "共空间模式",
+    "name_en": "Common Spatial Pattern",
+    "abbr": "CSP",
+    "aliases": [
+      "CSP",
+      "空间滤波降维",
+      "共空间模式算法"
+    ],
+    "pinyin": "gongkongjianmoshi",
+    "pinyin_initials": "gkjms",
+    "definition": "一种面向二分类多通道信号（尤指运动想象 EEG）的空间滤波降维方法：通过同时对角化两类协方差矩阵，寻找使一类方差最大、另一类方差最小的空间投影方向，从而最大化两类在方差（对应 ERD/ERS 强度）上的区分度。",
+    "plain": "给不同通道的信号“重新配比”，把两类脑电的差别放到最大。",
+    "difficulty": "advanced",
+    "tags": [
+      "脑机接口",
+      "算法"
+    ],
+    "related": [
+      "motor-motor-imagery",
+      "methods-eeg",
+      "bci-signal-processing-pipeline",
+      "bci-hybrid-bci"
+    ],
+    "engineering_link": "CSP（及滤波器组 FBCSP、正则化 RCSP）是运动想象脑机接口特征提取的经典基线，常配合 LDA/SVM 分类器使用。",
+    "references": [
+      {
+        "type": "paper",
+        "title": "Optimizing spatial filters for robust EEG single-trial analysis (Blankertz et al., 2008, IEEE Signal Processing Magazine)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "methods-artifact-removal",
+    "module": "methods",
+    "name_zh": "伪迹去除与独立成分分析",
+    "name_en": "Artifact Removal and ICA",
+    "aliases": [
+      "去伪迹",
+      "ICA 去噪",
+      "独立成分分析",
+      "ICA"
+    ],
+    "pinyin": "weijiquchuyudulichengfenfenxi",
+    "pinyin_initials": "wjqcydlcffx",
+    "definition": "脑电、脑磁等信号常混入眼动、眨眼、肌电、心电与工频等伪迹；常用方法包括滤波、回归、回归结合独立成分分析（ICA）、以及伪迹子空间重构（ASR）等，目标是在保留神经成分的前提下去除干扰。",
+    "plain": "脑电里混着眨眼、咬牙、电网噪声——先把这些“杂音”清掉。",
+    "difficulty": "intermediate",
+    "tags": [
+      "脑机接口",
+      "预处理"
+    ],
+    "related": [
+      "methods-eeg",
+      "methods-erp",
+      "bci-signal-processing-pipeline"
+    ],
+    "engineering_link": "去伪迹是脑机接口在线系统的第一道关卡；伪迹残留会显著降低分类精度，也常被误判为“神经信号”，因此需要在报告中如实交代处理流程。",
+    "references": [
+      {
+        "type": "paper",
+        "title": "Removing electroencephalographic artifacts by blind source separation (Jung et al., 2000, Psychophysiology)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z"
+  }
+]

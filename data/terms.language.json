@@ -1,0 +1,315 @@
+[
+  {
+    "id": "language-phoneme",
+    "module": "language",
+    "name_zh": "音素",
+    "name_en": "Phoneme",
+    "aliases": [
+      "语音单位",
+      "音位"
+    ],
+    "pinyin": "yinsu",
+    "pinyin_initials": "ys",
+    "definition": "一种语言中能够区别意义的最小语音单位（如汉语拼音中的声母、韵母与声调组合），其识别需在连续、含噪的声学信号中完成范畴化知觉，并受母语音系长期经验的塑造。",
+    "plain": "语言里最小的“发音零件”，换一个音意思就变了。",
+    "difficulty": "intro",
+    "tags": [
+      "语言",
+      "语音"
+    ],
+    "related": [
+      "language-morpheme-syntax",
+      "language-lexical-access",
+      "language-critical-period",
+      "attention-cocktail-party-effect"
+    ],
+    "engineering_link": "音素是语音识别与语音脑机接口的基本输出单元（如音素级解码），也是听觉反馈式神经假体（人工耳蜗）效果评估的指标之一。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "language-morpheme-syntax",
+    "module": "language",
+    "name_zh": "语素与句法",
+    "name_en": "Morpheme and Syntax",
+    "aliases": [
+      "语法结构",
+      "语素",
+      "形态句法"
+    ],
+    "pinyin": "yusuyujufa",
+    "pinyin_initials": "ysyjf",
+    "definition": "语素是语言中最小音义结合单位（词根、词缀等），句法则是把语素组合成短语与句子的规则系统；二者共同构成语言的双层结构——有限的音素与语素可生成无限的句子，是层级化、递归式加工的基础。",
+    "plain": "“字”组成“词”的规则，和“词”组成“句子”的规则。",
+    "difficulty": "intro",
+    "tags": [
+      "语言",
+      "语法"
+    ],
+    "related": [
+      "language-phoneme",
+      "language-lexical-access",
+      "language-n400",
+      "language-broca-aphasia"
+    ],
+    "engineering_link": "句法层级是自然语言处理中句法分析器的直接对象；句法违反引发的 P600 等成分也是语言类脑机接口的可用特征。",
+    "references": [
+      {
+        "type": "encyclopedia",
+        "title": "认知心理学 (Sternberg & Sternberg, 7th ed.)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "language-lexical-access",
+    "module": "language",
+    "name_zh": "词汇通达",
+    "name_en": "Lexical Access",
+    "aliases": [
+      "词汇提取",
+      "心理词典",
+      "词通达"
+    ],
+    "pinyin": "cihuitongda",
+    "pinyin_initials": "chtd",
+    "definition": "从心理词典中检索并激活词条（含语音、拼写、语义等表征）的过程；词汇通达具有竞争性（多个候选词相互抑制）并受词频、语境与语义关联影响，语速快时可低至数百毫秒并伴随 N400 等电生理指标变化。",
+    "plain": "“想到那个词”的过程：从脑内字典里翻出对应词条。",
+    "difficulty": "advanced",
+    "tags": [
+      "语言",
+      "语义"
+    ],
+    "related": [
+      "language-semantic-priming",
+      "language-n400",
+      "language-morpheme-syntax",
+      "memory-working-memory"
+    ],
+    "engineering_link": "词汇通达的时间进程是语言解码脑机接口（如尝试说话的解码）与语义神经反馈系统的关键时间基准。",
+    "references": [
+      {
+        "type": "encyclopedia",
+        "title": "认知心理学 (Sternberg & Sternberg, 7th ed.)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "language-broca-aphasia",
+    "module": "language",
+    "name_zh": "布罗卡失语症",
+    "name_en": "Broca's Aphasia",
+    "aliases": [
+      "运动性失语",
+      "表达性失语",
+      "Broca 失语"
+    ],
+    "pinyin": "buluokashiyuzheng",
+    "pinyin_initials": "blksyz",
+    "definition": "由额下回后部（布罗卡区）及邻近皮层下损伤引起的失语症，表现为言语产出费力、语法结构缺失、命名困难，但言语理解相对保留；患者常对自身缺陷有觉察并感到挫败。",
+    "plain": "想说话却“说不出来”：话不成句，但大致能听懂。",
+    "difficulty": "intermediate",
+    "tags": [
+      "语言",
+      "临床"
+    ],
+    "related": [
+      "anatomy-broca-area",
+      "language-wernicke-aphasia",
+      "language-arcuate-fasciculus",
+      "language-morpheme-syntax"
+    ],
+    "engineering_link": "布罗卡区与言语产出直接相关，是语音合成式脑机接口（从皮层活动直接合成语音）的主要解码靶区。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Neuroanatomy through Clinical Cases (Blumenfeld, 2nd ed.)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "language-wernicke-aphasia",
+    "module": "language",
+    "name_zh": "韦尼克失语症",
+    "name_en": "Wernicke's Aphasia",
+    "aliases": [
+      "感觉性失语",
+      "流畅性失语",
+      "Wernicke 失语"
+    ],
+    "pinyin": "weinikeshiyuzheng",
+    "pinyin_initials": "wnksyz",
+    "definition": "由颞上回后部（韦尼克区）损伤引起的失语症，特点是言语流畅但内容空洞、夹造新词、语义错乱，理解严重受损；患者常缺乏对自身语言错误的觉察。",
+    "plain": "说得又流利又热闹，却听不懂、也讲不清意思。",
+    "difficulty": "intermediate",
+    "tags": [
+      "语言",
+      "临床"
+    ],
+    "related": [
+      "language-wernicke-area",
+      "language-broca-aphasia",
+      "language-arcuate-fasciculus",
+      "language-n400"
+    ],
+    "engineering_link": "韦尼克区受损导致理解崩解，为语言理解解码器提供了“语义整合必须依赖该区”的因果证据，影响语言脑机接口的电极定位策略。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Neuroanatomy through Clinical Cases (Blumenfeld, 2nd ed.)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "language-arcuate-fasciculus",
+    "module": "language",
+    "name_zh": "弓状束",
+    "name_en": "Arcuate Fasciculus",
+    "aliases": [
+      "弓形束",
+      "AF",
+      "弓状纤维束"
+    ],
+    "pinyin": "gongzhuangshu",
+    "pinyin_initials": "gzs",
+    "definition": "连接额叶布罗卡区与颞叶韦尼克区（并延伸至顶下小叶）的弓形白质纤维束，构成语言“背侧通路”；其损伤可导致传导性失语（复述困难而理解与产出相对保留），是双通路语言模型的解剖基础。",
+    "plain": "连接“说话区”和“听懂区”的那条神经电缆。",
+    "difficulty": "advanced",
+    "tags": [
+      "语言",
+      "白质"
+    ],
+    "related": [
+      "anatomy-broca-area",
+      "language-wernicke-area",
+      "language-broca-aphasia",
+      "anatomy-corpus-callosum"
+    ],
+    "engineering_link": "弓状束是弥散张量成像（DTI）连接组学与术前功能区定位的重要通路，也用于评估脑机接口植入路径的白质安全边界。",
+    "references": [
+      {
+        "type": "review",
+        "title": "The arcuate fasciculus and the disconnection theme in language (Friederici, 2009)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "language-n400",
+    "module": "language",
+    "name_zh": "N400 成分",
+    "name_en": "N400 Component",
+    "aliases": [
+      "N400",
+      "语义整合电位",
+      "N400 波"
+    ],
+    "pinyin": "n400chengfen",
+    "pinyin_initials": "cf",
+    "definition": "在语义违反或语义难以整合的词出现后约 400 ms 左右、于中央—顶叶部位记录到的负向事件相关电位成分；其幅度随语义违反程度与词的可预期性（N400 效应）而变化，被视为语义整合难度的在线指标。",
+    "plain": "听到“不合逻辑的词”时，脑电会在 0.4 秒左右冒出一个负波。",
+    "difficulty": "intermediate",
+    "tags": [
+      "语言",
+      "ERP"
+    ],
+    "related": [
+      "methods-erp",
+      "language-semantic-priming",
+      "language-lexical-access",
+      "attention-spatial-cueing"
+    ],
+    "engineering_link": "N400 是语言类脑机接口（如语义一致性检测、翻译质量评估）的高时间分辨率特征，常与 P300/LPP 联合使用。",
+    "references": [
+      {
+        "type": "paper",
+        "title": "Reading senseless sentences: brain potentials reflect semantic incongruity (Kutas & Hillyard, 1980, Science)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "language-semantic-priming",
+    "module": "language",
+    "name_zh": "语义启动",
+    "name_en": "Semantic Priming",
+    "aliases": [
+      "启动效应",
+      "语义启动效应"
+    ],
+    "pinyin": "yuyiqidong",
+    "pinyin_initials": "yyqd",
+    "definition": "先呈现启动词会加速对语义相关靶词（如“医生—护士”）的加工，表现为反应时缩短与 N400 减小；该效应可自动发生且在短刺激间隔下尤为明显，反映语义网络中的扩散激活。",
+    "plain": "先看到“医生”，再看到“护士”会反应更快——大脑提前亮了相关词。",
+    "difficulty": "intermediate",
+    "tags": [
+      "语言",
+      "语义"
+    ],
+    "related": [
+      "language-lexical-access",
+      "language-n400",
+      "memory-declarative-nondeclarative",
+      "language-morpheme-syntax"
+    ],
+    "engineering_link": "语义启动范式是隐性脑机接口（如通过 N400 判断“是否理解”）的典型实验设计，可用于无运动参与的交流接口。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "An Introduction to the Event-Related Potential Technique (Luck, 2nd ed., 2014)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "language-critical-period",
+    "module": "language",
+    "name_zh": "语言习得关键期",
+    "name_en": "Critical Period for Language",
+    "aliases": [
+      "语言关键期",
+      "敏感期",
+      "关键期假说"
+    ],
+    "pinyin": "yuyanxideguanjianqi",
+    "pinyin_initials": "yyxdgjq",
+    "definition": "在特定发育时间窗内（通常认为儿童期，尤其语音与句法层面）神经系统对环境语言输入具有高度可塑性，此后习得效率与最终水平显著下降的现象；其机制与突触修剪、髓鞘化等成熟过程相关。",
+    "plain": "学语言有“黄金窗口期”，错过之后再学就会吃力很多。",
+    "difficulty": "intermediate",
+    "tags": [
+      "语言",
+      "发育"
+    ],
+    "related": [
+      "language-phoneme",
+      "synapse-synaptic-plasticity",
+      "memory-long-term-potentiation",
+      "neuron-myelin-sheath"
+    ],
+    "engineering_link": "关键期概念直接影响儿童人工耳蜗植入的“越早越好”原则，是神经工程临床决策的重要依据。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z"
+  }
+]

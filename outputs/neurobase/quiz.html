@@ -1,0 +1,92 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1e5fa8">
+  <meta name="description" content="NeuroBase 测验：选题后进入答题页作答并提交，随后跳转结果页查看判分与解析；错题自动进错题本。">
+  <title>测验 · NeuroBase</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="assets/css/style.css?v=1194">
+  <script>
+    (function () {
+      try {
+        var m = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)').matches : false;
+        var th = localStorage.getItem('nb-theme') || 'system';
+        if (th === 'dark' || (th === 'system' && m)) document.documentElement.classList.add('dark');
+      } catch (e) {}
+      try {
+        var f = parseFloat(localStorage.getItem('nb-font') || '100');
+        if (f >= 25 && f <= 300) document.documentElement.style.setProperty('--nb-font-scale', (f / 100).toFixed(2));
+      } catch (e) {}
+      try {
+        if (localStorage.getItem('nb-motion') === 'off') document.documentElement.classList.add('motion-off');
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="action.skipToContent">跳到主内容</a>
+  <header id="nb-header"></header>
+
+  <main id="main" class="nb-content">
+    <div class="wrap">
+      <h1 class="page-title" data-i18n="quiz.title">测验</h1>
+      <p class="page-desc" data-i18n="quiz.desc">从词条库自动出题：单选 · 多选 · 填空。分三步进行：先选题型范围，再逐题作答，最后提交并查看判分与解析；错题自动进错题本。</p>
+
+      <form class="sp-setup" id="qz-setup">
+        <div class="sp-field">
+          <label for="qz-module" class="sp-label" data-i18n="quiz.module">测验范围</label>
+          <select id="qz-module" class="sp-select"></select>
+        </div>
+        <div class="sp-field">
+          <label for="qz-types" class="sp-label" data-i18n="quiz.types">题型</label>
+          <select id="qz-types" class="sp-select">
+            <option value="single" data-i18n="quiz.typeSingle">单选</option>
+            <option value="multi" data-i18n="quiz.typeMulti">多选</option>
+            <option value="fill" data-i18n="quiz.typeFill">填空</option>
+            <option value="mix" selected data-i18n="quiz.typeMix">混合</option>
+          </select>
+        </div>
+        <div class="sp-field">
+          <label for="qz-count" class="sp-label" data-i18n="quiz.count">题数</label>
+          <select id="qz-count" class="sp-select">
+            <option value="5">5</option>
+            <option value="10" selected>10</option>
+            <option value="15">15</option>
+          </select>
+        </div>
+        <div class="sp-actions">
+          <button type="submit" class="btn btn-primary" data-i18n="quiz.start">开始测验</button>
+        </div>
+        <p class="sp-feedback" id="qz-feedback" role="status"></p>
+      </form>
+
+      <div class="qz-footer">
+        <a class="btn qz-back-btn qz-back-btn--outline" id="qz-to-learn" href="learn.html" data-i18n="learn.backToLearn">返回学习工具</a>
+      </div>
+    </div>
+  </main>
+
+  <footer id="nb-footer"></footer>
+
+  <noscript>
+    <div class="wrap">
+      <p class="notice">本页的测验由本地脚本渲染，请启用 JavaScript 后再访问。</p>
+    </div>
+  </noscript>
+
+  <script src="assets/js/data/terms.js?v=1194"></script>
+  <script src="assets/js/data/i18n.js?v=1194"></script>
+  <script src="assets/js/core.js?v=1194"></script>
+  <script src="assets/js/cloud-config.js?v=1194"></script>
+  <script src="assets/js/cloud.js?v=1194"></script>
+  <script src="assets/js/auth-ui.js?v=1194"></script>
+  <script src="assets/js/ai-fluid.js?v=1194"></script>
+  <script src="assets/js/ai-tutor.js?v=1194"></script>
+  <script src="assets/js/feedback.js?v=1194"></script>
+  <script src="assets/js/help.js?v=1194"></script>
+  <script src="assets/js/learn.js?v=1194"></script>
+  <script src="assets/js/page-quiz.js?v=1194"></script>
+</body>
+</html>

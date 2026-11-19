@@ -1,0 +1,123 @@
+{
+  "generated_at": "2026-10-10T03:34:14.066Z",
+  "source": "docs/",
+  "files": [
+    {
+      "slug": "DECISIONS.md",
+      "path": "DECISIONS.md",
+      "name": "DECISIONS.md",
+      "ext": "md",
+      "group": "",
+      "title": "DECISIONS · 决策记录",
+      "size": 28721
+    },
+    {
+      "slug": "DEV_LOG.md",
+      "path": "DEV_LOG.md",
+      "name": "DEV_LOG.md",
+      "ext": "md",
+      "group": "",
+      "title": "DEV_LOG · 开发日志",
+      "size": 37481
+    },
+    {
+      "slug": "ERROR_LOG.md",
+      "path": "ERROR_LOG.md",
+      "name": "ERROR_LOG.md",
+      "ext": "md",
+      "group": "",
+      "title": "ERROR_LOG · 错误记录",
+      "size": 8750
+    },
+    {
+      "slug": "PLAN.md",
+      "path": "PLAN.md",
+      "name": "PLAN.md",
+      "ext": "md",
+      "group": "",
+      "title": "NeuroBase · 项目计划（PLAN.md）",
+      "size": 28541
+    },
+    {
+      "slug": "PROJECT_SCOPE.md",
+      "path": "PROJECT_SCOPE.md",
+      "name": "PROJECT_SCOPE.md",
+      "ext": "md",
+      "group": "",
+      "title": "PROJECT_SCOPE · 项目范围说明",
+      "size": 16245
+    },
+    {
+      "slug": "READING_LIST.json",
+      "path": "READING_LIST.json",
+      "name": "READING_LIST.json",
+      "ext": "json",
+      "group": "",
+      "title": "READING_LIST.json",
+      "size": 27024
+    },
+    {
+      "slug": "READING_LIST.md",
+      "path": "READING_LIST.md",
+      "name": "READING_LIST.md",
+      "ext": "md",
+      "group": "",
+      "title": "READING_LIST · 权威教材与文献清单",
+      "size": 16357
+    },
+    {
+      "slug": "RESEARCH.md",
+      "path": "RESEARCH.md",
+      "name": "RESEARCH.md",
+      "ext": "md",
+      "group": "",
+      "title": "RESEARCH · 参考调研报告",
+      "size": 5549
+    },
+    {
+      "slug": "archive__PLAN.v10.static.md",
+      "path": "archive/PLAN.v10.static.md",
+      "name": "PLAN.v10.static.md",
+      "ext": "md",
+      "group": "archive",
+      "title": "神经与认知科学基础 · 学习网页 项目计划（PLAN.md）",
+      "size": 46501
+    },
+    {
+      "slug": "archive__PROJECT_SCOPE.v2.7.static.md",
+      "path": "archive/PROJECT_SCOPE.v2.7.static.md",
+      "name": "PROJECT_SCOPE.v2.7.static.md",
+      "ext": "md",
+      "group": "archive",
+      "title": "PROJECT_SCOPE · 项目范围说明",
+      "size": 17608
+    },
+    {
+      "slug": "schema__term.schema.json",
+      "path": "schema/term.schema.json",
+      "name": "term.schema.json",
+      "ext": "json",
+      "group": "schema",
+      "title": "term.schema.json",
+      "size": 3464
+    },
+    {
+      "slug": "supabase__README.md",
+      "path": "supabase/README.md",
+      "name": "README.md",
+      "ext": "md",
+      "group": "supabase",
+      "title": "反馈箱 · Supabase 部署说明",
+      "size": 8100
+    },
+    {
+      "slug": "supabase__schema.sql",
+      "path": "supabase/schema.sql",
+      "name": "schema.sql",
+      "ext": "sql",
+      "group": "supabase",
+      "title": "schema.sql",
+      "size": 9918
+    }
+  ]
+}

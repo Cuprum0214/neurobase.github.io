@@ -1,0 +1,75 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1e5fa8">
+  <meta name="description" content="NeuroBase 内容生态：按主题聚合的 BCI 专区、神经科学↔工程对照表与科研前沿速览，全部条目可跳转站内词条并标注来源。">
+  <title>内容生态 · NeuroBase</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="assets/css/style.css?v=1194">
+  <script>
+    (function () {
+      try {
+        var m = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)').matches : false;
+        var th = localStorage.getItem('nb-theme') || 'system';
+        if (th === 'dark' || (th === 'system' && m)) document.documentElement.classList.add('dark');
+      } catch (e) {}
+      try {
+        var f = parseFloat(localStorage.getItem('nb-font') || '100');
+        if (f >= 25 && f <= 300) document.documentElement.style.setProperty('--nb-font-scale', (f / 100).toFixed(2));
+      } catch (e) {}
+      try {
+        if (localStorage.getItem('nb-motion') === 'off') document.documentElement.classList.add('motion-off');
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="action.skipToContent">跳到主内容</a>
+  <header id="nb-header"></header>
+
+  <main id="main" class="nb-content">
+    <div class="wrap">
+      <h1 class="page-title" data-i18n="explore.title">内容生态</h1>
+      <p class="page-desc" data-i18n="explore.desc">把术语、工程实现与前沿研究串成一条可走通的路。</p>
+
+      <ul class="eco-stats" id="nb-eco-stats"></ul>
+
+      <div class="grid-3 eco-grid eco-grid-4" id="nb-eco-cards"></div>
+
+      <section class="term-section">
+        <h2 class="sec-title" data-i18n="explore.pathTitle">建议使用顺序</h2>
+        <ol class="eco-steps" id="nb-eco-steps"></ol>
+      </section>
+
+      <p class="source-note" data-i18n="explore.note">三个板块的条目均来自项目自维护数据，术语定义与来源以词条详情页为准；前沿摘要为项目自撰，非原文翻译。</p>
+    </div>
+  </main>
+
+  <footer id="nb-footer"></footer>
+
+  <noscript>
+    <div class="wrap">
+      <p class="notice">本页的板块入口由本地脚本渲染，请启用 JavaScript 后再访问。</p>
+    </div>
+  </noscript>
+
+  <script src="assets/js/data/terms.js?v=1194"></script>
+  <script src="assets/js/data/i18n.js?v=1194"></script>
+  <script src="assets/js/data/bci-zone.js?v=1194"></script>
+  <script src="assets/js/data/eng-map.js?v=1194"></script>
+  <script src="assets/js/data/frontier.js?v=1194"></script>
+  <script src="assets/js/data/sources.js?v=1194"></script>
+  <script src="assets/js/core.js?v=1194"></script>
+  <script src="assets/js/cloud-config.js?v=1194"></script>
+  <script src="assets/js/cloud.js?v=1194"></script>
+  <script src="assets/js/auth-ui.js?v=1194"></script>
+  <script src="assets/js/ai-fluid.js?v=1194"></script>
+  <script src="assets/js/ai-tutor.js?v=1194"></script>
+  <script src="assets/js/feedback.js?v=1194"></script>
+  <script src="assets/js/help.js?v=1194"></script>
+  <script src="assets/js/page-explore.js?v=1194"></script>
+</body>
+</html>
+

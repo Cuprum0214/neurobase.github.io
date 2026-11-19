@@ -1,0 +1,585 @@
+{
+  "meta": {
+    "version": 1,
+    "generated_at": "2026-11-18",
+    "updated_at": "2026-11-18",
+    "term_count": 110,
+    "reference_count": 111,
+    "source_count": 41,
+    "term_without_source": 0,
+    "by_type": {
+      "textbook": 19,
+      "encyclopedia": 1,
+      "review": 9,
+      "paper": 12
+    },
+    "check_window_days": 365,
+    "stale_window_days": 180,
+    "note_zh": "来源按词条 references 标题归并登记；url 为可核验检索入口（论文/综述→Crossref，教材/百科→WorldCat），不是原文链接，点击后可自行核对版本与页码。",
+    "note_en": "Sources are de-duplicated by reference title. The url is a verification entry point (Crossref for papers/reviews, WorldCat for textbooks), not the original full text."
+  },
+  "sources": [
+    {
+      "id": "src-a23b2e58",
+      "type": "textbook",
+      "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+      "url": "https://search.worldcat.org/search?q=Principles%20of%20Neural%20Science%20(Kandel%20et%20al.%2C%206th%20ed.%2C%202021)",
+      "via": "worldcat",
+      "note": "",
+      "verified_at": "2026-10-10",
+      "terms": [
+        "anatomy-basal-ganglia",
+        "anatomy-broca-area",
+        "anatomy-cerebellum",
+        "anatomy-cerebral-cortex",
+        "anatomy-hippocampus",
+        "anatomy-prefrontal-cortex",
+        "attention-cocktail-party-effect",
+        "attention-sustained-attention",
+        "attention-top-down-control",
+        "emotion-amygdala",
+        "emotion-fear-conditioning",
+        "emotion-insula",
+        "language-critical-period",
+        "language-phoneme",
+        "language-wernicke-area",
+        "memory-consolidation",
+        "memory-long-term-memory",
+        "memory-reconsolidation",
+        "motor-central-pattern-generator",
+        "motor-corticospinal-tract",
+        "motor-golgi-tendon-organ",
+        "motor-motor-cortex",
+        "motor-muscle-spindle",
+        "motor-supplementary-motor-area",
+        "neuron-action-potential",
+        "neuron-axon",
+        "neuron-dendrite",
+        "neuron-glia",
+        "neuron-myelin-sheath",
+        "neuron-resting-potential",
+        "neuron-saltatory-conduction",
+        "sensory-receptive-field",
+        "sensory-retina",
+        "sensory-sensory-transduction",
+        "sensory-somatosensory-system",
+        "sensory-visual-cortex",
+        "synapse-chemical-synapse",
+        "synapse-long-term-depression",
+        "synapse-postsynaptic-potential",
+        "synapse-receptor-ionotropic",
+        "synapse-receptor-metabotropic",
+        "synapse-synaptic-plasticity"
+      ]
+    },
+    {
+      "id": "src-b0ebf74e",
+      "type": "encyclopedia",
+      "title": "认知心理学 (Sternberg & Sternberg, 7th ed.)",
+      "url": "https://search.worldcat.org/search?q=%E8%AE%A4%E7%9F%A5%E5%BF%83%E7%90%86%E5%AD%A6%20(Sternberg%20%26%20Sternberg%2C%207th%20ed.)",
+      "via": "worldcat",
+      "note": "",
+      "verified_at": "2026-10-10",
+      "terms": [
+        "attention-bottom-up-capture",
+        "attention-divided-attention",
+        "emotion-basic-emotions",
+        "language-lexical-access",
+        "language-morpheme-syntax",
+        "memory-encoding-consolidation-retrieval",
+        "memory-working-memory"
+      ]
+    },
+    {
+      "id": "src-771d98e7",
+      "type": "textbook",
+      "title": "An Introduction to the Event-Related Potential Technique (Luck, 2nd ed., 2014)",
+      "url": "https://search.worldcat.org/search?q=An%20Introduction%20to%20the%20Event-Related%20Potential%20Technique%20(Luck%2C%202nd%20ed.%2C%202014)",
+      "via": "worldcat",
+      "note": "",
+      "verified_at": "2026-10-10",
+      "terms": [
+        "attention-selective-attention",
+        "attention-spatial-cueing",
+        "bci-p300",
+        "language-semantic-priming",
+        "methods-erp"
+      ]
+    },
+    {
+      "id": "src-94d3a218",
+      "type": "textbook",
+      "title": "Brain-Computer Interfaces: Principles and Practice (Wolpaw & Wolpaw, 2012)",
+      "url": "https://search.worldcat.org/search?q=Brain-Computer%20Interfaces%3A%20Principles%20and%20Practice%20(Wolpaw%20%26%20Wolpaw%2C%202012)",
+      "via": "worldcat",
+      "note": "",
+      "verified_at": "2026-10-10",
+      "terms": [
+        "bci-erp-based",
+        "bci-invasive-vs-noninvasive",
+        "bci-p300",
+        "motor-motor-imagery"
+      ]
+    },
+    {
+      "id": "src-25957081",
+      "type": "textbook",
+      "title": "From Neuron to Brain (Nicholls et al., 6th ed., 2021)",
+      "url": "https://search.worldcat.org/search?q=From%20Neuron%20to%20Brain%20(Nicholls%20et%20al.%2C%206th%20ed.%2C%202021)",
+      "via": "worldcat",
+      "note": "",
+      "verified_at": "2026-10-10",
+      "terms": [
+        "memory-long-term-potentiation",
+        "neuron-refractory-period",
+        "synapse-synaptic-transmission",
+        "synapse-synaptic-vesicle"
+      ]
+    },
+    {
+      "id": "src-3217a2f7",
+      "type": "textbook",
+      "title": "Neuroscience (Purves et al., 6th ed., 2018)",
+      "url": "https://search.worldcat.org/search?q=Neuroscience%20(Purves%20et%20al.%2C%206th%20ed.%2C%202018)",
+      "via": "worldcat",
+      "note": "",
+      "verified_at": "2026-10-10",
+      "terms": [
+        "motor-motor-homunculus",
+        "motor-motor-unit",
+        "sensory-center-surround",
+        "sensory-just-noticeable-difference"
+      ]
+    },
+    {
+      "id": "src-f5c96db0",
+      "type": "textbook",
+      "title": "The Human Brain: An Introduction to its Functional Anatomy (Nolte, 7th ed.)",
+      "url": "https://search.worldcat.org/search?q=The%20Human%20Brain%3A%20An%20Introduction%20to%20its%20Functional%20Anatomy%20(Nolte%2C%207th%20ed.)",
+      "via": "worldcat",
+      "note": "",
+      "verified_at": "2026-10-10",
+      "terms": [
+        "anatomy-brainstem",
+        "anatomy-thalamus",
+        "emotion-limbic-system",
+        "sensory-visual-pathway"
+      ]
+    },
+    {
+      "id": "src-7f986fbb",
+      "type": "textbook",
+      "title": "Brain-Computer Interfaces Handbook (Nam, Nijholt & Lotte, 2018)",
+      "url": "https://search.worldcat.org/search?q=Brain-Computer%20Interfaces%20Handbook%20(Nam%2C%20Nijholt%20%26%20Lotte%2C%202018)",
+      "via": "worldcat",
+      "note": "",
+      "verified_at": "2026-10-10",
+      "terms": [
+        "bci-hybrid-bci",
+        "emotion-affective-computing",
+        "methods-ecog"
+      ]
+    },
+    {
+      "id": "src-a92fcbf9",
+      "type": "textbook",
+      "title": "Neuroanatomy through Clinical Cases (Blumenfeld, 2nd ed.)",
+      "url": "https://search.worldcat.org/search?q=Neuroanatomy%20through%20Clinical%20Cases%20(Blumenfeld%2C%202nd%20ed.)",
+      "via": "worldcat",
+      "note": "",
+      "verified_at": "2026-10-10",
+      "terms": [
+        "anatomy-corpus-callosum",
+        "language-broca-aphasia",
+        "language-wernicke-aphasia"
+      ]
+    },
+    {
+      "id": "src-98cb0de0",
+      "type": "textbook",
+      "title": "Neuroscience: Exploring the Brain (Bear et al., 4th ed., 2016)",
+      "url": "https://search.worldcat.org/search?q=Neuroscience%3A%20Exploring%20the%20Brain%20(Bear%20et%20al.%2C%204th%20ed.%2C%202016)",
+      "via": "worldcat",
+      "note": "",
+      "verified_at": "2026-10-10",
+      "terms": [
+        "motor-stretch-reflex",
+        "sensory-photoreceptor",
+        "sensory-sensory-adaptation"
+      ]
+    },
+    {
+      "id": "src-8505b30a",
+      "type": "textbook",
+      "title": "Basic Neurochemistry (Siegel et al., 8th ed., 2012)",
+      "url": "https://search.worldcat.org/search?q=Basic%20Neurochemistry%20(Siegel%20et%20al.%2C%208th%20ed.%2C%202012)",
+      "via": "worldcat",
+      "note": "",
+      "verified_at": "2026-10-10",
+      "terms": [
+        "synapse-neuromodulator",
+        "synapse-neurotransmitter"
+      ]
+    },
+    {
+      "id": "src-e3d447f1",
+      "type": "textbook",
+      "title": "神经科学 (韩济生 主编)",
+      "url": "https://search.worldcat.org/search?q=%E7%A5%9E%E7%BB%8F%E7%A7%91%E5%AD%A6%20(%E9%9F%A9%E6%B5%8E%E7%94%9F%20%E4%B8%BB%E7%BC%96)",
+      "via": "worldcat",
+      "note": "",
+      "verified_at": "2026-10-10",
+      "terms": [
+        "anatomy-hypothalamus"
+      ]
+    },
+    {
+      "id": "src-a3803a8b",
+      "type": "review",
+      "title": "A brief review on the history of human functional near-infrared spectroscopy (fNIRS) (Ferrari & Quaresima, 2012, NeuroImage)",
+      "url": "https://search.crossref.org/?q=A%20brief%20review%20on%20the%20history%20of%20human%20functional%20near-infrared%20spectroscopy%20(fNIRS)%20(Ferrari%20%26%20Quaresima%2C%202012%2C%20NeuroImage)",
+      "via": "crossref",
+      "note": "",
+      "verified_at": "2026-10-10",
+      "terms": [
+        "methods-fnirs"
+      ]
+    },
+    {
+      "id": "src-14aad054",
+      "type": "paper",
+      "title": "A neural substrate of prediction and reward (Schultz, Dayan & Montague, 1997, Science)",
+      "url": "https://search.crossref.org/?q=A%20neural%20substrate%20of%20prediction%20and%20reward%20(Schultz%2C%20Dayan%20%26%20Montague%2C%201997%2C%20Science)",
+      "via": "crossref",
+      "note": "",
+      "verified_at": "2026-10-10",
+      "terms": [
+        "emotion-dopamine-reward"
+      ]
+    },
+    {
+      "id": "src-855285c4",
+      "type": "review",
+      "title": "Brain-computer interfaces for communication and control (Wolpaw et al., 2002, Clinical Neurophysiology)",
+      "url": "https://search.crossref.org/?q=Brain-computer%20interfaces%20for%20communication%20and%20control%20(Wolpaw%20et%20al.%2C%202002%2C%20Clinical%20Neurophysiology)",
+      "via": "crossref",
+      "note": "",
+      "verified_at": "2026-10-10",
+      "terms": [
+        "bci-signal-processing-pipeline"
+      ]
+    },
+    {
+      "id": "src-cd98fc1a",
+      "type": "textbook",
+      "title": "Brain-Computer Interfaces Handbook (Nam, Nijholt, Lotte, 2018)",
+      "url": "https://search.worldcat.org/search?q=Brain-Computer%20Interfaces%20Handbook%20(Nam%2C%20Nijholt%2C%20Lotte%2C%202018)",
+      "via": "worldcat",
+      "note": "",
+      "verified_at": "2026-10-10",
+      "terms": [
+        "bci-ssvep"
+      ]
+    },
+    {
+      "id": "src-243be628",
+      "type": "paper",
+      "title": "Change blindness (Simons & Levin, 1998, Trends in Cognitive Sciences)",
+      "url": "https://search.crossref.org/?q=Change%20blindness%20(Simons%20%26%20Levin%2C%201998%2C%20Trends%20in%20Cognitive%20Sciences)",
+      "via": "crossref",
+      "note": "",
+      "verified_at": "2026-10-10",
+      "terms": [
+        "attention-change-blindness"
+      ]
+    },
+    {
+      "id": "src-3f725789",
+      "type": "review",
+      "title": "Closed-loop brain training: the science of neurofeedback (Sitaram et al., 2017, Nature Reviews Neuroscience)",
+      "url": "https://search.crossref.org/?q=Closed-loop%20brain%20training%3A%20the%20science%20of%20neurofeedback%20(Sitaram%20et%20al.%2C%202017%2C%20Nature%20Reviews%20Neuroscience)",
+      "via": "crossref",
+      "note": "",
+      "verified_at": "2026-10-10",
+      "terms": [
+        "bci-neurofeedback"
+      ]
+    },
+    {
+      "id": "src-cd8cc1f4",
+      "type": "review",
+      "title": "Closed-loop neuromodulation (Bouthour et al., 2019, Brain / Bosch et al.)",
+      "url": "https://search.crossref.org/?q=Closed-loop%20neuromodulation%20(Bouthour%20et%20al.%2C%202019%2C%20Brain%20%2F%20Bosch%20et%20al.)",
+      "via": "crossref",
+      "note": "",
+      "verified_at": "2026-10-10",
+      "terms": [
+        "bci-closed-loop"
+      ]
+    },
+    {
+      "id": "src-787cc55f",
+      "type": "review",
+      "title": "Control of goal-directed and stimulus-driven attention in the brain (Corbetta & Shulman, 2002, Nature Reviews Neuroscience)",
+      "url": "https://search.crossref.org/?q=Control%20of%20goal-directed%20and%20stimulus-driven%20attention%20in%20the%20brain%20(Corbetta%20%26%20Shulman%2C%202002%2C%20Nature%20Reviews%20Neuroscience)",
+      "via": "crossref",
+      "note": "",
+      "verified_at": "2026-10-10",
+      "terms": [
+        "attention-dorsal-ventral-network"
+      ]
+    },
+    {
+      "id": "src-20d6133d",
+      "type": "textbook",
+      "title": "EEG Signal Processing (Sanei & Chambers, 2007)",
+      "url": "https://search.worldcat.org/search?q=EEG%20Signal%20Processing%20(Sanei%20%26%20Chambers%2C%202007)",
+      "via": "worldcat",
+      "note": "",
+      "verified_at": "2026-10-10",
+      "terms": [
+        "methods-eeg"
+      ]
+    },
+    {
+      "id": "src-94319c2d",
+      "type": "textbook",
+      "title": "Electromyography: Physiology, Engineering, and Noninvasive Applications (Merletti & Parker, 2004)",
+      "url": "https://search.worldcat.org/search?q=Electromyography%3A%20Physiology%2C%20Engineering%2C%20and%20Noninvasive%20Applications%20(Merletti%20%26%20Parker%2C%202004)",
+      "via": "worldcat",
+      "note": "",
+      "verified_at": "2026-10-10",
+      "terms": [
+        "methods-emg"
+      ]
+    },
+    {
+      "id": "src-f1c04013",
+      "type": "review",
+      "title": "Emotion regulation: conceptual foundations (Gross, 2015)",
+      "url": "https://search.crossref.org/?q=Emotion%20regulation%3A%20conceptual%20foundations%20(Gross%2C%202015)",
+      "via": "crossref",
+      "note": "",
+      "verified_at": "2026-10-10",
+      "terms": [
+        "emotion-emotion-regulation"
+      ]
+    },
+    {
+      "id": "src-bc302810",
+      "type": "paper",
+      "title": "Four ethical priorities for neurotechnologies and AI (Ienca & Andorno, 2017, Nature)",
+      "url": "https://search.crossref.org/?q=Four%20ethical%20priorities%20for%20neurotechnologies%20and%20AI%20(Ienca%20%26%20Andorno%2C%202017%2C%20Nature)",
+      "via": "crossref",
+      "note": "",
+      "verified_at": "2026-10-10",
+      "terms": [
+        "bci-ethical-issues"
+      ]
+    },
+    {
+      "id": "src-d7d08a1f",
+      "type": "textbook",
+      "title": "Functional Magnetic Resonance Imaging (Huettel, Song & McCarthy, 3rd ed., 2014)",
+      "url": "https://search.worldcat.org/search?q=Functional%20Magnetic%20Resonance%20Imaging%20(Huettel%2C%20Song%20%26%20McCarthy%2C%203rd%20ed.%2C%202014)",
+      "via": "worldcat",
+      "note": "",
+      "verified_at": "2026-10-10",
+      "terms": [
+        "methods-fmri"
+      ]
+    },
+    {
+      "id": "src-336b8d85",
+      "type": "textbook",
+      "title": "Fundamental Neuroscience (Squire et al., 4th ed., 2013)",
+      "url": "https://search.worldcat.org/search?q=Fundamental%20Neuroscience%20(Squire%20et%20al.%2C%204th%20ed.%2C%202013)",
+      "via": "worldcat",
+      "note": "",
+      "verified_at": "2026-10-10",
+      "terms": [
+        "memory-declarative-nondeclarative"
+      ]
+    },
+    {
+      "id": "src-a9a6c89d",
+      "type": "textbook",
+      "title": "Ion Channels of Excitable Membranes (Hille, 3rd ed., 2001)",
+      "url": "https://search.worldcat.org/search?q=Ion%20Channels%20of%20Excitable%20Membranes%20(Hille%2C%203rd%20ed.%2C%202001)",
+      "via": "worldcat",
+      "note": "",
+      "verified_at": "2026-10-10",
+      "terms": [
+        "neuron-ion-channel"
+      ]
+    },
+    {
+      "id": "src-7bbdefd5",
+      "type": "textbook",
+      "title": "MEG: An Introduction to Methods (Hansen, Kringelbach & Salmelin, 2010)",
+      "url": "https://search.worldcat.org/search?q=MEG%3A%20An%20Introduction%20to%20Methods%20(Hansen%2C%20Kringelbach%20%26%20Salmelin%2C%202010)",
+      "via": "worldcat",
+      "note": "",
+      "verified_at": "2026-10-10",
+      "terms": [
+        "methods-meg"
+      ]
+    },
+    {
+      "id": "src-d86dee59",
+      "type": "paper",
+      "title": "Microstructure of a spatial map in the entorhinal cortex (Hafting et al., 2005, Nature)",
+      "url": "https://search.crossref.org/?q=Microstructure%20of%20a%20spatial%20map%20in%20the%20entorhinal%20cortex%20(Hafting%20et%20al.%2C%202005%2C%20Nature)",
+      "via": "crossref",
+      "note": "",
+      "verified_at": "2026-10-10",
+      "terms": [
+        "memory-grid-cell"
+      ]
+    },
+    {
+      "id": "src-ffa06104",
+      "type": "paper",
+      "title": "Neuronal ensemble control of prosthetic devices by a human with tetraplegia (Hochberg et al., 2006, Nature)",
+      "url": "https://search.crossref.org/?q=Neuronal%20ensemble%20control%20of%20prosthetic%20devices%20by%20a%20human%20with%20tetraplegia%20(Hochberg%20et%20al.%2C%202006%2C%20Nature)",
+      "via": "crossref",
+      "note": "",
+      "verified_at": "2026-10-10",
+      "terms": [
+        "methods-intracortical-recording"
+      ]
+    },
+    {
+      "id": "src-52e0cf48",
+      "type": "paper",
+      "title": "Optimizing spatial filters for robust EEG single-trial analysis (Blankertz et al., 2008, IEEE Signal Processing Magazine)",
+      "url": "https://search.crossref.org/?q=Optimizing%20spatial%20filters%20for%20robust%20EEG%20single-trial%20analysis%20(Blankertz%20et%20al.%2C%202008%2C%20IEEE%20Signal%20Processing%20Magazine)",
+      "via": "crossref",
+      "note": "",
+      "verified_at": "2026-10-10",
+      "terms": [
+        "methods-common-spatial-pattern"
+      ]
+    },
+    {
+      "id": "src-7e518133",
+      "type": "paper",
+      "title": "Reach and grasp by people with tetraplegia using a neurally controlled robotic arm (Hochberg et al., 2012, Nature)",
+      "url": "https://search.crossref.org/?q=Reach%20and%20grasp%20by%20people%20with%20tetraplegia%20using%20a%20neurally%20controlled%20robotic%20arm%20(Hochberg%20et%20al.%2C%202012%2C%20Nature)",
+      "via": "crossref",
+      "note": "",
+      "verified_at": "2026-10-10",
+      "terms": [
+        "bci-electrode-array"
+      ]
+    },
+    {
+      "id": "src-2d09aa66",
+      "type": "paper",
+      "title": "Reading senseless sentences: brain potentials reflect semantic incongruity (Kutas & Hillyard, 1980, Science)",
+      "url": "https://search.crossref.org/?q=Reading%20senseless%20sentences%3A%20brain%20potentials%20reflect%20semantic%20incongruity%20(Kutas%20%26%20Hillyard%2C%201980%2C%20Science)",
+      "via": "crossref",
+      "note": "",
+      "verified_at": "2026-10-10",
+      "terms": [
+        "language-n400"
+      ]
+    },
+    {
+      "id": "src-94c7bc03",
+      "type": "paper",
+      "title": "Removing electroencephalographic artifacts by blind source separation (Jung et al., 2000, Psychophysiology)",
+      "url": "https://search.crossref.org/?q=Removing%20electroencephalographic%20artifacts%20by%20blind%20source%20separation%20(Jung%20et%20al.%2C%202000%2C%20Psychophysiology)",
+      "via": "crossref",
+      "note": "",
+      "verified_at": "2026-10-10",
+      "terms": [
+        "methods-artifact-removal"
+      ]
+    },
+    {
+      "id": "src-f5d68323",
+      "type": "review",
+      "title": "The anterior cingulate cortex and conflict monitoring (Botvinick et al., 2004, Psychological Review)",
+      "url": "https://search.crossref.org/?q=The%20anterior%20cingulate%20cortex%20and%20conflict%20monitoring%20(Botvinick%20et%20al.%2C%202004%2C%20Psychological%20Review)",
+      "via": "crossref",
+      "note": "",
+      "verified_at": "2026-10-10",
+      "terms": [
+        "emotion-anterior-cingulate-cortex"
+      ]
+    },
+    {
+      "id": "src-1728af6e",
+      "type": "review",
+      "title": "The arcuate fasciculus and the disconnection theme in language (Friederici, 2009)",
+      "url": "https://search.crossref.org/?q=The%20arcuate%20fasciculus%20and%20the%20disconnection%20theme%20in%20language%20(Friederici%2C%202009)",
+      "via": "crossref",
+      "note": "",
+      "verified_at": "2026-10-10",
+      "terms": [
+        "language-arcuate-fasciculus"
+      ]
+    },
+    {
+      "id": "src-8b22b8d9",
+      "type": "paper",
+      "title": "The attentional blink (Raymond, Shapiro & Arnell, 1992, JEP)",
+      "url": "https://search.crossref.org/?q=The%20attentional%20blink%20(Raymond%2C%20Shapiro%20%26%20Arnell%2C%201992%2C%20JEP)",
+      "via": "crossref",
+      "note": "",
+      "verified_at": "2026-10-10",
+      "terms": [
+        "attention-attentional-blink"
+      ]
+    },
+    {
+      "id": "src-6404ac5f",
+      "type": "paper",
+      "title": "The hippocampus as a spatial map (O'Keefe & Dostrovsky, 1971, Brain Research)",
+      "url": "https://search.crossref.org/?q=The%20hippocampus%20as%20a%20spatial%20map%20(O'Keefe%20%26%20Dostrovsky%2C%201971%2C%20Brain%20Research)",
+      "via": "crossref",
+      "note": "",
+      "verified_at": "2026-10-10",
+      "terms": [
+        "memory-place-cell"
+      ]
+    },
+    {
+      "id": "src-b8602420",
+      "type": "review",
+      "title": "The prefrontal-amygdala circuit in emotion regulation (Quirk & Gehlert, 2003 / Etkin et al., 2015)",
+      "url": "https://search.crossref.org/?q=The%20prefrontal-amygdala%20circuit%20in%20emotion%20regulation%20(Quirk%20%26%20Gehlert%2C%202003%20%2F%20Etkin%20et%20al.%2C%202015)",
+      "via": "crossref",
+      "note": "",
+      "verified_at": "2026-10-10",
+      "terms": [
+        "emotion-prefrontal-amygdala-circuit"
+      ]
+    },
+    {
+      "id": "src-f5f87156",
+      "type": "textbook",
+      "title": "Theoretical Neuroscience (Dayan & Abbott, 2001)",
+      "url": "https://search.worldcat.org/search?q=Theoretical%20Neuroscience%20(Dayan%20%26%20Abbott%2C%202001)",
+      "via": "worldcat",
+      "note": "",
+      "verified_at": "2026-10-10",
+      "terms": [
+        "neuron-neural-coding"
+      ]
+    },
+    {
+      "id": "src-5a06bf5e",
+      "type": "paper",
+      "title": "Über das Gedächtnis (Ebbinghaus, 1885)",
+      "url": "https://search.crossref.org/?q=%C3%9Cber%20das%20Ged%C3%A4chtnis%20(Ebbinghaus%2C%201885)",
+      "via": "crossref",
+      "note": "",
+      "verified_at": "2026-10-10",
+      "terms": [
+        "memory-forgetting-curve"
+      ]
+    }
+  ]
+}

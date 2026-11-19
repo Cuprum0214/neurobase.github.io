@@ -1,0 +1,308 @@
+[
+  {
+    "id": "synapse-chemical-synapse",
+    "module": "synapse",
+    "name_zh": "化学突触",
+    "name_en": "Chemical Synapse",
+    "aliases": [
+      "化学性突触",
+      "化学突触传递"
+    ],
+    "pinyin": "huaxuetuchu",
+    "pinyin_initials": "hxtc",
+    "definition": "以神经递质为中介、经突触间隙传递信号的突触类型，由突触前膜、突触间隙与突触后膜构成，是哺乳动物神经系统最主要的信息传递形式。",
+    "plain": "两个神经元之间的“递纸条”式通信：一个负责放出信使，一个负责接住。",
+    "difficulty": "intro",
+    "tags": [
+      "突触",
+      "传递"
+    ],
+    "related": [
+      "synapse-synaptic-transmission",
+      "synapse-synaptic-vesicle",
+      "synapse-neurotransmitter"
+    ],
+    "engineering_link": "化学突触的延迟与增益特性决定神经环路的时间常数，是解读诱发电位潜伏期等时序成分的生理依据。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "synapse-neurotransmitter",
+    "module": "synapse",
+    "name_zh": "神经递质",
+    "name_en": "Neurotransmitter",
+    "aliases": [
+      "递质",
+      "神经传递物质",
+      "神经递质物质"
+    ],
+    "pinyin": "shenjingdizhi",
+    "pinyin_initials": "sjdz",
+    "definition": "由突触前神经元合成、储存并释放，作用于突触后受体以传递信号的化学物质，例如谷氨酸（主要兴奋性）、GABA（主要抑制性）、多巴胺、乙酰胆碱与 5-羟色胺等。",
+    "plain": "神经元之间传话用的“化学信使”。",
+    "difficulty": "intro",
+    "tags": [
+      "突触",
+      "递质"
+    ],
+    "related": [
+      "synapse-chemical-synapse",
+      "synapse-receptor-ionotropic",
+      "synapse-neuromodulator"
+    ],
+    "engineering_link": "递质系统状态影响脑电节律与唤醒水平，是解读 EEG 背景活动个体差异的重要背景知识。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Basic Neurochemistry (Siegel et al., 8th ed., 2012)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "synapse-receptor-ionotropic",
+    "module": "synapse",
+    "name_zh": "离子型受体",
+    "name_en": "Ionotropic Receptor",
+    "aliases": [
+      "促离子型受体",
+      "配体门控离子通道",
+      "离子通道型受体"
+    ],
+    "pinyin": "lizixingshouti",
+    "pinyin_initials": "lzxst",
+    "definition": "本身即为配体门控离子通道的受体：递质结合后通道迅速开放，产生毫秒级的快速突触后电流，典型代表为 AMPA、NMDA 与 GABA_A 受体。",
+    "plain": "一把“自带开关”的锁——信使一插上，门就立刻打开让离子通过。",
+    "difficulty": "intermediate",
+    "tags": [
+      "突触",
+      "受体"
+    ],
+    "related": [
+      "synapse-receptor-metabotropic",
+      "neuron-ion-channel",
+      "synapse-postsynaptic-potential"
+    ],
+    "engineering_link": "快速离子型传递决定了 ERP 等毫秒级神经信号的生成速度，是脑电时间分辨率研究的生化基础。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "synapse-receptor-metabotropic",
+    "module": "synapse",
+    "name_zh": "代谢型受体",
+    "name_en": "Metabotropic Receptor",
+    "aliases": [
+      "促代谢型受体",
+      "G 蛋白偶联受体",
+      "第二信使受体"
+    ],
+    "pinyin": "daixiexingshouti",
+    "pinyin_initials": "dxxst",
+    "definition": "通过 G 蛋白与胞内第二信使级联发挥作用的受体：递质结合后不直接开放通道，而是调节通道活动、细胞兴奋性乃至基因表达，反应较慢但更持久、更具放大效应。",
+    "plain": "一把“打电话转达命令”的锁，反应慢一些，但影响更持久。",
+    "difficulty": "advanced",
+    "tags": [
+      "突触",
+      "受体"
+    ],
+    "related": [
+      "synapse-receptor-ionotropic",
+      "synapse-neuromodulator",
+      "synapse-synaptic-plasticity"
+    ],
+    "engineering_link": "代谢型信号参与增益调节与可塑性，是理解状态依赖（注意、警觉）如何改变脑信号的关键环节。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "synapse-synaptic-vesicle",
+    "module": "synapse",
+    "name_zh": "突触囊泡",
+    "name_en": "Synaptic Vesicle",
+    "aliases": [
+      "囊泡",
+      "突触小泡",
+      "递质囊泡"
+    ],
+    "pinyin": "tuchunangpao",
+    "pinyin_initials": "tcnp",
+    "definition": "位于突触前终末内、包裹神经递质的小型膜泡；经 SNARE 蛋白介导与突触前膜融合并释放递质（胞吐），其“量子式”释放是突触传递的基本计量单位。",
+    "plain": "装着“化学信使”的小包裹，信号来了就打包寄出。",
+    "difficulty": "intermediate",
+    "tags": [
+      "突触",
+      "胞吐"
+    ],
+    "related": [
+      "synapse-chemical-synapse",
+      "synapse-neurotransmitter"
+    ],
+    "engineering_link": "量子式释放带来的释放噪声是神经信号随机性的来源之一，影响微弱信号解码的理论极限。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "From Neuron to Brain (Nicholls et al., 6th ed., 2021)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "synapse-postsynaptic-potential",
+    "module": "synapse",
+    "name_zh": "突触后电位",
+    "name_en": "Postsynaptic Potential",
+    "abbr": "PSP",
+    "aliases": [
+      "兴奋性突触后电位",
+      "抑制性突触后电位",
+      "EPSP",
+      "IPSP",
+      "突触后膜电位"
+    ],
+    "pinyin": "tuchuhoudianwei",
+    "pinyin_initials": "tchdw",
+    "definition": "递质作用于突触后膜后引起的局部膜电位变化：使膜电位去极化者为兴奋性突触后电位（EPSP），超极化者为抑制性突触后电位（IPSP）；它们以电紧张方式衰减传播，并在胞体与树突上进行时空总和。",
+    "plain": "神经元收到信息后“被推了一把或被按住一下”，最终是否放电取决于很多路输入的累加。",
+    "difficulty": "intermediate",
+    "tags": [
+      "突触",
+      "整合"
+    ],
+    "related": [
+      "synapse-receptor-ionotropic",
+      "neuron-resting-potential",
+      "neuron-action-potential"
+    ],
+    "engineering_link": "EPSP/IPSP 的时空总和决定神经元是否放电，是神经环路编码与脑机接口解码的最小计算单元。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "synapse-synaptic-plasticity",
+    "module": "synapse",
+    "name_zh": "突触可塑性",
+    "name_en": "Synaptic Plasticity",
+    "aliases": [
+      "突触可塑性机制",
+      "突触可塑性改变"
+    ],
+    "pinyin": "tuchukesuxing",
+    "pinyin_initials": "tcksx",
+    "definition": "突触传递效率随活动历史而发生改变的能力，包括长时程增强（LTP）、长时程抑制（LTD）以及短时程增强/抑制等形式，被广泛认为是学习与记忆在细胞层面的机制基础。",
+    "plain": "神经元连接上的“可调旋钮”——用得多的变强，用得少的变弱。",
+    "difficulty": "intermediate",
+    "tags": [
+      "突触",
+      "可塑性"
+    ],
+    "related": [
+      "memory-long-term-potentiation",
+      "synapse-long-term-depression",
+      "neuron-action-potential"
+    ],
+    "engineering_link": "可塑性规则是脉冲神经网络学习算法（如 STDP）的直接生物学来源。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "synapse-long-term-depression",
+    "module": "synapse",
+    "name_zh": "长时程抑制",
+    "name_en": "Long-Term Depression",
+    "abbr": "LTD",
+    "aliases": [
+      "长时程压抑",
+      "LTD 现象",
+      "突触长时程抑制"
+    ],
+    "pinyin": "changshichengyizhi",
+    "pinyin_initials": "cscyz",
+    "definition": "在特定刺激模式（如低频刺激，或突触前放电与突触后放电反序配对）下，突触传递效率出现持久性减弱的现象；与 LTP 共同构成可塑性的双向调节，参与消退学习与环路稳态。",
+    "plain": "连接的“调弱版本”——长时间不用或用得不对，通路就会被调低。",
+    "difficulty": "intermediate",
+    "tags": [
+      "突触",
+      "可塑性"
+    ],
+    "related": [
+      "memory-long-term-potentiation",
+      "synapse-synaptic-plasticity"
+    ],
+    "engineering_link": "双向可塑性让网络既能学习也能遗忘，是构建长期稳定、可自适应脑机接口的关键机制之一。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "synapse-neuromodulator",
+    "module": "synapse",
+    "name_zh": "神经调质",
+    "name_en": "Neuromodulator",
+    "aliases": [
+      "神经调质物质",
+      "调质",
+      "神经调质系统"
+    ],
+    "pinyin": "shenjingtiaozhi",
+    "pinyin_initials": "sjtz",
+    "definition": "主要经代谢型受体发挥作用、改变神经元或环路的兴奋性、反应增益与信噪比，而不直接传递快速点对点信息的化学物质，如多巴胺、去甲肾上腺素、乙酰胆碱与 5-羟色胺。",
+    "plain": "广播式的“调节旋钮”，不传具体内容，而是调整整个系统的工作状态。",
+    "difficulty": "advanced",
+    "tags": [
+      "突触",
+      "调质"
+    ],
+    "related": [
+      "synapse-receptor-metabotropic",
+      "synapse-neurotransmitter",
+      "emotion-amygdala"
+    ],
+    "engineering_link": "调质水平影响注意、唤醒与信噪比，是脑机接口使用者状态评估（疲劳/专注度）研究的重要变量。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Basic Neurochemistry (Siegel et al., 8th ed., 2012)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z"
+  }
+]

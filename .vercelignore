@@ -1,0 +1,9 @@
+# 仅部署 outputs/neurobase 静态站点；排除产物、过程文件与本机数据
+.deepworks/
+neurobase/
+uploads/
+docs/
+data/
+scripts/
+outputs/imagegen/
+*.md

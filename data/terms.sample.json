@@ -1,0 +1,247 @@
+[
+  {
+    "id": "neuron-resting-potential",
+    "module": "neuron",
+    "name_zh": "静息膜电位",
+    "name_en": "Resting Membrane Potential",
+    "abbr": "RMP",
+    "pinyin": "jingximodianwei",
+    "pinyin_initials": "jxmdw",
+    "definition": "神经元未受刺激时，膜内相对膜外约 -70 mV 的稳定电位差，由离子浓度梯度与选择性通透性共同维持。",
+    "plain": "神经元“待机”时，内外有约 -70 毫伏的电压差，就像一块充满电的电池。",
+    "related": [
+      "neuron-action-potential"
+    ],
+    "figure": "assets/figures/neuron-resting-potential.svg",
+    "difficulty": "intro",
+    "tags": [
+      "神经生理",
+      "膜电位"
+    ],
+    "engineering_link": "决定了神经信号的可检测幅度，是 EEG/膜片钳测量的基础量。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z",
+    "aliases": [
+      "静息电位",
+      "膜静息电位"
+    ]
+  },
+  {
+    "id": "synapse-synaptic-transmission",
+    "module": "synapse",
+    "name_zh": "突触传递",
+    "name_en": "Synaptic Transmission",
+    "abbr": "ST",
+    "pinyin": "tuchuchuandi",
+    "pinyin_initials": "tccd",
+    "definition": "动作电位到达突触前末梢后，经神经递质释放与受体结合，将信号传递至突触后神经元的化学性信息传递过程。",
+    "plain": "神经元之间靠“化学信使”传递信号，这就是突触传递。",
+    "related": [
+      "neuron-action-potential"
+    ],
+    "figure": "assets/figures/synapse-synaptic-transmission.svg",
+    "difficulty": "intro",
+    "tags": [
+      "突触",
+      "神经递质"
+    ],
+    "engineering_link": "理解突触可塑性（LTP/LTD）是解释学习与解码神经表征的前提。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "From Neuron to Brain (Nicholls et al., 6th ed., 2021)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z",
+    "aliases": [
+      "突触信号传递",
+      "神经突触传递"
+    ]
+  },
+  {
+    "id": "bci-p300",
+    "module": "bci",
+    "name_zh": "P300 电位",
+    "name_en": "P300",
+    "abbr": "P300",
+    "pinyin": "p300",
+    "pinyin_initials": "dw",
+    "definition": "一种在刺激出现后约 300 ms 于顶叶-中央区出现的正向事件相关电位成分，常与注意和刺激概率相关。",
+    "plain": "当你“注意到”一个稀有刺激时，大脑会在约 0.3 秒后出现一个正向电波，这就是 P300。",
+    "related": [
+      "bci-ssvep",
+      "methods-erp"
+    ],
+    "figure": "assets/figures/bci-p300.svg",
+    "difficulty": "intermediate",
+    "tags": [
+      "BCI",
+      "ERP",
+      "EEG"
+    ],
+    "engineering_link": "常用于 P300 拼写器：以行列闪烁诱发 P300，解码目标字符。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Brain-Computer Interfaces: Principles and Practice (Wolpaw & Wolpaw, 2012)",
+        "verified_at": "2026-10-10"
+      },
+      {
+        "type": "textbook",
+        "title": "An Introduction to the Event-Related Potential Technique (Luck, 2nd ed., 2014)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z",
+    "aliases": [
+      "P300 波",
+      "P3 成分"
+    ]
+  },
+  {
+    "id": "bci-ssvep",
+    "module": "bci",
+    "name_zh": "稳态视觉诱发电位",
+    "name_en": "Steady-State Visual Evoked Potential",
+    "abbr": "SSVEP",
+    "pinyin": "ssvep",
+    "pinyin_initials": "wtsjyfdw",
+    "definition": "当注视以固定频率闪烁的视觉刺激时，枕区 EEG 在刺激频率及其谐波处出现的稳态节律性响应。",
+    "plain": "盯着一定频率闪烁的图案看，大脑视觉区会“跟着”这个频率振荡。",
+    "related": [
+      "bci-p300",
+      "methods-eeg"
+    ],
+    "figure": "assets/figures/bci-ssvep.svg",
+    "difficulty": "intermediate",
+    "tags": [
+      "BCI",
+      "EEG",
+      "视觉"
+    ],
+    "engineering_link": "经典 SSVEP-BCI 拼写器：不同目标以不同频率闪烁，按频率解码注视目标。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Brain-Computer Interfaces Handbook (Nam, Nijholt, Lotte, 2018)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z",
+    "aliases": [
+      "SSVEP-BCI",
+      "稳态视觉诱发电位脑机接口"
+    ]
+  },
+  {
+    "id": "neuron-action-potential",
+    "module": "neuron",
+    "name_zh": "动作电位",
+    "name_en": "Action Potential",
+    "abbr": "AP",
+    "pinyin": "dongzuodianwei",
+    "pinyin_initials": "dzdw",
+    "definition": "神经元轴突膜电位在一次快速去极化后在约 1 ms 内达到约 +30 mV 峰值的全或无式电信号。",
+    "plain": "神经元“发报”的电脉冲，一旦触发就沿轴突传下去。",
+    "related": [
+      "neuron-resting-potential",
+      "synapse-synaptic-transmission"
+    ],
+    "figure": "assets/figures/neuron-action-potential.svg",
+    "difficulty": "intro",
+    "tags": [
+      "神经生理",
+      "膜电位"
+    ],
+    "engineering_link": "是 spike 信号与脉冲神经网络（SNN）的生理基础。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z",
+    "aliases": [
+      "神经冲动",
+      "锋电位",
+      "spike"
+    ]
+  },
+  {
+    "id": "methods-erp",
+    "module": "methods",
+    "name_zh": "事件相关电位",
+    "name_en": "Event-Related Potential",
+    "abbr": "ERP",
+    "pinyin": "shijianxiangguandianwei",
+    "pinyin_initials": "sjxgdw",
+    "definition": "对多次相同事件锁时 EEG 片段进行叠加平均后得到的、与特定认知过程相关的时间锁定脑电响应。",
+    "plain": "把同一类事件发生时的脑电一次次叠加平均，噪声被抵消，剩下与认知相关的波形。",
+    "related": [
+      "bci-p300",
+      "methods-eeg"
+    ],
+    "figure": "assets/figures/methods-erp.svg",
+    "difficulty": "intermediate",
+    "tags": [
+      "EEG",
+      "方法"
+    ],
+    "engineering_link": "BCI 中 P300/ERN 等范式均基于 ERP 分析。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "An Introduction to the Event-Related Potential Technique (Luck, 2nd ed., 2014)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z",
+    "aliases": [
+      "诱发电位",
+      "ERP 成分"
+    ]
+  },
+  {
+    "id": "methods-eeg",
+    "module": "methods",
+    "name_zh": "脑电图",
+    "name_en": "Electroencephalography",
+    "abbr": "EEG",
+    "pinyin": "naodian",
+    "pinyin_initials": "ndt",
+    "definition": "通过在头皮放置电极记录大脑皮层神经元群体同步活动所产生的微弱电位变化的技术。",
+    "plain": "在头皮上贴电极，记录大脑整体的电活动节律。",
+    "related": [
+      "methods-erp",
+      "bci-ssvep"
+    ],
+    "figure": "assets/figures/methods-eeg.svg",
+    "difficulty": "intro",
+    "tags": [
+      "EEG",
+      "方法",
+      "BCI"
+    ],
+    "engineering_link": "时间分辨率高、成本低，是消费级 BCI 最常用的信号源。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "EEG Signal Processing (Sanei & Chambers, 2007)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z",
+    "aliases": [
+      "脑电",
+      "EEG 信号"
+    ]
+  }
+]

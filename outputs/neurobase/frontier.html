@@ -1,0 +1,70 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1e5fa8">
+  <meta name="description" content="NeuroBase 科研前沿速览：13 项脑机接口与认知神经科学代表性研究，按日期倒序排列，每条附期刊、作者、DOI 与站内关联词条，来源可核验。">
+  <title>科研前沿速览 · NeuroBase</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="assets/css/style.css?v=1194">
+  <script>
+    (function () {
+      try {
+        var m = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)').matches : false;
+        var th = localStorage.getItem('nb-theme') || 'system';
+        if (th === 'dark' || (th === 'system' && m)) document.documentElement.classList.add('dark');
+      } catch (e) {}
+      try {
+        var f = parseFloat(localStorage.getItem('nb-font') || '100');
+        if (f >= 25 && f <= 300) document.documentElement.style.setProperty('--nb-font-scale', (f / 100).toFixed(2));
+      } catch (e) {}
+      try {
+        if (localStorage.getItem('nb-motion') === 'off') document.documentElement.classList.add('motion-off');
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="action.skipToContent">跳到主内容</a>
+  <header id="nb-header"></header>
+
+  <main id="main" class="nb-content">
+    <div class="wrap">
+      <h1 class="page-title" data-i18n="frontier.title">科研前沿速览</h1>
+      <p class="page-desc" data-i18n="frontier.desc">代表性研究按时间倒序排列，摘要为项目自撰，每条都保留原题、期刊、作者与 DOI，方便你回溯原文核验。</p>
+
+      <p class="notice" id="nb-frontier-note"></p>
+
+      <div class="filters" id="nb-frontier-kinds" role="group" aria-label="类型筛选" data-i18n-aria="frontier.filterAria"></div>
+
+      <p class="meta" id="nb-frontier-count" aria-live="polite"></p>
+
+      <ol class="frontier-list" id="nb-frontier-list"></ol>
+
+      <p class="source-note" id="nb-frontier-source"></p>
+    </div>
+  </main>
+
+  <footer id="nb-footer"></footer>
+
+  <noscript>
+    <div class="wrap">
+      <p class="notice">本页的前沿条目由本地脚本渲染，请启用 JavaScript 后再访问。</p>
+    </div>
+  </noscript>
+
+  <script src="assets/js/data/terms.js?v=1194"></script>
+  <script src="assets/js/data/i18n.js?v=1194"></script>
+  <script src="assets/js/data/frontier.js?v=1194"></script>
+  <script src="assets/js/core.js?v=1194"></script>
+  <script src="assets/js/cloud-config.js?v=1194"></script>
+  <script src="assets/js/cloud.js?v=1194"></script>
+  <script src="assets/js/auth-ui.js?v=1194"></script>
+  <script src="assets/js/ai-fluid.js?v=1194"></script>
+  <script src="assets/js/ai-tutor.js?v=1194"></script>
+  <script src="assets/js/feedback.js?v=1194"></script>
+  <script src="assets/js/help.js?v=1194"></script>
+  <script src="assets/js/page-frontier.js?v=1194"></script>
+</body>
+</html>

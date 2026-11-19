@@ -1,0 +1,76 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1e5fa8">
+  <meta name="description" content="NeuroBase 项目文件：项目范围、计划、决策记录、开发日志、错误日志、研究笔记、词条 schema 与数据文件的清单与在线阅读。">
+  <title>项目文件 · NeuroBase</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="assets/css/style.css?v=1194">
+  <script>
+    (function () {
+      try {
+        var m = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)').matches : false;
+        var th = localStorage.getItem('nb-theme') || 'system';
+        if (th === 'dark' || (th === 'system' && m)) document.documentElement.classList.add('dark');
+      } catch (e) {}
+      try {
+        var f = parseFloat(localStorage.getItem('nb-font') || '100');
+        if (f >= 25 && f <= 300) document.documentElement.style.setProperty('--nb-font-scale', (f / 100).toFixed(2));
+      } catch (e) {}
+      try {
+        if (localStorage.getItem('nb-motion') === 'off') document.documentElement.classList.add('motion-off');
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="action.skipToContent">跳到主内容</a>
+  <header id="nb-header"></header>
+
+  <main id="main" class="nb-content">
+    <div class="wrap">
+      <div id="nb-docs-list">
+        <h1 class="page-title" data-i18n="docs.title">项目文件</h1>
+        <p class="page-desc" data-i18n="docs.desc">项目过程文档与数据文件（md / json / sql）。新增文件会自动收录到此处，并可查看原始文件。</p>
+        <p class="meta" id="nb-docs-meta"></p>
+        <div id="nb-docs-groups"></div>
+        <p class="source-note" data-i18n="docs.mdNote">此页为文档渲染视图，最终以仓库中的原始文件为准。</p>
+      </div>
+
+      <div id="nb-docs-view" hidden>
+        <div class="doc-head">
+          <a class="btn nb-back" href="docs.html" data-back data-i18n="docs.back">返回文档列表</a>
+          <span class="file-ext" id="nb-doc-ext"></span>
+          <span class="meta" id="nb-doc-size"></span>
+        </div>
+        <h2 class="page-title" id="nb-doc-title"></h2>
+        <p class="doc-path" id="nb-doc-path"></p>
+        <article class="doc-body" id="nb-doc-body"></article>
+      </div>
+    </div>
+  </main>
+
+  <footer id="nb-footer"></footer>
+
+  <noscript>
+    <div class="wrap">
+      <p class="notice">本页的文件清单由本地脚本渲染，请启用 JavaScript 后再访问。</p>
+    </div>
+  </noscript>
+
+  <script src="assets/js/data/terms.js?v=1194"></script>
+  <script src="assets/js/data/i18n.js?v=1194"></script>
+  <script defer src="assets/js/data/docs-content.js?v=1194"></script>
+  <script src="assets/js/core.js?v=1194"></script>
+  <script src="assets/js/cloud-config.js?v=1194"></script>
+  <script src="assets/js/cloud.js?v=1194"></script>
+  <script src="assets/js/auth-ui.js?v=1194"></script>
+  <script src="assets/js/ai-fluid.js?v=1194"></script>
+  <script src="assets/js/ai-tutor.js?v=1194"></script>
+  <script src="assets/js/feedback.js?v=1194"></script>
+  <script src="assets/js/help.js?v=1194"></script>
+  <script defer src="assets/js/page-docs.js?v=1194"></script>
+</body>
+</html>

@@ -1,0 +1,231 @@
+[
+  {
+    "id": "anatomy-broca-area",
+    "module": "anatomy",
+    "name_zh": "布洛卡区",
+    "name_en": "Broca's Area",
+    "aliases": [
+      "布罗卡区",
+      "Broca 区",
+      "BA44/45"
+    ],
+    "pinyin": "buluokaqu",
+    "pinyin_initials": "blkq",
+    "definition": "位于优势半球额下回后部（BA44/45）的皮层区域，与言语的语法加工和言语产生（构音运动编程）密切相关；受损可致表达性（运动性）失语。",
+    "plain": "大脑里负责“把话说出来、把词组成句子”的区域；它受损的人往往听得懂，却说得吃力。",
+    "difficulty": "intro",
+    "tags": [
+      "脑区",
+      "语言"
+    ],
+    "related": [
+      "language-wernicke-area",
+      "motor-motor-cortex"
+    ],
+    "engineering_link": "在语言解码与语音脑机接口中，布洛卡区常作为言语产生的关键皮层节点之一被采集与分析。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "language-wernicke-area",
+    "module": "language",
+    "name_zh": "韦尼克区",
+    "name_en": "Wernicke's Area",
+    "aliases": [
+      "韦尼克氏区",
+      "Wernicke 区",
+      "感觉性语言区"
+    ],
+    "pinyin": "weinikequ",
+    "pinyin_initials": "wnkq",
+    "definition": "位于优势半球颞上回后部（BA22）的皮层区域，主要参与语言理解（语义与语音的映射）；受损可致接受性（感觉性）失语，表现为语流流畅但内容混乱。",
+    "plain": "大脑里负责“听懂话、理解意思”的区域；受损的人能流利说话，却常常答非所问、听不懂别人。",
+    "difficulty": "intro",
+    "tags": [
+      "脑区",
+      "语言"
+    ],
+    "related": [
+      "anatomy-broca-area"
+    ],
+    "engineering_link": "语言解码研究常同时考察韦尼克区与布洛卡区的活动模式，以区分“理解”与“产生”两类成分。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "sensory-receptive-field",
+    "module": "sensory",
+    "name_zh": "感受野",
+    "name_en": "Receptive Field",
+    "abbr": "RF",
+    "pinyin": "ganshouye",
+    "pinyin_initials": "gsy",
+    "definition": "感觉系统中，能够影响某一感觉神经元放电的特定感受区域或刺激参数范围，例如视网膜上的一个区域、皮肤上的一块面积，或某个特定的朝向、频率。",
+    "plain": "一个感觉神经元“负责感受”的那一小块范围，就像它的“管辖片区”。",
+    "difficulty": "intro",
+    "tags": [
+      "感觉",
+      "视觉"
+    ],
+    "related": [
+      "bci-ssvep",
+      "motor-motor-cortex"
+    ],
+    "engineering_link": "感受野是构造脑机接口解码特征（视觉编码、触觉编码等）的基础概念。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z",
+    "aliases": [
+      "感受野区域",
+      "RF"
+    ]
+  },
+  {
+    "id": "motor-motor-cortex",
+    "module": "motor",
+    "name_zh": "初级运动皮层",
+    "name_en": "Primary Motor Cortex",
+    "abbr": "M1",
+    "aliases": [
+      "运动皮层",
+      "M1 区",
+      "M1",
+      "初级运动区"
+    ],
+    "pinyin": "chujiyundongpiceng",
+    "pinyin_initials": "cjydpc",
+    "definition": "位于中央前回（BA4）的皮层区域，其皮层脊髓束神经元直接参与随意运动的发起与精细控制；身体各部位沿皮层呈“运动小人”（motor homunculus）式拓扑排列。",
+    "plain": "大脑里发出“动起来”指令的区域，身体各部位在它上面有一张固定的“地图”。",
+    "difficulty": "intro",
+    "tags": [
+      "运动",
+      "脑区"
+    ],
+    "related": [
+      "neuron-action-potential",
+      "sensory-receptive-field"
+    ],
+    "engineering_link": "运动想象脑机接口（如解码手部运动意图）主要依赖 M1 及运动相关皮层的活动。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "attention-selective-attention",
+    "module": "attention",
+    "name_zh": "选择性注意",
+    "name_en": "Selective Attention",
+    "pinyin": "xuanzexingzhuyi",
+    "pinyin_initials": "xzxzy",
+    "definition": "在信息加工容量有限的前提下，个体对特定刺激或空间位置优先加工、同时抑制无关信息的认知机制。",
+    "plain": "大脑的“聚光灯”，把有限的资源集中到当前最重要的事情上，其余信息被弱化。",
+    "difficulty": "intermediate",
+    "tags": [
+      "注意",
+      "认知"
+    ],
+    "related": [
+      "bci-p300",
+      "methods-erp"
+    ],
+    "engineering_link": "P300 等事件相关电位成分对注意高度敏感，是注意型脑机接口范式的基础。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "An Introduction to the Event-Related Potential Technique (Luck, 2nd ed., 2014)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z",
+    "aliases": [
+      "注意选择",
+      "选择性注意加工"
+    ]
+  },
+  {
+    "id": "memory-long-term-potentiation",
+    "module": "memory",
+    "name_zh": "长时程增强",
+    "name_en": "Long-Term Potentiation",
+    "abbr": "LTP",
+    "pinyin": "changshichengzengqiang",
+    "pinyin_initials": "csczq",
+    "definition": "在反复高频刺激后，突触传递效率持久增强的现象，被认为是学习与记忆在细胞层面的重要机制之一。",
+    "plain": "神经元之间的连接“用进废退”——常走的连接越来越强，这就是记忆的细胞基础之一。",
+    "difficulty": "intermediate",
+    "tags": [
+      "记忆",
+      "突触可塑性"
+    ],
+    "related": [
+      "synapse-synaptic-transmission",
+      "neuron-action-potential"
+    ],
+    "engineering_link": "突触可塑性是脉冲神经网络（SNN）学习规则的重要生物学启发来源。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "From Neuron to Brain (Nicholls et al., 6th ed., 2021)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z",
+    "aliases": [
+      "LTP 现象",
+      "突触长时程增强"
+    ]
+  },
+  {
+    "id": "emotion-amygdala",
+    "module": "emotion",
+    "name_zh": "杏仁核",
+    "name_en": "Amygdala",
+    "pinyin": "xingrenhe",
+    "pinyin_initials": "xrh",
+    "definition": "位于颞叶内侧深部的杏仁状核团，参与情绪（尤其是恐惧）加工、情绪性记忆的巩固以及威胁检测。",
+    "plain": "大脑的“警报器”，遇到危险或强烈情绪时能快速做出反应。",
+    "difficulty": "intro",
+    "tags": [
+      "情绪",
+      "脑区"
+    ],
+    "related": [
+      "memory-long-term-potentiation"
+    ],
+    "engineering_link": "情绪与觉醒相关的信号会影响脑机接口使用者的状态评估与自适应交互设计。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z",
+    "aliases": [
+      "杏仁体",
+      "杏仁复合体"
+    ]
+  }
+]

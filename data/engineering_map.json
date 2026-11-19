@@ -1,0 +1,254 @@
+{
+  "meta": {
+    "updated_at": "2026-11-11",
+    "note_zh": "对照关系用于建立「神经机制 → 工程实现」的直觉映射，不是一一对应的物理等价；每行左列均可跳到站内词条。",
+    "note_en": "The pairings build intuition from neural mechanism to engineering implementation; they are not physical equivalences. Every left-column item links to an on-site term."
+  },
+  "groups": [
+    {
+      "id": "signal",
+      "name_zh": "信号产生与采集",
+      "name_en": "Signal Generation & Acquisition",
+      "desc_zh": "神经电活动的物理特性，决定了采集链路要什么样的带宽、增益与噪声指标。",
+      "desc_en": "The physics of neural electrical activity sets the bandwidth, gain and noise requirements of the acquisition chain.",
+      "rows": [
+        {
+          "id": "ap-sampling",
+          "neural_zh": "动作电位",
+          "neural_en": "Action Potential",
+          "term_id": "neuron-action-potential",
+          "eng_zh": "模数转换与采样率",
+          "eng_en": "ADC & Sampling Rate",
+          "note_zh": "动作电位时程约 1–2 ms、含高频成分，胞外记录常用 20–30 kHz 采样；采样率不足会直接削掉峰电位波形。",
+          "note_en": "Action potentials last ~1–2 ms and contain high frequencies; extracellular recording typically samples at 20–30 kHz. Too low a rate clips the spike waveform."
+        },
+        {
+          "id": "resting-amplifier",
+          "neural_zh": "静息膜电位",
+          "neural_en": "Resting Membrane Potential",
+          "term_id": "neuron-resting-potential",
+          "eng_zh": "前置放大与共模抑制",
+          "eng_en": "Preamplifier & CMRR",
+          "note_zh": "跨膜电位约 −70 mV，而头皮外信号只有微伏级；高输入阻抗与高共模抑制比（CMRR）是把信号从工频干扰里救出来的前提。",
+          "note_en": "Transmembrane potential is about −70 mV while scalp signals are microvolts; high input impedance and common-mode rejection are prerequisites for recovering signal from line noise."
+        },
+        {
+          "id": "psp-filter",
+          "neural_zh": "突触后电位",
+          "neural_en": "Postsynaptic Potential",
+          "term_id": "synapse-postsynaptic-potential",
+          "eng_zh": "低噪声放大与带通滤波",
+          "eng_en": "Low-noise Amplification & Band-pass Filtering",
+          "note_zh": "突触后电位是较慢的 graded 信号，对应 0.1–40 Hz 左右的带通窗口；滤波器截止频率选错会把慢电位和峰电位一起滤掉。",
+          "note_en": "Postsynaptic potentials are slower graded signals matched by a roughly 0.1–40 Hz band-pass window; a wrong cutoff removes slow potentials along with spikes."
+        },
+        {
+          "id": "myelin-latency",
+          "neural_zh": "髓鞘与跳跃式传导",
+          "neural_en": "Myelin & Saltatory Conduction",
+          "term_id": "neuron-myelin-sheath",
+          "eng_zh": "链路延迟与实时预算",
+          "eng_en": "Link Latency & Real-time Budget",
+          "note_zh": "有髓轴突把传导速度提到每秒数十米；工程侧的对应问题是端到端延迟——采集、解码、执行三段延迟之和决定闭环是否「跟手」。",
+          "note_en": "Myelination raises conduction velocity to tens of meters per second; on the engineering side the analogue is end-to-end latency—acquisition plus decoding plus actuation decides whether a closed loop feels responsive."
+        }
+      ]
+    },
+    {
+      "id": "sensor",
+      "name_zh": "传感与器件",
+      "name_en": "Sensing & Devices",
+      "desc_zh": "神经组织的空间尺度与免疫反应，决定了电极阵列的密度、材料与寿命。",
+      "desc_en": "The spatial scale of neural tissue and its immune response determine array density, materials and longevity.",
+      "rows": [
+        {
+          "id": "rf-resolution",
+          "neural_zh": "感受野",
+          "neural_en": "Receptive Field",
+          "term_id": "sensory-receptive-field",
+          "eng_zh": "传感器阵列空间分辨率",
+          "eng_en": "Array Spatial Resolution",
+          "note_zh": "感受野越小，所需的采样密度越高；电极间距大于目标神经元的感受野尺度时，空间信息在源头就已混叠。",
+          "note_en": "Smaller receptive fields demand denser sampling; when electrode pitch exceeds the receptive-field scale, spatial information is aliased at the source."
+        },
+        {
+          "id": "channel-selectivity",
+          "neural_zh": "离子通道",
+          "neural_en": "Ion Channel",
+          "term_id": "neuron-ion-channel",
+          "eng_zh": "离子敏场效应晶体管（ISFET）",
+          "eng_en": "Ion-sensitive FET (ISFET)",
+          "note_zh": "通道对特定离子的选择性通透，对应传感器的选择性识别层； selectivity 不够时，多种离子会混成同一个读数。",
+          "note_en": "A channel's selective permeability to specific ions parallels a sensor's selective recognition layer; without selectivity, multiple ions collapse into one reading."
+        },
+        {
+          "id": "array-fab",
+          "neural_zh": "电极阵列",
+          "neural_en": "Electrode Array",
+          "term_id": "bci-electrode-array",
+          "eng_zh": "微纳加工与生物相容性封装",
+          "eng_en": "Microfabrication & Biocompatible Packaging",
+          "note_zh": "阵列的通道数受制于布线、封装与散热；生物相容性封装决定植入后数周至数年的阻抗是否稳定。",
+          "note_en": "Channel count is limited by wiring, packaging and heat dissipation; biocompatible packaging determines whether impedance stays stable over weeks to years."
+        },
+        {
+          "id": "glia-impedance",
+          "neural_zh": "胶质细胞反应",
+          "neural_en": "Glial Response",
+          "term_id": "neuron-glia",
+          "eng_zh": "异物反应与阻抗漂移",
+          "eng_en": "Foreign-body Response & Impedance Drift",
+          "note_zh": "植入体周围的星形胶质细胞增生与微胶质细胞包裹会推高电极阻抗、降低信噪比，是长期植入失效的主要工程原因之一。",
+          "note_en": "Astrocyte scarring and microglial encapsulation around an implant raise impedance and lower SNR—one of the main engineering causes of long-term implant failure."
+        }
+      ]
+    },
+    {
+      "id": "processing",
+      "name_zh": "信号处理",
+      "name_en": "Signal Processing",
+      "desc_zh": "把混在一起的头皮/皮层信号拆开：频域、时域与空域三条路径。",
+      "desc_en": "Separating mixed scalp or cortical signals along spectral, temporal and spatial paths.",
+      "rows": [
+        {
+          "id": "alpha-bandpass",
+          "neural_zh": "脑电节律（α / μ）",
+          "neural_en": "EEG Rhythms (alpha / mu)",
+          "term_id": "methods-eeg",
+          "eng_zh": "带通滤波与功率谱估计",
+          "eng_en": "Band-pass Filtering & Spectral Estimation",
+          "note_zh": "α 节律集中在 8–13 Hz，运动想象相关 μ 节律也在相近频段；先用带通把频段圈出来，再做 Welch 或 FFT 估计功率。",
+          "note_en": "Alpha rhythms concentrate at 8–13 Hz and motor-imagery mu rhythms sit nearby; band-pass first, then estimate power with Welch or FFT."
+        },
+        {
+          "id": "erp-averaging",
+          "neural_zh": "事件相关电位",
+          "neural_en": "Event-related Potential",
+          "term_id": "methods-erp",
+          "eng_zh": "锁时平均与模板匹配",
+          "eng_en": "Time-locked Averaging & Template Matching",
+          "note_zh": "单试次 ERP 被背景脑电淹没，锁时平均把随机成分压掉、把与刺激锁定的成分留下；代价是需要多次重复。",
+          "note_en": "Single-trial ERPs are buried in background EEG; time-locked averaging suppresses random activity and preserves stimulus-locked components, at the cost of repeated trials."
+        },
+        {
+          "id": "artifact-ica",
+          "neural_zh": "眼电 / 肌电伪迹",
+          "neural_en": "Ocular / Muscular Artifacts",
+          "term_id": "methods-artifact-removal",
+          "eng_zh": "独立成分分析与回归",
+          "eng_en": "ICA & Regression",
+          "note_zh": "眼动与肌电在头皮上的投影模式相对固定，ICA 能把它们分离成独立成分后剔除；残余伪迹再用回归或阈值法清理。",
+          "note_en": "Eye and muscle artifacts project onto the scalp with fairly stable topographies; ICA separates them for removal, with regression or thresholding for residuals."
+        },
+        {
+          "id": "csp-spatial",
+          "neural_zh": "感觉运动节律的空间分布",
+          "neural_en": "Spatial Distribution of Sensorimotor Rhythms",
+          "term_id": "methods-common-spatial-pattern",
+          "eng_zh": "共空间模式（CSP）空域滤波",
+          "eng_en": "Common Spatial Pattern (CSP)",
+          "note_zh": "CSP 学习一组权重，让两类任务（如左手/右手想象）的方差比最大化，等价于用数据自动找「最有判别力的电极组合」。",
+          "note_en": "CSP learns weights that maximize the variance ratio between two classes (e.g. left vs right hand imagery)—automatically finding the most discriminative electrode combination."
+        }
+      ]
+    },
+    {
+      "id": "control",
+      "name_zh": "解码与控制",
+      "name_en": "Decoding & Control",
+      "desc_zh": "从神经活动到行为：编码模型、运动学回归与闭环控制。",
+      "desc_en": "From neural activity to behavior: encoding models, kinematic regression and closed-loop control.",
+      "rows": [
+        {
+          "id": "coding-model",
+          "neural_zh": "神经编码",
+          "neural_en": "Neural Coding",
+          "term_id": "neuron-neural-coding",
+          "eng_zh": "编码 / 解码模型",
+          "eng_en": "Encoding / Decoding Models",
+          "note_zh": "编码模型问「刺激如何变成放电」，解码模型问「放电如何还原刺激」；BCI 用的是后者的逆问题，且必须在线、低延迟。",
+          "note_en": "Encoding asks how a stimulus becomes spikes; decoding asks how spikes reconstruct the stimulus. BCI solves the inverse problem, online and with low latency."
+        },
+        {
+          "id": "motor-kinematics",
+          "neural_zh": "初级运动皮层群体放电",
+          "neural_en": "Population Activity in Primary Motor Cortex",
+          "term_id": "motor-motor-cortex",
+          "eng_zh": "速度 / 位置回归与群体向量",
+          "eng_en": "Velocity / Position Regression & Population Vector",
+          "note_zh": "运动皮层神经元的调谐方向构成群体向量，可直接回归手部速度；这是机械臂与光标控制解码器的经典起点。",
+          "note_en": "Preferred directions of motor-cortical neurons form a population vector that can regress hand velocity—the classic starting point for cursor and robotic-arm decoders."
+        },
+        {
+          "id": "mi-classifier",
+          "neural_zh": "运动想象",
+          "neural_en": "Motor Imagery",
+          "term_id": "motor-motor-imagery",
+          "eng_zh": "ERD 特征 + 分类器",
+          "eng_en": "ERD Features + Classifier",
+          "note_zh": "想象运动引起对侧感觉运动区 μ/beta 去同步（ERD）；工程上用频带功率作特征，配 LDA / SVM 做二到四类分类。",
+          "note_en": "Imagined movement desynchronizes mu/beta over contralateral sensorimotor cortex (ERD); band power feeds LDA or SVM for two- to four-class classification."
+        },
+        {
+          "id": "closed-loop-control",
+          "neural_zh": "闭环神经调控",
+          "neural_en": "Closed-loop Neuromodulation",
+          "term_id": "bci-closed-loop",
+          "eng_zh": "实时反馈控制与刺激参数自适应",
+          "eng_en": "Real-time Feedback Control & Adaptive Stimulation",
+          "note_zh": "闭环系统按实时神经状态调整刺激，控制论里的延迟、稳定性与振荡问题在这里同样成立；延迟过大可能诱发振荡而非抑制。",
+          "note_en": "Closed-loop systems adjust stimulation to real-time neural state; latency, stability and oscillation are control-theory problems here too—too much delay can induce rather than suppress oscillations."
+        }
+      ]
+    },
+    {
+      "id": "system",
+      "name_zh": "系统与合规",
+      "name_en": "System & Regulation",
+      "desc_zh": "把单点技术做成可用产品：带宽指标、长期校准、审批与数据治理。",
+      "desc_en": "Turning point technologies into usable products: throughput metrics, long-term calibration, approval and data governance.",
+      "rows": [
+        {
+          "id": "fnirs-optics",
+          "neural_zh": "血氧动力学响应",
+          "neural_en": "Hemodynamic Response",
+          "term_id": "methods-fnirs",
+          "eng_zh": "近红外光学测量（Beer–Lambert）",
+          "eng_en": "Near-infrared Optical Measurement (Beer–Lambert)",
+          "note_zh": "fNIRS 用 700–900 nm 近红外光测氧合/脱氧血红蛋白吸收变化；血氧响应慢（秒级），所以信息速率天然低于电生理。",
+          "note_en": "fNIRS measures absorption changes of oxygenated and deoxygenated hemoglobin with 700–900 nm light; the hemodynamic response is slow (seconds), so throughput is inherently below electrophysiology."
+        },
+        {
+          "id": "itr-bandwidth",
+          "neural_zh": "信息传输率（ITR）",
+          "neural_en": "Information Transfer Rate (ITR)",
+          "term_id": "bci-signal-processing-pipeline",
+          "eng_zh": "系统吞吐与带宽预算",
+          "eng_en": "System Throughput & Bandwidth Budget",
+          "note_zh": "ITR 把准确率、指令数与单次决策时间合成 bits/min，是跨范式比较的唯一共同尺子；提高准确率往往以更长的平均时间为代价。",
+          "note_en": "ITR combines accuracy, number of commands and decision time into bits/min—the common yardstick across paradigms. Higher accuracy usually costs longer averaging."
+        },
+        {
+          "id": "plasticity-calibration",
+          "neural_zh": "突触可塑性",
+          "neural_en": "Synaptic Plasticity",
+          "term_id": "synapse-synaptic-plasticity",
+          "eng_zh": "在线自适应校准",
+          "eng_en": "Online Adaptive Calibration",
+          "note_zh": "用户学习使用 BCI 时神经表征本身会变，固定解码器会逐渐失配；工程上要靠在线更新或周期重校准跟上这种可塑性。",
+          "note_en": "Neural representations drift as users learn to use a BCI, so a fixed decoder degrades; online updates or periodic recalibration track this plasticity."
+        },
+        {
+          "id": "ethics-approval",
+          "neural_zh": "知情同意与神经数据",
+          "neural_en": "Informed Consent & Neural Data",
+          "term_id": "bci-ethical-issues",
+          "eng_zh": "医疗器械审批与数据治理",
+          "eng_en": "Medical-device Approval & Data Governance",
+          "note_zh": "植入式 BCI 按医疗器械路径审批（临床前、临床试验、上市后监测）；神经数据还涉及隐私、二次使用与「神经权利」讨论。",
+          "note_en": "Implantable BCIs follow medical-device approval paths (preclinical, trials, post-market surveillance); neural data also raises privacy, secondary-use and neuro-rights questions."
+        }
+      ]
+    }
+  ]
+}

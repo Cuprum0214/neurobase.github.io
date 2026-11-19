@@ -1,0 +1,76 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1e5fa8">
+  <meta name="description" content="NeuroBase 测验答题页：逐题作答后提交答卷，跳转结果页查看判分与解析。">
+  <title>测验 · 答题 · NeuroBase</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="assets/css/style.css?v=1194">
+  <script>
+    (function () {
+      try {
+        var m = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)').matches : false;
+        var th = localStorage.getItem('nb-theme') || 'system';
+        if (th === 'dark' || (th === 'system' && m)) document.documentElement.classList.add('dark');
+      } catch (e) {}
+      try {
+        var f = parseFloat(localStorage.getItem('nb-font') || '100');
+        if (f >= 25 && f <= 300) document.documentElement.style.setProperty('--nb-font-scale', (f / 100).toFixed(2));
+      } catch (e) {}
+      try {
+        if (localStorage.getItem('nb-motion') === 'off') document.documentElement.classList.add('motion-off');
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="action.skipToContent">跳到主内容</a>
+  <header id="nb-header"></header>
+
+  <main id="main" class="nb-content">
+    <div class="wrap">
+      <h1 class="page-title" data-i18n="quiz.title">测验</h1>
+      <p class="page-desc" data-i18n="quiz.flow">选题 → 作答并提交 → 查看结果与解析</p>
+
+      <section class="qz-run" id="qz-run" aria-live="polite">
+        <p class="sp-progress" id="qz-progress"></p>
+        <form class="qz-form" id="qz-form"></form>
+        <div class="sp-result-actions">
+          <button type="button" class="btn" id="qz-submit" data-i18n="quiz.submit">提交答卷</button>
+        </div>
+      </section>
+
+      <p class="notice" id="qz-nosession" hidden data-i18n="quiz.noSession">没有进行中的测验，请先回到选题页开始。</p>
+
+      <!-- 答题过程中不提供返回入口，避免中途退出丢失作答；仅在无进行中会话时由脚本显示 -->
+      <div class="qz-footer" id="qz-footer" hidden>
+        <a class="btn btn-ghost" id="qz-to-setup" href="quiz.html" data-i18n="quiz.goSetup">去选题</a>
+        <a class="btn nb-back" id="qz-to-learn" href="learn.html" data-i18n="learn.backToLearn">返回学习工具</a>
+      </div>
+    </div>
+  </main>
+
+  <footer id="nb-footer"></footer>
+
+  <noscript>
+    <div class="wrap">
+      <p class="notice">本页的测验由本地脚本渲染，请启用 JavaScript 后再访问。</p>
+    </div>
+  </noscript>
+
+  <script src="assets/js/data/terms.js?v=1194"></script>
+  <script src="assets/js/data/i18n.js?v=1194"></script>
+  <script src="assets/js/core.js?v=1194"></script>
+  <script src="assets/js/cloud-config.js?v=1194"></script>
+  <script src="assets/js/cloud.js?v=1194"></script>
+  <script src="assets/js/auth-ui.js?v=1194"></script>
+  <script src="assets/js/ai-fluid.js?v=1194"></script>
+  <script src="assets/js/ai-tutor.js?v=1194"></script>
+  <script src="assets/js/feedback.js?v=1194"></script>
+  <script src="assets/js/help.js?v=1194"></script>
+  <script src="assets/js/learn.js?v=1194"></script>
+  <script src="assets/js/page-quiz-run.js?v=1194"></script>
+</body>
+</html>

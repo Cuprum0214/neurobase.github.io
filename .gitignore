@@ -1,0 +1,44 @@
+node_modules/
+.DS_Store
+Thumbs.db
+*.log
+
+# 本地过程文件与历史归档（不参与站点部署）
+.deepworks/archive/
+.deepworks/tmp/
+uploads/
+
+# 本地维护目录（自测脚本、探测输出、历史备份、依赖；含可能的明文探测记录）
+.deepworks/
+.opencode/
+.opencode-router/
+
+# 旧 Vue 原型（已归档，不参与原生离线版交付与部署）
+/neurobase/
+
+# 根目录本机杂项（文档草稿、截图、地址 / 启动脚本等，不属于项目交付）
+/*.docx
+/~$*
+/*.txt
+/*.png
+/*.jpeg
+/*.cmd
+
+# 打包产物与生成的大图（站点不引用；如需引用请显式加入）
+outputs/*.zip
+outputs/imagegen/*.png
+
+# ---------------------------------------------------------------------------
+# 凭证与密钥：绝不入库（AGENTS.md「凭证与密钥」硬性约定）
+# ---------------------------------------------------------------------------
+.env
+.env.*
+.dev.vars
+*.pem
+*.key
+*.p12
+*.pfx
+*secret*.txt
+*token*.txt
+*credential*
+supabase/.temp/

@@ -1,0 +1,319 @@
+[
+  {
+    "id": "attention-sustained-attention",
+    "module": "attention",
+    "name_zh": "持续性注意",
+    "name_en": "Sustained Attention",
+    "aliases": [
+      "警觉",
+      "注意维持",
+      "vigilance",
+      "持续注意"
+    ],
+    "pinyin": "chixuxingzhuyi",
+    "pinyin_initials": "cxxzy",
+    "definition": "在较长时间内维持对特定刺激或任务目标的注意准备状态的能力，其表现随时间推移而下降（警觉递减，vigilance decrement）；个体差异较大，且受昼夜节律、唤醒水平与任务单调性影响。",
+    "plain": "长时间盯着同一件事不走神的能力——它会随时间变差。",
+    "difficulty": "intro",
+    "tags": [
+      "注意",
+      "警觉"
+    ],
+    "related": [
+      "attention-selective-attention",
+      "attention-divided-attention",
+      "attention-attentional-blink",
+      "anatomy-prefrontal-cortex"
+    ],
+    "engineering_link": "持续注意下降会直接体现在 EEG 节律（如 theta/alpha 比值升高）上，是脑机接口“疲劳/走神检测”的核心监测目标。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "attention-divided-attention",
+    "module": "attention",
+    "name_zh": "分配性注意",
+    "name_en": "Divided Attention",
+    "aliases": [
+      "注意分配",
+      "双任务",
+      "分配注意"
+    ],
+    "pinyin": "fenpeixingzhuyi",
+    "pinyin_initials": "fpxzy",
+    "definition": "同时把注意资源分配到两个或多个任务或刺激上的加工方式；由于资源容量有限，双任务间会产生干扰（双任务代价），其大小取决于两任务的资源重叠程度与自动化程度。",
+    "plain": "一边走路一边聊天——能同时做，但两边都会变慢。",
+    "difficulty": "intermediate",
+    "tags": [
+      "注意",
+      "资源"
+    ],
+    "related": [
+      "attention-selective-attention",
+      "attention-sustained-attention",
+      "attention-change-blindness",
+      "memory-long-term-potentiation"
+    ],
+    "engineering_link": "双任务范式是驾驶分心监测与自适应人机界面的标准设计，脑电/眼动指标可用于在线判定负荷是否超限。",
+    "references": [
+      {
+        "type": "encyclopedia",
+        "title": "认知心理学 (Sternberg & Sternberg, 7th ed.)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "attention-top-down-control",
+    "module": "attention",
+    "name_zh": "自上而下控制",
+    "name_en": "Top-Down Control",
+    "aliases": [
+      "目标导向注意",
+      "内源注意",
+      "自上而下注意控制"
+    ],
+    "pinyin": "zishangerxiakongzhi",
+    "pinyin_initials": "zsexkz",
+    "definition": "由当前任务目标、预期与知识驱动的注意调控，主要表现为额顶网络的主动偏置：通过预先增强目标相关特征的神经表征并抑制无关刺激来提升加工效率，其效应出现较慢但可持续。",
+    "plain": "“我要找什么”说了算的注意——主动按目标去筛信息。",
+    "difficulty": "intermediate",
+    "tags": [
+      "注意",
+      "认知控制"
+    ],
+    "related": [
+      "attention-selective-attention",
+      "attention-bottom-up-capture",
+      "attention-dorsal-ventral-network",
+      "anatomy-prefrontal-cortex",
+      "motor-supplementary-motor-area"
+    ],
+    "engineering_link": "内源注意的调节会改变 P300 与 SSVEP 的幅度，是设计“注意门控”式脑机接口与降低误触发率的关键。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "attention-bottom-up-capture",
+    "module": "attention",
+    "name_zh": "自下而上注意捕获",
+    "name_en": "Bottom-Up Attentional Capture",
+    "aliases": [
+      "刺激驱动注意",
+      "外源注意",
+      "自下而上注意"
+    ],
+    "pinyin": "zixiaershangzhuyibuhuo",
+    "pinyin_initials": "zxeszybh",
+    "definition": "由刺激本身的显著性（如突然出现、强对比、运动、意外声响）自动吸引注意的过程，加工迅速、难以抑制，但随后可被自上而下的目标调控（如通过持续抑制模板）削弱。",
+    "plain": "突然的响动或闪亮的东西“抢走”你的注意——不由你决定。",
+    "difficulty": "intermediate",
+    "tags": [
+      "注意",
+      "显著性"
+    ],
+    "related": [
+      "attention-top-down-control",
+      "attention-spatial-cueing",
+      "attention-dorsal-ventral-network",
+      "sensory-center-surround"
+    ],
+    "engineering_link": "视觉显著性是显著图（saliency map）与异步脑机接口“事件触发”逻辑的生理依据（如闪烁刺激引发 SSVEP/ERP 响应）。",
+    "references": [
+      {
+        "type": "encyclopedia",
+        "title": "认知心理学 (Sternberg & Sternberg, 7th ed.)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "attention-spatial-cueing",
+    "module": "attention",
+    "name_zh": "空间线索范式",
+    "name_en": "Spatial Cueing Paradigm",
+    "aliases": [
+      "Posner 范式",
+      "线索-靶范式",
+      "空间提示范式"
+    ],
+    "pinyin": "kongjianxiansuofanshi",
+    "pinyin_initials": "kjxsfs",
+    "definition": "由 Posner 提出、通过中央或外周线索指示靶刺激可能出现位置来研究注意空间定向的经典范式：线索有效时反应更快更准（注意收益），线索无效时反应更慢（注意代价），二者之差即为注意定向的量度。",
+    "plain": "先给你一个提示“东西会出现在左边或右边”，再看你反应快不快。",
+    "difficulty": "intermediate",
+    "tags": [
+      "注意",
+      "实验范式"
+    ],
+    "related": [
+      "attention-selective-attention",
+      "attention-bottom-up-capture",
+      "attention-top-down-control",
+      "sensory-visual-pathway",
+      "methods-erp"
+    ],
+    "engineering_link": "线索-靶设计是 ERP 成分（如 N2pc、ADAN/LDAP）与空间注意脑机接口的标准实验模板，可用于标定注意方向。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "An Introduction to the Event-Related Potential Technique (Luck, 2nd ed., 2014)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "attention-cocktail-party-effect",
+    "module": "attention",
+    "name_zh": "鸡尾酒会效应",
+    "name_en": "Cocktail Party Effect",
+    "aliases": [
+      "选择性听觉注意",
+      "鸡尾酒会现象"
+    ],
+    "pinyin": "jiweijiuhuixiaoying",
+    "pinyin_initials": "jwjhxy",
+    "definition": "在多人同时说话等嘈杂环境中，人仍能选择性地跟踪某一个说话者并通过音高、空间位置、语义与视觉线索（唇动）区分来源，同时还能对无关通道中的高显著性信息（如自己的名字）产生注意捕获的现象。",
+    "plain": "在喧闹的聚会上，你还是能专心听清某一个人说话。",
+    "difficulty": "intro",
+    "tags": [
+      "听觉注意",
+      "注意"
+    ],
+    "related": [
+      "attention-selective-attention",
+      "attention-bottom-up-capture",
+      "attention-dorsal-ventral-network"
+    ],
+    "engineering_link": "听觉注意解码（auditory attention decoding）已能依据皮层对多个说话者包络的跟踪来判定听者关注对象，是助听器与听觉脑机接口的前沿方向。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "attention-change-blindness",
+    "module": "attention",
+    "name_zh": "变化盲视",
+    "name_en": "Change Blindness",
+    "aliases": [
+      "变化盲",
+      "变化失明"
+    ],
+    "pinyin": "bianhuamangshi",
+    "pinyin_initials": "bhms",
+    "definition": "当视觉场景发生明显变化而该变化未被注意时，观察者往往无法察觉该变化的现象；它说明知觉并非对场景的完整逐点记录，而是依赖注意与记忆进行稀疏采样，需要变化检测机制参与才能显性报告。",
+    "plain": "眼前明明变了，你却完全没看出——因为注意力不在那儿。",
+    "difficulty": "intro",
+    "tags": [
+      "知觉",
+      "注意"
+    ],
+    "related": [
+      "attention-divided-attention",
+      "attention-selective-attention",
+      "attention-attentional-blink",
+      "sensory-visual-cortex"
+    ],
+    "engineering_link": "该现象解释了监控类人机界面中告警遗漏（looked-but-failed-to-see）的机制，对告警设计与注意监测式脑机接口有直接意义。",
+    "references": [
+      {
+        "type": "paper",
+        "title": "Change blindness (Simons & Levin, 1998, Trends in Cognitive Sciences)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "attention-dorsal-ventral-network",
+    "module": "attention",
+    "name_zh": "背侧与腹侧注意网络",
+    "name_en": "Dorsal and Ventral Attention Networks",
+    "aliases": [
+      "双侧注意网络",
+      "背侧额顶网络",
+      "背侧注意网络",
+      "腹侧注意网络"
+    ],
+    "pinyin": "beiceyufushezhuyiwangluo",
+    "pinyin_initials": "bcyfczywl",
+    "definition": "由 Corbetta 与 Shulman 提出的注意双网络模型：背侧额顶网络（顶内沟/额眼区）负责目标导向的注意选择与偏置；腹侧网络（颞顶联合区/腹侧额叶）充当“中断者”，在检测到显著或意外刺激时打破当前注意集并重新定向。",
+    "plain": "两个注意系统：一个按目标“干活”，一个在意外发生时“打断并报警”。",
+    "difficulty": "advanced",
+    "tags": [
+      "注意",
+      "网络"
+    ],
+    "related": [
+      "attention-top-down-control",
+      "attention-bottom-up-capture",
+      "attention-sustained-attention",
+      "anatomy-prefrontal-cortex",
+      "methods-erp"
+    ],
+    "engineering_link": "腹侧网络的“显著性检测”响应与 P3a/P300 成分密切相关，是 P300 脑机接口与注意监测系统的重要神经基础。",
+    "references": [
+      {
+        "type": "review",
+        "title": "Control of goal-directed and stimulus-driven attention in the brain (Corbetta & Shulman, 2002, Nature Reviews Neuroscience)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "attention-attentional-blink",
+    "module": "attention",
+    "name_zh": "注意瞬脱",
+    "name_en": "Attentional Blink",
+    "aliases": [
+      "注意瞬断",
+      "注意眨眼"
+    ],
+    "pinyin": "zhuyishuntuo",
+    "pinyin_initials": "zyst",
+    "definition": "在快速序列视觉呈现（RSVP）范式中，被试正确报告第一个目标（T1）后的约 200–500 ms 内，对第二个目标（T2）的识别能力显著下降的现象，反映注意在时间维度上的容量限制与暂时“关闭”。",
+    "plain": "你刚抓住一个目标，接下来半秒内会“看不见”第二个目标。",
+    "difficulty": "advanced",
+    "tags": [
+      "注意",
+      "时间维度"
+    ],
+    "related": [
+      "attention-selective-attention",
+      "attention-sustained-attention",
+      "attention-change-blindness",
+      "methods-erp",
+      "bci-p300"
+    ],
+    "engineering_link": "P300 的“不应期”与注意瞬脱同源，直接决定 P300 拼写器等脑机接口的刺激呈现速率上限。",
+    "references": [
+      {
+        "type": "paper",
+        "title": "The attentional blink (Raymond, Shapiro & Arnell, 1992, JEP)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z"
+  }
+]

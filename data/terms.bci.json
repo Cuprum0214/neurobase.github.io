@@ -1,0 +1,282 @@
+[
+  {
+    "id": "bci-invasive-vs-noninvasive",
+    "module": "bci",
+    "name_zh": "侵入式与非侵入式脑机接口",
+    "name_en": "Invasive and Non-invasive BCI",
+    "aliases": [
+      "BCI 分类",
+      "有创与无创脑机接口",
+      "有创脑机接口",
+      "无创脑机接口"
+    ],
+    "pinyin": "qinrushiyufeiqinrushibci",
+    "pinyin_initials": "qrsyfqrsnjjk",
+    "definition": "按信号获取方式对脑机接口的基本划分：非侵入式（EEG、MEG、fNIRS 等）安全易用但信噪比与信息速率有限；侵入式（皮层内微电极、ECoG 等）信号质量与信息速率高，但需手术植入，存在感染、组织反应与电极长期稳定性等风险。",
+    "plain": "戴帽子（无创，方便但信号糊）还是植入电极（有创，清楚但要开刀）。",
+    "difficulty": "intro",
+    "tags": [
+      "脑机接口",
+      "分类"
+    ],
+    "related": [
+      "methods-eeg",
+      "methods-intracortical-recording",
+      "bci-electrode-array",
+      "bci-ethical-issues"
+    ],
+    "engineering_link": "该取舍直接决定系统的信息传输率（ITR）、临床适用人群与合规审查路径，是脑机接口方案设计的首要决策点。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Brain-Computer Interfaces: Principles and Practice (Wolpaw & Wolpaw, 2012)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "bci-electrode-array",
+    "module": "bci",
+    "name_zh": "电极阵列",
+    "name_en": "Electrode Array",
+    "aliases": [
+      "微电极阵列",
+      "犹他阵列",
+      "Utah array",
+      "多电极阵列"
+    ],
+    "pinyin": "dianjizhenlie",
+    "pinyin_initials": "djzl",
+    "definition": "由按规则排布的多通道电极组成的采集（或刺激）器件，如皮层表面的 ECoG 网格与可插入皮层的犹他阵列、Neuropixels 探针；通道数、间距、阻抗与材料生物相容性共同决定信号质量与使用寿命。",
+    "plain": "一排排针脚或电极片——通道越多，能“听”到的神经元就越多。",
+    "difficulty": "intermediate",
+    "tags": [
+      "脑机接口",
+      "器件"
+    ],
+    "related": [
+      "methods-intracortical-recording",
+      "methods-ecog",
+      "bci-invasive-vs-noninvasive",
+      "neuron-action-potential"
+    ],
+    "engineering_link": "柔性电极、无线化与高通量（千通道级）是当前神经工程的核心技术方向，直接决定脑机接口的带宽与临床可行性。",
+    "references": [
+      {
+        "type": "paper",
+        "title": "Reach and grasp by people with tetraplegia using a neurally controlled robotic arm (Hochberg et al., 2012, Nature)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "bci-signal-processing-pipeline",
+    "module": "bci",
+    "name_zh": "脑机接口信号处理流程",
+    "name_en": "BCI Signal Processing Pipeline",
+    "aliases": [
+      "BCI 处理流水线",
+      "BCI 信号链"
+    ],
+    "pinyin": "xinhaochuliliucheng",
+    "pinyin_initials": "njjkxhcllc",
+    "definition": "脑机接口的典型处理链：信号采集 → 预处理（滤波、去伪迹、重参考）→ 特征提取（功率谱、ERD/ERS、ERP 幅值、空间滤波）→ 特征降维与选择 → 分类/回归 → 控制指令输出与反馈，常配合自适应与迁移学习以应对跨被试、跨会话的信号漂移。",
+    "plain": "从“采到信号”到“变成指令”的一整条流水线。",
+    "difficulty": "intermediate",
+    "tags": [
+      "脑机接口",
+      "算法"
+    ],
+    "related": [
+      "methods-eeg",
+      "methods-artifact-removal",
+      "methods-common-spatial-pattern",
+      "methods-emg"
+    ],
+    "engineering_link": "流水线的每一环都可替换（如 CSP → 深度网络），而各环的时延与稳定性共同决定在线系统的实际可用性；这也是本课程期末项目最可能落地的技术骨架。",
+    "references": [
+      {
+        "type": "review",
+        "title": "Brain-computer interfaces for communication and control (Wolpaw et al., 2002, Clinical Neurophysiology)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "bci-erp-based",
+    "module": "bci",
+    "name_zh": "事件相关电位脑机接口",
+    "name_en": "ERP-based BCI",
+    "aliases": [
+      "ERP-BCI",
+      "诱发式脑机接口",
+      "诱发电位脑机接口"
+    ],
+    "pinyin": "shijianxiangguandianweibci",
+    "pinyin_initials": "sjxgdwnjjk",
+    "definition": "利用时间锁定的刺激诱发脑电成分（最典型为 P300，以及 N200、N400 等）作为控制信号的脑机接口范式：系统按序呈现可选刺激，通过检测用户“关注目标”所产生的特异性成分偏移来判定选择，无需运动参与。",
+    "plain": "屏幕上一格一格闪，你只盯着想看的那格——脑电就告诉机器你选了哪个。",
+    "difficulty": "intermediate",
+    "tags": [
+      "脑机接口",
+      "范式"
+    ],
+    "related": [
+      "bci-p300",
+      "methods-erp",
+      "attention-attentional-blink",
+      "language-n400"
+    ],
+    "engineering_link": "ERP-BCI 的信息传输率受成分不应期与叠加平均次数制约（“准确率—速度”权衡），是拼写器与交流辅助系统的成熟方案。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Brain-Computer Interfaces: Principles and Practice (Wolpaw & Wolpaw, 2012)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "bci-neurofeedback",
+    "module": "bci",
+    "name_zh": "神经反馈",
+    "name_en": "Neurofeedback",
+    "aliases": [
+      "脑电生物反馈",
+      "神经生物反馈",
+      "神经反馈训练"
+    ],
+    "pinyin": "shenjingfankui",
+    "pinyin_initials": "sjfk",
+    "definition": "把个体自身实时脑活动（如特定频段功率、BOLD 信号）以可视/可听形式反馈给被试，使其通过操作性条件化学会自主调节该脑活动的训练方法；常用于注意缺陷、情绪调节与运动康复的辅助训练。",
+    "plain": "把脑活动变成游戏画面，让你练着“自己调控自己的大脑”。",
+    "difficulty": "intro",
+    "tags": [
+      "脑机接口",
+      "训练"
+    ],
+    "related": [
+      "methods-eeg",
+      "methods-fmri",
+      "emotion-emotion-regulation",
+      "attention-sustained-attention"
+    ],
+    "engineering_link": "神经反馈是脑机接口在非控制类应用中的代表：评价要特别小心安慰剂效应与回归均值，需设计 sham 对照组。",
+    "references": [
+      {
+        "type": "review",
+        "title": "Closed-loop brain training: the science of neurofeedback (Sitaram et al., 2017, Nature Reviews Neuroscience)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "bci-closed-loop",
+    "module": "bci",
+    "name_zh": "闭环神经调控",
+    "name_en": "Closed-loop Neuromodulation",
+    "aliases": [
+      "闭环刺激",
+      "闭环脑机接口",
+      "闭环调控"
+    ],
+    "pinyin": "bihuanshenjingtiaokong",
+    "pinyin_initials": "bhsjtk",
+    "definition": "实时读取神经信号并根据预设判据即时给出刺激或干预的系统结构（读 → 判 → 刺激 → 再读），相比固定参数的开放环刺激能更精准地对齐生理状态与干预时机，代表性应用包括闭环深部脑刺激与响应式神经刺激（RNS）。",
+    "plain": "先“听”再“动手”：检测到异常状态才给刺激，而不是一直无脑刺激。",
+    "difficulty": "intermediate",
+    "tags": [
+      "脑机接口",
+      "神经调控"
+    ],
+    "related": [
+      "bci-neurofeedback",
+      "methods-intracortical-recording",
+      "emotion-prefrontal-amygdala-circuit",
+      "anatomy-basal-ganglia"
+    ],
+    "engineering_link": "闭环系统的核心工程问题是检测时延、误触发率与安全边界，涉及实时计算、刺激伪迹抑制与失效保护设计。",
+    "references": [
+      {
+        "type": "review",
+        "title": "Closed-loop neuromodulation (Bouthour et al., 2019, Brain / Bosch et al.)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "bci-hybrid-bci",
+    "module": "bci",
+    "name_zh": "混合脑机接口",
+    "name_en": "Hybrid BCI",
+    "aliases": [
+      "多模态脑机接口",
+      "混合式脑机接口"
+    ],
+    "pinyin": "hunhenaojijiekou",
+    "pinyin_initials": "hhnjjk",
+    "definition": "同时使用两种或以上生理信号或范式（如 EEG + EMG、P300 + SSVEP、脑电 + 眼动/fNIRS）构建的脑机接口：通过信息融合提高准确率与信息传输率，或用一个模态做“开关/确认”、另一个做“选择/连续控制”。",
+    "plain": "把几种信号拼一起用：一个负责选择，一个负责确认，比单打独斗更可靠。",
+    "difficulty": "intermediate",
+    "tags": [
+      "脑机接口",
+      "多模态"
+    ],
+    "related": [
+      "bci-ssvep",
+      "bci-erp-based",
+      "methods-emg",
+      "motor-motor-imagery"
+    ],
+    "engineering_link": "混合设计是提升实用系统鲁棒性的主要路线，常见于机械臂控制、轮椅导航与康复训练系统。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Brain-Computer Interfaces Handbook (Nam, Nijholt & Lotte, 2018)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "bci-ethical-issues",
+    "module": "bci",
+    "name_zh": "脑机接口伦理与合规",
+    "name_en": "Ethical Issues in BCI",
+    "aliases": [
+      "神经伦理",
+      "BCI 伦理",
+      "脑机接口伦理"
+    ],
+    "pinyin": "naojijiekoulunli",
+    "pinyin_initials": "njjkllyhg",
+    "definition": "围绕脑机接口提出的伦理与治理议题，包括知情同意（尤其对重度运动障碍者）、隐私与神经数据安全、身份认同与自主性、能力增强与公平、以及医疗安全与长期风险；相关规范强调把神经数据当作敏感个人信息并维持人的主体性。",
+    "plain": "能读脑信号，就要回答：谁有权读取、能不能被改写、出问题谁负责。",
+    "difficulty": "intro",
+    "tags": [
+      "伦理",
+      "脑机接口"
+    ],
+    "related": [
+      "bci-invasive-vs-noninvasive",
+      "methods-eeg",
+      "emotion-affective-computing",
+      "methods-fmri"
+    ],
+    "engineering_link": "任何脑机接口课程项目都应交代数据来源、脱敏与再分发限制；本平台内容亦须遵守“不做诊断、不替代医疗建议”的合规红线。",
+    "references": [
+      {
+        "type": "paper",
+        "title": "Four ethical priorities for neurotechnologies and AI (Ienca & Andorno, 2017, Nature)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z"
+  }
+]

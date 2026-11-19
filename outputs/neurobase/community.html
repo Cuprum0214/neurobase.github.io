@@ -1,0 +1,262 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1e5fa8">
+  <meta name="description" content="NeuroBase 学习社区：论坛式问答、点赞、收藏、举报与管理员审核；云端可用时全员发言实时更新，离线时数据保存在本机。">
+  <title>学习社区 · NeuroBase</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="assets/css/style.css?v=1194">
+  <script>
+    (function () {
+      try {
+        var m = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)').matches : false;
+        var th = localStorage.getItem('nb-theme') || 'system';
+        if (th === 'dark' || (th === 'system' && m)) document.documentElement.classList.add('dark');
+      } catch (e) {}
+      try {
+        var f = parseFloat(localStorage.getItem('nb-font') || '100');
+        if (f >= 25 && f <= 300) document.documentElement.style.setProperty('--nb-font-scale', (f / 100).toFixed(2));
+      } catch (e) {}
+      try {
+        if (localStorage.getItem('nb-motion') === 'off') document.documentElement.classList.add('motion-off');
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="action.skipToContent">跳到主内容</a>
+  <header id="nb-header"></header>
+
+  <main id="main" class="nb-content">
+    <div class="wrap">
+      <div class="fm-hero">
+        <div class="fm-hero-copy">
+          <h1 class="page-title" data-i18n="community.title">学习社区</h1>
+          <p class="page-desc" data-i18n="forum.desc">像逛贴吧一样提问、回答与讨论：发帖、回帖、点赞、收藏、举报，全员可见。</p>
+          <ul class="fm-kpis" id="fm-kpis" aria-label="社区数据">
+            <li class="fm-kpi"><b id="fm-kpi-posts">0</b><span data-i18n="forum.kpiPosts">主题</span></li>
+            <li class="fm-kpi"><b id="fm-kpi-replies">0</b><span data-i18n="forum.kpiReplies">回复</span></li>
+            <li class="fm-kpi"><b id="fm-kpi-members">0</b><span data-i18n="forum.kpiMembers">参与者</span></li>
+          </ul>
+        </div>
+        <div class="fm-hero-side">
+          <button type="button" class="btn btn-primary fm-new" id="fm-new" data-i18n="forum.newPost">发帖提问</button>
+          <span class="pill pill-slate fm-mode" id="fm-mode" title=""></span>
+        </div>
+      </div>
+
+      <div class="fm-layout">
+        <div class="fm-col">
+
+          <!-- ================= 列表视图 ================= -->
+          <section class="fm-listview" id="fm-listview" aria-labelledby="fm-list-title">
+            <h2 class="sr-only" id="fm-list-title" data-i18n="forum.listTitle">帖子列表</h2>
+
+            <div class="fm-toolbar">
+              <div class="fm-orders" id="fm-orders" role="group" aria-label="排序">
+                <button type="button" class="chip" data-order="new" aria-pressed="true" data-i18n="forum.orderNew">最新</button>
+                <button type="button" class="chip" data-order="hot" aria-pressed="false" data-i18n="forum.orderHot">最热</button>
+                <button type="button" class="chip" data-order="replies" aria-pressed="false" data-i18n="forum.orderReplies">回复最多</button>
+              </div>
+              <div class="fm-tools">
+                <label class="sr-only" for="fm-search" data-i18n="forum.search">搜索</label>
+                <input class="input fm-search" id="fm-search" type="search" autocomplete="off"
+                       data-i18n-placeholder="forum.searchPh" placeholder="搜索标题、正文或作者">
+                <label class="sr-only" for="fm-board" data-i18n="forum.board">板块</label>
+                <select class="select fm-board" id="fm-board"></select>
+              </div>
+            </div>
+
+            <div class="fm-scopes" id="fm-scopes" role="group" aria-label="筛选">
+              <button type="button" class="chip" data-scope="all" aria-pressed="true" data-i18n="forum.scopeAll">全部</button>
+              <button type="button" class="chip" data-scope="mine" aria-pressed="false" data-i18n="forum.scopeMine">我的帖子</button>
+              <button type="button" class="chip" data-scope="favs" aria-pressed="false" data-i18n="forum.scopeFavs">我的收藏</button>
+              <button type="button" class="chip" data-scope="featured" aria-pressed="false" data-i18n="forum.scopeFeatured">精华</button>
+            </div>
+
+            <div class="fm-listhead" id="fm-listhead">
+              <span class="meta" id="fm-count"></span>
+              <span class="fm-live" id="fm-live" role="status" aria-live="polite"></span>
+            </div>
+
+            <ul class="fm-list" id="fm-list"></ul>
+            <p class="empty-hint" id="fm-empty" hidden></p>
+            <div class="fm-emptycta" id="fm-empty-cta" hidden>
+              <p data-i18n="forum.emptyCta">有疑问？直接开一帖，大家一起看看。</p>
+              <button type="button" class="btn btn-primary" id="fm-empty-new" data-i18n="forum.newPost">发帖提问</button>
+            </div>
+            <div class="fm-more"><button type="button" class="btn btn-ghost btn-sm" id="fm-more" hidden data-i18n="forum.loadMore">加载更多</button></div>
+          </section>
+
+          <!-- ================= 帖子详情视图 ================= -->
+          <section class="fm-thread" id="fm-thread" aria-label="帖子详情" data-i18n-aria="forum.threadLabel" hidden>
+            <div class="fm-thread-top">
+              <button type="button" class="btn btn-ghost btn-sm" id="fm-back" data-i18n="forum.backToList">← 返回列表</button>
+              <span class="meta" id="fm-thread-crumb"></span>
+            </div>
+            <article class="fm-op" id="fm-op"></article>
+            <div class="fm-floor-head">
+              <h2 id="fm-floor-title" data-i18n="forum.repliesTitle">全部回复</h2>
+              <span class="meta" id="fm-floor-count"></span>
+            </div>
+            <ul class="fm-floors" id="fm-floors"></ul>
+            <p class="empty-hint" id="fm-floor-empty" data-i18n="forum.noReply">还没有回复，来坐第一层楼。</p>
+
+            <form class="fm-replybox card" id="fm-reply-form" novalidate>
+              <label class="cm-label" for="fm-reply-body" data-i18n="forum.replyLabel">回复</label>
+              <textarea class="input cm-textarea" id="fm-reply-body" rows="4" maxlength="1000"
+                        data-i18n-placeholder="forum.replyPh" placeholder="友善交流，说清你的观点或补充……"></textarea>
+              <div class="fm-replybar">
+                <span class="meta" id="fm-reply-note" aria-live="polite"></span>
+                <button type="submit" class="btn btn-primary btn-sm" id="fm-reply-send" data-i18n="forum.replySend">发表回复</button>
+              </div>
+            </form>
+          </section>
+        </div>
+
+        <!-- ================= 侧栏 ================= -->
+        <aside class="fm-side" aria-label="社区侧栏">
+          <section class="card fm-card" aria-labelledby="fm-rules-title">
+            <h2 id="fm-rules-title" data-i18n="forum.rulesTitle">社区约定</h2>
+            <ul class="fm-rules">
+              <li data-i18n="forum.rule1">提问写清背景与已尝试的办法，回答给依据。</li>
+              <li data-i18n="forum.rule2">不发布广告、人身攻击或未证实的医疗建议。</li>
+              <li data-i18n="forum.rule3">看到违规内容请举报，管理员会处理。</li>
+              <li data-i18n="forum.rule4">本机模式内容只保存在当前浏览器。</li>
+            </ul>
+            <p class="meta" id="fm-identity"></p>
+            <button type="button" class="btn btn-ghost btn-sm" id="fm-rename" data-i18n="forum.rename">修改昵称</button>
+          </section>
+
+          <section class="card fm-card fm-admin" aria-labelledby="fm-admin-title">
+            <div class="fm-cardhead">
+              <h2 id="fm-admin-title" data-i18n="forum.adminTitle">管理员</h2>
+              <span class="pill pill-slate" id="fm-admin-badge" hidden data-i18n="forum.adminOn">管理中</span>
+            </div>
+            <p class="meta" data-i18n="forum.adminDesc">管理员可删除或隐藏言论、置顶精华、禁言用户。</p>
+            <button type="button" class="btn btn-ghost btn-sm" id="fm-admin-open" data-i18n="forum.adminOpen">管理员入口</button>
+            <form class="fm-gate" id="fm-admin-gate" hidden novalidate>
+              <label class="cm-label" for="fm-admin-pass" data-i18n="forum.adminPass">管理口令</label>
+              <input class="input" id="fm-admin-pass" type="password" autocomplete="off"
+                     data-i18n-placeholder="forum.adminPassPh" placeholder="输入管理口令">
+              <div class="fm-gate-actions">
+                <button type="submit" class="btn btn-primary btn-sm" data-i18n="forum.adminUnlock">进入</button>
+                <button type="button" class="btn btn-ghost btn-sm" id="fm-admin-cancel" data-i18n="action.close">关闭</button>
+              </div>
+              <p class="cm-err" id="fm-admin-err" role="alert"></p>
+            </form>
+            <div id="fm-admin-panel" hidden>
+              <p class="fm-admin-note" data-i18n="forum.adminNote">管理模式已开启：列表与楼层会多出管理按钮。</p>
+              <h3 class="cm-sub" data-i18n="forum.banList">禁言名单</h3>
+              <ul class="fm-bans" id="fm-bans"></ul>
+              <p class="empty-hint" id="fm-bans-empty" data-i18n="forum.banEmpty">当前没有禁言用户。</p>
+              <button type="button" class="btn btn-ghost btn-sm" id="fm-admin-lock" data-i18n="forum.adminLock">退出管理</button>
+            </div>
+          </section>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <!-- ================= 发帖弹层 ================= -->
+  <div class="fm-modal" id="fm-compose" hidden>
+    <div class="fm-mask" data-close="1"></div>
+    <form class="fm-dialog" id="fm-compose-form" role="dialog" aria-modal="true" aria-labelledby="fm-compose-title" novalidate>
+      <h2 id="fm-compose-title" data-i18n="forum.composeTitle">发帖提问</h2>
+      <label class="cm-label" for="fm-title" data-i18n="forum.postTitle">标题</label>
+      <input class="input" id="fm-title" type="text" maxlength="80" autocomplete="off"
+             data-i18n-placeholder="forum.postTitlePh" placeholder="一句话说清你的问题">
+      <label class="cm-label" for="fm-body" data-i18n="forum.postBody">正文</label>
+      <textarea class="input cm-textarea" id="fm-body" rows="7" maxlength="2000"
+                data-i18n-placeholder="forum.postBodyPh" placeholder="补充背景、你已尝试过什么、卡在哪里……"></textarea>
+      <div class="fm-dialog-row">
+        <div class="fm-field">
+          <label class="cm-label" for="fm-module" data-i18n="forum.postModule">板块</label>
+          <select class="select" id="fm-module"></select>
+        </div>
+        <div class="fm-field">
+          <label class="cm-label" for="fm-name" data-i18n="forum.postName">昵称（可选）</label>
+          <input class="input" id="fm-name" type="text" maxlength="16" autocomplete="off"
+                 data-i18n-placeholder="forum.postNamePh" placeholder="留空用默认昵称">
+        </div>
+      </div>
+      <p class="cm-err" id="fm-compose-err" role="alert"></p>
+      <div class="fm-dialog-actions">
+        <button type="submit" class="btn btn-primary" id="fm-compose-send" data-i18n="forum.postSubmit">发布</button>
+        <button type="button" class="btn btn-ghost" data-close="1" data-i18n="action.close">取消</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- ================= 举报弹层 ================= -->
+  <div class="fm-modal" id="fm-report" hidden>
+    <div class="fm-mask" data-close="1"></div>
+    <div class="fm-dialog" role="dialog" aria-modal="true" aria-labelledby="fm-report-title">
+      <h2 id="fm-report-title" data-i18n="forum.reportTitle">举报这条内容</h2>
+      <p class="meta" id="fm-report-what"></p>
+      <label class="cm-label" for="fm-report-reason" data-i18n="forum.reportReason">原因</label>
+      <select class="select" id="fm-report-reason">
+        <option value="spam" data-i18n="forum.reasonSpam">垃圾广告</option>
+        <option value="wrong" data-i18n="forum.reasonWrong">错误信息</option>
+        <option value="rude" data-i18n="forum.reasonRude">不友善</option>
+        <option value="other" data-i18n="forum.reasonOther">其他</option>
+      </select>
+      <label class="cm-label" for="fm-report-note" data-i18n="forum.reportNote">补充说明（可选）</label>
+      <input class="input" id="fm-report-note" type="text" maxlength="300"
+             data-i18n-placeholder="forum.reportNotePh" placeholder="补充说明">
+      <div class="fm-dialog-actions">
+        <button type="button" class="btn btn-primary btn-sm" id="fm-report-send" data-i18n="forum.reportSend">提交举报</button>
+        <button type="button" class="btn btn-ghost btn-sm" data-close="1" data-i18n="action.close">取消</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= 禁言弹层 ================= -->
+  <div class="fm-modal" id="fm-ban" hidden>
+    <div class="fm-mask" data-close="1"></div>
+    <form class="fm-dialog" id="fm-ban-form" role="dialog" aria-modal="true" aria-labelledby="fm-ban-title" novalidate>
+      <h2 id="fm-ban-title" data-i18n="forum.banTitle">禁言用户</h2>
+      <p class="meta" id="fm-ban-who"></p>
+      <label class="cm-label" for="fm-ban-days" data-i18n="forum.banDays">时长</label>
+      <select class="select" id="fm-ban-days">
+        <option value="1" data-i18n="forum.ban1">1 天</option>
+        <option value="7" selected data-i18n="forum.ban7">7 天</option>
+        <option value="30" data-i18n="forum.ban30">30 天</option>
+        <option value="0" data-i18n="forum.banForever">永久</option>
+      </select>
+      <label class="cm-label" for="fm-ban-reason" data-i18n="forum.banReason">原因（可选）</label>
+      <input class="input" id="fm-ban-reason" type="text" maxlength="100"
+             data-i18n-placeholder="forum.banReasonPh" placeholder="例如：多次发布广告">
+      <div class="fm-dialog-actions">
+        <button type="submit" class="btn btn-primary btn-sm" data-i18n="forum.banSubmit">确认禁言</button>
+        <button type="button" class="btn btn-ghost btn-sm" data-close="1" data-i18n="action.close">取消</button>
+      </div>
+    </form>
+  </div>
+
+  <footer id="nb-footer"></footer>
+
+  <noscript>
+    <div class="wrap">
+      <p class="notice">本页的社区内容由本地脚本渲染，请启用 JavaScript 后再访问。</p>
+    </div>
+  </noscript>
+
+  <script src="assets/js/data/terms.js?v=1194"></script>
+  <script src="assets/js/data/i18n.js?v=1194"></script>
+  <script src="assets/js/core.js?v=1194"></script>
+  <script src="assets/js/cloud-config.js?v=1194"></script>
+  <script src="assets/js/cloud.js?v=1194"></script>
+  <script src="assets/js/auth-ui.js?v=1194"></script>
+  <script src="assets/js/ai-fluid.js?v=1194"></script>
+  <script src="assets/js/ai-tutor.js?v=1194"></script>
+  <script src="assets/js/feedback.js?v=1194"></script>
+  <script src="assets/js/help.js?v=1194"></script>
+  <script src="assets/js/learn.js?v=1194"></script>
+  <script src="assets/js/community.js?v=1194"></script>
+  <script src="assets/js/forum.js?v=1194"></script>
+  <script src="assets/js/page-community.js?v=1194"></script>
+</body>
+</html>

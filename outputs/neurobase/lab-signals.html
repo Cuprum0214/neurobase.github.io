@@ -1,0 +1,123 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1e5fa8">
+  <meta name="description" content="NeuroBase 神经信号与范式演示：EEG 波形、ERP 与 P300（oddball）、SSVEP、运动想象 μ 节律的 Canvas 动画演示。">
+  <title>神经信号与范式 · NeuroBase</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="assets/css/style.css?v=1194">
+  <!-- 在样式生效前定好主题与正文字号，避免首屏闪烁（两件事各自 try，互不牵连） -->
+  <script>
+    (function () {
+      try {
+        var m = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)').matches : false;
+        var th = localStorage.getItem('nb-theme') || 'system';
+        if (th === 'dark' || (th === 'system' && m)) document.documentElement.classList.add('dark');
+      } catch (e) {}
+      try {
+        var f = parseFloat(localStorage.getItem('nb-font') || '100');
+        if (f >= 25 && f <= 300) document.documentElement.style.setProperty('--nb-font-scale', (f / 100).toFixed(2));
+      } catch (e) {}
+      try {
+        if (localStorage.getItem('nb-motion') === 'off') document.documentElement.classList.add('motion-off');
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="action.skipToContent">跳到主内容</a>
+  <header id="nb-header"></header>
+
+  <main id="main" class="nb-content">
+    <div class="wrap">
+      <h1 class="page-title" data-i18n="labSignals.title">神经信号与范式演示</h1>
+      <p class="page-desc" data-i18n="labSignals.desc">用 Canvas 动画演示 EEG / ERP / P300 / SSVEP / 运动想象的基本波形与实验范式，帮助理解信号怎么来、怎么读。</p>
+
+      <!-- EEG 基础波形 -->
+      <section class="card lab-exp" aria-labelledby="sig-eeg-title">
+        <h2 class="lab-exp-title" id="sig-eeg-title" data-i18n="labSignals.eegTitle">EEG 基础波形（α 节律）</h2>
+        <p class="lab-exp-desc" data-i18n="labSignals.eegDesc">闭眼放松时枕区可见 8–12 Hz 的 α 节律，睁眼或注意时被抑制。波形幅度约 10–100 µV。</p>
+        <div class="lab-canvas-row">
+          <canvas class="lab-canvas" id="sig-eeg" width="560" height="180" aria-label="EEG α 节律波形动画"></canvas>
+          <button type="button" class="btn btn-sm" id="sig-eeg-toggle" data-i18n="lab.pause">暂停</button>
+        </div>
+        <p class="lab-exp-note" data-i18n="labSignals.eegHint">α 节律是 EEG 最直观的节律之一，也是许多神经反馈训练的目标。</p>
+      </section>
+
+      <!-- ERP 与 P300 -->
+      <section class="card lab-exp" aria-labelledby="sig-erp-title">
+        <h2 class="lab-exp-title" id="sig-erp-title" data-i18n="labSignals.erpTitle">ERP 与 P300（oddball 范式）</h2>
+        <p class="lab-exp-desc" data-i18n="labSignals.erpDesc">重复呈现标准刺激，偶尔插入偏差刺激；偏差刺激约 300 ms 后引发一个正向波峰 P300，幅度越大说明注意力越集中。</p>
+        <p class="lab-exp-progress" id="erp-stim-label" role="status"></p>
+        <div class="lab-canvas-row">
+          <canvas class="lab-canvas" id="sig-erp" width="560" height="180" aria-label="ERP 与 P300 波形动画"></canvas>
+          <button type="button" class="btn btn-sm" id="sig-erp-toggle" data-i18n="lab.pause">暂停</button>
+        </div>
+        <p class="lab-exp-note" data-i18n="labSignals.erpHint">P300 是经典 ERP-BCI（如 P300 拼写器）的判决信号：目标行/列被闪亮时诱发更大 P300。</p>
+      </section>
+
+      <!-- SSVEP -->
+      <section class="card lab-exp" aria-labelledby="sig-ssvep-title">
+        <h2 class="lab-exp-title" id="sig-ssvep-title" data-i18n="labSignals.ssvepTitle">SSVEP（稳态视觉诱发电位）</h2>
+        <p class="lab-exp-desc" data-i18n="labSignals.ssvepDesc">注视以固定频率闪烁的光源时，枕叶视觉皮层会产生同频及谐波成分的稳态响应，频率编码可用于 BCI 指令。</p>
+        <div class="lab-ssvep-stage">
+          <div class="lab-ssvep-flicker">
+            <div class="ssvep-box" id="ssvep-box-a" aria-hidden="true"></div>
+            <p class="ssvep-box-label">8 Hz</p>
+            <div class="ssvep-box" id="ssvep-box-b" aria-hidden="true"></div>
+            <p class="ssvep-box-label">12 Hz</p>
+          </div>
+          <div class="lab-ssvep-ctl">
+            <span class="lab-exp-label" data-i18n="labSignals.switchTo">切换到</span>
+            <label class="lab-exp-label"><input type="radio" name="ssvep-attend" value="a" checked> 8 Hz</label>
+            <label class="lab-exp-label"><input type="radio" name="ssvep-attend" value="b"> 12 Hz</label>
+            <button type="button" class="btn btn-sm" id="sig-ssvep-toggle" data-i18n="lab.pause">暂停</button>
+          </div>
+          <canvas class="lab-canvas" id="sig-ssvep-spec" width="560" height="160" aria-label="SSVEP 频谱示意"></canvas>
+        </div>
+        <p class="lab-exp-note" data-i18n="labSignals.ssvepHint">屏幕上两个方块分别以 8 Hz 与 12 Hz 闪烁；注视哪个，频谱中就在哪个频率出现明显峰值。</p>
+      </section>
+
+      <!-- 运动想象 -->
+      <section class="card lab-exp" aria-labelledby="sig-mi-title">
+        <h2 class="lab-exp-title" id="sig-mi-title" data-i18n="labSignals.miTitle">运动想象与 μ 节律</h2>
+        <p class="lab-exp-desc" data-i18n="labSignals.miDesc">想象肢体运动（不实际执行）会使对侧运动皮层 μ 节律（8–12 Hz）与 β 节律（13–30 Hz）出现事件相关去同步（ERD），这是运动想象 BCI 的神经基础。</p>
+        <div class="lab-canvas-row">
+          <canvas class="lab-canvas" id="sig-mi" width="560" height="180" aria-label="运动想象 μ 节律去同步示意"></canvas>
+          <button type="button" class="btn btn-sm" id="sig-mi-toggle" data-i18n="lab.pause">暂停</button>
+        </div>
+        <p class="lab-exp-note" data-i18n="labSignals.miHint">注意对比「静息」与「想象」两段波形：想象时 μ/β 振荡幅度明显下降。</p>
+      </section>
+
+      <p class="lab-note" data-i18n="labSignals.canvasHint">动画演示，非真实记录；可用于理解范式与波形形态。</p>
+
+      <div class="qz-footer">
+        <a class="btn nb-back" href="lab.html" data-back data-i18n="lab.back">返回互动实验室</a>
+      </div>
+    </div>
+  </main>
+
+  <footer id="nb-footer"></footer>
+
+  <noscript>
+    <div class="wrap">
+      <p class="notice">本页的信号演示由本地脚本渲染，请启用 JavaScript 后再访问。</p>
+    </div>
+  </noscript>
+
+  <script src="assets/js/data/terms.js?v=1194"></script>
+  <script src="assets/js/data/i18n.js?v=1194"></script>
+  <script src="assets/js/core.js?v=1194"></script>
+  <script src="assets/js/cloud-config.js?v=1194"></script>
+  <script src="assets/js/cloud.js?v=1194"></script>
+  <script src="assets/js/auth-ui.js?v=1194"></script>
+  <script src="assets/js/ai-fluid.js?v=1194"></script>
+  <script src="assets/js/ai-tutor.js?v=1194"></script>
+  <script src="assets/js/feedback.js?v=1194"></script>
+  <script src="assets/js/help.js?v=1194"></script>
+  <script src="assets/js/learn.js?v=1194"></script>
+  <script src="assets/js/page-lab-signals.js?v=1194"></script>
+</body>
+</html>

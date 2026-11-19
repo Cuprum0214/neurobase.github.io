@@ -1,0 +1,165 @@
+{
+  "meta": {
+    "updated_at": "2026-11-18",
+    "last_run": "run-20261118174746122",
+    "dois": 13,
+    "mode": "online"
+  },
+  "dois": {
+    "10.1038/s41593-025-01905-6": {
+      "title": "A streaming brain-to-voice neuroprosthesis to restore naturalistic communication",
+      "date": "2025-03-31",
+      "precision": 3,
+      "journal": "Nature Neuroscience",
+      "term_ids": [
+        "methods-ecog",
+        "bci-signal-processing-pipeline",
+        "language-phoneme"
+      ],
+      "local": false
+    },
+    "10.1056/NEJMoa2314132": {
+      "title": "An Accurate and Rapidly Calibrating Speech Neuroprosthesis",
+      "date": "2024-08-15",
+      "precision": 3,
+      "journal": "New England Journal of Medicine",
+      "term_ids": [
+        "methods-intracortical-recording",
+        "bci-signal-processing-pipeline",
+        "language-phoneme"
+      ],
+      "local": false
+    },
+    "10.1038/s42256-023-00714-5": {
+      "title": "Decoding speech perception from non-invasive brain recordings",
+      "date": "2023-10-05",
+      "precision": 3,
+      "journal": "Nature Machine Intelligence",
+      "term_ids": [
+        "methods-meg",
+        "methods-eeg",
+        "language-lexical-access"
+      ],
+      "local": false
+    },
+    "10.1038/s41586-023-06443-4": {
+      "title": "A high-performance neuroprosthesis for speech decoding and avatar control",
+      "date": "2023-08-23",
+      "precision": 3,
+      "journal": "Nature",
+      "term_ids": [
+        "methods-ecog",
+        "bci-signal-processing-pipeline",
+        "language-phoneme"
+      ],
+      "local": false
+    },
+    "10.1038/s41586-023-06377-x": {
+      "title": "A high-performance speech neuroprosthesis",
+      "date": "2023-08-23",
+      "precision": 3,
+      "journal": "Nature",
+      "term_ids": [
+        "methods-intracortical-recording",
+        "language-phoneme",
+        "bci-signal-processing-pipeline"
+      ],
+      "local": false
+    },
+    "10.1038/s41586-023-06094-5": {
+      "title": "Walking naturally after spinal cord injury using a brain–spine interface",
+      "date": "2023-05-24",
+      "precision": 3,
+      "journal": "Nature",
+      "term_ids": [
+        "methods-ecog",
+        "motor-corticospinal-tract",
+        "bci-closed-loop"
+      ],
+      "local": false
+    },
+    "10.1038/s41593-023-01304-9": {
+      "title": "Semantic reconstruction of continuous language from non-invasive brain recordings",
+      "date": "2023-05-01",
+      "precision": 2,
+      "journal": "Nature Neuroscience",
+      "term_ids": [
+        "methods-fmri",
+        "language-lexical-access",
+        "language-n400"
+      ],
+      "local": false
+    },
+    "10.1038/s41586-021-03465-8": {
+      "title": "Comparative cellular analysis of motor cortex in human, marmoset and mouse",
+      "date": "2021-10-06",
+      "precision": 3,
+      "journal": "Nature",
+      "term_ids": [
+        "anatomy-cerebral-cortex",
+        "motor-motor-cortex"
+      ],
+      "local": false
+    },
+    "10.1038/s41586-021-03950-0": {
+      "title": "A multimodal cell census and atlas of the mammalian primary motor cortex",
+      "date": "2021-10-06",
+      "precision": 3,
+      "journal": "Nature",
+      "term_ids": [
+        "motor-motor-cortex",
+        "anatomy-cerebral-cortex"
+      ],
+      "local": false
+    },
+    "10.1038/s41586-021-03506-2": {
+      "title": "High-performance brain-to-text communication via handwriting",
+      "date": "2021-05-12",
+      "precision": 3,
+      "journal": "Nature",
+      "term_ids": [
+        "methods-intracortical-recording",
+        "motor-motor-cortex",
+        "bci-signal-processing-pipeline"
+      ],
+      "local": false
+    },
+    "10.1136/neurintsurg-2020-016862": {
+      "title": "Motor neuroprosthesis implanted with neurointerventional surgery improves capacity for activities of daily living tasks in severe paralysis: first in-human experience",
+      "date": "2020-10-28",
+      "precision": 3,
+      "journal": "Journal of NeuroInterventional Surgery",
+      "term_ids": [
+        "bci-invasive-vs-noninvasive",
+        "methods-ecog",
+        "bci-electrode-array"
+      ],
+      "local": false
+    },
+    "10.1038/s41586-019-1119-1": {
+      "title": "Speech synthesis from neural decoding of spoken sentences",
+      "date": "2019-04-24",
+      "precision": 3,
+      "journal": "Nature",
+      "term_ids": [
+        "methods-ecog",
+        "language-phoneme",
+        "bci-signal-processing-pipeline"
+      ],
+      "local": false
+    },
+    "10.1038/nature11076": {
+      "title": "Reach and grasp by people with tetraplegia using a neurally controlled robotic arm",
+      "date": "2012-05-01",
+      "precision": 2,
+      "journal": "Nature",
+      "term_ids": [
+        "methods-intracortical-recording",
+        "motor-motor-cortex",
+        "bci-signal-processing-pipeline"
+      ],
+      "local": false
+    }
+  },
+  "urls": {}
+}

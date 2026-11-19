@@ -1,0 +1,102 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1e5fa8">
+  <meta name="description" content="NeuroBase 数据来源与最近更新：110 条词条的来源登记、核验时间戳、定时同步记录与待审队列，来源可追溯、可核验。">
+  <title>数据来源与最近更新 · NeuroBase</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="assets/css/style.css?v=1194">
+  <script>
+    (function () {
+      try {
+        var m = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)').matches : false;
+        var th = localStorage.getItem('nb-theme') || 'system';
+        if (th === 'dark' || (th === 'system' && m)) document.documentElement.classList.add('dark');
+      } catch (e) {}
+      try {
+        var f = parseFloat(localStorage.getItem('nb-font') || '100');
+        if (f >= 25 && f <= 300) document.documentElement.style.setProperty('--nb-font-scale', (f / 100).toFixed(2));
+      } catch (e) {}
+      try {
+        if (localStorage.getItem('nb-motion') === 'off') document.documentElement.classList.add('motion-off');
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="action.skipToContent">跳到主内容</a>
+  <header id="nb-header"></header>
+
+  <main id="main" class="nb-content">
+    <div class="wrap">
+      <h1 class="page-title" data-i18n="updates.title">数据来源与最近更新</h1>
+      <p class="page-desc" data-i18n="updates.desc">每个词条都登记来源与核验时间；来源按标题归并，链接是可自行核对的检索入口。定时任务每周核对权威源，差异进入待审队列，人工抽检后才发布。</p>
+
+      <section class="card" aria-labelledby="upd-stats-title">
+        <h2 id="upd-stats-title" data-i18n="updates.statsTitle">更新概览</h2>
+        <ul class="eco-stats" id="upd-stats"></ul>
+        <p class="upd-status" id="upd-status" aria-live="polite"></p>
+      </section>
+
+      <section class="card" aria-labelledby="upd-recent-title">
+        <h2 id="upd-recent-title" data-i18n="updates.recentTitle">最近更新的词条</h2>
+        <p class="meta" data-i18n="updates.recentDesc">按词条 updated_at 倒序，展示最近 12 条；点进词条可看到来源与核验时间。</p>
+        <ol class="upd-list" id="upd-recent"></ol>
+      </section>
+
+      <section class="card" aria-labelledby="upd-sources-title">
+        <h2 id="upd-sources-title" data-i18n="updates.sourcesTitle">来源登记表</h2>
+        <p class="meta" data-i18n="updates.sourcesDesc">按关联词条数排序；链接为 Crossref / WorldCat 检索入口，用于自行核对版本与页码，不是原文全文。</p>
+        <div class="table-wrap">
+          <table class="emap-table upd-table">
+            <thead>
+              <tr>
+                <th scope="col" data-i18n="updates.colSource">来源</th>
+                <th scope="col" data-i18n="updates.colType">类型</th>
+                <th scope="col" data-i18n="updates.colTerms">关联词条</th>
+                <th scope="col" data-i18n="updates.colVerified">核验于</th>
+                <th scope="col" data-i18n="updates.colLink">核验入口</th>
+              </tr>
+            </thead>
+            <tbody id="upd-sources"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="card" aria-labelledby="upd-sync-title">
+        <h2 id="upd-sync-title" data-i18n="updates.syncTitle">同步记录与待审队列</h2>
+        <ul class="upd-sync" id="upd-sync"></ul>
+        <h3 class="upd-sub" data-i18n="updates.queueTitle">待审变更</h3>
+        <ul class="upd-queue" id="upd-queue"></ul>
+        <p class="source-note" data-i18n="updates.note">自动抓取与人工整理都可能出错；本项目只承诺来源透明、可追溯、可纠错，不宣称内容完全正确。发现错误请通过反馈箱告知。</p>
+      </section>
+    </div>
+  </main>
+
+  <footer id="nb-footer"></footer>
+
+  <noscript>
+    <div class="wrap">
+      <p class="notice">本页的来源与更新数据由本地脚本渲染，请启用 JavaScript 后再访问。</p>
+    </div>
+  </noscript>
+
+  <script src="assets/js/data/terms.js?v=1194"></script>
+  <script src="assets/js/data/i18n.js?v=1194"></script>
+  <script src="assets/js/data/sources.js?v=1194"></script>
+  <script src="assets/js/data/updates.js?v=1194"></script>
+  <script src="assets/js/core.js?v=1194"></script>
+  <script src="assets/js/cloud-config.js?v=1194"></script>
+  <script src="assets/js/cloud.js?v=1194"></script>
+  <script src="assets/js/auth-ui.js?v=1194"></script>
+  <script src="assets/js/ai-fluid.js?v=1194"></script>
+  <script src="assets/js/ai-tutor.js?v=1194"></script>
+  <script src="assets/js/feedback.js?v=1194"></script>
+  <script src="assets/js/help.js?v=1194"></script>
+  <script src="assets/js/learn.js?v=1194"></script>
+  <script src="assets/js/page-updates.js?v=1194"></script>
+</body>
+</html>
+

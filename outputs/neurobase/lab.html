@@ -1,0 +1,93 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1e5fa8">
+  <meta name="description" content="NeuroBase 互动实验室：交互式脑解剖 · 认知实验模拟（Stroop/反应时/记忆广度）· 神经信号与范式演示（EEG/ERP/P300/SSVEP/运动想象）· BCI 案例拆解。">
+  <title>互动实验室 · NeuroBase</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="assets/css/style.css?v=1194">
+  <!-- 在样式生效前定好主题与正文字号，避免首屏闪烁（两件事各自 try，互不牵连） -->
+  <script>
+    (function () {
+      try {
+        var m = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)').matches : false;
+        var th = localStorage.getItem('nb-theme') || 'system';
+        if (th === 'dark' || (th === 'system' && m)) document.documentElement.classList.add('dark');
+      } catch (e) {}
+      try {
+        var f = parseFloat(localStorage.getItem('nb-font') || '100');
+        if (f >= 25 && f <= 300) document.documentElement.style.setProperty('--nb-font-scale', (f / 100).toFixed(2));
+      } catch (e) {}
+      try {
+        if (localStorage.getItem('nb-motion') === 'off') document.documentElement.classList.add('motion-off');
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="action.skipToContent">跳到主内容</a>
+  <header id="nb-header"></header>
+
+  <main id="main" class="nb-content">
+    <div class="wrap">
+      <h1 class="page-title" data-i18n="lab.title">互动实验室</h1>
+      <p class="page-desc" data-i18n="lab.desc">把抽象的概念变成可操作的演示：点一点大脑、做一轮认知实验、看一次脑电波形、拆一个 BCI 案例。</p>
+
+      <section aria-labelledby="lab-modules-title">
+        <h2 class="sr-only" id="lab-modules-title" data-i18n="lab.title">互动实验室</h2>
+        <div class="grid-2 lab-entry" id="lab-entry">
+          <a class="tool-card" href="lab-anatomy.html">
+            <p class="tool-icon" aria-hidden="true">🧠</p>
+            <p class="tool-name" data-i18n="lab.cardAnatomy">交互式脑解剖</p>
+            <p class="tool-desc" data-i18n="lab.cardAnatomyDesc">点选脑区 · 分层显示 · 标注开关 · 剖面示意</p>
+            <p class="tool-stat" data-i18n="lab.enter">进入</p>
+          </a>
+          <a class="tool-card" href="lab-cogsim.html">
+            <p class="tool-icon" aria-hidden="true">🧪</p>
+            <p class="tool-name" data-i18n="lab.cardCogsim">认知实验模拟</p>
+            <p class="tool-desc" data-i18n="lab.cardCogsimDesc">Stroop 效应 · 反应时 · 记忆广度</p>
+            <p class="tool-stat" data-i18n="lab.enter">进入</p>
+          </a>
+          <a class="tool-card" href="lab-signals.html">
+            <p class="tool-icon" aria-hidden="true">📈</p>
+            <p class="tool-name" data-i18n="lab.cardSignals">神经信号与范式</p>
+            <p class="tool-desc" data-i18n="lab.cardSignalsDesc">EEG 波形 · ERP / P300 · SSVEP · 运动想象</p>
+            <p class="tool-stat" data-i18n="lab.enter">进入</p>
+          </a>
+          <a class="tool-card" href="lab-bci.html">
+            <p class="tool-icon" aria-hidden="true">🔌</p>
+            <p class="tool-name" data-i18n="lab.cardBci">BCI 案例拆解</p>
+            <p class="tool-desc" data-i18n="lab.cardBciDesc">P300 拼写器 · SSVEP 控制 · 运动想象假肢 · 侵入式系统</p>
+            <p class="tool-stat" data-i18n="lab.enter">进入</p>
+          </a>
+        </div>
+      </section>
+
+      <p class="lab-note" data-i18n="lab.moduleNote">本页演示为教学示意，用于帮助理解概念，不等同于真实实验数据。</p>
+    </div>
+  </main>
+
+  <footer id="nb-footer"></footer>
+
+  <noscript>
+    <div class="wrap">
+      <p class="notice">本页的互动实验室模块由本地脚本渲染，请启用 JavaScript 后再访问。</p>
+    </div>
+  </noscript>
+
+  <script src="assets/js/data/terms.js?v=1194"></script>
+  <script src="assets/js/data/i18n.js?v=1194"></script>
+  <script src="assets/js/core.js?v=1194"></script>
+  <script src="assets/js/cloud-config.js?v=1194"></script>
+  <script src="assets/js/cloud.js?v=1194"></script>
+  <script src="assets/js/auth-ui.js?v=1194"></script>
+  <script src="assets/js/ai-fluid.js?v=1194"></script>
+  <script src="assets/js/ai-tutor.js?v=1194"></script>
+  <script src="assets/js/feedback.js?v=1194"></script>
+  <script src="assets/js/help.js?v=1194"></script>
+  <script src="assets/js/learn.js?v=1194"></script>
+  <script src="assets/js/page-lab.js?v=1194"></script>
+</body>
+</html>

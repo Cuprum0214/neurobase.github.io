@@ -1,0 +1,310 @@
+[
+  {
+    "id": "memory-working-memory",
+    "module": "memory",
+    "name_zh": "工作记忆",
+    "name_en": "Working Memory",
+    "aliases": [
+      "短时工作记忆",
+      "WM",
+      "工作记忆系统"
+    ],
+    "pinyin": "gongzuojiyi",
+    "pinyin_initials": "gzjy",
+    "definition": "容量极为有限、可在数秒内保持并同时操作信息的系统，通常被划分为语音回路、视空间模板与中央执行等成分；它是推理、语言理解与决策等复杂认知活动的临时“工作台”，容量约 4 个组块。",
+    "plain": "脑子里能同时“拿着并摆弄”的信息量很小，只有几个格子。",
+    "difficulty": "intro",
+    "tags": [
+      "记忆",
+      "认知"
+    ],
+    "related": [
+      "memory-long-term-memory",
+      "attention-selective-attention",
+      "anatomy-prefrontal-cortex",
+      "attention-divided-attention"
+    ],
+    "engineering_link": "工作记忆负荷是认知负荷测量（如 EEG theta、fNIRS 前额叶血氧）的核心操控变量，可用于自适应学习系统与注意力监测。",
+    "references": [
+      {
+        "type": "encyclopedia",
+        "title": "认知心理学 (Sternberg & Sternberg, 7th ed.)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "memory-long-term-memory",
+    "module": "memory",
+    "name_zh": "长时记忆",
+    "name_en": "Long-Term Memory",
+    "aliases": [
+      "长时程记忆",
+      "LTM"
+    ],
+    "pinyin": "changshijiyi",
+    "pinyin_initials": "csjy",
+    "definition": "容量近乎无限、可保持数分钟至终生的记忆存储系统；其形成依赖经验引起的突触结构改变（如长时程增强与蛋白合成依赖的巩固过程），提取时可短暂变为可塑状态（见记忆再巩固）。",
+    "plain": "能长期存下来的记忆，靠改变神经连接来“存盘”。",
+    "difficulty": "intro",
+    "tags": [
+      "记忆",
+      "可塑性"
+    ],
+    "related": [
+      "memory-long-term-potentiation",
+      "memory-working-memory",
+      "memory-consolidation",
+      "synapse-synaptic-plasticity"
+    ],
+    "engineering_link": "长时记忆的突触机制是类脑计算中“权重长期保持”与持续学习（catastrophic forgetting）问题的生物学参照。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "memory-declarative-nondeclarative",
+    "module": "memory",
+    "name_zh": "陈述性与非陈述性记忆",
+    "name_en": "Declarative and Nondeclarative Memory",
+    "aliases": [
+      "外显与内隐记忆",
+      "记忆分类",
+      "陈述性记忆",
+      "非陈述性记忆"
+    ],
+    "pinyin": "chenshuxingyufeichenshuxingjiyi",
+    "pinyin_initials": "csxyfcsxjy",
+    "definition": "记忆的经典分类：陈述性（外显）记忆可有意识地回忆事实与事件，依赖海马与内侧颞叶；非陈述性（内隐）记忆包括技能习惯、启动、条件化等，多依赖基底神经节、小脑与皮层—运动环路。",
+    "plain": "一类是“能说出来的记忆”（知识），一类是“做出来的记忆”（骑车、游泳）。",
+    "difficulty": "intermediate",
+    "tags": [
+      "记忆",
+      "分类"
+    ],
+    "related": [
+      "memory-long-term-memory",
+      "anatomy-hippocampus",
+      "anatomy-basal-ganglia",
+      "anatomy-cerebellum"
+    ],
+    "engineering_link": "两类记忆对应不同的可塑性环路，是脑机接口用户长期训练中“显性学习规则”与“隐性适应映射”两种训练策略的神经基础。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Fundamental Neuroscience (Squire et al., 4th ed., 2013)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "memory-encoding-consolidation-retrieval",
+    "module": "memory",
+    "name_zh": "编码、巩固与提取",
+    "name_en": "Encoding, Consolidation and Retrieval",
+    "aliases": [
+      "记忆三阶段",
+      "记忆编码巩固提取"
+    ],
+    "pinyin": "bianmagongguyutiqu",
+    "pinyin_initials": "bmggytq",
+    "definition": "记忆过程的标准三阶段模型：编码是把信息转化为神经表征；巩固是通过突触与系统层面的改变使记忆稳定（含睡眠依赖的离线巩固）；提取是依据线索重新激活并重建记忆表征，提取本身又会使其再次进入可塑状态。",
+    "plain": "记东西分三步：写进去、存稳、再取出来——取出来时还会被改写。",
+    "difficulty": "intro",
+    "tags": [
+      "记忆",
+      "加工"
+    ],
+    "related": [
+      "memory-consolidation",
+      "memory-reconsolidation",
+      "memory-forgetting-curve",
+      "anatomy-hippocampus"
+    ],
+    "engineering_link": "记忆三阶段是间隔重复学习算法与“最佳复习时机”设计的认知依据，直接影响学习类 App 的排程策略。",
+    "references": [
+      {
+        "type": "encyclopedia",
+        "title": "认知心理学 (Sternberg & Sternberg, 7th ed.)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "memory-consolidation",
+    "module": "memory",
+    "name_zh": "记忆巩固",
+    "name_en": "Memory Consolidation",
+    "aliases": [
+      "系统巩固",
+      "睡眠巩固",
+      "记忆固化"
+    ],
+    "pinyin": "jiyigonggu",
+    "pinyin_initials": "jygg",
+    "definition": "新形成的、初始脆弱的记忆痕迹随时间逐渐稳定的过程，包括突触巩固（局部蛋白合成依赖）与系统巩固（记忆表征逐渐从海马依赖转为皮层依赖），睡眠特别是慢波睡眠阶段对巩固尤为关键。",
+    "plain": "记忆不是一存就牢，需要“睡一觉”慢慢加固。",
+    "difficulty": "intermediate",
+    "tags": [
+      "记忆",
+      "睡眠"
+    ],
+    "related": [
+      "memory-encoding-consolidation-retrieval",
+      "memory-long-term-potentiation",
+      "anatomy-hippocampus",
+      "memory-reconsolidation"
+    ],
+    "engineering_link": "睡眠期记忆巩固的研究支持在教育科技中把复习与睡眠节律结合，也提示脑机接口实验应控制被试睡眠以稳定信号与学习效果。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "memory-place-cell",
+    "module": "memory",
+    "name_zh": "位置细胞",
+    "name_en": "Place Cell",
+    "aliases": [
+      "空间位置细胞",
+      "海马位置细胞"
+    ],
+    "pinyin": "weizhixibao",
+    "pinyin_initials": "wzxb",
+    "definition": "海马中在动物处于环境中特定位置（该细胞的“位置野”）时高发放率放电的神经元，多个位置细胞共同构成环境的认知地图，是空间记忆与情景记忆编码的重要细胞基础。",
+    "plain": "海马里的“定位图钉”：走到某个地方，对应的细胞就点亮。",
+    "difficulty": "advanced",
+    "tags": [
+      "记忆",
+      "空间认知"
+    ],
+    "related": [
+      "anatomy-hippocampus",
+      "memory-grid-cell",
+      "memory-declarative-nondeclarative",
+      "neuron-neural-coding"
+    ],
+    "engineering_link": "位置细胞提供了“空间认知地图”的神经密码，是脑机接口空间记忆解码、以及类脑导航与强化学习地图结构的灵感来源。",
+    "references": [
+      {
+        "type": "paper",
+        "title": "The hippocampus as a spatial map (O'Keefe & Dostrovsky, 1971, Brain Research)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "memory-grid-cell",
+    "module": "memory",
+    "name_zh": "网格细胞",
+    "name_en": "Grid Cell",
+    "aliases": [
+      "六边形网格编码",
+      "六边形网格细胞"
+    ],
+    "pinyin": "wanggexibao",
+    "pinyin_initials": "wgxb",
+    "definition": "内侧内嗅皮层中具有多个规则六边形排列放电野的神经元，其网格间距与朝向随皮层解剖位置沿背腹轴系统性地变化，被认为提供了空间定位的度量（坐标）系统，与位置细胞共同支持空间导航。",
+    "plain": "大脑内置的“坐标网格”，给环境铺上一层六边形定位格。",
+    "difficulty": "advanced",
+    "tags": [
+      "记忆",
+      "空间认知"
+    ],
+    "related": [
+      "memory-place-cell",
+      "anatomy-hippocampus",
+      "memory-declarative-nondeclarative"
+    ],
+    "engineering_link": "网格细胞的六边形编码已被借鉴到深层网络的空间表征与向量导航（grid-cell-like representations）研究中。",
+    "references": [
+      {
+        "type": "paper",
+        "title": "Microstructure of a spatial map in the entorhinal cortex (Hafting et al., 2005, Nature)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "memory-reconsolidation",
+    "module": "memory",
+    "name_zh": "记忆再巩固",
+    "name_en": "Memory Reconsolidation",
+    "aliases": [
+      "再巩固窗口",
+      "记忆再固化"
+    ],
+    "pinyin": "jiyizaigonggu",
+    "pinyin_initials": "jyzgg",
+    "definition": "已巩固的记忆在被提取（或受到强烈线索重新激活）后短暂回到不稳定状态，需再次经蛋白合成依赖的过程才能重新稳定；该窗口期可对记忆内容进行更新或修饰，是记忆可变性与情绪记忆治疗研究的核心机制。",
+    "plain": "回忆一次旧记忆，它会短暂“变软”，这时有机会被改写。",
+    "difficulty": "advanced",
+    "tags": [
+      "记忆",
+      "可塑性"
+    ],
+    "related": [
+      "memory-consolidation",
+      "memory-encoding-consolidation-retrieval",
+      "emotion-fear-conditioning",
+      "synapse-synaptic-plasticity"
+    ],
+    "engineering_link": "再巩固为神经调控（如 PTSD 的暴露疗法结合药物/闭环刺激）以及脑机接口辅助记忆改写研究提供了时间窗依据。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "memory-forgetting-curve",
+    "module": "memory",
+    "name_zh": "遗忘曲线",
+    "name_en": "Forgetting Curve",
+    "aliases": [
+      "艾宾浩斯遗忘曲线",
+      "艾宾浩斯曲线"
+    ],
+    "pinyin": "yiwangquxian",
+    "pinyin_initials": "ywqx",
+    "definition": "由 Ebbinghaus 以无意义音节自测得出的遗忘规律：记忆保持量随时间近似呈指数式衰减，最初下降最快、随后趋缓；重复学习与间隔复习可显著抬升并延展保持曲线，是间隔重复学习法的实证起源。",
+    "plain": "刚学过的东西忘得最快，越往后越慢——所以要趁早复习。",
+    "difficulty": "intro",
+    "tags": [
+      "记忆",
+      "学习"
+    ],
+    "related": [
+      "memory-encoding-consolidation-retrieval",
+      "memory-working-memory",
+      "memory-long-term-memory"
+    ],
+    "engineering_link": "遗忘曲线是间隔重复算法（如 SM-2、FSRS）的核心建模对象；本学习平台后续的「自测与复习」模块可直接采用其排程思想。",
+    "references": [
+      {
+        "type": "paper",
+        "title": "Über das Gedächtnis (Ebbinghaus, 1885)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z"
+  }
+]

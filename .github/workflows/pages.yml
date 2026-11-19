@@ -1,0 +1,60 @@
+name: Deploy NeuroBase to GitHub Pages
+
+# V5.0.0 · 唯一定向发布通道
+# 推送 main（或手动触发）→ 重建数据 → 上传 outputs/neurobase → 发布 GitHub Pages
+# 站点地址：https://cuprum0214.github.io/neurobase.github.io/
+# 不需要任何 API Key / Token：只用仓库自带的 GITHUB_TOKEN。
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 检出仓库
+        uses: actions/checkout@v4
+
+      - name: 安装 Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: 重建前端数据（无变化则不改指纹）
+        run: node scripts/build-site.mjs
+
+      - name: 来源与引用质量门
+        run: node scripts/check-sources.mjs
+
+      - name: 配置 Pages
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
+
+      - name: 上传站点产物
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: outputs/neurobase
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: 发布到 GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

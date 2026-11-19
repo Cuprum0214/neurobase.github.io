@@ -1,0 +1,101 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1e5fa8">
+  <meta name="description" content="NeuroBase 学习工具：拼写与缩写训练、测验；错题本、收藏与进度统计全部保存在本机浏览器。">
+  <title>学习工具 · NeuroBase</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="assets/css/style.css?v=1194">
+  <script>
+    (function () {
+      try {
+        var m = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)').matches : false;
+        var th = localStorage.getItem('nb-theme') || 'system';
+        if (th === 'dark' || (th === 'system' && m)) document.documentElement.classList.add('dark');
+      } catch (e) {}
+      try {
+        var f = parseFloat(localStorage.getItem('nb-font') || '100');
+        if (f >= 25 && f <= 300) document.documentElement.style.setProperty('--nb-font-scale', (f / 100).toFixed(2));
+      } catch (e) {}
+      try {
+        if (localStorage.getItem('nb-motion') === 'off') document.documentElement.classList.add('motion-off');
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="action.skipToContent">跳到主内容</a>
+  <header id="nb-header"></header>
+
+  <main id="main" class="nb-content">
+    <div class="wrap">
+      <h1 class="page-title" data-i18n="learn.title">学习工具</h1>
+
+      <section class="learn-tools" aria-labelledby="learn-tools-title">
+        <h2 class="sec-title" id="learn-tools-title" data-i18n="learn.toolTitle">选择工具</h2>
+        <div class="grid-2" id="learn-tools-grid">
+          <a class="tool-card" href="spelling.html">
+            <p class="tool-icon" aria-hidden="true">✍️</p>
+            <p class="tool-name" data-i18n="learn.spelling">拼写与缩写训练</p>
+            <p class="tool-desc" data-i18n="learn.spellingDesc">看释义写英文 · 缩写互转 · 听写朗读，答错自动进错题本</p>
+          </a>
+          <a class="tool-card" href="quiz.html">
+            <p class="tool-icon" aria-hidden="true">📝</p>
+            <p class="tool-name" data-i18n="learn.quiz">测验</p>
+            <p class="tool-desc" data-i18n="learn.quizDesc">单选 · 多选 · 填空，提交即判分并展开解析</p>
+          </a>
+        </div>
+      </section>
+
+      <section class="learn-panel" aria-labelledby="mistakes-title">
+        <div class="panel-head">
+          <h2 class="sec-title" id="mistakes-title" data-i18n="learn.mistakesTitle">错题本</h2>
+          <p class="meta" id="mistakes-hint"></p>
+          <button type="button" class="btn btn-ghost btn-sm" id="mistakes-clear" hidden data-i18n="learn.clearAll">清空错题本</button>
+        </div>
+        <ul class="mistake-list" id="mistakes-list"></ul>
+        <p class="empty-hint" id="mistakes-empty" data-i18n="learn.mistakesEmpty">还没有错题 —— 测验或拼写训练答错的题会自动出现在这里。</p>
+      </section>
+
+      <section class="learn-panel" aria-labelledby="favorites-title">
+        <div class="panel-head">
+          <h2 class="sec-title" id="favorites-title" data-i18n="learn.favoritesTitle">收藏</h2>
+          <p class="meta" id="favorites-hint"></p>
+        </div>
+        <ul class="fav-list" id="favorites-list"></ul>
+        <p class="empty-hint" id="favorites-empty" data-i18n="learn.favoritesEmpty">还没有收藏 —— 打开任意词条详情页点「收藏」后，会出现在这里。</p>
+      </section>
+
+      <section class="learn-panel" aria-labelledby="progress-title">
+        <div class="panel-head">
+          <h2 class="sec-title" id="progress-title" data-i18n="learn.progressTitle">进度统计</h2>
+        </div>
+        <ul class="progress-stats" id="progress-stats"></ul>
+      </section>
+    </div>
+  </main>
+
+  <footer id="nb-footer"></footer>
+
+  <noscript>
+    <div class="wrap">
+      <p class="notice">本页的学习数据由本地脚本渲染，请启用 JavaScript 后再访问。</p>
+    </div>
+  </noscript>
+
+  <script src="assets/js/data/terms.js?v=1194"></script>
+  <script src="assets/js/data/i18n.js?v=1194"></script>
+  <script src="assets/js/core.js?v=1194"></script>
+  <script src="assets/js/cloud-config.js?v=1194"></script>
+  <script src="assets/js/cloud.js?v=1194"></script>
+  <script src="assets/js/auth-ui.js?v=1194"></script>
+  <script src="assets/js/ai-fluid.js?v=1194"></script>
+  <script src="assets/js/ai-tutor.js?v=1194"></script>
+  <script src="assets/js/feedback.js?v=1194"></script>
+  <script src="assets/js/help.js?v=1194"></script>
+  <script src="assets/js/learn.js?v=1194"></script>
+  <script src="assets/js/page-learn.js?v=1194"></script>
+</body>
+</html>

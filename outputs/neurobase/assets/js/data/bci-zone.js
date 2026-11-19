@@ -1,0 +1,199 @@
+/* 本文件由 .deepworks/tmp/build-native/build-data.mjs 自动生成，请勿手改。 */
+window.NB_BCI_ZONE = {
+  "meta": {
+    "updated_at": "2026-11-11",
+    "note_zh": "本专区按主题聚合站内词条，术语定义与来源以词条详情页为准；案例拆解为教学示意。",
+    "note_en": "This zone aggregates on-site terms by topic. Definitions and references follow each term page; case walkthroughs are teaching illustrations."
+  },
+  "topics": [
+    {
+      "id": "signal-hardware",
+      "icon": "📡",
+      "name_zh": "信号采集与器械",
+      "name_en": "Signal Acquisition & Hardware",
+      "desc_zh": "从大脑取出可用信号：电极放在哪里、采什么物理量、信噪比与风险如何取舍。",
+      "desc_en": "Getting usable signals out of the brain: where electrodes sit, which physical quantity is measured, and how signal quality trades off against risk.",
+      "terms": [
+        "bci-invasive-vs-noninvasive",
+        "methods-eeg",
+        "methods-meg",
+        "methods-fnirs",
+        "methods-ecog",
+        "methods-intracortical-recording",
+        "bci-electrode-array"
+      ]
+    },
+    {
+      "id": "paradigm",
+      "icon": "🔁",
+      "name_zh": "范式与意图编码",
+      "name_en": "Paradigms & Intent Encoding",
+      "desc_zh": "让用户「用哪种脑活动表达意图」：诱发响应、自主节律调制，还是多模态混合。",
+      "desc_en": "How a user expresses intent through brain activity: evoked responses, voluntary rhythm modulation, or hybrid multimodal control.",
+      "terms": [
+        "bci-p300",
+        "bci-ssvep",
+        "bci-erp-based",
+        "motor-motor-imagery",
+        "bci-hybrid-bci",
+        "bci-neurofeedback",
+        "attention-spatial-cueing"
+      ]
+    },
+    {
+      "id": "decoding",
+      "icon": "🧮",
+      "name_zh": "信号处理与解码",
+      "name_en": "Processing & Decoding",
+      "desc_zh": "把原始波形变成可执行的指令：滤波、去伪迹、特征提取、分类或回归。",
+      "desc_en": "Turning raw waveforms into executable commands: filtering, artifact removal, feature extraction, classification or regression.",
+      "terms": [
+        "bci-signal-processing-pipeline",
+        "methods-artifact-removal",
+        "methods-common-spatial-pattern",
+        "methods-erp",
+        "neuron-neural-coding"
+      ]
+    },
+    {
+      "id": "output",
+      "icon": "🦾",
+      "name_zh": "输出与闭环",
+      "name_en": "Output & Closed Loop",
+      "desc_zh": "解码结果如何作用于外部设备，以及反馈如何回到用户形成闭环调控。",
+      "desc_en": "How decoded intent drives external devices, and how feedback returns to the user to close the loop.",
+      "terms": [
+        "bci-closed-loop",
+        "motor-motor-cortex",
+        "motor-corticospinal-tract",
+        "methods-emg"
+      ]
+    },
+    {
+      "id": "ethics",
+      "icon": "⚖️",
+      "name_zh": "伦理与合规",
+      "name_en": "Ethics & Regulation",
+      "desc_zh": "植入风险、知情同意、神经数据隐私与医疗器械审批，决定技术能否真正落地。",
+      "desc_en": "Implant risk, informed consent, neural-data privacy and medical-device approval decide whether the technology can be deployed.",
+      "terms": [
+        "bci-ethical-issues",
+        "bci-invasive-vs-noninvasive",
+        "bci-neurofeedback"
+      ]
+    }
+  ],
+  "pipeline": [
+    {
+      "id": "acquire",
+      "step": 1,
+      "name_zh": "采集",
+      "name_en": "Acquisition",
+      "desc_zh": "电极或光学传感器把神经电活动、磁场或血氧变化转成可记录的信号。",
+      "desc_en": "Electrodes or optical sensors convert neural electrical activity, magnetic fields or hemodynamics into recordable signals.",
+      "terms": [
+        "methods-eeg",
+        "methods-meg",
+        "methods-fnirs",
+        "methods-intracortical-recording"
+      ]
+    },
+    {
+      "id": "preprocess",
+      "step": 2,
+      "name_zh": "预处理",
+      "name_en": "Preprocessing",
+      "desc_zh": "带通滤波、重参考、去伪迹与分段，尽量保留神经成分、压掉眼电肌电与工频干扰。",
+      "desc_en": "Band-pass filtering, re-referencing, artifact removal and epoching keep neural components while suppressing ocular, muscular and line noise.",
+      "terms": [
+        "methods-artifact-removal",
+        "methods-eeg"
+      ]
+    },
+    {
+      "id": "feature",
+      "step": 3,
+      "name_zh": "特征提取",
+      "name_en": "Feature Extraction",
+      "desc_zh": "把时域波形压缩成判别性特征：功率谱、ERD/ERS、空域滤波成分或锁时平均波形。",
+      "desc_en": "Compress time-domain waveforms into discriminative features: spectral power, ERD/ERS, spatial-filter components or time-locked averages.",
+      "terms": [
+        "methods-common-spatial-pattern",
+        "methods-erp",
+        "bci-ssvep"
+      ]
+    },
+    {
+      "id": "decode",
+      "step": 4,
+      "name_zh": "解码",
+      "name_en": "Decoding",
+      "desc_zh": "用分类器或回归模型把特征映射为意图类别、连续轨迹或语音单元，并做在线校准。",
+      "desc_en": "Classifiers or regression models map features to intent classes, continuous trajectories or speech units, with online calibration.",
+      "terms": [
+        "bci-signal-processing-pipeline",
+        "neuron-neural-coding",
+        "bci-p300"
+      ]
+    },
+    {
+      "id": "output",
+      "step": 5,
+      "name_zh": "输出",
+      "name_en": "Output",
+      "desc_zh": "指令驱动光标、机械臂、轮椅、外骨骼或语音合成器，完成一次可观察的行为。",
+      "desc_en": "Commands drive a cursor, robotic arm, wheelchair, exoskeleton or speech synthesizer to produce observable behavior.",
+      "terms": [
+        "motor-motor-cortex",
+        "methods-emg"
+      ]
+    },
+    {
+      "id": "feedback",
+      "step": 6,
+      "name_zh": "反馈与闭环",
+      "name_en": "Feedback & Closed Loop",
+      "desc_zh": "把执行结果或神经状态回传给用户/刺激器，形成闭环并支持自适应调整。",
+      "desc_en": "Results or neural states are fed back to the user or stimulator, closing the loop and enabling adaptive adjustment.",
+      "terms": [
+        "bci-closed-loop",
+        "bci-neurofeedback",
+        "bci-hybrid-bci"
+      ]
+    }
+  ],
+  "cases": [
+    {
+      "id": "p300-speller",
+      "name_zh": "P300 拼写器",
+      "name_en": "P300 Speller",
+      "desc_zh": "字符矩阵随机闪烁，只有目标字符诱发 P300；逐轮累加即可选出字符。",
+      "desc_en": "Characters flash in a matrix; only the target evokes a P300, and accumulation across rounds selects the character.",
+      "href": "lab-bci.html?case=1"
+    },
+    {
+      "id": "ssvep-control",
+      "name_zh": "SSVEP 拨号与控制",
+      "name_en": "SSVEP Dialing & Control",
+      "desc_zh": "多个指令以不同频率闪烁，注视哪个就增强对应频率的稳态响应。",
+      "desc_en": "Commands flicker at distinct frequencies; gazing at one amplifies the corresponding steady-state response.",
+      "href": "lab-bci.html?case=2"
+    },
+    {
+      "id": "mi-prosthetic",
+      "name_zh": "运动想象假肢控制",
+      "name_en": "Motor-Imagery Prosthetic",
+      "desc_zh": "想象肢体运动引起感觉运动节律去同步，解码后映射为假肢动作。",
+      "desc_en": "Imagined movement desynchronizes sensorimotor rhythms; decoding maps them to prosthetic actions.",
+      "href": "lab-bci.html?case=3"
+    },
+    {
+      "id": "invasive-cursor",
+      "name_zh": "侵入式神经光标与语音",
+      "name_en": "Invasive Neural Cursor & Speech",
+      "desc_zh": "皮层内阵列记录峰电位，直接解码运动意图或构音过程。",
+      "desc_en": "Intracortical arrays record spikes and decode movement intent or articulation directly.",
+      "href": "lab-bci.html?case=4"
+    }
+  ]
+};

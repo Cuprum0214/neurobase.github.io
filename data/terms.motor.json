@@ -1,0 +1,311 @@
+[
+  {
+    "id": "motor-corticospinal-tract",
+    "module": "motor",
+    "name_zh": "皮层脊髓束",
+    "name_en": "Corticospinal Tract",
+    "aliases": [
+      "锥体束",
+      "皮质脊髓束"
+    ],
+    "pinyin": "picengjisuishu",
+    "pinyin_initials": "pcjss",
+    "definition": "起源于皮层（主要为初级运动皮层等）锥体神经元、经内囊、脑干锥体交叉下行至脊髓的传导束，主要负责肢体远端精细随意运动；其损伤在人类可导致痉挛性瘫痪，是随意运动控制的最终输出通道。",
+    "plain": "大脑直接下达到身体的“高速指令线”，管精细的自主动作。",
+    "difficulty": "intermediate",
+    "tags": [
+      "运动",
+      "通路"
+    ],
+    "related": [
+      "motor-motor-cortex",
+      "anatomy-brainstem",
+      "motor-motor-unit",
+      "neuron-myelin-sheath"
+    ],
+    "engineering_link": "脊髓损伤患者的皮层脊髓束信号是解码式脑机接口（如手部运动解码、神经桥接）的重点目标。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "motor-motor-unit",
+    "module": "motor",
+    "name_zh": "运动单位",
+    "name_en": "Motor Unit",
+    "aliases": [
+      "运动单位募集",
+      "神经肌肉单位"
+    ],
+    "pinyin": "yundongdanwei",
+    "pinyin_initials": "yddw",
+    "definition": "一个α运动神经元及其所支配的全部肌纤维构成的运动控制基本单位；精细肌（如眼外肌）运动单位很小，粗大肌（如股四头肌）可达上千根肌纤维。肌肉力量通过运动单位的大小原则逐一募集与放电频率共同调节。",
+    "plain": "神经控制肌肉的“最小打包单位”：一个指令神经元加上它管的肌纤维。",
+    "difficulty": "intro",
+    "tags": [
+      "运动",
+      "肌肉"
+    ],
+    "related": [
+      "motor-motor-cortex",
+      "motor-corticospinal-tract",
+      "neuron-refractory-period",
+      "synapse-chemical-synapse"
+    ],
+    "engineering_link": "表面肌电（sEMG）记录到的正是运动单位动作电位的叠加，是肌电假肢与力控接口的主要信号源。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Neuroscience (Purves et al., 6th ed., 2018)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "motor-muscle-spindle",
+    "module": "motor",
+    "name_zh": "肌梭",
+    "name_en": "Muscle Spindle",
+    "aliases": [
+      "肌张感受器",
+      "肌肉感受器"
+    ],
+    "pinyin": "jisuo",
+    "pinyin_initials": "js",
+    "definition": "位于骨骼肌内、与肌纤维平行排列的特殊感受器，通过其内感受神经元编码肌肉长度的变化与变化速率（动态/静态反应），经 Ia 类传入纤维向中枢提供本体感觉信息并参与牵张反射。",
+    "plain": "肌肉里的“长度传感器”，告诉大脑肌肉被拉长了多少、拉得多快。",
+    "difficulty": "intermediate",
+    "tags": [
+      "本体感觉",
+      "感受器"
+    ],
+    "related": [
+      "motor-stretch-reflex",
+      "motor-golgi-tendon-organ",
+      "sensory-somatosensory-system",
+      "motor-motor-unit"
+    ],
+    "engineering_link": "肌梭的编码特性是本体感觉反馈假肢与关节角度估计（如肌电-角度回归）的生理学参照。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "motor-golgi-tendon-organ",
+    "module": "motor",
+    "name_zh": "高尔基腱器官",
+    "name_en": "Golgi Tendon Organ",
+    "aliases": [
+      "腱器官",
+      "GTO",
+      "高尔基腱器"
+    ],
+    "pinyin": "gaoerjijianqiguan",
+    "pinyin_initials": "gejjqg",
+    "definition": "位于肌腱与肌纤维连接处、与肌纤维串联排列的感受器，由 Ib 类传入纤维传导，主要编码肌肉张力（收缩力）而非长度，并参与对过高张力的抑制性保护反射与力反馈调节。",
+    "plain": "肌腱里的“拉力计”，防止肌肉把自己拉伤。",
+    "difficulty": "advanced",
+    "tags": [
+      "本体感觉",
+      "感受器"
+    ],
+    "related": [
+      "motor-muscle-spindle",
+      "motor-stretch-reflex",
+      "sensory-somatosensory-system"
+    ],
+    "engineering_link": "张力反馈环是康复外骨骼与力控机械手的仿生控制依据（过载保护 + 阻抗调节）。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "motor-stretch-reflex",
+    "module": "motor",
+    "name_zh": "牵张反射",
+    "name_en": "Stretch Reflex",
+    "aliases": [
+      "腱反射",
+      "肌伸张反射",
+      "牵张反射弧"
+    ],
+    "pinyin": "qianzhangfanshe",
+    "pinyin_initials": "qzfs",
+    "definition": "肌肉被动拉长时经肌梭 Ia 传入纤维、单突触激活同名肌 α 运动神经元而引发收缩的反射，是最简单的单突触脊髓反射；临床上膝跳反射与反射亢进/减弱是评估脊髓与下行通路功能的基本手段。",
+    "plain": "被拉一下肌肉就自动缩回去的“本能反应”，比如膝跳反射。",
+    "difficulty": "intro",
+    "tags": [
+      "运动",
+      "反射"
+    ],
+    "related": [
+      "motor-muscle-spindle",
+      "motor-golgi-tendon-organ",
+      "synapse-chemical-synapse",
+      "anatomy-brainstem"
+    ],
+    "engineering_link": "单突触反射的“延迟—增益”特性是机器人阻抗控制与神经假体闭环时延指标的直接类比。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Neuroscience: Exploring the Brain (Bear et al., 4th ed., 2016)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "motor-central-pattern-generator",
+    "module": "motor",
+    "name_zh": "中枢模式发生器",
+    "name_en": "Central Pattern Generator",
+    "abbr": "CPG",
+    "aliases": [
+      "节律运动发生器",
+      "中枢节律发生器"
+    ],
+    "pinyin": "zhongshumoshifashengqi",
+    "pinyin_initials": "zsmsfsq",
+    "definition": "脊髓或脑干中能在缺乏感觉反馈的条件下自主产生节律性运动输出（如行走、呼吸、咀嚼、游动）的神经网络；感觉反馈与下行命令通过调制 CPG 的节律与相位来适应环境。",
+    "plain": "身体里自带的“节拍器”，让走路口呼吸这类节律动作自动跑起来。",
+    "difficulty": "intermediate",
+    "tags": [
+      "运动",
+      "节律"
+    ],
+    "related": [
+      "motor-corticospinal-tract",
+      "anatomy-brainstem",
+      "neuron-neural-coding"
+    ],
+    "engineering_link": "CPG 是步态训练机器人、外骨骼步态节律生成与半球间节律耦合算法的经典仿生模型。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "motor-supplementary-motor-area",
+    "module": "motor",
+    "name_zh": "辅助运动区",
+    "name_en": "Supplementary Motor Area",
+    "abbr": "SMA",
+    "aliases": [
+      "SMA",
+      "运动前区内侧部",
+      "辅助运动皮层"
+    ],
+    "pinyin": "fuzhuyundongqu",
+    "pinyin_initials": "fzydq",
+    "definition": "位于额叶内侧面的运动相关皮层区域，主要参与动作序列的准备与排序、双侧动作协调与基于内在意图（而非外部线索）的动作启动，其神经元活动常在动作实际执行前即出现。",
+    "plain": "负责“下一步怎么动、按什么顺序动”的编排区。",
+    "difficulty": "advanced",
+    "tags": [
+      "运动",
+      "皮层"
+    ],
+    "related": [
+      "motor-motor-cortex",
+      "attention-top-down-control",
+      "anatomy-prefrontal-cortex",
+      "motor-motor-imagery"
+    ],
+    "engineering_link": "SMA 在运动准备期的活动是“提前解码”意图型脑机接口的重要窗口，可缩短控制延迟。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "motor-motor-homunculus",
+    "module": "motor",
+    "name_zh": "运动小人",
+    "name_en": "Motor Homunculus",
+    "aliases": [
+      "运动皮层拓扑图",
+      "皮层运动小人"
+    ],
+    "pinyin": "yundongxiaoren",
+    "pinyin_initials": "ydxr",
+    "definition": "初级运动皮层中按身体部位顺序排列的功能表征图：各身体部位所占皮层面积与其运动精细程度（而非身体体积）成正比，因此手、唇、舌等部位的代表区远大于躯干与大腿。",
+    "plain": "大脑皮层里的“身体地图”，越灵活的部位占的地盘越大。",
+    "difficulty": "intro",
+    "tags": [
+      "运动",
+      "皮层"
+    ],
+    "related": [
+      "motor-motor-cortex",
+      "sensory-receptive-field",
+      "motor-motor-imagery"
+    ],
+    "engineering_link": "皮层拓扑图为植入式脑机接口的电极阵列布局与解码通道分配提供了直接的解剖依据。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Neuroscience (Purves et al., 6th ed., 2018)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "motor-motor-imagery",
+    "module": "motor",
+    "name_zh": "运动想象",
+    "name_en": "Motor Imagery",
+    "aliases": [
+      "想象运动",
+      "MI",
+      "运动意象"
+    ],
+    "pinyin": "yundongxiangxiang",
+    "pinyin_initials": "ydxx",
+    "definition": "在不产生实际肌肉动作的前提下，于内心模拟某肢体运动的过程；其神经活动与实际执行时的部分网络（运动皮层、SMA 等）高度重叠，可产生可测量的感觉运动节律（如 μ/β 节律）事件相关去同步化（ERD）/同步化（ERS）。",
+    "plain": "“在心里做动作”——想抬手但不动，大脑皮层却真的会起反应。",
+    "difficulty": "intro",
+    "tags": [
+      "运动",
+      "脑机接口"
+    ],
+    "related": [
+      "motor-motor-cortex",
+      "motor-supplementary-motor-area",
+      "bci-p300",
+      "methods-eeg"
+    ],
+    "engineering_link": "运动想象是 EEG 脑机接口最经典的控制范式（如左右手想象分类），常用 CSP/共空间模式 + 滤波器组提取 ERD/ERS 特征。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Brain-Computer Interfaces: Principles and Practice (Wolpaw & Wolpaw, 2012)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z"
+  }
+]

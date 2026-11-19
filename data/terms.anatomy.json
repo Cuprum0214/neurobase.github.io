@@ -1,0 +1,302 @@
+[
+  {
+    "id": "anatomy-cerebral-cortex",
+    "module": "anatomy",
+    "name_zh": "大脑皮层",
+    "name_en": "Cerebral Cortex",
+    "aliases": [
+      "皮层",
+      "皮质",
+      "大脑皮质",
+      "cortex"
+    ],
+    "pinyin": "danaopiceng",
+    "pinyin_initials": "dnpc",
+    "definition": "位于大脑半球表面、由分层神经元构成的灰质结构（厚约 2–4 mm），是感觉、运动、语言与高级认知功能的主要皮层基础；按细胞构筑可分为 6 层，并划分为不同的 Brodmann 区。",
+    "plain": "大脑最外层那张“皱褶工作台”，高级功能基本都在这儿完成。",
+    "difficulty": "intro",
+    "tags": [
+      "脑区",
+      "皮层"
+    ],
+    "related": [
+      "anatomy-prefrontal-cortex",
+      "motor-motor-cortex",
+      "anatomy-broca-area"
+    ],
+    "engineering_link": "EEG/MEG 的主要信号源是皮层锥体细胞群的同步突触后电位，理解皮层分层有助于解释脑电的空间特性。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "anatomy-corpus-callosum",
+    "module": "anatomy",
+    "name_zh": "胼胝体",
+    "name_en": "Corpus Callosum",
+    "aliases": [
+      "胼胝体纤维束",
+      "callosum"
+    ],
+    "pinyin": "pianzhiti",
+    "pinyin_initials": "pzt",
+    "definition": "连接左右大脑半球新皮层的最大的白质纤维束（约含两亿余条轴突），负责两侧皮层间的信息交换与半球间协调。",
+    "plain": "连接左右脑的“高速公路桥”，让两边能互相通话。",
+    "difficulty": "intro",
+    "tags": [
+      "脑区",
+      "白质"
+    ],
+    "related": [
+      "anatomy-cerebral-cortex",
+      "neuron-myelin-sheath"
+    ],
+    "engineering_link": "半球间传导时延与信息整合是裂脑研究与跨半球脑机接口研究的解剖基础。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Neuroanatomy through Clinical Cases (Blumenfeld, 2nd ed.)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "anatomy-hippocampus",
+    "module": "anatomy",
+    "name_zh": "海马",
+    "name_en": "Hippocampus",
+    "aliases": [
+      "海马体",
+      "海马结构"
+    ],
+    "pinyin": "haima",
+    "pinyin_initials": "hm",
+    "definition": "位于颞叶内侧的皮层结构，参与情景记忆的形成与巩固以及空间导航（位置细胞等），是长时程增强等突触可塑性机制的经典研究部位。",
+    "plain": "大脑的“记忆整理室”，把新经历存成记忆，也管方向和定位。",
+    "difficulty": "intro",
+    "tags": [
+      "脑区",
+      "记忆"
+    ],
+    "related": [
+      "memory-long-term-potentiation",
+      "synapse-synaptic-plasticity",
+      "anatomy-cerebral-cortex"
+    ],
+    "engineering_link": "海马局部场电位的 theta 节律与记忆编码相关，是侵入式神经记录与记忆解码研究的重要靶区。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "anatomy-thalamus",
+    "module": "anatomy",
+    "name_zh": "丘脑",
+    "name_en": "Thalamus",
+    "aliases": [
+      "视丘",
+      "背侧丘脑"
+    ],
+    "pinyin": "qiunao",
+    "pinyin_initials": "qn",
+    "definition": "位于间脑、由多个核团组成的感觉与运动信息中继及调制中枢：除嗅觉外，各类感觉信息通常先经丘脑相应核团中继，再投射到各自对应的皮层区域。",
+    "plain": "大脑的“总交换台”，几乎所有感觉信息都要在这里中转。",
+    "difficulty": "intro",
+    "tags": [
+      "脑区",
+      "间脑"
+    ],
+    "related": [
+      "anatomy-hypothalamus",
+      "anatomy-cerebral-cortex",
+      "bci-ssvep"
+    ],
+    "engineering_link": "丘脑中继的节律活动与同步化直接影响 EEG 节律（如 alpha 节律与睡眠纺锤波）的产生和调制。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "The Human Brain: An Introduction to its Functional Anatomy (Nolte, 7th ed.)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "anatomy-hypothalamus",
+    "module": "anatomy",
+    "name_zh": "下丘脑",
+    "name_en": "Hypothalamus",
+    "aliases": [
+      "下视丘",
+      "丘脑下部"
+    ],
+    "pinyin": "xiaqunao",
+    "pinyin_initials": "xqn",
+    "definition": "位于丘脑下方的间脑结构，通过神经与神经内分泌途径调控体温、摄食、水盐平衡、昼夜节律与内分泌，是自主神经调节与内分泌控制的关键枢纽。",
+    "plain": "身体的“恒温与管家中心”，管吃、睡、体温和内分泌。",
+    "difficulty": "intro",
+    "tags": [
+      "脑区",
+      "内稳态"
+    ],
+    "related": [
+      "anatomy-thalamus",
+      "emotion-amygdala"
+    ],
+    "engineering_link": "内稳态与昼夜节律影响被试的警觉度与信号质量，是脑机接口实验设计中需要控制的生理变量。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "神经科学 (韩济生 主编)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "anatomy-cerebellum",
+    "module": "anatomy",
+    "name_zh": "小脑",
+    "name_en": "Cerebellum",
+    "aliases": [
+      "小脑皮层",
+      "cerebellar cortex"
+    ],
+    "pinyin": "xiaonao",
+    "pinyin_initials": "xn",
+    "definition": "位于后颅窝、覆盖于脑干背侧的皮层下结构，参与运动的协调与时序控制以及运动学习（误差驱动的可塑性），并被认为与部分认知和语言功能相关。",
+    "plain": "动作的“精细校准器”，让动作流畅、准时、不发抖。",
+    "difficulty": "intro",
+    "tags": [
+      "脑区",
+      "运动"
+    ],
+    "related": [
+      "motor-motor-cortex",
+      "anatomy-brainstem",
+      "synapse-synaptic-plasticity"
+    ],
+    "engineering_link": "小脑的误差驱动学习机制是运动控制与机器人自适应算法的经典生物学参照。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "anatomy-basal-ganglia",
+    "module": "anatomy",
+    "name_zh": "基底神经节",
+    "name_en": "Basal Ganglia",
+    "aliases": [
+      "基底节",
+      "纹状体系统",
+      "基底核"
+    ],
+    "pinyin": "jidishenjingjie",
+    "pinyin_initials": "jdsjj",
+    "definition": "位于大脑深部的一组皮层下核团（尾状核、壳核、苍白球、黑质、丘脑底核等），通过“皮质—基底节—丘脑—皮质”环路参与运动的选择与启动、奖赏学习与习惯形成。",
+    "plain": "行为的“开关与筛选器”，决定眼下哪些动作该做、哪些先按住。",
+    "difficulty": "intermediate",
+    "tags": [
+      "脑区",
+      "运动"
+    ],
+    "related": [
+      "motor-motor-cortex",
+      "anatomy-thalamus",
+      "emotion-amygdala"
+    ],
+    "engineering_link": "基底神经节的强化学习解释是脑机接口增益/选择机制与神经调控（如帕金森病 DBS）的重要理论来源。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "anatomy-brainstem",
+    "module": "anatomy",
+    "name_zh": "脑干",
+    "name_en": "Brainstem",
+    "aliases": [
+      "脑干结构",
+      "脑干系统"
+    ],
+    "pinyin": "naogan",
+    "pinyin_initials": "ng",
+    "definition": "连接大脑与脊髓的中枢结构，自上而下由中脑、脑桥与延髓组成，包含呼吸、心血管等生命中枢与多对脑神经核团，并通过上行网状激活系统调节觉醒与意识水平。",
+    "plain": "大脑的“生命主干道”，管呼吸心跳，也管你清不清醒。",
+    "difficulty": "intro",
+    "tags": [
+      "脑区",
+      "脑干"
+    ],
+    "related": [
+      "anatomy-cerebellum",
+      "anatomy-thalamus",
+      "methods-erp"
+    ],
+    "engineering_link": "脑干听觉通路反应（如听性脑干反应 ABR）是临床与神经工程中经典的时序与通路完整性评估指标。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "The Human Brain: An Introduction to its Functional Anatomy (Nolte, 7th ed.)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "anatomy-prefrontal-cortex",
+    "module": "anatomy",
+    "name_zh": "前额叶皮层",
+    "name_en": "Prefrontal Cortex",
+    "abbr": "PFC",
+    "aliases": [
+      "前额皮层",
+      "额叶前部",
+      "前额叶"
+    ],
+    "pinyin": "qianeyepiceng",
+    "pinyin_initials": "qeypc",
+    "definition": "位于额叶最前部、与执行功能密切相关的高级皮层区域，参与工作记忆、计划、抑制控制、决策与情绪调节，是系统发生与个体发育中成熟较晚的脑区之一。",
+    "plain": "大脑的“总指挥”，负责规划、克制冲动和做决定。",
+    "difficulty": "intermediate",
+    "tags": [
+      "脑区",
+      "执行功能"
+    ],
+    "related": [
+      "anatomy-cerebral-cortex",
+      "attention-selective-attention",
+      "memory-long-term-potentiation"
+    ],
+    "engineering_link": "前额叶活动反映工作记忆负荷与执行控制，是认知负荷评估（如基于 EEG/fNIRS 的心理负荷测量）的核心目标区域。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z"
+  }
+]

@@ -1,0 +1,82 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1e5fa8">
+  <meta name="description" content="NeuroBase BCI 专区：按信号采集、范式编码、解码、输出闭环、伦理五个主题聚合站内词条，附六环节链路与四个案例拆解，全部链接可跳转。">
+  <title>BCI 专区 · NeuroBase</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="assets/css/style.css?v=1194">
+  <script>
+    (function () {
+      try {
+        var m = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)').matches : false;
+        var th = localStorage.getItem('nb-theme') || 'system';
+        if (th === 'dark' || (th === 'system' && m)) document.documentElement.classList.add('dark');
+      } catch (e) {}
+      try {
+        var f = parseFloat(localStorage.getItem('nb-font') || '100');
+        if (f >= 25 && f <= 300) document.documentElement.style.setProperty('--nb-font-scale', (f / 100).toFixed(2));
+      } catch (e) {}
+      try {
+        if (localStorage.getItem('nb-motion') === 'off') document.documentElement.classList.add('motion-off');
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="action.skipToContent">跳到主内容</a>
+  <header id="nb-header"></header>
+
+  <main id="main" class="nb-content">
+    <div class="wrap">
+      <h1 class="page-title" data-i18n="bciZone.title">BCI 专区</h1>
+      <p class="page-desc" data-i18n="bciZone.desc">按主题聚合站内词条，再沿「采集 → 预处理 → 特征 → 解码 → 输出 → 反馈」走一遍完整链路。</p>
+
+      <p class="notice" id="nb-zone-note"></p>
+
+      <section class="term-section">
+        <h2 class="sec-title" data-i18n="bciZone.topicsTitle">按主题浏览</h2>
+        <p class="meta" data-i18n="bciZone.topicsDesc">每个主题下的术语都可直接点进详情页。</p>
+        <div class="grid-2 zone-topics" id="nb-zone-topics"></div>
+      </section>
+
+      <section class="term-section">
+        <h2 class="sec-title" data-i18n="bciZone.pipelineTitle">BCI 链路六环节</h2>
+        <p class="meta" data-i18n="bciZone.pipelineDesc">从大脑信号到可执行命令，任何一环断了，整条链路都不成立。</p>
+        <ol class="pipeline" id="nb-zone-pipeline"></ol>
+      </section>
+
+      <section class="term-section">
+        <h2 class="sec-title" data-i18n="bciZone.casesTitle">案例拆解</h2>
+        <p class="meta" data-i18n="bciZone.casesDesc">四个代表性案例，在互动实验室里按六环节展开。</p>
+        <div class="grid-2 case-grid" id="nb-zone-cases"></div>
+      </section>
+
+      <p class="source-note" id="nb-zone-source"></p>
+    </div>
+  </main>
+
+  <footer id="nb-footer"></footer>
+
+  <noscript>
+    <div class="wrap">
+      <p class="notice">本页的主题、链路与案例由本地脚本渲染，请启用 JavaScript 后再访问。</p>
+    </div>
+  </noscript>
+
+  <script src="assets/js/data/terms.js?v=1194"></script>
+  <script src="assets/js/data/i18n.js?v=1194"></script>
+  <script src="assets/js/data/bci-zone.js?v=1194"></script>
+  <script src="assets/js/core.js?v=1194"></script>
+  <script src="assets/js/cloud-config.js?v=1194"></script>
+  <script src="assets/js/cloud.js?v=1194"></script>
+  <script src="assets/js/auth-ui.js?v=1194"></script>
+  <script src="assets/js/ai-fluid.js?v=1194"></script>
+  <script src="assets/js/ai-tutor.js?v=1194"></script>
+  <script src="assets/js/feedback.js?v=1194"></script>
+  <script src="assets/js/help.js?v=1194"></script>
+  <script src="assets/js/page-bci-zone.js?v=1194"></script>
+</body>
+</html>

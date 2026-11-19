@@ -1,0 +1,313 @@
+[
+  {
+    "id": "sensory-sensory-transduction",
+    "module": "sensory",
+    "name_zh": "感觉转导",
+    "name_en": "Sensory Transduction",
+    "aliases": [
+      "感受器换能",
+      "感觉换能",
+      "感觉转换"
+    ],
+    "pinyin": "ganjuezhuandao",
+    "pinyin_initials": "gjzd",
+    "definition": "感受器细胞把外界物理或化学刺激（光、声、机械压力、温度、化学分子等）转换为细胞膜电位变化（感受器电位，通常为分级电位）的过程；若电位达到阈值即可触发传入神经元的动作电位。",
+    "plain": "把外界的“光、声、压力”翻译成神经能读懂的“电信号”。",
+    "difficulty": "intro",
+    "tags": [
+      "感觉",
+      "换能"
+    ],
+    "related": [
+      "sensory-photoreceptor",
+      "neuron-action-potential",
+      "sensory-receptive-field"
+    ],
+    "engineering_link": "人工耳蜗、视网膜假体等神经工程器件本质上是在体外重建“转导”环节，把物理刺激直接映射为神经电刺激。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "sensory-photoreceptor",
+    "module": "sensory",
+    "name_zh": "感光细胞",
+    "name_en": "Photoreceptor Cell",
+    "aliases": [
+      "视杆细胞",
+      "视锥细胞",
+      "光感受器",
+      "光感受细胞"
+    ],
+    "pinyin": "ganguangxibao",
+    "pinyin_initials": "ggxb",
+    "definition": "视网膜中把光子转换为电信号的特化神经元，分为对弱光敏感但无色觉的视杆细胞与负责高分辨色觉的视锥细胞；其外段含视紫红质等视色素，光照导致离子通道关闭并使细胞超极化。",
+    "plain": "视网膜里的“像素感光元件”，一种管暗光，一种管颜色和细节。",
+    "difficulty": "intro",
+    "tags": [
+      "视觉",
+      "受体"
+    ],
+    "related": [
+      "sensory-retina",
+      "sensory-sensory-transduction",
+      "sensory-visual-pathway"
+    ],
+    "engineering_link": "视网膜假体通过电极阵列直接激活视网膜神经节细胞，绕过受损的感光细胞层来恢复部分视觉。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Neuroscience: Exploring the Brain (Bear et al., 4th ed., 2016)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "sensory-retina",
+    "module": "sensory",
+    "name_zh": "视网膜",
+    "name_en": "Retina",
+    "aliases": [
+      "眼底神经组织",
+      "视网膜组织"
+    ],
+    "pinyin": "shiwangmo",
+    "pinyin_initials": "swm",
+    "definition": "位于眼球后部、由多层神经元构成的感觉上皮与神经组织，除感光细胞外还包含双极细胞、水平细胞、无长突细胞与神经节细胞；神经节细胞轴突汇合成视神经，在离开眼球处形成视盘（生理盲点）。",
+    "plain": "眼球后壁上的一层“图像处理器”，不只是感光，还先做一轮信息压缩。",
+    "difficulty": "intro",
+    "tags": [
+      "视觉",
+      "脑区"
+    ],
+    "related": [
+      "sensory-photoreceptor",
+      "sensory-visual-pathway",
+      "methods-erp"
+    ],
+    "engineering_link": "视网膜神经节细胞的放电是视网膜编码研究的核心信号，可直接用于视觉编码假体与脉冲神经网络（SNN）的对照设计。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "sensory-visual-pathway",
+    "module": "sensory",
+    "name_zh": "视觉通路",
+    "name_en": "Visual Pathway",
+    "aliases": [
+      "视网膜膝状体通路",
+      "视觉传导通路",
+      "视觉传导路径"
+    ],
+    "pinyin": "shijuetonglu",
+    "pinyin_initials": "sjtl",
+    "definition": "视觉信息从视网膜神经节细胞经视神经、视交叉、视束与丘脑外侧膝状体（LGN）逐级传递并最终投射到初级视皮层的通路；两侧视野信息在视交叉处部分交叉，故单侧通路损伤会产生特征性的视野缺损。",
+    "plain": "视觉信号从眼睛到大脑皮层的“固定线路”，中途还要经过丘脑的交换台。",
+    "difficulty": "intermediate",
+    "tags": [
+      "视觉",
+      "通路"
+    ],
+    "related": [
+      "sensory-retina",
+      "anatomy-thalamus",
+      "sensory-visual-cortex",
+      "anatomy-corpus-callosum"
+    ],
+    "engineering_link": "视觉通路是脑机接口中“前向解码”链路的典型范式：从外周信号到皮层表征的逐级变换，可用于评估解码器需要接入哪一级信号。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "The Human Brain: An Introduction to its Functional Anatomy (Nolte, 7th ed.)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "sensory-visual-cortex",
+    "module": "sensory",
+    "name_zh": "初级视皮层",
+    "name_en": "Primary Visual Cortex",
+    "abbr": "V1",
+    "aliases": [
+      "纹状皮层",
+      "V1",
+      "初级视觉皮层",
+      "视皮层"
+    ],
+    "pinyin": "chujishipiceng",
+    "pinyin_initials": "cjspc",
+    "definition": "位于枕叶、接受外侧膝状体主要投射的皮层区域，其神经元具有方向选择性、眼优势等特征，并存在由超柱构成的规则功能构筑（如方位柱、眼优势柱），是视觉特征提取的起始皮层阶段。",
+    "plain": "大脑里的第一站“图像分析中心”，开始识别边缘和方向。",
+    "difficulty": "intro",
+    "tags": [
+      "视觉",
+      "皮层"
+    ],
+    "related": [
+      "sensory-visual-pathway",
+      "sensory-receptive-field",
+      "anatomy-cerebral-cortex"
+    ],
+    "engineering_link": "V1 的方向选择性与皮层拓扑表征是视觉解码、皮层假体（视幻觉点）设计的重要依据。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "sensory-center-surround",
+    "module": "sensory",
+    "name_zh": "中心—周边拮抗",
+    "name_en": "Center-Surround Antagonism",
+    "aliases": [
+      "同心圆拮抗感受野",
+      "中央周边对抗",
+      "中心外周拮抗"
+    ],
+    "pinyin": "zhongxinzhoubianjiekang",
+    "pinyin_initials": "zxzbjk",
+    "definition": "视网膜神经节细胞与外侧膝状体细胞的感受野呈同心圆结构，中心与周边区域对光刺激的反应极性相反；该结构使神经元对局部亮度对比（而非绝对亮度）敏感，从而增强边缘与对比信息的编码效率。",
+    "plain": "视觉神经元的“对比度滤镜”：只告诉你哪里和旁边不一样，而不是哪里亮。",
+    "difficulty": "intermediate",
+    "tags": [
+      "视觉",
+      "感受野"
+    ],
+    "related": [
+      "sensory-receptive-field",
+      "sensory-retina",
+      "sensory-visual-cortex"
+    ],
+    "engineering_link": "中心—周边结构是图像处理中“墨西哥帽”算子的生物学原型，常用于脉冲神经网络前端与事件相机算法的设计参考。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Neuroscience (Purves et al., 6th ed., 2018)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "sensory-somatosensory-system",
+    "module": "sensory",
+    "name_zh": "躯体感觉系统",
+    "name_en": "Somatosensory System",
+    "aliases": [
+      "体感系统",
+      "触压觉通路",
+      "躯体感觉通路"
+    ],
+    "pinyin": "qutiganjuexitong",
+    "pinyin_initials": "qtgjxt",
+    "definition": "处理来自皮肤、肌肉与关节的触压、振动、温度、疼痛与本体感觉信息的系统；背柱—内侧丘系通路传递精细触觉与本体觉并投射到初级躯体感觉皮层（含体感小人），痛温觉则主要由脊髓丘脑束传递。",
+    "plain": "负责“摸到什么、疼不疼、身体在哪”的一套感觉系统。",
+    "difficulty": "intro",
+    "tags": [
+      "躯体感觉",
+      "通路"
+    ],
+    "related": [
+      "sensory-receptive-field",
+      "motor-muscle-spindle",
+      "anatomy-thalamus",
+      "sensory-just-noticeable-difference"
+    ],
+    "engineering_link": "触觉反馈是灵巧假肢与力反馈遥操作的关键：电极刺激躯体感觉皮层或外周神经可人为产生触觉信息。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "sensory-just-noticeable-difference",
+    "module": "sensory",
+    "name_zh": "最小可觉差",
+    "name_en": "Just Noticeable Difference",
+    "abbr": "JND",
+    "aliases": [
+      "差别阈限",
+      "恰可察觉差异",
+      "最小可觉差异"
+    ],
+    "pinyin": "zuixiaokejuecha",
+    "pinyin_initials": "zxkjc",
+    "definition": "在给定基线强度下，能被觉察到的最小刺激变化量；对多数感觉维度而言 JND 近似与基线强度成固定比例（韦伯定律），而主观感觉强度随物理强度呈压缩式增长（费希纳定律）。",
+    "plain": "能感觉出“变了”的最小变化量——而且底子越大，越难察觉细微变化。",
+    "difficulty": "intermediate",
+    "tags": [
+      "心理物理",
+      "阈值"
+    ],
+    "related": [
+      "sensory-sensory-adaptation",
+      "sensory-receptive-field",
+      "methods-erp"
+    ],
+    "engineering_link": "JND 是人机界面与神经反馈系统“可感知步长”设计的量化基准（如力反馈分辨率、刺激强度分级）。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Neuroscience (Purves et al., 6th ed., 2018)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "sensory-sensory-adaptation",
+    "module": "sensory",
+    "name_zh": "感觉适应",
+    "name_en": "Sensory Adaptation",
+    "aliases": [
+      "适应现象",
+      "感受器适应",
+      "感觉适应现象"
+    ],
+    "pinyin": "ganjueshiying",
+    "pinyin_initials": "gjsy",
+    "definition": "在持续或重复刺激下感受器或感觉神经元反应逐渐减弱的现象，使系统优先编码变化与新异信息而避免饱和；按反应时程可分为快适应（相位性）与慢适应（张力性）两类感受器。",
+    "plain": "刚戴手表总觉得硌，过一会儿就“感觉不到”了——这就是适应。",
+    "difficulty": "intro",
+    "tags": [
+      "感觉",
+      "编码"
+    ],
+    "related": [
+      "sensory-just-noticeable-difference",
+      "neuron-neural-coding",
+      "sensory-somatosensory-system"
+    ],
+    "engineering_link": "适应特性解释了脑机接口中长时间使用后信号幅度漂移、以及“变化才引发反应”的稳态刺激失效问题。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Neuroscience: Exploring the Brain (Bear et al., 4th ed., 2016)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z"
+  }
+]

@@ -1,0 +1,63 @@
+name: source-sync
+
+# Phase 7 · 每周核对 Crossref DOI 与来源登记
+# 链路：核对 → 重建前端数据（含缓存指纹）→ 提交记录型数据 → 推送触发 pages.yml 自动部署
+# 不需要 Supabase / Cloudflare 密钥；只用仓库自带的 GITHUB_TOKEN。
+on:
+  schedule:
+    - cron: '17 3 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: source-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: 重建来源登记
+        run: node scripts/build-sources.mjs
+
+      - name: 在线同步（Crossref，失败自动降级）
+        run: node scripts/sync-sources.mjs --online
+
+      - name: 来源质量门
+        run: node scripts/check-sources.mjs
+
+      - name: 重建前端数据（有变化时自动 bump 缓存指纹）
+        run: node scripts/build-site.mjs
+
+      - name: 提交记录型数据
+        run: |
+          git config user.name "neurobase-sync-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data
+          git add outputs/neurobase
+          if git diff --cached --quiet; then
+            echo "没有需要提交的变化"
+          else
+            git commit -m "chore(source-sync): 自动核对来源与最近更新 $(date -u +%Y-%m-%d)"
+            git pull --rebase --autostash origin "${GITHUB_REF_NAME}"
+            git push
+          fi
+
+      - name: 保存同步产物
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: source-sync-${{ github.run_id }}
+          path: |
+            data/sources.json
+            data/update-log.json
+            data/sync-state.json
+          if-no-files-found: error

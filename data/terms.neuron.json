@@ -1,0 +1,269 @@
+[
+  {
+    "id": "neuron-dendrite",
+    "module": "neuron",
+    "name_zh": "树突",
+    "name_en": "Dendrite",
+    "aliases": [
+      "树突分支",
+      "树突树",
+      "神经树突"
+    ],
+    "pinyin": "shutu",
+    "pinyin_initials": "st",
+    "definition": "神经元胞体伸出的、通常短而多分支的突起，是突触输入的主要接收部位；其膜电位对来自不同时空的输入进行整合后传向胞体与轴突起始段。",
+    "plain": "神经元的“天线”和“插线板”，负责接收其他神经元传来的信息。",
+    "difficulty": "intro",
+    "tags": [
+      "神经元",
+      "结构"
+    ],
+    "related": [
+      "neuron-axon",
+      "neuron-ion-channel",
+      "synapse-synaptic-transmission"
+    ],
+    "engineering_link": "树突整合与突触分布决定了神经元的输入—输出映射，是脉冲神经网络建模的基本计算单元。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "neuron-axon",
+    "module": "neuron",
+    "name_zh": "轴突",
+    "name_en": "Axon",
+    "aliases": [
+      "神经纤维",
+      "轴突纤维"
+    ],
+    "pinyin": "zhoubu",
+    "pinyin_initials": "zt",
+    "definition": "神经元胞体（或轴突丘）发出的一条细长突起，负责将动作电位从轴突起始段传导至远端终末，是神经元输出的主要通道。",
+    "plain": "神经元的“电缆”，把信号从一头快速送到另一头。",
+    "difficulty": "intro",
+    "tags": [
+      "神经元",
+      "结构"
+    ],
+    "related": [
+      "neuron-dendrite",
+      "neuron-myelin-sheath",
+      "neuron-action-potential"
+    ],
+    "engineering_link": "轴突的传导速度与长度决定了信号时延，是神经接口链路建模与真实感交互设计的参数来源。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "neuron-myelin-sheath",
+    "module": "neuron",
+    "name_zh": "髓鞘",
+    "name_en": "Myelin Sheath",
+    "aliases": [
+      "髓磷脂",
+      "髓鞘化",
+      "髓鞘膜"
+    ],
+    "pinyin": "suiqiao",
+    "pinyin_initials": "sq",
+    "definition": "由中枢的少突胶质细胞或外周的施万细胞形成的多层脂质膜鞘，节段性包裹轴突以实现电绝缘，并支持跳跃式传导、显著提升传导速度。",
+    "plain": "给“电缆”包上绝缘层，让信号传得更快、更省力。",
+    "difficulty": "intro",
+    "tags": [
+      "神经元",
+      "髓鞘"
+    ],
+    "related": [
+      "neuron-axon",
+      "neuron-saltatory-conduction",
+      "neuron-glia"
+    ],
+    "engineering_link": "脱髓鞘会降低传导速度、改变诱发电位的潜伏期——是解释临床与脑电信号异常的重要机制。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "neuron-saltatory-conduction",
+    "module": "neuron",
+    "name_zh": "跳跃式传导",
+    "name_en": "Saltatory Conduction",
+    "aliases": [
+      "跳跃传导",
+      "盐跃传导"
+    ],
+    "pinyin": "tiaoyueshichuandao",
+    "pinyin_initials": "tyscd",
+    "definition": "在有髓轴突上，动作电位仅在相邻郎飞结处再生，兴奋以“跳跃”方式自一个结传向下一个结，从而大幅提高传导速度并减少离子泵的能量消耗。",
+    "plain": "信号不是一路跑，而是“一跳一跳”地越过绝缘段，所以又快又省。",
+    "difficulty": "intermediate",
+    "tags": [
+      "神经元",
+      "髓鞘"
+    ],
+    "related": [
+      "neuron-myelin-sheath",
+      "neuron-action-potential"
+    ],
+    "engineering_link": "传导速度决定神经系统的时间分辨率，是解读 ERP/MEG 时序成分与建立神经时延模型的基础。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "neuron-glia",
+    "module": "neuron",
+    "name_zh": "胶质细胞",
+    "name_en": "Glial Cell",
+    "aliases": [
+      "神经胶质细胞",
+      "胶质",
+      "神经胶质"
+    ],
+    "pinyin": "jiaozhixibao",
+    "pinyin_initials": "jzxb",
+    "definition": "神经系统中的一大类非神经元细胞，包括星形胶质细胞、少突胶质细胞、小胶质细胞与室管膜细胞等，参与髓鞘形成、离子与递质稳态维持、代谢支持与免疫应答。",
+    "plain": "神经元的“后勤与保障团队”，负责供给、清扫、绝缘与免疫。",
+    "difficulty": "intro",
+    "tags": [
+      "神经元",
+      "胶质细胞"
+    ],
+    "related": [
+      "neuron-myelin-sheath",
+      "synapse-synaptic-transmission"
+    ],
+    "engineering_link": "胶质细胞对信号与代谢的调节正被纳入更完整的神经解码与神经调控模型。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "neuron-ion-channel",
+    "module": "neuron",
+    "name_zh": "离子通道",
+    "name_en": "Ion Channel",
+    "aliases": [
+      "膜通道",
+      "门控通道",
+      "离子通道蛋白"
+    ],
+    "pinyin": "lizitongdao",
+    "pinyin_initials": "lztd",
+    "definition": "镶嵌在细胞膜上的跨膜蛋白，在电压、配体或机械刺激等条件下允许特定离子（如 Na⁺、K⁺、Ca²⁺、Cl⁻）跨膜流动，是静息电位、动作电位与突触电流的分子基础。",
+    "plain": "细胞膜上的“小门”，只放特定离子通过；门什么时候开，决定了电信号怎么来。",
+    "difficulty": "intro",
+    "tags": [
+      "神经元",
+      "离子通道"
+    ],
+    "related": [
+      "neuron-resting-potential",
+      "neuron-action-potential",
+      "synapse-receptor-ionotropic"
+    ],
+    "engineering_link": "离子通道动力学是 Hodgkin–Huxley 等神经元模型与脉冲神经网络的方程来源。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Ion Channels of Excitable Membranes (Hille, 3rd ed., 2001)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "neuron-refractory-period",
+    "module": "neuron",
+    "name_zh": "不应期",
+    "name_en": "Refractory Period",
+    "aliases": [
+      "绝对不应期",
+      "相对不应期",
+      "神经不应期"
+    ],
+    "pinyin": "buyingqi",
+    "pinyin_initials": "byq",
+    "definition": "动作电位之后神经元暂时不能再被激发的时期：绝对不应期内 Na⁺ 通道失活、无论刺激多强都无法产生新动作电位；相对不应期内阈值升高，需更强刺激才能兴奋。",
+    "plain": "神经元放完一次电后，需要一段短暂的“冷却期”才能再放电。",
+    "difficulty": "intermediate",
+    "tags": [
+      "神经元",
+      "兴奋性"
+    ],
+    "related": [
+      "neuron-action-potential",
+      "neuron-ion-channel"
+    ],
+    "engineering_link": "不应期限制了神经元的最高放电率，是脉冲编码容量与脑机接口解码模型的重要约束。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "From Neuron to Brain (Nicholls et al., 6th ed., 2021)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "neuron-neural-coding",
+    "module": "neuron",
+    "name_zh": "神经编码",
+    "name_en": "Neural Coding",
+    "aliases": [
+      "神经编码理论",
+      "神经元编码",
+      "神经编码机制"
+    ],
+    "pinyin": "shenjingbianma",
+    "pinyin_initials": "sjbm",
+    "definition": "研究神经系统如何以外界刺激或内部状态对应的放电模式（放电率、精确时序、群体协同等）来表征信息，主要假说包括频率编码、时间编码与群体编码。",
+    "plain": "大脑用什么“密码”来表示看到、听到和想到的东西。",
+    "difficulty": "intermediate",
+    "tags": [
+      "神经元",
+      "计算神经科学"
+    ],
+    "related": [
+      "neuron-action-potential",
+      "neuron-refractory-period",
+      "methods-eeg"
+    ],
+    "engineering_link": "神经编码是脑机接口解码的前提——先假设“信息藏在哪种放电模式里”，再据此设计特征与分类器。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Theoretical Neuroscience (Dayan & Abbott, 2001)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z"
+  }
+]

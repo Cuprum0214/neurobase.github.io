@@ -1,0 +1,213 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1e5fa8">
+  <meta name="description" content="NeuroBase 交互式脑解剖：3D 全景（旋转/全部拆分/挪动/全部复位，点击部位可单独旋转与复位）+ 2D 解剖图（真实网格投影，点选/分层/标注）+ 矢状剖面。">
+  <title>交互式脑解剖 · NeuroBase</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="assets/css/style.css?v=1194">
+  <!-- 在样式生效前定好主题与正文字号，避免首屏闪烁（两件事各自 try，互不牵连） -->
+  <script>
+    (function () {
+      try {
+        var m = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)').matches : false;
+        var th = localStorage.getItem('nb-theme') || 'system';
+        if (th === 'dark' || (th === 'system' && m)) document.documentElement.classList.add('dark');
+      } catch (e) {}
+      try {
+        var f = parseFloat(localStorage.getItem('nb-font') || '100');
+        if (f >= 25 && f <= 300) document.documentElement.style.setProperty('--nb-font-scale', (f / 100).toFixed(2));
+      } catch (e) {}
+      try {
+        if (localStorage.getItem('nb-motion') === 'off') document.documentElement.classList.add('motion-off');
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="action.skipToContent">跳到主内容</a>
+  <header id="nb-header"></header>
+
+  <main id="main" class="nb-content">
+    <div class="wrap">
+      <h1 class="page-title" data-i18n="labAnatomy.title">交互式脑解剖</h1>
+      <p class="page-desc" data-i18n="labAnatomy.desc">3D 全景可旋转、拆分、挪动与复位；2D 解剖图支持点选、分层与标注；「矢状剖面」查看真实内侧面投影下的结构关系。</p>
+
+      <div class="anatomy-view-switch" role="tablist" aria-label="解剖视图切换">
+        <button type="button" class="btn btn-sm" id="view-3d" role="tab" aria-selected="true" data-i18n="labAnatomy3d.view3d">3D 全景</button>
+        <button type="button" class="btn btn-sm" id="view-2d" role="tab" aria-selected="false" data-i18n="labAnatomy3d.view2d">2D 解剖图</button>
+        <button type="button" class="btn btn-sm" id="view-section" role="tab" aria-selected="false" data-i18n="labAnatomy3d.viewSection">矢状剖面</button>
+      </div>
+
+      <div class="lab-anatomy" id="lab-anatomy">
+        <div class="anatomy-stage">
+          <!-- 3D 全景视图 -->
+          <div id="anatomy-3d-wrap" class="anatomy-3d-wrap">
+            <div class="anatomy-3d-canvas-box" id="anatomy-3d-canvas-box" aria-label="3D 大脑全景（可旋转 / 全部拆分 / 挪动）">
+              <!-- 加载提示文字已移除；此节点仅在 WebGL 不可用时显示降级说明 -->
+              <p class="anatomy-3d-loading" id="anat3d-loading" hidden></p>
+              <!-- 点选某一部位后弹出的单部位操作菜单：旋转 / 复位（复位不改变整体视角） -->
+              <div class="anatomy-3d-part-menu" id="anat3d-part-menu" role="dialog" aria-label="部位操作" hidden>
+                <p class="anatomy-3d-part-menu-name" id="anat3d-part-menu-name"></p>
+                <div class="anatomy-3d-part-menu-actions">
+                  <button type="button" class="btn btn-sm anatomy-3d-part-btn" id="anat3d-part-rotate" aria-pressed="false" data-i18n="labAnatomy3d.partRotate">旋转</button>
+                  <button type="button" class="btn btn-sm anatomy-3d-part-btn" id="anat3d-part-reset" data-i18n="labAnatomy3d.partReset">复位</button>
+                </div>
+                <p class="anatomy-3d-part-menu-tip" id="anat3d-part-menu-tip" data-i18n="labAnatomy3d.partMenuTip">点「旋转」后拖拽该部位；「复位」恢复原始位置与角度</p>
+              </div>
+            </div>
+            <div class="anatomy-3d-controls">
+              <div class="anatomy-3d-mode" role="group" aria-label="3D 显示模式">
+                <button type="button" class="btn btn-sm anatomy-3d-mode-btn" id="anat3d-mode-real" aria-pressed="true" data-i18n="labAnatomy3d.modeReal">真实解剖</button>
+                <button type="button" class="btn btn-sm anatomy-3d-mode-btn" id="anat3d-mode-parts" aria-pressed="false" data-i18n="labAnatomy3d.modeParts">分区部件</button>
+              </div>
+              <button type="button" class="btn btn-sm" id="anat3d-autorotate" aria-pressed="false" data-i18n="labAnatomy3d.autoRotate">自动旋转</button>
+              <button type="button" class="btn btn-sm" id="anat3d-explode" aria-pressed="false" data-i18n="labAnatomy3d.explode">全部拆分</button>
+              <button type="button" class="btn btn-sm" id="anat3d-reset" data-i18n="labAnatomy3d.reset">全部复位</button>
+            </div>
+            <p class="anatomy-3d-selection" id="anat3d-selection" hidden data-i18n="labAnatomy3d.surfaceHint">点击皮层表面查看所在脑区（位置为近似归属）</p>
+            <span class="anatomy-group-label" id="anat3d-hints" data-i18n="labAnatomy3d.rotateHint">拖拽旋转 · 滚轮缩放 · 点击脑区查看说明</span>
+            </div>
+          </div>
+
+          <!-- 2D 示意图视图 -->
+          <div id="anatomy-2d-wrap" class="anatomy-2d-wrap" hidden>
+            <div class="anatomy-controls" role="group" aria-label="解剖视图控制">
+              <span class="anatomy-group-label" data-i18n="labAnatomy.layerHint">皮层表面 / 皮层下结构</span>
+              <button type="button" class="btn btn-sm" id="layer-surface" aria-pressed="true" data-i18n="labAnatomy.surface">皮层表面</button>
+              <button type="button" class="btn btn-sm" id="layer-deep" aria-pressed="false" data-i18n="labAnatomy.subcortical">皮层下结构</button>
+              <button type="button" class="btn btn-sm" id="toggle-labels" aria-pressed="true" data-i18n="lab.showLabels">显示标注</button>
+            </div>
+            <div class="anatomy-figure" id="anatomy-figure">
+              <svg id="brain-lateral" viewBox="0 0 340 280" role="img" aria-label="大脑左侧解剖图（皮层轮廓与分区由真实三维表面投影生成）">
+                <defs>
+                  <radialGradient id="anat-shade" cx="42%" cy="30%" r="78%">
+                    <stop offset="0" stop-color="#ffffff" stop-opacity="0.55" />
+                    <stop offset="0.62" stop-color="#ffffff" stop-opacity="0" />
+                    <stop offset="1" stop-color="#08203c" stop-opacity="0.22" />
+                  </radialGradient>
+                </defs>
+                <g class="layer-surface">
+                  <path class="anat-outline" id="anat-outline" d="" />
+                  <path id="reg-frontal" class="region" data-region="frontal" d="" />
+                  <path id="reg-parietal" class="region" data-region="parietal" d="" />
+                  <path id="reg-occipital" class="region" data-region="occipital" d="" />
+                  <path id="reg-temporal" class="region" data-region="temporal" d="" />
+                  <path class="anat-shade" id="anat-surface-shade" d="" />
+                  <!-- 小脑 / 脑干不在 pial 皮层表面内，按真实位置与叶片走向绘制 -->
+                  <g id="reg-cerebellum" class="region" data-region="cerebellum">
+                    <path d="M 56 198 C 64 182, 96 176, 120 184 C 136 190, 142 206, 137 222 C 130 238, 104 244, 82 239 C 62 234, 50 218, 56 198 Z" />
+                    <path class="folia" d="M 60 203 C 84 194, 112 192, 134 200" />
+                    <path class="folia" d="M 57 212 C 81 203, 110 201, 136 210" />
+                    <path class="folia" d="M 58 221 C 80 214, 108 212, 132 220" />
+                    <path class="folia" d="M 64 230 C 84 224, 108 223, 128 229" />
+                  </g>
+                  <g id="reg-brainstem" class="region" data-region="brainstem">
+                    <path d="M 150 184 C 161 179, 173 184, 176 195 C 180 214, 178 240, 174 262 L 157 262 C 153 238, 148 204, 150 184 Z" />
+                    <path class="folia" d="M 154 200 C 162 197, 170 198, 175 202" />
+                    <path class="folia" d="M 154 218 C 162 215, 171 216, 176 220" />
+                  </g>
+                </g>
+                <g class="layer-deep" hidden>
+                  <path id="reg-corpus-callosum" class="region region-deep" data-region="corpus-callosum"
+                    d="M 92 124 C 112 96, 176 86, 216 104 L 212 113 C 176 97, 120 105, 99 130 Z" />
+                  <path id="reg-ventricle" class="region region-deep" data-region="ventricle"
+                    d="M 103 105 C 122 87, 166 82, 196 94 L 192 102 C 165 92, 128 95, 109 111 Z" />
+                  <path id="reg-thalamus" class="region region-deep" data-region="thalamus"
+                    d="M 107 128 C 113 117, 132 113, 144 118 C 156 123, 159 136, 152 146 C 143 157, 120 157, 111 147 C 104 139, 103 134, 107 128 Z" />
+                  <path id="reg-hippocampus" class="region region-deep" data-region="hippocampus"
+                    d="M 84 178 C 100 166, 126 162, 148 168 C 157 171, 158 180, 151 184 C 131 176, 108 179, 94 190 C 86 195, 78 185, 84 178 Z" />
+                </g>
+                <g class="label-group">
+                  <text class="region-label" x="228" y="86">额叶</text>
+                  <text class="region-label" x="152" y="66">顶叶</text>
+                  <text class="region-label" x="72" y="96">枕叶</text>
+                  <text class="region-label" x="158" y="196">颞叶</text>
+                  <text class="region-label" x="96" y="256">小脑</text>
+                  <text class="region-label" x="196" y="252">脑干</text>
+                  <text class="region-label" x="146" y="92">胼胝体</text>
+                  <text class="region-label" x="150" y="80">侧脑室</text>
+                  <text class="region-label" x="132" y="158">丘脑</text>
+                  <text class="region-label" x="118" y="200">海马</text>
+                </g>
+              </svg>
+            </div>
+          </div>
+
+          <!-- 矢状剖面视图 -->
+          <div id="anatomy-section-wrap" class="anatomy-section-wrap" hidden>
+            <div class="anatomy-figure">
+              <p class="lab-exp-desc" data-i18n="labAnatomy.sectionDesc">沿大脑正中矢状面切开，可见胼胝体、丘脑、海马等结构的位置关系。</p>
+              <svg id="brain-section" viewBox="0 0 340 280" role="img" aria-label="大脑矢状剖面解剖图（内侧面轮廓由真实三维表面生成）">
+                <path class="anat-section-outline" id="anat-section-outline" d="" />
+                <path class="anat-shade" id="anat-section-shade" d="" />
+                <path id="sec-corpus-callosum" class="region region-section" data-region="corpus-callosum"
+                  d="M 108 114 C 130 88, 180 84, 208 100 L 204 108 C 178 94, 134 98, 116 120 Z" />
+                <path id="sec-thalamus" class="region region-section" data-region="thalamus"
+                  d="M 138 134 C 146 122, 170 120, 182 129 C 194 138, 193 152, 182 160 C 168 169, 144 166, 137 155 C 132 147, 133 140, 138 134 Z" />
+                <path class="region region-section" data-region="hippocampus"
+                  d="M 152 172 C 170 164, 194 164, 208 172 C 216 177, 214 186, 206 190 C 188 182, 166 182, 154 188 C 146 191, 145 176, 152 172 Z" />
+                <path class="region region-section" data-region="brainstem"
+                  d="M 156 192 C 166 187, 178 191, 181 201 C 185 220, 183 244, 180 262 L 164 262 C 160 242, 154 212, 156 192 Z" />
+                <g class="region region-section" data-region="cerebellum">
+                  <path d="M 214 180 C 236 172, 262 180, 271 197 C 278 213, 268 230, 249 234 C 231 238, 214 227, 210 211 C 206 197, 208 185, 214 180 Z" />
+                  <path class="folia" d="M 216 189 C 236 183, 258 186, 270 197" />
+                  <path class="folia" d="M 214 200 C 234 194, 256 197, 269 207" />
+                  <path class="folia" d="M 216 212 C 234 207, 254 210, 266 219" />
+                </g>
+                <text class="region-label" x="158" y="76">胼胝体</text>
+                <text class="region-label" x="162" y="142">丘脑</text>
+                <text class="region-label" x="182" y="200">海马</text>
+                <text class="region-label" x="178" y="248">脑干</text>
+                <text class="region-label" x="244" y="246">小脑</text>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <aside class="anatomy-info" id="anatomy-info" aria-live="polite">
+          <h2 class="anatomy-info-name" id="info-name"></h2>
+          <p class="anatomy-info-text" id="info-text"></p>
+          <div class="anatomy-info-kws" id="info-kws"></div>
+          <div class="anatomy-info-related" id="info-related"></div>
+          <p class="lab-exp-note" id="anat3d-engine-note" data-i18n="labAnatomy3d.engineNote">3D 引擎 three.js（MIT 许可，本地化离线加载）；皮层表面为 FreeSurfer fsaverage5（pial，含真实沟回）；分区部件为教学示意。支持旋转 / 拆分 / 挪动 / 复位。</p>
+        </aside>
+      </div>
+
+      <p class="lab-note" data-i18n="lab.moduleNote">本页演示为教学示意，用于帮助理解概念，不等同于真实实验数据。</p>
+
+      <div class="qz-footer">
+        <a class="btn nb-back" href="lab.html" data-back data-i18n="lab.back">返回互动实验室</a>
+      </div>
+    </div>
+  </main>
+
+  <footer id="nb-footer"></footer>
+
+  <noscript>
+    <div class="wrap">
+      <p class="notice">本页的脑解剖演示由本地脚本渲染，请启用 JavaScript 后再访问。</p>
+    </div>
+  </noscript>
+
+  <script src="assets/js/data/terms.js?v=1194"></script>
+  <script src="assets/js/data/i18n.js?v=1194"></script>
+  <script defer src="assets/vendor/three/three.min.js?v=1194"></script>
+  <script defer src="assets/vendor/three/OrbitControls.js?v=1194"></script>
+  <script defer src="assets/vendor/three/brain-surface.js?v=1194"></script>
+  <script defer src="assets/vendor/three/brain-deep.js?v=1194"></script>
+  <script src="assets/data/brain-2d.js?v=1194"></script>
+  <script src="assets/js/core.js?v=1194"></script>
+  <script src="assets/js/cloud-config.js?v=1194"></script>
+  <script src="assets/js/cloud.js?v=1194"></script>
+  <script src="assets/js/auth-ui.js?v=1194"></script>
+  <script src="assets/js/ai-fluid.js?v=1194"></script>
+  <script src="assets/js/ai-tutor.js?v=1194"></script>
+  <script src="assets/js/feedback.js?v=1194"></script>
+  <script src="assets/js/help.js?v=1194"></script>
+  <script src="assets/js/learn.js?v=1194"></script>
+  <script defer src="assets/js/page-lab-anatomy.js?v=1194"></script>
+</body>
+</html>

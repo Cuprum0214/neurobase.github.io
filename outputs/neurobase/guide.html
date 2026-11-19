@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1e5fa8">
+  <meta name="description" content="NeuroBase 使用指南：检索、词条、学习工具、互动实验室、社区与云同步的用法，个性化与无障碍设置，数据与隐私说明，以及免责声明和来源引用规范。">
+  <title>使用指南 · NeuroBase</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="assets/css/style.css?v=1194">
+  <script>
+    (function () {
+      try {
+        var m = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)').matches : false;
+        var th = localStorage.getItem('nb-theme') || 'system';
+        if (th === 'dark' || (th === 'system' && m)) document.documentElement.classList.add('dark');
+      } catch (e) {}
+      try {
+        var f = parseFloat(localStorage.getItem('nb-font') || '100');
+        if (f >= 25 && f <= 300) document.documentElement.style.setProperty('--nb-font-scale', (f / 100).toFixed(2));
+      } catch (e) {}
+      try {
+        if (localStorage.getItem('nb-motion') === 'off') document.documentElement.classList.add('motion-off');
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="action.skipToContent">跳到主内容</a>
+  <header id="nb-header"></header>
+
+  <main id="main" class="nb-content">
+    <div class="wrap manual">
+      <h1 class="page-title" data-i18n="manual.title">使用指南</h1>
+      <p class="page-desc" data-i18n="manual.lead">从「查一个词」到「做一次实验」，这份指南说明每个入口做什么、数据存在哪里，以及内容的使用边界。</p>
+
+      <section class="card">
+        <h2 data-i18n="manual.quickTitle">一分钟上手</h2>
+        <ol>
+          <li data-i18n="manual.step1">在顶部检索框输入中文、英文或缩写（如 P300、SSVEP、突触），回车进入结果列表。</li>
+          <li data-i18n="manual.step2">打开词条，先看「一句话定义」和「通俗解释」，再看「工程关联」与参考来源。</li>
+          <li data-i18n="manual.step3">打开「学习工具」，用闪卡、拼写练习和测验按间隔重复复习；错题会进入错题本。</li>
+          <li data-i18n="manual.step4">打开「互动实验室」，转动 3D 脑模型、跑认知实验，或查看神经信号与 BCI 流程模拟。</li>
+          <li data-i18n="manual.step5">「我的学习」汇总进度、收藏、错题与打卡；数据默认只存在本机浏览器。</li>
+          <li data-i18n="manual.step6">需要跨设备同步时，点右上角「登录」创建账号；不登录也能完整使用。</li>
+        </ol>
+      </section>
+
+      <section class="card">
+        <h2 data-i18n="manual.areasTitle">各功能区做什么</h2>
+        <ul class="manual-list">
+          <li><strong data-i18n="manual.areaTermsName">术语检索</strong><span data-i18n="manual.areaTermsDesc">按模块筛选词条，支持关键词、英文缩写与拼音检索。</span></li>
+          <li><strong data-i18n="manual.areaTermName">词条详情</strong><span data-i18n="manual.areaTermDesc">定义、通俗解释、图示、工程关联、相关词条，以及来源类型与核验时间。</span></li>
+          <li><strong data-i18n="manual.areaLearnName">学习工具</strong><span data-i18n="manual.areaLearnDesc">闪卡（间隔重复）、拼写与缩写训练、测验；自动记录错题与掌握度。</span></li>
+          <li><strong data-i18n="manual.areaLabName">互动实验室</strong><span data-i18n="manual.areaLabDesc">3D 脑解剖、认知实验模拟、神经信号与 BCI 流程演示。</span></li>
+          <li><strong data-i18n="manual.areaReadingName">教材导读</strong><span data-i18n="manual.areaReadingDesc">按主题组织的权威教材与阅读路径。</span></li>
+          <li><strong data-i18n="manual.areaExploreName">内容生态</strong><span data-i18n="manual.areaExploreDesc">工程对照表、前沿追踪、数据来源与更新记录。</span></li>
+          <li><strong data-i18n="manual.areaCommunityName">学习社区</strong><span data-i18n="manual.areaCommunityDesc">提问、回答、点赞与收藏；发布内容需要先登录。</span></li>
+          <li><strong data-i18n="manual.areaDashboardName">我的学习</strong><span data-i18n="manual.areaDashboardDesc">学习进度、打卡日历、错题本与个性化设置。</span></li>
+          <li><strong data-i18n="manual.areaDocsName">项目文件</strong><span data-i18n="manual.areaDocsDesc">过程文档与数据文件的只读总览。</span></li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2 data-i18n="manual.a11yTitle">个性化与无障碍</h2>
+        <ul>
+          <li data-i18n="manual.a11yTheme">主题：白天 / 黑夜 / 跟随系统，可在顶部工具栏切换。</li>
+          <li data-i18n="manual.a11yFont">字号：工具栏可在 25%–300% 之间调节，全站正文随之缩放。</li>
+          <li data-i18n="manual.a11yMotion">动效：尊重系统的「减弱动效」偏好，也可在「我的学习」中关闭。</li>
+          <li data-i18n="manual.a11yLang">语言：中文 / English 一键切换，选择会被记住。</li>
+          <li data-i18n="manual.a11yKeys">键盘：Tab 移动焦点，Enter / Space 激活，Esc 关闭弹窗；页面顶部提供「跳到主内容」。</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2 data-i18n="manual.privacyTitle">数据与隐私</h2>
+        <ul>
+          <li data-i18n="manual.privacyLocal">学习进度、收藏、错题、打卡与设置默认保存在本机浏览器；清除浏览器数据会一并丢失。</li>
+          <li data-i18n="manual.privacyCloud">登录后可选同步到云端，只在你主动操作时上传对应数据。</li>
+          <li data-i18n="manual.privacyTrack">本站不接入第三方广告或行为追踪。</li>
+          <li data-i18n="manual.privacyFeedback">反馈箱内容（可含页面与设备信息）会发送给维护者，用于排错与改进。</li>
+        </ul>
+      </section>
+
+      <section class="card" id="disclaimer">
+        <h2 data-i18n="manual.disclaimerTitle">免责声明</h2>
+        <p data-i18n="manual.disclaimerBody">本站内容仅供学习参考，不构成医疗、诊断或治疗建议。AI 生成、自动抓取与人工整理均可能出错；3D 模型与模拟结果用于教学演示，不是真实测量数据。如涉及身体不适或临床问题，请咨询具备资质的专业人员。</p>
+      </section>
+
+      <section class="card" id="sources">
+        <h2 data-i18n="manual.sourcesTitle">来源与引用</h2>
+        <p data-i18n="manual.sourcesBody">每条词条标注来源类型、来源与核验时间；「内容生态」中的数据来源页提供按来源归并的登记表与 Crossref / WorldCat 检索入口。教材基准见 docs/READING_LIST.md。引用本站内容时，请一并核对原始来源与版本页码。</p>
+      </section>
+
+      <section class="card" id="feedback">
+        <h2 data-i18n="manual.feedbackTitle">反馈与纠错</h2>
+        <p data-i18n="manual.feedbackBody">发现错误、缺失或表述不清，请用顶部「反馈箱」提交（可附页面与截图），或在「学习社区」发帖。我们会定期复核，并把修正记录到来源登记表。</p>
+      </section>
+    </div>
+  </main>
+
+  <footer id="nb-footer"></footer>
+
+  <noscript>
+    <div class="wrap">
+      <p class="notice">本页由本地脚本渲染顶栏与页脚，请启用 JavaScript 后再访问。</p>
+    </div>
+  </noscript>
+
+  <script src="assets/js/data/terms.js?v=1194"></script>
+  <script src="assets/js/data/i18n.js?v=1194"></script>
+  <script src="assets/js/core.js?v=1194"></script>
+  <script src="assets/js/cloud-config.js?v=1194"></script>
+  <script src="assets/js/cloud.js?v=1194"></script>
+  <script src="assets/js/auth-ui.js?v=1194"></script>
+  <script src="assets/js/ai-fluid.js?v=1194"></script>
+  <script src="assets/js/ai-tutor.js?v=1194"></script>
+  <script src="assets/js/feedback.js?v=1194"></script>
+  <script src="assets/js/help.js?v=1194"></script>
+  <script src="assets/js/page-guide.js?v=1194"></script>
+</body>
+</html>

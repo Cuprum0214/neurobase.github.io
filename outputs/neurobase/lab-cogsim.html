@@ -1,0 +1,169 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1e5fa8">
+  <meta name="description" content="NeuroBase 认知实验模拟：亲身体验 Stroop 效应、简单/选择反应时与数字记忆广度三个经典认知实验。">
+  <title>认知实验模拟 · NeuroBase</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="assets/css/style.css?v=1194">
+  <!-- 在样式生效前定好主题与正文字号，避免首屏闪烁（两件事各自 try，互不牵连） -->
+  <script>
+    (function () {
+      try {
+        var m = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)').matches : false;
+        var th = localStorage.getItem('nb-theme') || 'system';
+        if (th === 'dark' || (th === 'system' && m)) document.documentElement.classList.add('dark');
+      } catch (e) {}
+      try {
+        var f = parseFloat(localStorage.getItem('nb-font') || '100');
+        if (f >= 25 && f <= 300) document.documentElement.style.setProperty('--nb-font-scale', (f / 100).toFixed(2));
+      } catch (e) {}
+      try {
+        if (localStorage.getItem('nb-motion') === 'off') document.documentElement.classList.add('motion-off');
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="action.skipToContent">跳到主内容</a>
+  <header id="nb-header"></header>
+
+  <main id="main" class="nb-content cogsim">
+    <div class="wrap">
+      <h1 class="page-title" data-i18n="labCogsim.title">认知实验模拟</h1>
+      <p class="page-desc" data-i18n="labCogsim.desc">亲手做三个经典认知实验，体验认知科学的经典范式，并了解它们的神经科学含义。</p>
+
+      <!-- 第一步：三个实验模块，先选模块再进入具体实验 -->
+      <section class="cogsim-menu" id="cogsim-menu" aria-labelledby="cogsim-menu-title">
+        <h2 class="sr-only" id="cogsim-menu-title" data-i18n="labCogsim.menuTitle">选择实验模块</h2>
+        <p class="cogsim-menu-hint" data-i18n="labCogsim.menuHint">三个经典范式任选其一；实验过程中可随时返回重选。</p>
+        <div class="cogsim-grid">
+          <button type="button" class="cogsim-card" data-exp="stroop">
+            <span class="cogsim-card-icon" aria-hidden="true">🎨</span>
+            <span class="cogsim-card-name" data-i18n="labCogsim.stroopTitle">Stroop 效应（色词干扰）</span>
+            <span class="cogsim-card-desc" data-i18n="labCogsim.stroopDesc">字义与颜色冲突时，反应变慢、错误变多，说明自动化的语义加工会干扰受控的颜色命名。</span>
+            <span class="cogsim-card-meta" data-i18n="labCogsim.stroopMeta">20 题 · 约 1–2 分钟</span>
+            <span class="cogsim-card-go" data-i18n="labCogsim.enterExp">开始实验 →</span>
+          </button>
+          <button type="button" class="cogsim-card" data-exp="rt">
+            <span class="cogsim-card-icon" aria-hidden="true">⏱️</span>
+            <span class="cogsim-card-name" data-i18n="labCogsim.rtTitle">反应时实验（简单 / 选择）</span>
+            <span class="cogsim-card-desc" data-i18n="labCogsim.rtDesc">测量从刺激出现到按键反应的时间间隔，是认知加工速度的基本指标。</span>
+            <span class="cogsim-card-meta" data-i18n="labCogsim.rtMeta">10 次 · 约 1 分钟</span>
+            <span class="cogsim-card-go" data-i18n="labCogsim.enterExp">开始实验 →</span>
+          </button>
+          <button type="button" class="cogsim-card" data-exp="digit">
+            <span class="cogsim-card-icon" aria-hidden="true">🔢</span>
+            <span class="cogsim-card-name" data-i18n="labCogsim.digitTitle">记忆广度实验</span>
+            <span class="cogsim-card-desc" data-i18n="labCogsim.digitDesc">看一串数字，按顺序回忆出来。工作记忆容量大约为 7±2 个项目。</span>
+            <span class="cogsim-card-meta" data-i18n="labCogsim.digitMeta">从 3 位起 · 约 2 分钟</span>
+            <span class="cogsim-card-go" data-i18n="labCogsim.enterExp">开始实验 →</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- 第二步：具体实验内容，一次只显示一个 -->
+      <div class="cogsim-detail" id="cogsim-detail" hidden>
+        <button type="button" class="nb-back cogsim-back" id="cogsim-back" data-i18n="labCogsim.backToMenu">返回实验列表</button>
+
+        <!-- Stroop 效应 -->
+        <section class="card lab-exp" id="exp-stroop" data-exp-panel="stroop" aria-labelledby="stroop-title" hidden>
+          <h2 class="lab-exp-title" id="stroop-title" data-i18n="labCogsim.stroopTitle">Stroop 效应（色词干扰）</h2>
+          <p class="lab-exp-desc" data-i18n="labCogsim.stroopDesc">字义与颜色冲突时，反应变慢、错误变多，说明自动化的语义加工会干扰受控的颜色命名。</p>
+          <p class="lab-exp-how" data-i18n="labCogsim.stroopHow">每个色词用不同的颜色显示。请判断【字的颜色】，而不是字义本身。</p>
+          <div class="lab-exp-actions">
+            <button type="button" class="btn" id="stroop-start" data-i18n="labCogsim.stroopStart">开始测试（20 题）</button>
+          </div>
+          <p class="lab-exp-progress" id="stroop-progress" role="status"></p>
+          <p class="lab-exp-word" id="stroop-word" aria-live="polite"></p>
+          <div class="lab-color-row" id="stroop-btns">
+            <button type="button" class="lab-color-btn c-red" data-color="red" data-key="Q" data-i18n="labCogsim.colorRed">红</button>
+            <button type="button" class="lab-color-btn c-blue" data-color="blue" data-key="W" data-i18n="labCogsim.colorBlue">蓝</button>
+            <button type="button" class="lab-color-btn c-green" data-color="green" data-key="E" data-i18n="labCogsim.colorGreen">绿</button>
+            <button type="button" class="lab-color-btn c-yellow" data-color="yellow" data-key="R" data-i18n="labCogsim.colorYellow">黄</button>
+          </div>
+          <p class="lab-exp-keys" id="stroop-keys" data-i18n="labCogsim.stroopKeys">键盘作答：Q 红 · W 蓝 · E 绿 · R 黄</p>
+          <div class="lab-exp-result" id="stroop-result" role="status"></div>
+          <p class="lab-exp-note" data-i18n="labCogsim.stroopNote">该效应提示前额叶—扣带回的冲突监控机制（ACC 检测冲突、前额叶解决冲突）。</p>
+        </section>
+
+        <!-- 反应时 -->
+        <section class="card lab-exp" id="exp-rt" data-exp-panel="rt" aria-labelledby="rt-title" hidden>
+          <h2 class="lab-exp-title" id="rt-title" data-i18n="labCogsim.rtTitle">反应时实验（简单 / 选择）</h2>
+          <p class="lab-exp-desc" data-i18n="labCogsim.rtDesc">测量从刺激出现到按键反应的时间间隔，是认知加工速度的基本指标。</p>
+          <div class="lab-exp-setup" id="rt-setup">
+            <label class="lab-exp-label">
+              <input type="radio" name="rt-mode" value="simple" checked>
+              <span data-i18n="labCogsim.rtModeSimple">简单反应时</span>
+            </label>
+            <label class="lab-exp-label">
+              <input type="radio" name="rt-mode" value="choice">
+              <span data-i18n="labCogsim.rtModeChoice">选择反应时</span>
+            </label>
+            <button type="button" class="btn" id="rt-start" data-i18n="lab.run">开始</button>
+          </div>
+          <p class="lab-exp-how" id="rt-how"></p>
+          <div class="lab-rt-stage" id="rt-stage">
+            <div class="lab-rt-stim" id="rt-stim" hidden></div>
+            <p class="lab-rt-ready" id="rt-ready" hidden data-i18n="labCogsim.rtSimpleHow">方块出现后尽快点击「反应」按钮。</p>
+            <div class="lab-rt-actions" id="rt-actions">
+              <button type="button" class="btn btn-accent" id="rt-react" data-key="Space" hidden data-i18n="labCogsim.rtReact">反应</button>
+              <button type="button" class="btn lab-color-btn c-red" id="rt-red" hidden data-i18n="labCogsim.rtRed">红</button>
+              <button type="button" class="btn lab-color-btn c-blue" id="rt-blue" hidden data-i18n="labCogsim.rtBlue">蓝</button>
+            </div>
+          </div>
+          <p class="lab-exp-keys lab-rt-keys" id="rt-keys" data-i18n="labCogsim.rtKeys" hidden>键盘作答：方块出现后按空格键（也可点「反应」）</p>
+          <div class="lab-exp-result" id="rt-result" role="status"></div>
+          <p class="lab-exp-note" id="rt-note"></p>
+        </section>
+
+        <!-- 记忆广度 -->
+        <section class="card lab-exp" id="exp-digit" data-exp-panel="digit" aria-labelledby="digit-title" hidden>
+          <h2 class="lab-exp-title" id="digit-title" data-i18n="labCogsim.digitTitle">记忆广度实验</h2>
+          <p class="lab-exp-desc" data-i18n="labCogsim.digitDesc">看一串数字，按顺序回忆出来。工作记忆容量大约为 7±2 个项目。</p>
+          <p class="lab-exp-how" data-i18n="labCogsim.digitHow">数字序列会短暂显示，随后输入你记住的数字（按出现顺序）。</p>
+          <div class="lab-digit-stage">
+            <button type="button" class="btn" id="digit-start" data-i18n="labCogsim.digitStart">开始（从 3 位开始）</button>
+            <p class="lab-digit-display" id="digit-display" aria-live="polite"></p>
+            <div class="lab-digit-input-row" id="digit-input-row" hidden>
+              <input class="input" id="digit-input" type="text" inputmode="numeric" autocomplete="off" aria-label="输入你记住的数字" data-i18n-aria="labCogsim.digitInputLabel" data-i18n-placeholder="labCogsim.digitRecallPlaceholder" placeholder="输入你记住的数字">
+              <button type="button" class="btn" id="digit-submit" data-i18n="labCogsim.digitSubmit">确认</button>
+            </div>
+            <div class="lab-exp-result" id="digit-result" role="status"></div>
+            <p class="lab-exp-note" data-i18n="labCogsim.digitNote">广度大小与左侧前额叶工作记忆系统及语音环路有关；可通过组块（chunking）策略提升。</p>
+          </div>
+        </section>
+      </div>
+
+      <p class="lab-note" data-i18n="lab.moduleNote">本页演示为教学示意，用于帮助理解概念，不等同于真实实验数据。</p>
+
+      <div class="qz-footer">
+        <a class="btn nb-back" href="lab.html" data-back data-i18n="lab.back">返回互动实验室</a>
+      </div>
+    </div>
+  </main>
+
+  <footer id="nb-footer"></footer>
+
+  <noscript>
+    <div class="wrap">
+      <p class="notice">本页的认知实验由本地脚本渲染，请启用 JavaScript 后再访问。</p>
+    </div>
+  </noscript>
+
+  <script src="assets/js/data/terms.js?v=1194"></script>
+  <script src="assets/js/data/i18n.js?v=1194"></script>
+  <script src="assets/js/core.js?v=1194"></script>
+  <script src="assets/js/cloud-config.js?v=1194"></script>
+  <script src="assets/js/cloud.js?v=1194"></script>
+  <script src="assets/js/auth-ui.js?v=1194"></script>
+  <script src="assets/js/ai-fluid.js?v=1194"></script>
+  <script src="assets/js/ai-tutor.js?v=1194"></script>
+  <script src="assets/js/feedback.js?v=1194"></script>
+  <script src="assets/js/help.js?v=1194"></script>
+  <script src="assets/js/learn.js?v=1194"></script>
+  <script src="assets/js/page-lab-cogsim.js?v=1194"></script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1e5fa8">
+  <meta name="description" content="NeuroBase 教材与文献推荐：按分支整理的 55 本权威教材与文献，附难度、语言与自撰导读，含 5 条学习路径，全站离线可用。">
+  <title>教材导读 · NeuroBase</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="assets/css/style.css?v=1194">
+  <script>
+    (function () {
+      try {
+        var m = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)').matches : false;
+        var th = localStorage.getItem('nb-theme') || 'system';
+        if (th === 'dark' || (th === 'system' && m)) document.documentElement.classList.add('dark');
+      } catch (e) {}
+      try {
+        var f = parseFloat(localStorage.getItem('nb-font') || '100');
+        if (f >= 25 && f <= 300) document.documentElement.style.setProperty('--nb-font-scale', (f / 100).toFixed(2));
+      } catch (e) {}
+      try {
+        if (localStorage.getItem('nb-motion') === 'off') document.documentElement.classList.add('motion-off');
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="action.skipToContent">跳到主内容</a>
+  <header id="nb-header"></header>
+
+  <main id="main" class="nb-content">
+    <div class="wrap">
+      <h1 class="page-title" data-i18n="reading.title">教材与文献推荐</h1>
+      <p class="page-desc" data-i18n="reading.desc">按分支整理的主流权威教材，附难度与语言标记。</p>
+
+      <p class="notice" id="nb-jump" hidden></p>
+
+      <div class="filters" id="nb-cats" role="group" aria-label="分类筛选" data-i18n-aria="nb.categoryFilter"></div>
+      <p class="meta" id="nb-note-hint" data-i18n="reading.noteHint" style="margin-top:.75rem">导读为项目自撰摘要，非教材原文引用</p>
+      <ul class="grid-2" id="nb-books" style="margin-top:.75rem"></ul>
+
+      <section class="term-section">
+        <h2 class="sec-title" data-i18n="reading.pathsTitle">学习路径建议</h2>
+        <div class="grid-2" id="nb-paths"></div>
+      </section>
+
+      <p class="source-note" data-i18n="reading.sourceNote">导读为项目自撰摘要、非教材原文引用；书目与版次以出版社最新信息为准，完整依据见「关于」。</p>
+    </div>
+  </main>
+
+  <footer id="nb-footer"></footer>
+
+  <noscript>
+    <div class="wrap">
+      <p class="notice">本页的书目清单由本地脚本渲染，请启用 JavaScript 后再访问。</p>
+    </div>
+  </noscript>
+
+  <script src="assets/js/data/terms.js?v=1194"></script>
+  <script src="assets/js/data/i18n.js?v=1194"></script>
+  <script src="assets/js/data/reading.js?v=1194"></script>
+  <script src="assets/js/core.js?v=1194"></script>
+  <script src="assets/js/cloud-config.js?v=1194"></script>
+  <script src="assets/js/cloud.js?v=1194"></script>
+  <script src="assets/js/auth-ui.js?v=1194"></script>
+  <script src="assets/js/ai-fluid.js?v=1194"></script>
+  <script src="assets/js/ai-tutor.js?v=1194"></script>
+  <script src="assets/js/feedback.js?v=1194"></script>
+  <script src="assets/js/help.js?v=1194"></script>
+  <script src="assets/js/page-reading.js?v=1194"></script>
+</body>
+</html>

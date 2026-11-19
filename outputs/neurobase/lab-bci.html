@@ -1,0 +1,87 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1e5fa8">
+  <meta name="description" content="NeuroBase BCI 案例拆解：P300 拼写器、SSVEP 控制、运动想象假肢、侵入式神经光标与语音——按问题/范式/信号/解码/性能/局限六环节拆解。">
+  <title>BCI 案例拆解 · NeuroBase</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="assets/css/style.css?v=1194">
+  <!-- 在样式生效前定好主题与正文字号，避免首屏闪烁（两件事各自 try，互不牵连） -->
+  <script>
+    (function () {
+      try {
+        var m = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)').matches : false;
+        var th = localStorage.getItem('nb-theme') || 'system';
+        if (th === 'dark' || (th === 'system' && m)) document.documentElement.classList.add('dark');
+      } catch (e) {}
+      try {
+        var f = parseFloat(localStorage.getItem('nb-font') || '100');
+        if (f >= 25 && f <= 300) document.documentElement.style.setProperty('--nb-font-scale', (f / 100).toFixed(2));
+      } catch (e) {}
+      try {
+        if (localStorage.getItem('nb-motion') === 'off') document.documentElement.classList.add('motion-off');
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="action.skipToContent">跳到主内容</a>
+  <header id="nb-header"></header>
+
+  <main id="main" class="nb-content">
+    <div class="wrap">
+      <h1 class="page-title" data-i18n="labBci.title">BCI 案例拆解</h1>
+      <p class="page-desc" data-i18n="labBci.desc">把代表性 BCI 应用拆成「问题 → 范式 → 信号 → 解码 → 性能 → 局限」六个环节，理解一个真实脑机接口是怎么搭起来的。</p>
+
+      <section class="card lab-bci" aria-labelledby="bci-title">
+        <h2 class="sr-only" id="bci-title" data-i18n="labBci.stepIntro">拆解环节</h2>
+
+        <div class="bci-case-nav" role="tablist" aria-label="BCI 案例选择">
+          <button type="button" class="btn btn-sm" data-case="1" role="tab" aria-selected="true" aria-controls="bci-case-body">P300 拼写器</button>
+          <button type="button" class="btn btn-sm" data-case="2" role="tab" aria-selected="false" aria-controls="bci-case-body">SSVEP 拨号与控制</button>
+          <button type="button" class="btn btn-sm" data-case="3" role="tab" aria-selected="false" aria-controls="bci-case-body">运动想象假肢控制</button>
+          <button type="button" class="btn btn-sm" data-case="4" role="tab" aria-selected="false" aria-controls="bci-case-body">侵入式神经光标与语音</button>
+        </div>
+
+        <div class="bci-case-body" id="bci-case-body" aria-live="polite">
+          <p class="bci-case-label" id="bci-case-label"></p>
+          <h3 class="bci-case-title" id="bci-case-title"></h3>
+          <p class="bci-case-desc" id="bci-case-desc"></p>
+          <ol class="bci-steps" id="bci-steps"></ol>
+        </div>
+
+        <p class="lab-exp-note" id="bci-takeaway"></p>
+      </section>
+
+      <p class="lab-note" data-i18n="lab.moduleNote">本页演示为教学示意，用于帮助理解概念，不等同于真实实验数据。</p>
+
+      <div class="qz-footer">
+        <a class="btn nb-back" href="lab.html" data-back data-i18n="lab.back">返回互动实验室</a>
+      </div>
+    </div>
+  </main>
+
+  <footer id="nb-footer"></footer>
+
+  <noscript>
+    <div class="wrap">
+      <p class="notice">本页的 BCI 案例拆解由本地脚本渲染，请启用 JavaScript 后再访问。</p>
+    </div>
+  </noscript>
+
+  <script src="assets/js/data/terms.js?v=1194"></script>
+  <script src="assets/js/data/i18n.js?v=1194"></script>
+  <script src="assets/js/core.js?v=1194"></script>
+  <script src="assets/js/cloud-config.js?v=1194"></script>
+  <script src="assets/js/cloud.js?v=1194"></script>
+  <script src="assets/js/auth-ui.js?v=1194"></script>
+  <script src="assets/js/ai-fluid.js?v=1194"></script>
+  <script src="assets/js/ai-tutor.js?v=1194"></script>
+  <script src="assets/js/feedback.js?v=1194"></script>
+  <script src="assets/js/help.js?v=1194"></script>
+  <script src="assets/js/learn.js?v=1194"></script>
+  <script src="assets/js/page-lab-bci.js?v=1194"></script>
+</body>
+</html>

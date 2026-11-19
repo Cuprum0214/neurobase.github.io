@@ -1,0 +1,316 @@
+[
+  {
+    "id": "emotion-limbic-system",
+    "module": "emotion",
+    "name_zh": "边缘系统",
+    "name_en": "Limbic System",
+    "aliases": [
+      "大脑边缘系统",
+      "边缘环路"
+    ],
+    "pinyin": "bianyuanxitong",
+    "pinyin_initials": "byxt",
+    "definition": "由杏仁核、海马、扣带回、隔区、下丘脑等相互连接的结构组成的皮层下—皮层网络（其边界定义在历史上历经修订），参与情绪、动机、记忆与自主神经调节，是情绪加工“旧脑通路”的核心组成部分。",
+    "plain": "大脑里管“情绪和本能”的那一片老区域。",
+    "difficulty": "intro",
+    "tags": [
+      "情绪",
+      "网络"
+    ],
+    "related": [
+      "emotion-amygdala",
+      "anatomy-hypothalamus",
+      "emotion-anterior-cingulate-cortex",
+      "anatomy-hippocampus"
+    ],
+    "engineering_link": "边缘系统是情绪识别脑机接口（基于 EEG/fMRI 的情绪状态分类）与情感神经调控（如抑郁症 DBS 靶点）的主要功能网络。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "The Human Brain: An Introduction to its Functional Anatomy (Nolte, 7th ed.)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "emotion-anterior-cingulate-cortex",
+    "module": "emotion",
+    "name_zh": "前扣带皮层",
+    "name_en": "Anterior Cingulate Cortex",
+    "abbr": "ACC",
+    "aliases": [
+      "ACC",
+      "前扣带回",
+      "前扣带回皮层"
+    ],
+    "pinyin": "qiankoudaipiceng",
+    "pinyin_initials": "qkdpc",
+    "definition": "位于胼胝体前部上方、围绕胼胝体膝部的皮层区域，参与冲突监测与错误检测、疼痛的情绪—动机成分、努力与决策的价值计算；其活动常以错误相关负电位（ERN）与反馈相关负波（FRN）等电生理指标体现。",
+    "plain": "发现“出错了/有冲突”时最活跃的脑区，负责“纠错和使劲”。",
+    "difficulty": "intermediate",
+    "tags": [
+      "情绪",
+      "认知控制"
+    ],
+    "related": [
+      "emotion-insula",
+      "emotion-prefrontal-amygdala-circuit",
+      "attention-top-down-control",
+      "methods-erp"
+    ],
+    "engineering_link": "ERN/FRN 是脑机接口与神经反馈系统中“错误觉察、绩效监测”的可用特征，可用于自适应难度调节与错误校正回路。",
+    "references": [
+      {
+        "type": "review",
+        "title": "The anterior cingulate cortex and conflict monitoring (Botvinick et al., 2004, Psychological Review)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "emotion-insula",
+    "module": "emotion",
+    "name_zh": "脑岛",
+    "name_en": "Insula",
+    "aliases": [
+      "岛叶",
+      "岛叶皮层"
+    ],
+    "pinyin": "naodao",
+    "pinyin_initials": "nd",
+    "definition": "隐藏于外侧沟深部、被额顶颞叶覆盖的皮层区域，其前部参与内感受（心跳、呼吸、内脏感受）与主观情绪体验（尤其厌恶、焦虑与共情），后部参与躯体感觉与疼痛加工，是情绪“身体感受”来源的关键枢纽。",
+    "plain": "负责“身体的情绪感受”——心跳加快、胃里发紧，都被它汇总成心情。",
+    "difficulty": "intermediate",
+    "tags": [
+      "情绪",
+      "内感受"
+    ],
+    "related": [
+      "emotion-limbic-system",
+      "emotion-anterior-cingulate-cortex",
+      "emotion-emotion-regulation",
+      "sensory-somatosensory-system"
+    ],
+    "engineering_link": "内感受信号（心率变异性等）与脑岛活动联合可用于焦虑与应激状态的在线评估，是情感计算与神经反馈训练的重要指标。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "emotion-fear-conditioning",
+    "module": "emotion",
+    "name_zh": "恐惧条件化",
+    "name_en": "Fear Conditioning",
+    "aliases": [
+      "情绪条件化",
+      "恐惧学习",
+      "巴甫洛夫恐惧条件化"
+    ],
+    "pinyin": "kongjutiaojianhua",
+    "pinyin_initials": "kjtjh",
+    "definition": "把中性刺激（条件刺激，如声音）与厌恶刺激（非条件刺激，如电击）反复配对，使中性刺激单独出现即可引发恐惧反应（如僵直、心率与皮电升高）的学习过程；其获得依赖杏仁核，消退则是新的抑制性学习而非遗忘。",
+    "plain": "被吓过一次之后，同样的信号一出现你就紧张——这是一种自动学习。",
+    "difficulty": "intermediate",
+    "tags": [
+      "情绪",
+      "学习"
+    ],
+    "related": [
+      "emotion-amygdala",
+      "memory-reconsolidation",
+      "emotion-prefrontal-amygdala-circuit",
+      "synapse-synaptic-plasticity"
+    ],
+    "engineering_link": "恐惧条件化是暴露疗法与闭环神经调控（如 PTSD 治疗）的经典实验模型；皮肤电（EDA）与心率是其常用外周读出指标。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "emotion-prefrontal-amygdala-circuit",
+    "module": "emotion",
+    "name_zh": "前额叶—杏仁核回路",
+    "name_en": "Prefrontal-Amygdala Circuit",
+    "aliases": [
+      "情绪自上而下调控回路",
+      "前额叶-杏仁核通路"
+    ],
+    "pinyin": "qianeyexingrenhehuilu",
+    "pinyin_initials": "qeyxrhhl",
+    "definition": "由腹内侧/眶额前额叶对杏仁核实施抑制性调控的双向回路：前额叶负责对情绪反应的认知重评与情境化评价，杏仁核负责快速威胁检测；该回路的失衡与焦虑、抑郁及情绪调节困难密切相关。",
+    "plain": "理智脑（前额叶）给情绪脑（杏仁核）踩刹车的那条线。",
+    "difficulty": "advanced",
+    "tags": [
+      "情绪",
+      "调控"
+    ],
+    "related": [
+      "emotion-amygdala",
+      "anatomy-prefrontal-cortex",
+      "emotion-emotion-regulation",
+      "emotion-fear-conditioning"
+    ],
+    "engineering_link": "该回路是实时 fMRI/EEG 神经反馈情绪调节训练与抑郁症深部脑刺激（DBS）的靶向网络。",
+    "references": [
+      {
+        "type": "review",
+        "title": "The prefrontal-amygdala circuit in emotion regulation (Quirk & Gehlert, 2003 / Etkin et al., 2015)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "emotion-dopamine-reward",
+    "module": "emotion",
+    "name_zh": "多巴胺与奖赏预测误差",
+    "name_en": "Dopamine and Reward Prediction Error",
+    "aliases": [
+      "奖赏预测误差",
+      "强化学习多巴胺",
+      "奖赏预测误差理论",
+      "RPE"
+    ],
+    "pinyin": "duobaanyujiangshangyucewucha",
+    "pinyin_initials": "dbayjsycwc",
+    "definition": "中脑多巴胺神经元的相位性放电编码奖赏预测误差（结果优于预期则放电增加、劣于预期则减少），从而为强化学习提供“价值更新信号”；多巴胺通路还参与动机、趋近行为与习惯形成。",
+    "plain": "“比想象中更好”时多巴胺就爆发——它是大脑的“惊喜与动力信号”。",
+    "difficulty": "intermediate",
+    "tags": [
+      "情绪",
+      "动机"
+    ],
+    "related": [
+      "anatomy-basal-ganglia",
+      "neuron-neural-coding",
+      "memory-long-term-potentiation",
+      "emotion-emotion-regulation"
+    ],
+    "engineering_link": "多巴胺的预测误差信号是强化学习算法（TD 学习）的生物学来源，也是脑机接口用户训练中“即时反馈与奖励设计”的理论依据。",
+    "references": [
+      {
+        "type": "paper",
+        "title": "A neural substrate of prediction and reward (Schultz, Dayan & Montague, 1997, Science)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "emotion-basic-emotions",
+    "module": "emotion",
+    "name_zh": "基本情绪理论",
+    "name_en": "Basic Emotion Theory",
+    "aliases": [
+      "基本情绪",
+      "离散情绪模型",
+      "基本情绪论"
+    ],
+    "pinyin": "jibenqingxulilun",
+    "pinyin_initials": "jbqxll",
+    "definition": "认为存在若干种具有进化适应性、跨文化可识别、各有特征性表达与生理反应模式的基本情绪（传统上以喜、怒、哀、惧、惊、厌等为代表），每种情绪对应相对特化的神经与行为程序；与维度模型（效价—唤醒）相对互补。",
+    "plain": "认为情绪有几块“基本积木”，每种都有固定表情和反应。",
+    "difficulty": "intro",
+    "tags": [
+      "情绪",
+      "理论"
+    ],
+    "related": [
+      "emotion-affective-computing",
+      "emotion-limbic-system",
+      "emotion-amygdala",
+      "emotion-insula"
+    ],
+    "engineering_link": "基本情绪标签是情感计算中最常用的分类体系（如 DEAP 数据集的效价/唤醒维度与情绪标签），直接决定情绪识别模型的目标空间。",
+    "references": [
+      {
+        "type": "encyclopedia",
+        "title": "认知心理学 (Sternberg & Sternberg, 7th ed.)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "emotion-emotion-regulation",
+    "module": "emotion",
+    "name_zh": "情绪调节",
+    "name_en": "Emotion Regulation",
+    "aliases": [
+      "认知重评",
+      "情绪调控",
+      "情绪调节策略"
+    ],
+    "pinyin": "qingxutiaojie",
+    "pinyin_initials": "qxtj",
+    "definition": "个体影响自身情绪产生、体验与表达的过程，常用策略包括情境选择、注意分配、认知重评与表达抑制；其中认知重评在生理代价与长期适应性上通常优于表达抑制，其神经基础涉及前额叶对杏仁核的自上而下调控。",
+    "plain": "“换个角度想一遍”，让自己没那么激动——这就是情绪调节。",
+    "difficulty": "intro",
+    "tags": [
+      "情绪",
+      "调控"
+    ],
+    "related": [
+      "emotion-prefrontal-amygdala-circuit",
+      "emotion-amygdala",
+      "emotion-affective-computing",
+      "attention-top-down-control"
+    ],
+    "engineering_link": "神经反馈式情绪调节训练（实时 fMRI/EEG）与情绪自适应交互系统，是智能医学工程中“情绪脑机接口”的典型落地场景。",
+    "references": [
+      {
+        "type": "review",
+        "title": "Emotion regulation: conceptual foundations (Gross, 2015)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "emotion-affective-computing",
+    "module": "emotion",
+    "name_zh": "情感计算",
+    "name_en": "Affective Computing",
+    "aliases": [
+      "情绪识别",
+      "情感识别",
+      "情感识别计算"
+    ],
+    "pinyin": "qingganjisuan",
+    "pinyin_initials": "qgjs",
+    "definition": "让计算系统识别、理解、表达与响应人类情绪的研究领域；常用信号包括面部表情、语音韵律、文本语义以及脑电、皮电、心率等生理信号，其评价通常围绕效价—唤醒维度或离散情绪类别展开。",
+    "plain": "让机器“读懂你的心情”，好让它做出更合适的回应。",
+    "difficulty": "intro",
+    "tags": [
+      "情绪",
+      "脑机接口"
+    ],
+    "related": [
+      "emotion-basic-emotions",
+      "emotion-emotion-regulation",
+      "methods-eeg",
+      "bci-p300"
+    ],
+    "engineering_link": "基于 EEG 的情绪识别（常用 DEAP、SEED 数据集与微分熵/功率谱特征）是情感脑机接口的代表方向，也是本课程「脑机接口」模块的典型应用案例。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Brain-Computer Interfaces Handbook (Nam, Nijholt & Lotte, 2018)",
+        "verified_at": "2026-10-10"
+      }
+    ],
+    "updated_at": "2026-10-10T00:00:00Z"
+  }
+]

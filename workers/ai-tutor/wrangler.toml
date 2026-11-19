@@ -1,0 +1,20 @@
+name = "neurobase-ai-tutor"
+main = "src/index.js"
+compatibility_date = "2024-09-23"
+account_id = "d15bdfa92ba449d913ea894887fe47dc"
+
+# Workers AI 绑定：必需。部署前需在 Cloudflare 账号中开通 Workers AI。
+[ai]
+binding = "AI"
+
+[vars]
+# 模型可换成任意 Workers AI 文本生成模型，例如 @cf/meta/llama-3.3-70b-instruct-fp8-fast
+MODEL = "@cf/meta/llama-3.1-8b-instruct"
+# 逗号分隔的允许来源，支持 *。生产环境建议改成实际站点来源。
+ALLOWED_ORIGINS = "*"
+
+# ---------------------------------------------------------------
+# 限流用的 KV 绑定（已创建）。
+[[kv_namespaces]]
+binding = "RATE"
+id = "a991d7fd10c64f2798ae41b2ca892628"

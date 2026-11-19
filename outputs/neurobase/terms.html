@@ -1,0 +1,101 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1e5fa8">
+  <meta name="description" content="NeuroBase 术语检索：支持中文、英文、缩写、拼音与模块筛选，全站离线可用。">
+  <title>术语检索 · NeuroBase</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="assets/css/style.css?v=1194">
+  <script>
+    (function () {
+      try {
+        var m = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)').matches : false;
+        var th = localStorage.getItem('nb-theme') || 'system';
+        if (th === 'dark' || (th === 'system' && m)) document.documentElement.classList.add('dark');
+      } catch (e) {}
+      try {
+        var f = parseFloat(localStorage.getItem('nb-font') || '100');
+        if (f >= 25 && f <= 300) document.documentElement.style.setProperty('--nb-font-scale', (f / 100).toFixed(2));
+      } catch (e) {}
+      try {
+        if (localStorage.getItem('nb-motion') === 'off') document.documentElement.classList.add('motion-off');
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="action.skipToContent">跳到主内容</a>
+  <header id="nb-header"></header>
+
+  <main id="main" class="nb-content">
+    <div class="wrap">
+      <div class="page-head">
+        <div class="page-head-main">
+          <h1 class="page-title" data-i18n="terms.title">术语检索</h1>
+          <p class="page-desc" data-i18n="terms.desc">关键词 / 英文缩写 / 拼音 / 模块筛选，支持高亮与相关术语。</p>
+        </div>
+        <button class="btn btn-fav" id="nb-fav-toggle" type="button" aria-expanded="false"
+                aria-controls="nb-fav-panel" data-i18n-aria="terms.favOpen">
+          <span class="fav-star" aria-hidden="true">★</span>
+          <span data-i18n="terms.favTitle">收藏夹</span>
+          <span class="pill-count" id="nb-fav-count">0</span>
+        </button>
+      </div>
+
+      <section class="fav-panel" id="nb-fav-panel" aria-labelledby="nb-fav-heading" hidden>
+        <div class="fav-panel-head">
+          <h2 class="sec-title" id="nb-fav-heading">
+            <span class="fav-star" aria-hidden="true">★</span>
+            <span data-i18n="terms.favTitle">收藏夹</span>
+          </h2>
+          <button class="btn" id="nb-fav-close" type="button" data-i18n="action.close">关闭</button>
+        </div>
+        <ul class="fav-list" id="nb-fav-list"></ul>
+        <p class="empty-hint" id="nb-fav-empty" data-i18n="terms.favEmpty" hidden></p>
+      </section>
+
+      <div class="card card-tight">
+        <div class="search-row">
+          <div style="flex:1">
+            <label class="sr-only" for="nb-q" data-i18n="terms.title">术语检索</label>
+            <input class="input" id="nb-q" type="search" autocomplete="off"
+                   data-i18n-placeholder="terms.placeholder" placeholder="输入关键词开始检索…">
+          </div>
+          <div>
+            <label class="sr-only" for="nb-module" data-i18n="nb.moduleFilter">模块筛选</label>
+            <select class="select" id="nb-module" data-i18n-aria="nb.moduleFilter"></select>
+          </div>
+        </div>
+        <p class="notice notice--info" data-i18n="terms.sampleNotice">已收录神经与认知科学核心术语，覆盖全部学习模块；支持中文、英文、缩写、全拼与拼音首字母检索。</p>
+        <p class="result-line" id="nb-result-line"></p>
+      </div>
+
+      <ul class="grid-3" id="nb-results" style="margin-top:1.5rem"></ul>
+      <p class="empty" id="nb-empty" data-i18n="terms.empty" hidden>词库正在建设中（Phase 1–2 上线）。</p>
+    </div>
+  </main>
+
+  <footer id="nb-footer"></footer>
+
+  <noscript>
+    <div class="wrap">
+      <p class="notice">本页的词条列表由本地脚本渲染，请启用 JavaScript 后再访问。</p>
+    </div>
+  </noscript>
+
+  <script src="assets/js/data/terms.js?v=1194"></script>
+  <script src="assets/js/data/i18n.js?v=1194"></script>
+  <script src="assets/js/core.js?v=1194"></script>
+  <script src="assets/js/cloud-config.js?v=1194"></script>
+  <script src="assets/js/cloud.js?v=1194"></script>
+  <script src="assets/js/auth-ui.js?v=1194"></script>
+  <script src="assets/js/ai-fluid.js?v=1194"></script>
+  <script src="assets/js/ai-tutor.js?v=1194"></script>
+  <script src="assets/js/learn.js?v=1194"></script>
+  <script src="assets/js/feedback.js?v=1194"></script>
+  <script src="assets/js/help.js?v=1194"></script>
+  <script src="assets/js/page-terms.js?v=1194"></script>
+</body>
+</html>
