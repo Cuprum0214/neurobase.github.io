@@ -178,7 +178,7 @@
 - 遇到问题：同一件事实存在四套口径——CHANGELOG 已到 v1.25.4，PLAN §6 说 Phase 6 / 8「待验收」，DEV_LOG 的 Phase 映射表说 Phase 6–9「未开始」，PROJECT_SCOPE 文末又说「Phase 8 待人工验收」；同时旧的 `v1.x` 线性号无法表达「现在处于哪个阶段」。
 - 解决方式：以 DEV_LOG 的验收记录为唯一事实源，先统一 PLAN / 映射表 / SCOPE，再引入 V0–V5 作为唯一版本轴；在 E-060 记录「状态事实必须有唯一写入点、索引表是派生物」这一教训。版本切换不重写历史条目，避免破坏可追溯性。
 - 三档案判定：**有决策**（V0–V5 阶段版本 + GitHub Pages 发布通道，见 D-096，取代 D-095 中「不发布」的口径但保留本地离线优先）；**有可复用教训**（多文档状态漂移与版本轴缺失，见 E-060）。
-- 下一步：① 推送后在仓库 Settings → Pages 确认 Source = GitHub Actions，跑一次 workflow 并打开 `https://cuprum0214.github.io/neurobase.github.io/`；② V5.x 启动 110 → 300+ 词条扩容（分模块产出、逐条来源核验、重建数据与断言）；③ 若启用云端，按 DEPLOY §10.4 执行 schema 并复验换设备同步。
+- 下一步：① 仓库已推送（`a78b0bb`）、Pages 已启用（build_type = workflow）且两次部署均成功，线上 27 页 / 23 个资源验收通过；后续每次 push 到 `main` 自动发布；② V5.x 启动 110 → 300+ 词条扩容（分模块产出、逐条来源核验、重建数据与断言）；③ 若启用云端，按 DEPLOY §10.4 执行 schema 并复验换设备同步。
 - 相关文件：`README.md`、`VERSION`、`outputs/neurobase/assets/js/core.js`、`outputs/neurobase/assets/css/style.css`、`.github/workflows/pages.yml`、`.gitignore`、`docs/CHANGELOG.md`、`docs/PLAN.md`、`docs/PROJECT_SCOPE.md`、`docs/DECISIONS.md`、`docs/ERROR_LOG.md`、`docs/DEPLOY.md`、`docs/DEV_LOG.md`。
 
 ### 2026-11-20 · Phase 9 · 交付形态确定：仅本地离线，不部署（v1.25.4）

@@ -29,10 +29,11 @@
 
 ### Docs
 - 同步 `CHANGELOG`（V5.0.0）/ `DEV_LOG`（当日条目 + 阶段总览行 + Phase 映射修正）/ `DECISIONS`（D-096）/ `ERROR_LOG`（E-060）/ `PLAN`（v122 + §4 / §5 / §6 / §10）/ `PROJECT_SCOPE`（v7.0 + §八 + §11）/ `DEPLOY`（§10）。
-- 重建 `assets/js/data/docs-content.js`（16 个文档 / 1465.6 KB；文档多轮修订后共重建 3 次），27 页缓存指纹 `?v=1191` → `?v=1194`（364 处；收口值以全站 HTML 为准）。
+- 重建 `assets/js/data/docs-content.js`（16 个文档 / 约 1466 KB；文档多轮修订后共重建 4 次），27 页缓存指纹 `?v=1191` → `?v=1195`（364 处；收口值以全站 HTML 为准）。
 
 ### 自测
 - `verify-native` **1138 项全绿**，失败 0；`node --check core.js` 通过。
+- **GitHub Pages 线上验收**：`pages.yml` 两次运行均 `success`；27 个页面全部 200、23 个抽样资源 0 失败；`phase9-live-check` 仅报「CSS 缓存头非长缓存」——GitHub Pages 固定 `max-age=600`，资源失效依赖 `?v=` 指纹，属平台限制而非缺陷。
 - 机密扫描：`sk-` / `service_role` 真实值 / `cfut_` / `sb_secret_` / `ghp_` / `AKIA` / 明文 JWT 均为 0 命中；仓库只保留 Supabase publishable（公开）key。
 
 ## [v1.25.4] - 2026-11-20 · 交付形态确定：仅本地离线，不部署 Vercel
