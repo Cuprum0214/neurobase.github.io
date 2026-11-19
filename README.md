@@ -20,9 +20,9 @@ NeuroBase 把分散在教材、百科与论文中的神经科学 / 认知科学�
 
 ## 快速开始
 
-### 方式一：在线访问
+### 方式一：在线访问（已上线）
 
-GitHub Pages 部署完成后访问：
+GitHub Pages 地址：
 
 ```text
 https://cuprum0214.github.io/neurobase.github.io/
