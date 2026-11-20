@@ -7,24 +7,43 @@
 > 4. 相关自动化流程见 `.opencode/skills/version-changelog/SKILL.md`。
 ---
 
+## [V5.0.2] - 2026-11-20 · 交付物：课程报告同步 333 条词库并更名为 Tong Wang_NeuroBase.pdf
+
+### Changed
+- **报告规模数字与当前词库对齐**：110 → 333 条、303 → 755 条别名（平均 2.27）、来源引用 111 → 334（41 个来源不变）；难度分布 52 / 44 / 14 → 122 / 153 / 58；报告引用的文档计数按 V5.0.1 时点为 CHANGELOG 105 / DECISIONS 99 / ERROR_LOG 61（产品 59 + 报告与文档维护 2）/ DEV_LOG 需求 110 条（本轮新增条目后实际为 106 / 100 / 62 / 111）。
+- **2.6 增补扩容过程**：新增「扩容怎么做的（2026-11-20）」段，记录 +223 条按模块补齐、`pypinyin` 逐条校验 333/333、`sources.json` 重建（333 词条 / 334 引用 / 41 来源、无来源词条 0）、别名下限 2 条；V0–V5 版本表与 11-20 时间线补「词库 110 → 333」。
+- **版本口径**：报告封面、页脚与「阅读提示」改为 V5.0.1，并注明站点页脚与 `VERSION` 文件仍为 V5.0.0——V5.0.1 是词库扩容后的文档与数据口径版本，页面结构未变。
+- **截图复核**：首页（进度 `0/333`）、检索（「突触」44 条命中）与手机端重新抓取并裁切；3D 解剖与论坛界面不受词库影响，沿用同日截图。图注与截图清单同步。
+
+### Fixed
+- **交付文件名顺序**：按课程 `Firstname Lastname_project name.pdf` 更正为 `outputs/Tong Wang_NeuroBase.pdf`（原 `Wang Tong_NeuroBase.pdf` 已移除）；PDF 元数据 title / author 同步为 `NeuroBase - Project Report (V5.0.1)` / `Tong Wang`。
+- **报告内过期口径**：5.5 词条规模由「110 / 300+ 进行中」改为「333 / 300+ 已达成」；6.3「如果重做一次」与 5.4 成本判断改按「110 打样 + 223 集中补齐」的实际路径表述；4.1 错误分布补注 E-061 / E-062 / E-063 不属于产品错误。
+
+### Docs
+- 同步 `DEV_LOG`（当日条目 + 阶段总览行）/ `DECISIONS`（D-100）/ `ERROR_LOG`（E-063）/ `PLAN`（v126 + §10）/ `PROJECT_SCOPE`（v7.4 + §九 + §11）/ `README`（333 词条 / 755 别名 / 334 引用、报告新文件名与路线图勾选）。
+- 重建 `outputs/neurobase/assets/js/data/docs-content.js`；27 页缓存指纹 `?v=1200` → `?v=1201`（364 处）。
+
+### 自测
+- `verify-native` 全绿（1138 项，失败 0）；PDF 19 页 / A4 / 2.81 MB，ASCII 元数据回读正常；报告 6 图无截断。
+
 ## [V5.0.1] - 2026-11-20 · 迭代文档按课程四张规范对齐（五问 / 三档案分工 / 六要素 / 八项）
 
 ### Changed
-- **`ERROR_LOG.md` 五问表格化**：把「What happened? / What did we first think was wrong? / What was the real cause? / How was it fixed? / What did I learn?」写成「要写的问题 / 含义」对照表，保留落盘模板，并补一条结构自检（60 条正文五问各 60 次命中、索引 60 行）。
+- **`ERROR_LOG.md` 五问表格化**：把「What happened? / What did we first think was wrong? / What was the real cause? / How was it fixed? / What did I learn?」写成「要写的问题 / 含义」对照表，保留落盘模板，并补一条结构自检（61 条正文五问各 61 次命中、索引 61 行）。
 - **`PLAN.md` §5 六要素显式化**：Goal / Tasks / Acceptance Criteria / How AI will test it / How the student will check it / Exit condition 以定义表写出，并注明 Phase 0–9 逐项齐全；Phase 1 标题与进度补「现行 333 条」，2026-11-18 的 110 条验收结论保留为历史口径。
 - **`PROJECT_SCOPE.md` 八项显式化**：文首新增 Project purpose / Target users / Core problem / Core features / Non-goals / Constraints / Technical choices / Success criteria 定义表；§4.11 由「300+ 目标」改为「333 条现行 + 规模演进」；§八 首个成功标准改为已达成。
 
 ### Fixed
-- **索引编号错位**：`ERROR_LOG.md` 索引表 E-034–E-041 原追加在 E-055 之后、E-025 排在 E-024 之前，正文 E-057 排在 E-055 之前；现全部按编号升序重排，正文与索引仍为 60 条一一对应。
-- **同类问题回归**：`DECISIONS.md` 索引 98 行按编号重排、正文 D-094 / D-097 归位；D-098 索引行由 6 列改为 4 列，修复整表错位。
+- **索引编号错位**：`ERROR_LOG.md` 索引表 E-034–E-041 原追加在 E-055 之后、E-025 排在 E-024 之前，正文 E-057 排在 E-055 之前；现全部按编号升序重排，正文与索引仍为 61 条一一对应。
+- **同类问题回归**：`DECISIONS.md` 索引 99 行按编号重排、正文 D-094 / D-097 归位；D-098 索引行由 6 列改为 4 列，修复整表错位。
 - **过期口径**：`PLAN.md` Phase 1、`PROJECT_SCOPE.md` §八 仍写「110 条打样内容 / 扩容属后续工作」，与当前 333 条不一致；现统一为「现状 333 条 + 历史 110 条验收」双写。
 
 ### Docs
 - 同步 `CHANGELOG`（V5.0.1）/ `DEV_LOG`（当日条目 + 阶段总览行）/ `DECISIONS`（D-099）/ `ERROR_LOG`（E-062）/ `PLAN`（v125 + §5 + §10）/ `PROJECT_SCOPE`（v7.3 + 八项表 + §4.11 + §八 + §11）。
-- 重建 `outputs/neurobase/assets/js/data/docs-content.js`；27 页缓存指纹 `?v=1196` → `?v=1197`（364 处）。
+- 重建 `outputs/neurobase/assets/js/data/docs-content.js`；27 页缓存指纹 `?v=1196` → `?v=1200`（364 处）。
 
 ### 自测
-- `verify-native` 全绿（失败 0）；文档结构脚本核对：ERROR_LOG 正文/索引 60 = 60、DECISIONS 98 = 98，索引与正文编号均升序。
+- `verify-native` 全绿（失败 0）；文档结构脚本核对：ERROR_LOG 正文/索引 61 = 61、DECISIONS 99 = 99，索引与正文编号均升序。
 
 ## [V5.0.0] - 2026-11-20 · V5 发布：版本体系切换 V0–V5 + README + GitHub Pages
 
