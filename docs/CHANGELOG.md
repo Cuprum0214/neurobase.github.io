@@ -7,6 +7,25 @@
 > 4. 相关自动化流程见 `.opencode/skills/version-changelog/SKILL.md`。
 ---
 
+## [V5.0.1] - 2026-11-20 · 迭代文档按课程四张规范对齐（五问 / 三档案分工 / 六要素 / 八项）
+
+### Changed
+- **`ERROR_LOG.md` 五问表格化**：把「What happened? / What did we first think was wrong? / What was the real cause? / How was it fixed? / What did I learn?」写成「要写的问题 / 含义」对照表，保留落盘模板，并补一条结构自检（60 条正文五问各 60 次命中、索引 60 行）。
+- **`PLAN.md` §5 六要素显式化**：Goal / Tasks / Acceptance Criteria / How AI will test it / How the student will check it / Exit condition 以定义表写出，并注明 Phase 0–9 逐项齐全；Phase 1 标题与进度补「现行 333 条」，2026-11-18 的 110 条验收结论保留为历史口径。
+- **`PROJECT_SCOPE.md` 八项显式化**：文首新增 Project purpose / Target users / Core problem / Core features / Non-goals / Constraints / Technical choices / Success criteria 定义表；§4.11 由「300+ 目标」改为「333 条现行 + 规模演进」；§八 首个成功标准改为已达成。
+
+### Fixed
+- **索引编号错位**：`ERROR_LOG.md` 索引表 E-034–E-041 原追加在 E-055 之后、E-025 排在 E-024 之前，正文 E-057 排在 E-055 之前；现全部按编号升序重排，正文与索引仍为 60 条一一对应。
+- **同类问题回归**：`DECISIONS.md` 索引 98 行按编号重排、正文 D-094 / D-097 归位；D-098 索引行由 6 列改为 4 列，修复整表错位。
+- **过期口径**：`PLAN.md` Phase 1、`PROJECT_SCOPE.md` §八 仍写「110 条打样内容 / 扩容属后续工作」，与当前 333 条不一致；现统一为「现状 333 条 + 历史 110 条验收」双写。
+
+### Docs
+- 同步 `CHANGELOG`（V5.0.1）/ `DEV_LOG`（当日条目 + 阶段总览行）/ `DECISIONS`（D-099）/ `ERROR_LOG`（E-062）/ `PLAN`（v125 + §5 + §10）/ `PROJECT_SCOPE`（v7.3 + 八项表 + §4.11 + §八 + §11）。
+- 重建 `outputs/neurobase/assets/js/data/docs-content.js`；27 页缓存指纹 `?v=1196` → `?v=1197`（364 处）。
+
+### 自测
+- `verify-native` 全绿（失败 0）；文档结构脚本核对：ERROR_LOG 正文/索引 60 = 60、DECISIONS 98 = 98，索引与正文编号均升序。
+
 ## [V5.0.0] - 2026-11-20 · V5 发布：版本体系切换 V0–V5 + README + GitHub Pages
 
 > 版本号体系自本轮起由旧的线性 `v1.x` 切换为**阶段版本 `V0–V5`**：V0 = Phase 0，V1 = Phase 1–2，V2 = Phase 3，V3 = Phase 4–5，V4 = Phase 6–8，V5 = Phase 9。旧条目与旧号保持原样，不重写历史；上一版 `v1.25.4` 即 V4 收尾、V5 发布前基线。

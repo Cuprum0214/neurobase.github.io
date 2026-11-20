@@ -4,7 +4,8 @@
 > 本文件是项目的唯一事实基线（Single Source of Truth）。范围、任务、验收、自测、人工验收与退出条件均记录于此。
 > 任何范围变更必须写入文末「变更记录」，不得静默修改。
 >
-> 版本：v124，2026-11-20，**词库扩容至 333 条（11 模块全覆盖）**：正式词库 110 → 333（anatomy 30 / attention 30 / bci 32 / emotion 31 / language 31 / memory 31 / methods 29 / motor 31 / neuron 30 / sensory 29 / synapse 30，共 +223）；拼音与首字母由 `pypinyin` 生成并逐条校验（333/333）；`sources.json` 重建（333 词条 / 334 引用 / 41 来源）；清除 sample 与 phase1 重复条目、统一 motor 引用；`verify-native` 断言改为动态计算并 **1138 项全绿**；指纹 `?v=1195` → `?v=1196`；CHANGELOG v1.25.5、D-098、PROJECT_SCOPE v7.2
+> 版本：v125，2026-11-20，**迭代文档按课程四张规范对齐（五问 / 三档案分工 / PLAN 六要素 / SCOPE 八项）**：`ERROR_LOG.md` 五问改为「要写的问题 / 含义」表格并保留落盘模板，索引 60 行按编号升序、正文 E-055 / E-057 归位；`PLAN.md` §5 明写六要素定义与逐阶段核对；`PROJECT_SCOPE.md` 文首补八项定义表，§4.11 / §八 由 110 条旧口径更新为 333 条；无站点代码改动，仅重建 `docs-content.js`，27 页指纹 `?v=1196` → `?v=1197`（364 处）；CHANGELOG V5.0.1、D-099、E-062、PROJECT_SCOPE v7.3
+> 上一版本：v124，2026-11-20，**词库扩容至 333 条（11 模块全覆盖）**：正式词库 110 → 333（anatomy 30 / attention 30 / bci 32 / emotion 31 / language 31 / memory 31 / methods 29 / motor 31 / neuron 30 / sensory 29 / synapse 30，共 +223）；拼音与首字母由 `pypinyin` 生成并逐条校验（333/333）；`sources.json` 重建（333 词条 / 334 引用 / 41 来源）；清除 sample 与 phase1 重复条目、统一 motor 引用；`verify-native` 断言改为动态计算并 **1138 项全绿**；指纹 `?v=1195` → `?v=1196`；CHANGELOG v1.25.5、D-098、PROJECT_SCOPE v7.2
 > 上一版本：v122，2026-11-20，**V5 发布：版本体系 V0–V5 + README + GitHub Pages**：版本号由线性 `v1.25.4` 切换为阶段版本（V0 = Phase 0 … V5 = Phase 9），当前 **V5.0.0**；新增根 `README.md` 与 `VERSION`，全站页脚显示 `V5.0.0`；新增 `.github/workflows/pages.yml` 发布 `outputs/neurobase` 到 GitHub Pages（`https://cuprum0214.github.io/neurobase.github.io/`）；Phase 6 / 8 状态由「待验收」收口为「已通过」，Phase 9 改为「已发布」；`verify-native` 1138 全绿；CHANGELOG V5.0.0、D-096、E-060、PROJECT_SCOPE v7.0
 > 项目负责人：王童
 > 上一版本：v121，2026-11-20，**交付形态确定：仅本地离线，不部署 Vercel**：交付物锁定 `outputs/neurobase/**`，浏览器 `file://` 直接打开；取消线上发布计划，`vercel.json` 仅作历史配置保留；清理 `.deepworks/tmp/citest` 旧站副本（62 文件）；`verify-native` 全绿；CHANGELOG v1.25.4、D-095、PROJECT_SCOPE v6.70
@@ -248,7 +249,18 @@
 
 ## 5. 各阶段详细计划
 
-> 每个 Phase 均含六要素：**Goal / Tasks / Acceptance Criteria / How AI will test it / How the student will check it / Exit condition**。
+> 每个 Phase 都必须写清下面六件事（课程 `PLAN.md` 规范，缺一不可）：
+
+| 内容项 | 含义 |
+| --- | --- |
+| Goal | 这个阶段要达成什么 |
+| Tasks | 具体要做哪些事 |
+| Acceptance Criteria | 达到什么标准才算完成 |
+| How AI will test it | AI 怎么自测 |
+| How the student will check it | 你本人怎么亲手确认 |
+| Exit condition | 什么条件下才能进入下一阶段 |
+
+> 结构自检（2026-11-20）：Phase 0–9 共 **10** 个阶段，六要素逐项齐全（脚本核对：六个标签各命中 10 处）。
 
 ### Phase 0 · 准备与规范（本地优先收口 ✅）
 - **Goal**：搭好脚手架、冻结词条 schema（含来源字段）；确立无障碍与双语的信息架构。**后端与托管不在本阶段**。
@@ -260,14 +272,14 @@
 - **说明**：本项目为个人项目、无他人协作，故 **Supabase 建库 / GitHub 连接 / Vercel 部署统一后置到 Phase 6** 一次性完成（见 `docs/DECISIONS.md` D-020）。
 - **说明（v23）**：Phase 0 当时按 **Vue 3 + Vite** 落地；技术栈已于 v23 改为**原生 HTML/CSS/JS 离线版**（见 `docs/DECISIONS.md` D-031），上一条 Tasks 中的 Vue 相关描述保留为历史记录，后续阶段一律按原生方案执行。
 
-### Phase 1 · 词条展示（内容达标 ✅ · 人工验收通过 ✅）
+### Phase 1 · 词条展示（内容达标 ✅ · 人工验收通过 ✅ · 现行 333 条）
 - **Goal**：实现"按模块浏览 → 打开词条详情"。
 - **Tasks**：术语库页 + 词条详情页；渲染全部字段（含来源标注、时间戳、工程对接、相关术语跳转、难度）；导入打样数据（每模块约 10 条）。
 - **Acceptance Criteria**：11 模块均可进入；词条字段完整、相关术语可跳转；手机与电脑无横向溢出。
 - **How AI will test it**：遍历所有模块与词条检查渲染与死链；截图核对。
 - **How the student will check it（Human Gate）**：你用手机与电脑各浏览 3 模块、点开 3 词条。
 - **Exit condition**：词条展示闭环通过。
-- **说明（进度）**：11 个模块的打样词条已全部补齐至 **各 10 条（共 110 条）**，均为完整字段（中英名称 / 缩写·别名 / 拼音 / 学术定义 / 通俗解释 / 难度 / 标签 / 相关术语 / 工程对接 / 来源与时间戳），`related` 全部指向真实存在的词条，`npm run check` 五项全绿。剩余仅为 **Human Gate**（你用手机与电脑各浏览 3 个模块、点开 3 条词条；已于 2026-11-18 验收通过）。详见 `docs/DEV_LOG.md` 批次 1–4。
+- **说明（进度）**：11 个模块的打样词条已全部补齐至 **各 10 条（共 110 条）**，均为完整字段（中英名称 / 缩写·别名 / 拼音 / 学术定义 / 通俗解释 / 难度 / 标签 / 相关术语 / 工程对接 / 来源与时间戳），`related` 全部指向真实存在的词条，`npm run check` 五项全绿。剩余仅为 **Human Gate**（你用手机与电脑各浏览 3 个模块、点开 3 条词条；已于 2026-11-18 验收通过）。详见 `docs/DEV_LOG.md` 批次 1–4。**现状（v124 / V5.0.0）**：正式词库已扩至 **333 条**（11 模块 29–32 条，见 §2.2 与 `PROJECT_SCOPE` §4.11），本节验收结论仍指 2026-11-18 的 110 条打样范围。
 
 - **说明（UI 打磨，v18）**：按用户反馈完成 6 项界面与交互打磨 —— ① 字号档位由「小/中/大」改为**百分比**（90% / 100% / 115%）；② 新增**学习进度**入口（右下角「继续学习」悬浮键 + 首页进度卡片，`nb-progress` 本地持久化）；③ 「项目文件」由顶部导航项**并入「关于」栏目**（`/docs` 路由保留）；④ 使用指南的问号图标改为**电灯**图标；⑤ **顶部工具栏在中/英切换下排布保持一致**（品牌 / 导航项 / 工具栏控件全部固定宽度）；⑥ 词条来源新增**「在教材导读中查看」跳转**（点击后定位并高亮对应教材）。
 
@@ -423,6 +435,7 @@
 
 | 版本 | 日期 | 变更内容 | 原因 |
 | --- | --- | --- | --- |
+| v125 | 2026-11-20 | **迭代文档按课程四张规范对齐**：`ERROR_LOG.md` 五问改为「要写的问题 / 含义」表 + 落盘模板，索引 60 行按编号升序、正文 E-055 / E-057 归位；`PLAN.md` §5 明写 Goal / Tasks / Acceptance Criteria / How AI will test it / How the student will check it / Exit condition 定义并逐阶段核对；`PROJECT_SCOPE.md` 文首补八项定义表，§4.11 / §八 由 110 条旧口径改为 333 条；仅重建 `docs-content.js`，27 页指纹 `?v=1196` → `?v=1197`（364 处） | 用户要求按课程截图（五问 / 三档案分工 / 六要素 / 八项）核对并修改对应 md，且内容须与当前版本一致 |
 | v124 | 2026-11-20 | **词库扩容至 333 条（11 模块全覆盖）**：110 → 333（各模块 29–32 条，共 +223）；新增词条覆盖结构、递质、感觉、运动、注意、记忆、语言、情绪、方法与 BCI；每条含中英文名 / 别名 / 全拼 / 首字母 / 定义 / 通俗解释 / 难度 / 标签 / 关联 / 教材来源；拼音由 `pypinyin` 生成并校验长度；`sources.json` 重建（333 / 334 / 41）；清除 sample、phase1 重复条目并统一 motor 引用；`verify-native` 动态断言 + **1138 项全绿**；指纹 `?v=1196`；CHANGELOG v1.25.5、D-098、SCOPE v7.2 | 用户要求「按 300+ 词条规模更新词库」并要求推送 GitHub |
 | v123 | 2026-11-20 | **课程项目报告（PDF）交付**：`outputs/Wang Tong_NeuroBase.pdf`（A4 / 19 页）；章节覆盖背景与动机、V0–V5 历程与 6 张截图、功能与想法来源、6 个五问案例、108 条反馈分类与 9 条代表性决策、反思与附录；源文件 `.deepworks/tmp/report-work/` 不入库；站点未改、1138 全绿；CHANGELOG（V5.0.0 交付物补充）、D-097、E-061、PROJECT_SCOPE v7.1 | 课程第二个自由项目要求提交 PDF 报告（a–e 五项）并按 `Firstname Lastname_project name.pdf` 命名 |
 | v122 | 2026-11-20 | **V5 发布：版本体系 V0–V5 + README + GitHub Pages**：版本号由线性 `v1.25.4` 切换为阶段版本（V0 = Phase 0 … V5 = Phase 9），当前 **V5.0.0**；新增根 `README.md` / `VERSION`，全站页脚显示版本；新增 `.github/workflows/pages.yml` 发布 `outputs/neurobase` 到 GitHub Pages；PLAN §4 / §5 / §6 与 DEV_LOG Phase 映射表统一收口 Phase 6–9 状态；`verify-native` 1138 全绿；CHANGELOG V5.0.0、D-096、E-060、PROJECT_SCOPE v7.0 | 用户要求「检测未完成任务并处理、按版本分配 V0–V5 修改版本号、按最新版本补 README 并同步 md、以 Cuprum0214 推送到 GitHub」；旧线性版本号不承载阶段语义，Phase 状态存在四套口径（E-060） |
