@@ -178,7 +178,7 @@ window.NB_FRONTIER = {
       ],
       "term_ids": [
         "anatomy-cerebral-cortex",
-        "motor-motor-cortex"
+        "motor-primary-motor-cortex"
       ]
     },
     {
@@ -198,7 +198,7 @@ window.NB_FRONTIER = {
         "运动皮层"
       ],
       "term_ids": [
-        "motor-motor-cortex",
+        "motor-primary-motor-cortex",
         "anatomy-cerebral-cortex"
       ]
     },
@@ -220,7 +220,7 @@ window.NB_FRONTIER = {
       ],
       "term_ids": [
         "methods-intracortical-recording",
-        "motor-motor-cortex",
+        "motor-primary-motor-cortex",
         "bci-signal-processing-pipeline"
       ]
     },
@@ -286,7 +286,7 @@ window.NB_FRONTIER = {
       ],
       "term_ids": [
         "methods-intracortical-recording",
-        "motor-motor-cortex",
+        "motor-primary-motor-cortex",
         "bci-signal-processing-pipeline"
       ]
     }

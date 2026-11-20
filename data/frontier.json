@@ -115,7 +115,7 @@
       "authors": "BICCN Consortium",
       "doi": "10.1038/s41586-021-03465-8",
       "tags": ["脑图谱", "单细胞", "跨物种"],
-      "term_ids": ["anatomy-cerebral-cortex", "motor-motor-cortex"]
+      "term_ids": ["anatomy-cerebral-cortex", "motor-primary-motor-cortex"]
     },
     {
       "id": "biccn-2021-atlas",
@@ -129,7 +129,7 @@
       "authors": "BICCN Consortium",
       "doi": "10.1038/s41586-021-03950-0",
       "tags": ["脑图谱", "多模态", "运动皮层"],
-      "term_ids": ["motor-motor-cortex", "anatomy-cerebral-cortex"]
+      "term_ids": ["motor-primary-motor-cortex", "anatomy-cerebral-cortex"]
     },
     {
       "id": "willett-2021",
@@ -143,7 +143,7 @@
       "authors": "Willett et al.",
       "doi": "10.1038/s41586-021-03506-2",
       "tags": ["脑到文本", "手写解码", "侵入式"],
-      "term_ids": ["methods-intracortical-recording", "motor-motor-cortex", "bci-signal-processing-pipeline"]
+      "term_ids": ["methods-intracortical-recording", "motor-primary-motor-cortex", "bci-signal-processing-pipeline"]
     },
     {
       "id": "oxley-2020",
@@ -185,7 +185,7 @@
       "authors": "Hochberg et al.",
       "doi": "10.1038/nature11076",
       "tags": ["运动控制", "机械臂", "里程碑"],
-      "term_ids": ["methods-intracortical-recording", "motor-motor-cortex", "bci-signal-processing-pipeline"]
+      "term_ids": ["methods-intracortical-recording", "motor-primary-motor-cortex", "bci-signal-processing-pipeline"]
     }
   ]
 }

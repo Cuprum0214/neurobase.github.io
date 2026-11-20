@@ -315,5 +315,671 @@
       }
     ],
     "updated_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "attention-visual-search",
+    "module": "attention",
+    "name_zh": "视觉搜索",
+    "name_en": "Visual Search",
+    "aliases": [
+      "视觉搜寻",
+      "目标搜索任务"
+    ],
+    "definition": "在干扰项中寻找目标刺激的实验范式，通过搜索斜率区分特征搜索（并行、几乎不受项目数影响）与联合搜索（串行、随项目数线性增加）。",
+    "plain": "在一堆杂物里找钥匙：颜色显眼就一眼看到，形状相似就得一个个翻。",
+    "difficulty": "intro",
+    "tags": [
+      "注意",
+      "范式"
+    ],
+    "related": [
+      "attention-feature-integration",
+      "attention-selective-attention",
+      "attention-distractor-interference"
+    ],
+    "engineering_link": "搜索斜率对应计算复杂度，是界面信息密度与视觉显著性设计的量化参照。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Cognitive Neuroscience: The Biology of the Mind (Gazzaniga et al., 5th ed., 2018)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "shijuesousuo",
+    "pinyin_initials": "sjss",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "attention-feature-integration",
+    "module": "attention",
+    "name_zh": "特征整合理论",
+    "name_en": "Feature Integration Theory",
+    "aliases": [
+      "特征整合论",
+      "FIT"
+    ],
+    "definition": "Treisman 提出的理论：颜色、朝向等特征先被并行、独立编码为特征地图，注意再把它们绑定为完整客体，绑定失败可导致错觉性结合。",
+    "plain": "先分头记录“颜色、形状、位置”，再由注意力把它们缝成一个完整的东西。",
+    "difficulty": "intermediate",
+    "tags": [
+      "注意",
+      "理论",
+      "绑定"
+    ],
+    "related": [
+      "attention-feature-binding",
+      "attention-visual-search",
+      "attention-selective-attention"
+    ],
+    "engineering_link": "特征地图 + 绑定机制对应目标检测中的特征金字塔与注意力聚合。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Cognitive Neuroscience: The Biology of the Mind (Gazzaniga et al., 5th ed., 2018)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "tezhengzhenghelilun",
+    "pinyin_initials": "tzzhll",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "attention-inhibition-of-return",
+    "module": "attention",
+    "name_zh": "返回抑制",
+    "name_en": "Inhibition of Return",
+    "aliases": [
+      "IOR",
+      "返回抑制效应"
+    ],
+    "definition": "注意从已被线索化位置撤离后，该位置在数百毫秒内反应变慢的现象，被认为促进搜索中新位置的探索。",
+    "plain": "看过的地方“暂时不想再看”，逼着注意力去扫新的角落。",
+    "difficulty": "intermediate",
+    "tags": [
+      "注意",
+      "空间"
+    ],
+    "related": [
+      "attention-spatial-cueing",
+      "attention-visual-search",
+      "attention-orienting"
+    ],
+    "engineering_link": "返回抑制等价于搜索中的“已访问抑制”，可提升覆盖效率。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Cognitive Neuroscience: The Biology of the Mind (Gazzaniga et al., 5th ed., 2018)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "fanhuiyizhi",
+    "pinyin_initials": "fhyz",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "attention-attention-network",
+    "module": "attention",
+    "name_zh": "注意网络",
+    "name_en": "Attention Network",
+    "aliases": [
+      "注意系统",
+      "注意网络模型"
+    ],
+    "definition": "Posner 提出并后续扩展的注意系统划分，包括警觉、定向与执行控制三个子网络，各有相对独立的神经基础。",
+    "plain": "注意力不是一件事，而是三套系统：保持清醒、对准目标、压住干扰。",
+    "difficulty": "intermediate",
+    "tags": [
+      "注意",
+      "网络",
+      "模型"
+    ],
+    "related": [
+      "attention-alerting",
+      "attention-orienting",
+      "attention-executive-attention"
+    ],
+    "engineering_link": "三网络划分对应“唤醒水平 / 空间选择 / 冲突解决”的分层控制架构。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Cognitive Neuroscience: The Biology of the Mind (Gazzaniga et al., 5th ed., 2018)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "zhuyiwangluo",
+    "pinyin_initials": "zywl",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "attention-alerting",
+    "module": "attention",
+    "name_zh": "警觉",
+    "name_en": "Alerting",
+    "aliases": [
+      "警觉性",
+      "唤醒"
+    ],
+    "definition": "注意网络的子功能，指维持觉醒与对即将出现刺激的准备状态，依赖蓝斑—去甲肾上腺素系统与右额顶网络。",
+    "plain": "让大脑“开机并待命”，随时准备接住下一个信号。",
+    "difficulty": "intro",
+    "tags": [
+      "注意",
+      "警觉",
+      "唤醒"
+    ],
+    "related": [
+      "attention-attention-network",
+      "synapse-norepinephrine",
+      "attention-sustained-attention"
+    ],
+    "engineering_link": "警觉水平对应系统的全局唤醒增益，影响响应速度与漏检率。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Cognitive Neuroscience: The Biology of the Mind (Gazzaniga et al., 5th ed., 2018)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "jingjue",
+    "pinyin_initials": "jj",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "attention-orienting",
+    "module": "attention",
+    "name_zh": "定向",
+    "name_en": "Orienting",
+    "aliases": [
+      "注意定向",
+      "朝向反应"
+    ],
+    "definition": "把注意资源指向特定空间位置或感觉通道的过程，分为外显眼动定向与内隐注意定向，依赖顶叶与额眼区。",
+    "plain": "把“探照灯”转到该看的地方，眼睛不一定动，但注意力已经过去了。",
+    "difficulty": "intro",
+    "tags": [
+      "注意",
+      "空间"
+    ],
+    "related": [
+      "attention-spatial-cueing",
+      "attention-attention-network",
+      "attention-inhibition-of-return"
+    ],
+    "engineering_link": "定向机制对应主动感知中的传感器指向与感兴趣区域选择。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Cognitive Neuroscience: The Biology of the Mind (Gazzaniga et al., 5th ed., 2018)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "dingxiang",
+    "pinyin_initials": "dx",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "attention-executive-attention",
+    "module": "attention",
+    "name_zh": "执行注意",
+    "name_en": "Executive Attention",
+    "aliases": [
+      "执行控制注意",
+      "冲突控制"
+    ],
+    "definition": "注意网络中负责解决冲突、抑制无关反应与分配有限资源的成分，依赖前扣带皮层与背外侧前额叶。",
+    "plain": "注意力的“总调度”：决定先干哪件事，并压住想乱动的冲动。",
+    "difficulty": "intermediate",
+    "tags": [
+      "注意",
+      "执行控制"
+    ],
+    "related": [
+      "attention-attention-network",
+      "attention-cognitive-control",
+      "emotion-anterior-cingulate-cortex"
+    ],
+    "engineering_link": "执行注意对应任务调度器与冲突消解模块。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Cognitive Neuroscience: The Biology of the Mind (Gazzaniga et al., 5th ed., 2018)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "zhixingzhuyi",
+    "pinyin_initials": "zxzy",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "attention-attention-load",
+    "module": "attention",
+    "name_zh": "注意负荷",
+    "name_en": "Attentional Load",
+    "aliases": [
+      "认知负荷",
+      "注意负载"
+    ],
+    "definition": "当前任务占用的注意资源量；高负荷下选择性注意更早、更强，低负荷下干扰刺激更容易被加工（负荷理论）。",
+    "plain": "脑子越忙，越会自动屏蔽旁边的杂音；越闲，越容易被带跑。",
+    "difficulty": "intermediate",
+    "tags": [
+      "注意",
+      "资源"
+    ],
+    "related": [
+      "attention-selective-attention",
+      "attention-distractor-interference",
+      "memory-working-memory"
+    ],
+    "engineering_link": "负荷理论说明容量分配是显式的资源调度问题，而非单纯滤波。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Cognitive Neuroscience: The Biology of the Mind (Gazzaniga et al., 5th ed., 2018)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "zhuyifuhe",
+    "pinyin_initials": "zyfh",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "attention-inattentional-blindness",
+    "module": "attention",
+    "name_zh": "非注意盲视",
+    "name_en": "Inattentional Blindness",
+    "aliases": [
+      "不注意盲视",
+      "无意盲视"
+    ],
+    "definition": "当注意集中于某一任务时，位于视野中但未被注意的显著刺激可能完全未被察觉的现象，经典演示为“看不见的大猩猩”。",
+    "plain": "专心数传球次数时，从画面中间走过的大猩猩真的会“看不见”。",
+    "difficulty": "intro",
+    "tags": [
+      "注意",
+      "盲视"
+    ],
+    "related": [
+      "attention-change-blindness",
+      "attention-attention-load",
+      "attention-selective-attention"
+    ],
+    "engineering_link": "该现象说明感知是主动采样而非被动记录，对告警界面设计有直接警示。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Cognitive Neuroscience: The Biology of the Mind (Gazzaniga et al., 5th ed., 2018)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "feizhuyimangshi",
+    "pinyin_initials": "fzyms",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "attention-spotlight-model",
+    "module": "attention",
+    "name_zh": "聚光灯模型",
+    "name_en": "Spotlight Model",
+    "aliases": [
+      "注意聚光灯",
+      "探照灯模型"
+    ],
+    "definition": "把空间注意比作可移动聚光灯的隐喻模型：被照亮区域内的加工被增强，光斑大小与移动速度存在权衡。",
+    "plain": "注意力像一束手电筒，照到哪儿哪儿就清楚，但光圈越小越亮。",
+    "difficulty": "intro",
+    "tags": [
+      "注意",
+      "模型",
+      "空间"
+    ],
+    "related": [
+      "attention-orienting",
+      "attention-spatial-cueing",
+      "attention-selective-attention"
+    ],
+    "engineering_link": "聚光灯模型对应可变形注意力窗口，是视觉主干中 ROI 池化的早期思想。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Cognitive Neuroscience: The Biology of the Mind (Gazzaniga et al., 5th ed., 2018)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "juguangdengmoxing",
+    "pinyin_initials": "jgdmx",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "attention-biased-competition",
+    "module": "attention",
+    "name_zh": "偏向竞争",
+    "name_en": "Biased Competition",
+    "aliases": [
+      "竞争偏置模型",
+      "偏置竞争"
+    ],
+    "definition": "多个刺激表征相互竞争有限神经资源，注意通过增强目标表征或抑制干扰表征来改变竞争结果，Desimone 与 Duncan 提出。",
+    "plain": "多个信号抢同一块“喇叭”，注意力负责把目标那一路的音量调大。",
+    "difficulty": "advanced",
+    "tags": [
+      "注意",
+      "模型",
+      "竞争"
+    ],
+    "related": [
+      "attention-selective-attention",
+      "attention-attention-load",
+      "sensory-receptive-field"
+    ],
+    "engineering_link": "偏向竞争对应 softmax 竞争与侧抑制归一化，是注意力机制的经典解释。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Cognitive Neuroscience: The Biology of the Mind (Gazzaniga et al., 5th ed., 2018)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "pianxiangjingzheng",
+    "pinyin_initials": "pxjz",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "attention-feature-binding",
+    "module": "attention",
+    "name_zh": "特征绑定",
+    "name_en": "Feature Binding",
+    "aliases": [
+      "特征捆绑",
+      "绑定问题"
+    ],
+    "definition": "把分别编码的颜色、形状、运动等特征整合为同一客体的过程，需要空间注意参与，绑定失败会产生错觉性结合。",
+    "plain": "把“红色”和“圆形”缝成“红球”，缝错了就会出现“红色的方”这种幻觉。",
+    "difficulty": "advanced",
+    "tags": [
+      "注意",
+      "绑定"
+    ],
+    "related": [
+      "attention-feature-integration",
+      "attention-spatial-cueing",
+      "attention-selective-attention"
+    ],
+    "engineering_link": "绑定问题对应多特征融合与目标级表示，是实例分割的核心难点。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Cognitive Neuroscience: The Biology of the Mind (Gazzaniga et al., 5th ed., 2018)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "tezhengbangding",
+    "pinyin_initials": "tzbd",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "attention-attentional-capture",
+    "module": "attention",
+    "name_zh": "注意捕获",
+    "name_en": "Attentional Capture",
+    "aliases": [
+      "注意俘获",
+      "注意抓取"
+    ],
+    "definition": "显著刺激自动把注意吸引过去的现象，可为刺激驱动的自下而上捕获，也可由与当前目标匹配的特征引发。",
+    "plain": "突然闪一下、响一声，注意力会不受控地被拽过去。",
+    "difficulty": "intro",
+    "tags": [
+      "注意",
+      "显著性"
+    ],
+    "related": [
+      "attention-bottom-up-capture",
+      "attention-visual-search",
+      "attention-selective-attention"
+    ],
+    "engineering_link": "注意捕获是显著性检测与弹窗设计的共同机制，滥用会造成注意力劫持。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Cognitive Neuroscience: The Biology of the Mind (Gazzaniga et al., 5th ed., 2018)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "zhuyibuhuo",
+    "pinyin_initials": "zybh",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "attention-task-switching",
+    "module": "attention",
+    "name_zh": "任务切换",
+    "name_en": "Task Switching",
+    "aliases": [
+      "任务转换",
+      "切换代价"
+    ],
+    "definition": "在两个或多个任务规则之间切换时，反应时与错误率上升的现象，反映任务集重构与前一任务规则的持续激活。",
+    "plain": "刚算完数学再读文章，头几秒总会“卡一下”，这就是切换代价。",
+    "difficulty": "intermediate",
+    "tags": [
+      "执行功能",
+      "注意"
+    ],
+    "related": [
+      "attention-cognitive-control",
+      "attention-executive-attention",
+      "memory-working-memory"
+    ],
+    "engineering_link": "任务切换代价说明多任务并行的隐性开销，对应上下文切换成本。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Cognitive Neuroscience: The Biology of the Mind (Gazzaniga et al., 5th ed., 2018)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "renwuqiehuan",
+    "pinyin_initials": "rwqh",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "attention-cognitive-control",
+    "module": "attention",
+    "name_zh": "认知控制",
+    "name_en": "Cognitive Control",
+    "aliases": [
+      "执行控制",
+      "认知调控"
+    ],
+    "definition": "为达成目标而调节感知、记忆与动作的顶层过程，包括抑制优势反应、维持目标表征与灵活切换规则，依赖前额叶—顶叶网络。",
+    "plain": "大脑的“项目经理”：盯着目标，压住冲动，随时调整计划。",
+    "difficulty": "intermediate",
+    "tags": [
+      "执行功能",
+      "前额叶"
+    ],
+    "related": [
+      "attention-executive-attention",
+      "anatomy-prefrontal-cortex",
+      "attention-conflict-monitoring"
+    ],
+    "engineering_link": "认知控制对应智能体的目标管理、抑制与规划模块。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Cognitive Neuroscience: The Biology of the Mind (Gazzaniga et al., 5th ed., 2018)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "renzhikongzhi",
+    "pinyin_initials": "rzkz",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "attention-conflict-monitoring",
+    "module": "attention",
+    "name_zh": "冲突监测",
+    "name_en": "Conflict Monitoring",
+    "aliases": [
+      "冲突监控",
+      "冲突检测"
+    ],
+    "definition": "前扣带皮层检测反应竞争中出现的冲突信号，并向上游控制区发出调整需求，是认知控制环路的关键环节。",
+    "plain": "大脑里的“警报器”：发现两个念头打架，就提醒指挥部加大管控。",
+    "difficulty": "advanced",
+    "tags": [
+      "执行功能",
+      "前扣带"
+    ],
+    "related": [
+      "attention-cognitive-control",
+      "emotion-anterior-cingulate-cortex",
+      "attention-executive-attention"
+    ],
+    "engineering_link": "冲突监测对应强化学习中的误差信号与元控制触发机制。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Cognitive Neuroscience: The Biology of the Mind (Gazzaniga et al., 5th ed., 2018)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "chongtujiance",
+    "pinyin_initials": "ctjc",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "attention-attentional-span",
+    "module": "attention",
+    "name_zh": "注意广度",
+    "name_en": "Attentional Span",
+    "aliases": [
+      "注意范围",
+      "注意容量"
+    ],
+    "definition": "个体在单一时刻能够同时清晰把握的刺激数量或空间范围，受刺激复杂性与分组策略影响。",
+    "plain": "一眼能同时看清多少个东西，就是注意的“视野容量”。",
+    "difficulty": "intro",
+    "tags": [
+      "注意",
+      "容量"
+    ],
+    "related": [
+      "attention-attention-load",
+      "memory-working-memory",
+      "attention-selective-attention"
+    ],
+    "engineering_link": "注意广度对应单次并行处理的通道上限，是界面一屏信息量的经验约束。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Cognitive Neuroscience: The Biology of the Mind (Gazzaniga et al., 5th ed., 2018)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "zhuyiguangdu",
+    "pinyin_initials": "zygd",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "attention-distractor-interference",
+    "module": "attention",
+    "name_zh": "分心干扰",
+    "name_en": "Distractor Interference",
+    "aliases": [
+      "干扰效应",
+      "分心物干扰"
+    ],
+    "definition": "与任务无关的刺激占用注意资源、延长反应时或提高错误率的现象，其强度取决于干扰物的显著性、与目标的相似性及负荷水平。",
+    "plain": "旁边的噪音不一定让你停下，但一定会让你变慢。",
+    "difficulty": "intro",
+    "tags": [
+      "注意",
+      "干扰"
+    ],
+    "related": [
+      "attention-attention-load",
+      "attention-visual-search",
+      "attention-selective-attention"
+    ],
+    "engineering_link": "分心干扰量化了信噪比下降的代价，是告警分级与界面降噪的依据。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Cognitive Neuroscience: The Biology of the Mind (Gazzaniga et al., 5th ed., 2018)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "fenxinganrao",
+    "pinyin_initials": "fxgr",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "attention-attentional-oscillation",
+    "module": "attention",
+    "name_zh": "注意振荡",
+    "name_en": "Attentional Oscillation",
+    "aliases": [
+      "注意节律",
+      "注意周期性"
+    ],
+    "definition": "注意采样并非连续恒定，而是以约 4–8 Hz 的节律性波动，影响目标检测的成败与反应时的周期变化。",
+    "plain": "注意力像呼吸一样有节奏，一吸一呼之间，看东西的清晰度也在起伏。",
+    "difficulty": "advanced",
+    "tags": [
+      "注意",
+      "节律",
+      "脑电"
+    ],
+    "related": [
+      "attention-sustained-attention",
+      "methods-eeg",
+      "attention-selective-attention"
+    ],
+    "engineering_link": "注意节律提示采样率与相位对齐可以提升检测性能，对应相位编码的采集策略。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Cognitive Neuroscience: The Biology of the Mind (Gazzaniga et al., 5th ed., 2018)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "zhuyizhendang",
+    "pinyin_initials": "zyzd",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "attention-attention-training",
+    "module": "attention",
+    "name_zh": "注意训练",
+    "name_en": "Attention Training",
+    "aliases": [
+      "注意力训练",
+      "注意功能训练"
+    ],
+    "definition": "通过重复练习或神经反馈提升特定注意子功能的干预方式，对持续性注意与冲突控制的效果较一致，对广泛迁移仍有争议。",
+    "plain": "像练肌肉一样练注意力，但练出来的力量能不能用到别的场景，要看运气。",
+    "difficulty": "intermediate",
+    "tags": [
+      "注意",
+      "干预"
+    ],
+    "related": [
+      "attention-sustained-attention",
+      "bci-neurofeedback",
+      "attention-conflict-monitoring"
+    ],
+    "engineering_link": "训练迁移问题是评估任何认知增强技术的核心指标。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Cognitive Neuroscience: The Biology of the Mind (Gazzaniga et al., 5th ed., 2018)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "zhuyixunlian",
+    "pinyin_initials": "zyxl",
+    "updated_at": "2026-11-20T00:00:00Z"
   }
 ]

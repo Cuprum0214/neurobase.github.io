@@ -20,7 +20,7 @@
     ],
     "related": [
       "language-wernicke-area",
-      "motor-motor-cortex"
+      "motor-primary-motor-cortex"
     ],
     "engineering_link": "在语言解码与语音脑机接口中，布洛卡区常作为言语产生的关键皮层节点之一被采集与分析。",
     "references": [
@@ -81,7 +81,7 @@
     ],
     "related": [
       "bci-ssvep",
-      "motor-motor-cortex"
+      "motor-primary-motor-cortex"
     ],
     "engineering_link": "感受野是构造脑机接口解码特征（视觉编码、触觉编码等）的基础概念。",
     "references": [
@@ -96,41 +96,6 @@
       "感受野区域",
       "RF"
     ]
-  },
-  {
-    "id": "motor-motor-cortex",
-    "module": "motor",
-    "name_zh": "初级运动皮层",
-    "name_en": "Primary Motor Cortex",
-    "abbr": "M1",
-    "aliases": [
-      "运动皮层",
-      "M1 区",
-      "M1",
-      "初级运动区"
-    ],
-    "pinyin": "chujiyundongpiceng",
-    "pinyin_initials": "cjydpc",
-    "definition": "位于中央前回（BA4）的皮层区域，其皮层脊髓束神经元直接参与随意运动的发起与精细控制；身体各部位沿皮层呈“运动小人”（motor homunculus）式拓扑排列。",
-    "plain": "大脑里发出“动起来”指令的区域，身体各部位在它上面有一张固定的“地图”。",
-    "difficulty": "intro",
-    "tags": [
-      "运动",
-      "脑区"
-    ],
-    "related": [
-      "neuron-action-potential",
-      "sensory-receptive-field"
-    ],
-    "engineering_link": "运动想象脑机接口（如解码手部运动意图）主要依赖 M1 及运动相关皮层的活动。",
-    "references": [
-      {
-        "type": "textbook",
-        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
-        "verified_at": "2026-10-10"
-      }
-    ],
-    "updated_at": "2026-10-10T00:00:00Z"
   },
   {
     "id": "attention-selective-attention",

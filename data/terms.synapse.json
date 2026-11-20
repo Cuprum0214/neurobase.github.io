@@ -304,5 +304,681 @@
       }
     ],
     "updated_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "synapse-synaptic-cleft",
+    "module": "synapse",
+    "name_zh": "突触间隙",
+    "name_en": "Synaptic Cleft",
+    "aliases": [
+      "突触缝隙",
+      "突触裂隙"
+    ],
+    "definition": "突触前膜与突触后膜之间约 20–30 nm 的狭窄细胞外空间，神经递质由此扩散到后膜受体。",
+    "plain": "两个神经元之间那道极窄的“过道”，化学信使要穿过它才能把消息递过去。",
+    "difficulty": "intro",
+    "tags": [
+      "突触",
+      "结构"
+    ],
+    "related": [
+      "synapse-chemical-synapse",
+      "synapse-neurotransmitter",
+      "synapse-postsynaptic-potential"
+    ],
+    "engineering_link": "间隙宽度决定递质扩散时间与串扰程度，是化学突触带宽的物理约束。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "tuchujianxi",
+    "pinyin_initials": "tcjx",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "synapse-presynaptic-membrane",
+    "module": "synapse",
+    "name_zh": "突触前膜",
+    "name_en": "Presynaptic Membrane",
+    "aliases": [
+      "突触前终末膜",
+      "前膜"
+    ],
+    "definition": "突触前终末面向突触间隙的膜，含电压门控钙通道与囊泡释放机器，动作电位到达时在此触发胞吐。",
+    "plain": "发送端的“出货口”：货（递质）从这里打包扔进过道。",
+    "difficulty": "intro",
+    "tags": [
+      "突触",
+      "结构",
+      "释放"
+    ],
+    "related": [
+      "synapse-synaptic-vesicle",
+      "synapse-calcium-dependent-release",
+      "synapse-active-zone"
+    ],
+    "engineering_link": "前膜的钙通道—囊泡耦联是低延迟触发的关键，影响突触传输的时序抖动。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "tuchuqianmo",
+    "pinyin_initials": "tcqm",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "synapse-postsynaptic-membrane",
+    "module": "synapse",
+    "name_zh": "突触后膜",
+    "name_en": "Postsynaptic Membrane",
+    "aliases": [
+      "后膜",
+      "突触后受体膜"
+    ],
+    "definition": "突触后细胞面向突触间隙的膜，密集分布神经递质受体与支架蛋白，负责把化学信号转换为电信号或生化信号。",
+    "plain": "接收端的“签收台”：递质到了这里被受体认领，然后翻译成细胞能懂的电信号。",
+    "difficulty": "intro",
+    "tags": [
+      "突触",
+      "结构",
+      "受体"
+    ],
+    "related": [
+      "synapse-postsynaptic-density",
+      "synapse-receptor-ionotropic",
+      "synapse-postsynaptic-potential"
+    ],
+    "engineering_link": "后膜受体密度决定突触增益，是突触权重可调的物质基础。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "tuchuhoumo",
+    "pinyin_initials": "tchm",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "synapse-active-zone",
+    "module": "synapse",
+    "name_zh": "活性区",
+    "name_en": "Active Zone",
+    "aliases": [
+      "释放位点",
+      "突触活性带"
+    ],
+    "definition": "突触前膜上囊泡停靠与融合的专门区域，钙通道与释放机器在此高度富集，保证递质释放的快速与定位。",
+    "plain": "前膜上的“专用发射台”：囊泡只在这里排队、点火、发射。",
+    "difficulty": "intermediate",
+    "tags": [
+      "突触",
+      "释放",
+      "结构"
+    ],
+    "related": [
+      "synapse-synaptic-vesicle",
+      "synapse-snare-complex",
+      "synapse-calcium-dependent-release"
+    ],
+    "engineering_link": "活性区的纳米级组织方式启发了低延迟事件驱动硬件的设计。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "huoxingqu",
+    "pinyin_initials": "hxq",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "synapse-vesicle-cycle",
+    "module": "synapse",
+    "name_zh": "突触小泡循环",
+    "name_en": "Synaptic Vesicle Cycle",
+    "aliases": [
+      "囊泡循环",
+      "突触囊泡再循环"
+    ],
+    "definition": "囊泡从储备池动员、停靠、 priming、融合释放到膜回收再生的完整循环，决定突触在高频活动下的持续释放能力。",
+    "plain": "快递箱的“回收再利用”流程：发货、拆箱、把箱子捡回来重新打包。",
+    "difficulty": "intermediate",
+    "tags": [
+      "突触",
+      "囊泡",
+      "释放"
+    ],
+    "related": [
+      "synapse-synaptic-vesicle",
+      "synapse-quantal-release",
+      "synapse-active-zone"
+    ],
+    "engineering_link": "囊泡池的有限容量造成突触短时程可塑性，是脉冲网络中短时记忆效应的来源。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "tuchuxiaopaoxunhuan",
+    "pinyin_initials": "tcxpxh",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "synapse-calcium-dependent-release",
+    "module": "synapse",
+    "name_zh": "钙依赖性释放",
+    "name_en": "Calcium-Dependent Release",
+    "aliases": [
+      "钙触发释放",
+      "Ca2+ 依赖胞吐"
+    ],
+    "definition": "动作电位到达突触前终末引起电压门控钙通道开放，钙内流与突触结合蛋白结合后触发囊泡融合与递质释放。",
+    "plain": "钙离子就是“点火钥匙”：一到，囊泡立刻开箱放货。",
+    "difficulty": "intermediate",
+    "tags": [
+      "突触",
+      "释放",
+      "钙"
+    ],
+    "related": [
+      "synapse-snare-complex",
+      "synapse-synaptic-vesicle",
+      "synapse-presynaptic-membrane"
+    ],
+    "engineering_link": "钙信号把电脉冲转换为化学释放，是生物突触中最重要的“数模转换”环节。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "gaiyilaixingshifang",
+    "pinyin_initials": "gylxsf",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "synapse-snare-complex",
+    "module": "synapse",
+    "name_zh": "SNARE 复合体",
+    "name_en": "SNARE Complex",
+    "aliases": [
+      "SNARE 蛋白",
+      "可溶性 NSF 附着蛋白受体"
+    ],
+    "definition": "由突触小泡蛋白与突触前膜蛋白组成的螺旋束，驱动囊泡与细胞膜靠近并融合，是胞吐的核心分子机器。",
+    "plain": "把箱子和出货口“拉链式”拉在一起的装置，一拉紧箱子就开口了。",
+    "difficulty": "advanced",
+    "tags": [
+      "突触",
+      "分子机制",
+      "胞吐"
+    ],
+    "related": [
+      "synapse-calcium-dependent-release",
+      "synapse-synaptic-vesicle",
+      "synapse-presynaptic-membrane"
+    ],
+    "engineering_link": "SNARE 的机械式融合机制为分子机器人提供了“自组装执行器”的设计灵感。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "fuheti",
+    "pinyin_initials": "fht",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "synapse-postsynaptic-density",
+    "module": "synapse",
+    "name_zh": "突触后密度",
+    "name_en": "Postsynaptic Density",
+    "aliases": [
+      "PSD",
+      "后膜致密物"
+    ],
+    "definition": "突触后膜内侧由受体、支架蛋白与信号分子组成的电子致密结构，负责锚定受体并组织突触后信号转导。",
+    "plain": "签收台背后的“固定支架 + 分拣中心”，把受体摆好并处理后续信号。",
+    "difficulty": "advanced",
+    "tags": [
+      "突触",
+      "结构",
+      "信号"
+    ],
+    "related": [
+      "synapse-postsynaptic-membrane",
+      "synapse-receptor-ionotropic",
+      "synapse-receptor-metabotropic"
+    ],
+    "engineering_link": "PSD 的蛋白网络规模决定了突触的稳态调节能力，是突触权重持久化的结构基础。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "tuchuhoumidu",
+    "pinyin_initials": "tchmd",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "synapse-excitatory-synapse",
+    "module": "synapse",
+    "name_zh": "兴奋性突触",
+    "name_en": "Excitatory Synapse",
+    "aliases": [
+      "兴奋性连接",
+      "兴奋型突触"
+    ],
+    "definition": "释放谷氨酸等递质、使突触后膜去极化并产生兴奋性突触后电位的突触，提高目标神经元发放的概率。",
+    "plain": "专门“踩油门”的连接：让下游更容易放电。",
+    "difficulty": "intro",
+    "tags": [
+      "突触",
+      "兴奋性"
+    ],
+    "related": [
+      "synapse-inhibitory-synapse",
+      "synapse-glutamate",
+      "synapse-postsynaptic-potential"
+    ],
+    "engineering_link": "兴奋性突触对应网络中的正权重连接，是信号放大的基本单元。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "xingfenxingtuchu",
+    "pinyin_initials": "xfxtc",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "synapse-inhibitory-synapse",
+    "module": "synapse",
+    "name_zh": "抑制性突触",
+    "name_en": "Inhibitory Synapse",
+    "aliases": [
+      "抑制性连接",
+      "抑制型突触"
+    ],
+    "definition": "释放 GABA 或甘氨酸等递质、使突触后膜超极化或分流兴奋电流的突触，降低目标神经元的发放概率。",
+    "plain": "专门“踩刹车”的连接：让下游更难放电。",
+    "difficulty": "intro",
+    "tags": [
+      "突触",
+      "抑制"
+    ],
+    "related": [
+      "synapse-excitatory-synapse",
+      "synapse-gaba",
+      "synapse-postsynaptic-potential"
+    ],
+    "engineering_link": "抑制性连接是网络稳定与侧抑制的基础，对应负权重。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "yizhixingtuchu",
+    "pinyin_initials": "yzxtc",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "synapse-gaba",
+    "module": "synapse",
+    "name_zh": "γ-氨基丁酸",
+    "name_en": "Gamma-Aminobutyric Acid (GABA)",
+    "aliases": [
+      "GABA",
+      "氨基丁酸"
+    ],
+    "definition": "中枢神经系统最主要的抑制性神经递质，作用于 GABAA 与 GABAB 受体，分别介导快速氯离子内流与较慢的钾通道激活。",
+    "plain": "大脑里的“镇静剂”，负责让过度兴奋的回路安静下来。",
+    "difficulty": "intermediate",
+    "tags": [
+      "递质",
+      "抑制"
+    ],
+    "related": [
+      "synapse-inhibitory-synapse",
+      "synapse-receptor-ionotropic",
+      "synapse-receptor-metabotropic"
+    ],
+    "engineering_link": "GABA 能通路的失衡与癫痫、焦虑相关，是神经调控与药物靶点的重要方向。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "anjidingsuan",
+    "pinyin_initials": "ajds",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "synapse-glutamate",
+    "module": "synapse",
+    "name_zh": "谷氨酸",
+    "name_en": "Glutamate",
+    "aliases": [
+      "谷氨酸盐",
+      " Glu"
+    ],
+    "definition": "中枢神经系统最主要的兴奋性神经递质，作用于 AMPA、NMDA 与代谢型谷氨酸受体，参与快速兴奋传递与突触可塑性。",
+    "plain": "大脑里的“油门”，绝大多数兴奋信号都靠它传递。",
+    "difficulty": "intermediate",
+    "tags": [
+      "递质",
+      "兴奋性"
+    ],
+    "related": [
+      "synapse-excitatory-synapse",
+      "synapse-receptor-ionotropic",
+      "synapse-synaptic-plasticity"
+    ],
+    "engineering_link": "NMDA 受体的钙通透性使其成为学习规则（如 STDP）的分子开关。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "guansuan",
+    "pinyin_initials": "gas",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "synapse-acetylcholine",
+    "module": "synapse",
+    "name_zh": "乙酰胆碱",
+    "name_en": "Acetylcholine",
+    "aliases": [
+      "ACh",
+      "乙酰胆碱酯酶底物"
+    ],
+    "definition": "在神经肌肉接头、自主神经节与中枢胆碱能系统中使用的兴奋性递质，作用于烟碱型与毒蕈碱型受体后被乙酰胆碱酯酶迅速水解。",
+    "plain": "神经肌肉之间的“开火指令”，说完就被酶立刻销毁，保证动作干脆。",
+    "difficulty": "intermediate",
+    "tags": [
+      "递质",
+      "兴奋性",
+      "神经肌肉接头"
+    ],
+    "related": [
+      "synapse-neurotransmitter",
+      "synapse-receptor-ionotropic",
+      "motor-motor-unit"
+    ],
+    "engineering_link": "乙酰胆碱酯酶抑制是农药与部分神经毒剂的作用机制，也是神经接口安全设计的关注点。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "yixiandanjian",
+    "pinyin_initials": "yxdj",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "synapse-serotonin",
+    "module": "synapse",
+    "name_zh": "5-羟色胺",
+    "name_en": "Serotonin (5-HT)",
+    "aliases": [
+      "血清素",
+      "5-HT",
+      "羟色胺"
+    ],
+    "definition": "由中缝核群投射到全脑的调节性递质，参与情绪、睡眠、食欲与冲动控制，通过多种 5-HT 受体亚型发挥缓慢而广泛的作用。",
+    "plain": "大脑里的“情绪与作息调音师”，不直接传具体信息，而是调整整体状态。",
+    "difficulty": "intermediate",
+    "tags": [
+      "递质",
+      "调节",
+      "情绪"
+    ],
+    "related": [
+      "synapse-neuromodulator",
+      "emotion-emotion-regulation",
+      "synapse-receptor-metabotropic"
+    ],
+    "engineering_link": "5-羟色胺系统的全局投射是“增益控制”而非点对点通信的典型范例。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "qiangsean",
+    "pinyin_initials": "qsa",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "synapse-norepinephrine",
+    "module": "synapse",
+    "name_zh": "去甲肾上腺素",
+    "name_en": "Norepinephrine",
+    "aliases": [
+      "正肾上腺素",
+      "NE",
+      "noradrenaline"
+    ],
+    "definition": "由蓝斑等核团释放的调节性递质，提升觉醒、警觉与应激反应，并通过 α 与 β 受体调节心血管与中枢活动。",
+    "plain": "大脑的“警报与唤醒系统”，让全身进入备战状态。",
+    "difficulty": "intermediate",
+    "tags": [
+      "递质",
+      "调节",
+      "警觉"
+    ],
+    "related": [
+      "synapse-neuromodulator",
+      "attention-sustained-attention",
+      "synapse-receptor-metabotropic"
+    ],
+    "engineering_link": "蓝斑—去甲肾上腺素系统是全局唤醒信号的生物原型，影响注意力资源分配。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "qujiashenshangxiansu",
+    "pinyin_initials": "qjssxs",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "synapse-receptor-desensitization",
+    "module": "synapse",
+    "name_zh": "受体脱敏",
+    "name_en": "Receptor Desensitization",
+    "aliases": [
+      "受体失敏",
+      "脱敏现象"
+    ],
+    "definition": "受体在持续或高频递质刺激下反应性下降的过程，涉及受体磷酸化、内吞或构象变化，是突触短时程可塑性与药物耐受的机制之一。",
+    "plain": "签收台被反复轰炸后会“暂时懒得签收”，需要缓一缓才恢复。",
+    "difficulty": "advanced",
+    "tags": [
+      "受体",
+      "可塑性"
+    ],
+    "related": [
+      "synapse-receptor-ionotropic",
+      "synapse-receptor-metabotropic",
+      "synapse-synaptic-plasticity"
+    ],
+    "engineering_link": "脱敏等价于自适应增益控制，可防止突触在持续输入下饱和。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "shoutituomin",
+    "pinyin_initials": "sttm",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "synapse-quantal-release",
+    "module": "synapse",
+    "name_zh": "量子释放",
+    "name_en": "Quantal Release",
+    "aliases": [
+      "量子化释放",
+      "递质量子假说"
+    ],
+    "definition": "神经递质以单个囊泡为基本单位成批释放的现象，微小兴奋性突触后电位反映单个量子的效应，释放量随钙内流呈整数倍变化。",
+    "plain": "发货不是论克，而是论“箱”：一箱就是一个量子，多开几箱就是多倍信号。",
+    "difficulty": "advanced",
+    "tags": [
+      "突触",
+      "释放",
+      "定量"
+    ],
+    "related": [
+      "synapse-synaptic-vesicle",
+      "synapse-calcium-dependent-release",
+      "synapse-postsynaptic-potential"
+    ],
+    "engineering_link": "量子释放说明化学突触本质上是离散事件源，天然适合脉冲式编码。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "liangzishifang",
+    "pinyin_initials": "lzsf",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "synapse-electrical-synapse",
+    "module": "synapse",
+    "name_zh": "电突触",
+    "name_en": "Electrical Synapse",
+    "aliases": [
+      "缝隙连接",
+      "电耦合突触",
+      "gap junction"
+    ],
+    "definition": "由连接蛋白构成的缝隙连接通道直接连通两个细胞的胞质，电流与小于约 1 kDa 的分子可双向通过，传递几乎无延迟。",
+    "plain": "两个神经元之间直接“接通导线”，不用化学信使，速度快到几乎同步。",
+    "difficulty": "intermediate",
+    "tags": [
+      "突触",
+      "电耦合"
+    ],
+    "related": [
+      "synapse-chemical-synapse",
+      "synapse-synaptic-cleft",
+      "neuron-glia"
+    ],
+    "engineering_link": "电突触的低延迟同步特性被用于解释网络振荡，也是硬件中直接耦合连线的仿生依据。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "diantuchu",
+    "pinyin_initials": "dtc",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "synapse-synaptic-pruning",
+    "module": "synapse",
+    "name_zh": "突触修剪",
+    "name_en": "Synaptic Pruning",
+    "aliases": [
+      "突触剪枝",
+      "连接修剪"
+    ],
+    "definition": "发育期与学习过程中，小胶质细胞与星形胶质细胞清除弱化或多余突触的过程，使神经环路由冗余走向高效。",
+    "plain": "大脑的“园艺修剪”：把长得太密、用不上的枝条剪掉，让主干长得更好。",
+    "difficulty": "intermediate",
+    "tags": [
+      "发育",
+      "可塑性",
+      "胶质细胞"
+    ],
+    "related": [
+      "neuron-microglia",
+      "synapse-synaptic-plasticity",
+      "memory-consolidation"
+    ],
+    "engineering_link": "修剪对应神经网络剪枝（pruning），是压缩模型与提升泛化的生物证据。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "tuchuxiujian",
+    "pinyin_initials": "tcxj",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "synapse-neurotransmitter-transporter",
+    "module": "synapse",
+    "name_zh": "神经递质转运体",
+    "name_en": "Neurotransmitter Transporter",
+    "aliases": [
+      "递质转运体",
+      "再摄取转运体"
+    ],
+    "definition": "位于突触前膜或胶质细胞膜上的膜蛋白，通过继发性主动转运把递质从突触间隙回收，终止信号并循环利用递质。",
+    "plain": "过道里的“回收车”：把用完的信使捡回去，既清场又省料。",
+    "difficulty": "intermediate",
+    "tags": [
+      "突触",
+      "递质",
+      "回收"
+    ],
+    "related": [
+      "synapse-neurotransmitter",
+      "synapse-synaptic-cleft",
+      "synapse-receptor-desensitization"
+    ],
+    "engineering_link": "SSRI 等药物通过抑制转运体延长递质作用时间，是突触时间常数调控的经典案例。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "shenjingdizhizhuanyunti",
+    "pinyin_initials": "sjdzzyt",
+    "updated_at": "2026-11-20T00:00:00Z"
   }
 ]

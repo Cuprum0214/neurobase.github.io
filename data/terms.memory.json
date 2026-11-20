@@ -306,5 +306,699 @@
       }
     ],
     "updated_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "memory-episodic-memory",
+    "module": "memory",
+    "name_zh": "情景记忆",
+    "name_en": "Episodic Memory",
+    "aliases": [
+      "情节记忆",
+      "事件记忆"
+    ],
+    "definition": "对特定时间、地点与情境下发生事件的记忆，带有主观“重历”体验，依赖海马与内侧颞叶，是陈述性记忆的两大类别之一。",
+    "plain": "记得“上周三在哪儿吃了什么”的那类记忆。",
+    "difficulty": "intro",
+    "tags": [
+      "记忆类型",
+      "海马"
+    ],
+    "related": [
+      "memory-semantic-memory",
+      "anatomy-hippocampus",
+      "memory-autobiographical-memory"
+    ],
+    "engineering_link": "情景记忆的时空绑定对应带时间戳的事件存储与检索。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Cognitive Neuroscience: The Biology of the Mind (Gazzaniga et al., 5th ed., 2018)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "qingjingjiyi",
+    "pinyin_initials": "qjjy",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "memory-semantic-memory",
+    "module": "memory",
+    "name_zh": "语义记忆",
+    "name_en": "Semantic Memory",
+    "aliases": [
+      "概念记忆",
+      "知识记忆"
+    ],
+    "definition": "对世界的一般知识与概念的记忆，不绑定具体时间地点，分布于颞叶前部与新皮层，与情景记忆相对。",
+    "plain": "记得“巴黎是法国首都”但想不起哪天学的。",
+    "difficulty": "intro",
+    "tags": [
+      "记忆类型",
+      "语义"
+    ],
+    "related": [
+      "memory-episodic-memory",
+      "language-semantic-priming",
+      "memory-long-term-memory"
+    ],
+    "engineering_link": "语义记忆对应知识图谱与参数化知识的存储形式。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Cognitive Neuroscience: The Biology of the Mind (Gazzaniga et al., 5th ed., 2018)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "yuyijiyi",
+    "pinyin_initials": "yyjy",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "memory-procedural-memory",
+    "module": "memory",
+    "name_zh": "程序性记忆",
+    "name_en": "Procedural Memory",
+    "aliases": [
+      "技能记忆",
+      "动作记忆"
+    ],
+    "definition": "对技能与动作程序（如骑车、打字）的记忆，属非陈述性记忆，依赖基底神经节与小脑，难以用语言完整描述。",
+    "plain": "会骑车但说不清怎么保持平衡的那种记忆。",
+    "difficulty": "intro",
+    "tags": [
+      "记忆类型",
+      "技能"
+    ],
+    "related": [
+      "memory-declarative-nondeclarative",
+      "motor-motor-learning",
+      "memory-implicit-memory"
+    ],
+    "engineering_link": "程序性记忆对应策略网络的权重固化与编译执行。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Cognitive Neuroscience: The Biology of the Mind (Gazzaniga et al., 5th ed., 2018)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "chengxuxingjiyi",
+    "pinyin_initials": "cxxjy",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "memory-implicit-memory",
+    "module": "memory",
+    "name_zh": "内隐记忆",
+    "name_en": "Implicit Memory",
+    "aliases": [
+      "隐性记忆",
+      "无意识记忆"
+    ],
+    "definition": "无需意识提取、通过行为表现出的记忆，包括启动效应、程序性学习与条件化，与陈述性记忆相对。",
+    "plain": "没刻意记，但行为已经被影响的那部分记忆。",
+    "difficulty": "intermediate",
+    "tags": [
+      "记忆类型",
+      "无意识"
+    ],
+    "related": [
+      "memory-declarative-nondeclarative",
+      "memory-procedural-memory",
+      "language-semantic-priming"
+    ],
+    "engineering_link": "内隐记忆对应预训练带来的隐性偏置。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Cognitive Neuroscience: The Biology of the Mind (Gazzaniga et al., 5th ed., 2018)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "neiyinjiyi",
+    "pinyin_initials": "nyjy",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "memory-short-term-memory",
+    "module": "memory",
+    "name_zh": "短时记忆",
+    "name_en": "Short-Term Memory",
+    "aliases": [
+      "短期记忆",
+      "STM"
+    ],
+    "definition": "信息在无复述情况下保持数秒到数十秒的有限容量存储，是工作记忆的存储成分之一。",
+    "plain": "刚听到的电话号码，不默念几遍就会忘。",
+    "difficulty": "intro",
+    "tags": [
+      "记忆类型",
+      "容量"
+    ],
+    "related": [
+      "memory-working-memory",
+      "memory-span",
+      "memory-sensory-memory"
+    ],
+    "engineering_link": "短时记忆对应寄存器/缓存这类易失性存储。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Cognitive Neuroscience: The Biology of the Mind (Gazzaniga et al., 5th ed., 2018)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "duanshijiyi",
+    "pinyin_initials": "dsjy",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "memory-sensory-memory",
+    "module": "memory",
+    "name_zh": "感觉记忆",
+    "name_en": "Sensory Memory",
+    "aliases": [
+      "瞬时记忆",
+      "感觉登记"
+    ],
+    "definition": "感觉信息在刺激消失后极短时间内（图像约数百毫秒、声像约数秒）的原始登记，容量大但衰减极快。",
+    "plain": "眼睛闭上后那一瞬间还留着的“残影”。",
+    "difficulty": "intro",
+    "tags": [
+      "记忆类型",
+      "瞬时"
+    ],
+    "related": [
+      "memory-short-term-memory",
+      "sensory-receptive-field",
+      "memory-span"
+    ],
+    "engineering_link": "感觉记忆对应传感器缓冲与帧缓存。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Cognitive Neuroscience: The Biology of the Mind (Gazzaniga et al., 5th ed., 2018)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "ganjuejiyi",
+    "pinyin_initials": "gjjy",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "memory-span",
+    "module": "memory",
+    "name_zh": "记忆广度",
+    "name_en": "Memory Span",
+    "aliases": [
+      "数字广度",
+      "容量上限"
+    ],
+    "definition": "一次性正确复述的最长序列长度，成人数字广度约 7±2 个项目，受组块策略显著影响。",
+    "plain": "一次能记住多少个数字，大概 7 个上下。",
+    "difficulty": "intro",
+    "tags": [
+      "记忆",
+      "容量"
+    ],
+    "related": [
+      "memory-chunking",
+      "memory-short-term-memory",
+      "memory-working-memory"
+    ],
+    "engineering_link": "记忆广度给出了单步上下文容量的经验上限。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Cognitive Neuroscience: The Biology of the Mind (Gazzaniga et al., 5th ed., 2018)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "jiyiguangdu",
+    "pinyin_initials": "jygd",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "memory-chunking",
+    "module": "memory",
+    "name_zh": "组块",
+    "name_en": "Chunking",
+    "aliases": [
+      "组块化",
+      "信息打包"
+    ],
+    "definition": "把多个离散项目组合成有意义的更大单元以突破容量限制的策略，专家在各自领域依赖更丰富的组块。",
+    "plain": "把 11 位手机号拆成“3-4-4”就更好记。",
+    "difficulty": "intro",
+    "tags": [
+      "记忆",
+      "策略"
+    ],
+    "related": [
+      "memory-span",
+      "memory-working-memory",
+      "memory-long-term-memory"
+    ],
+    "engineering_link": "组块化对应分词与层次化表示，是提升有效上下文长度的经典手段。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Cognitive Neuroscience: The Biology of the Mind (Gazzaniga et al., 5th ed., 2018)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "zukuai",
+    "pinyin_initials": "zk",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "memory-spacing-effect",
+    "module": "memory",
+    "name_zh": "间隔效应",
+    "name_en": "Spacing Effect",
+    "aliases": [
+      "分散学习效应",
+      "间隔重复"
+    ],
+    "definition": "把学习分散到多次间隔中进行，比集中一次学习有更好的长期保持，是间隔重复算法的理论基础。",
+    "plain": "每天背 10 分钟，比考前突击 3 小时记得更久。",
+    "difficulty": "intro",
+    "tags": [
+      "记忆",
+      "学习策略"
+    ],
+    "related": [
+      "memory-forgetting-curve",
+      "memory-consolidation",
+      "memory-levels-of-processing"
+    ],
+    "engineering_link": "间隔重复是记忆调度算法（如 SM-2）的直接应用。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Cognitive Neuroscience: The Biology of the Mind (Gazzaniga et al., 5th ed., 2018)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "jiangexiaoying",
+    "pinyin_initials": "jgxy",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "memory-retrieval-cue",
+    "module": "memory",
+    "name_zh": "提取线索",
+    "name_en": "Retrieval Cue",
+    "aliases": [
+      "回忆线索",
+      "检索线索"
+    ],
+    "definition": "触发记忆提取的提示信息，其有效性取决于与编码时情境的匹配程度，线索缺失是遗忘的常见原因而非存储消失。",
+    "plain": "“话到嘴边想不起来”，一给提示立刻就想起来了。",
+    "difficulty": "intro",
+    "tags": [
+      "记忆",
+      "提取"
+    ],
+    "related": [
+      "memory-encoding-specificity",
+      "memory-forgetting-curve",
+      "memory-source-monitoring"
+    ],
+    "engineering_link": "提取线索对应检索系统的索引键设计。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Cognitive Neuroscience: The Biology of the Mind (Gazzaniga et al., 5th ed., 2018)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "tiquxiansuo",
+    "pinyin_initials": "tqxs",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "memory-encoding-specificity",
+    "module": "memory",
+    "name_zh": "编码特异性",
+    "name_en": "Encoding Specificity",
+    "aliases": [
+      "编码特异性原则",
+      "情境匹配"
+    ],
+    "definition": "当提取时的情境与编码时的情境越匹配，记忆成绩越好；线索只有在与编码时加工过的信息一致时才有效。",
+    "plain": "在考场里复习，考试时更容易想起来。",
+    "difficulty": "intermediate",
+    "tags": [
+      "记忆",
+      "提取"
+    ],
+    "related": [
+      "memory-retrieval-cue",
+      "memory-episodic-memory",
+      "memory-levels-of-processing"
+    ],
+    "engineering_link": "编码特异性说明训练分布与测试分布一致性的重要性。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Cognitive Neuroscience: The Biology of the Mind (Gazzaniga et al., 5th ed., 2018)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "bianmateyixing",
+    "pinyin_initials": "bmtyx",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "memory-levels-of-processing",
+    "module": "memory",
+    "name_zh": "加工水平",
+    "name_en": "Levels of Processing",
+    "aliases": [
+      "加工深度",
+      "深层加工"
+    ],
+    "definition": "记忆效果取决于编码时的加工深度：语义加工优于语音加工，语音加工优于字形加工，深加工产生更持久记忆。",
+    "plain": "琢磨“意思”比只记“长什么样”记得牢。",
+    "difficulty": "intermediate",
+    "tags": [
+      "记忆",
+      "编码"
+    ],
+    "related": [
+      "memory-encoding-consolidation-retrieval",
+      "memory-semantic-memory",
+      "memory-spacing-effect"
+    ],
+    "engineering_link": "加工深度对应表示学习的层次，深层语义特征更稳健。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Cognitive Neuroscience: The Biology of the Mind (Gazzaniga et al., 5th ed., 2018)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "jiagongshuiping",
+    "pinyin_initials": "jgsp",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "memory-flashbulb-memory",
+    "module": "memory",
+    "name_zh": "闪光灯记忆",
+    "name_en": "Flashbulb Memory",
+    "aliases": [
+      "闪光记忆",
+      "闪光灯式记忆"
+    ],
+    "definition": "对重大、情绪性事件发生情境的生动而自信的记忆，但其准确性随时间下降，生动感与准确度并不一致。",
+    "plain": "“那天我在哪儿听到这个消息”记得特别清楚，但细节常记错。",
+    "difficulty": "intermediate",
+    "tags": [
+      "记忆",
+      "情绪"
+    ],
+    "related": [
+      "emotion-fear-conditioning",
+      "memory-episodic-memory",
+      "memory-false-memory"
+    ],
+    "engineering_link": "高置信度与低准确度的分离，是模型校准（calibration）问题的生动案例。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Cognitive Neuroscience: The Biology of the Mind (Gazzaniga et al., 5th ed., 2018)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "shanguangdengjiyi",
+    "pinyin_initials": "sgdjy",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "memory-false-memory",
+    "module": "memory",
+    "name_zh": "错误记忆",
+    "name_en": "False Memory",
+    "aliases": [
+      "虚假记忆",
+      "记忆扭曲"
+    ],
+    "definition": "对未曾发生事件的确信记忆，或对真实事件的显著扭曲，可由误导性信息、想象与语义关联诱发。",
+    "plain": "非常确信地记着一件其实没发生过的事。",
+    "difficulty": "intermediate",
+    "tags": [
+      "记忆",
+      "失真"
+    ],
+    "related": [
+      "memory-reconsolidation",
+      "memory-source-monitoring",
+      "memory-flashbulb-memory"
+    ],
+    "engineering_link": "错误记忆提示生成式重构的风险，对应大模型的幻觉问题。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Cognitive Neuroscience: The Biology of the Mind (Gazzaniga et al., 5th ed., 2018)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "cuowujiyi",
+    "pinyin_initials": "cwjy",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "memory-source-monitoring",
+    "module": "memory",
+    "name_zh": "来源监控",
+    "name_en": "Source Monitoring",
+    "aliases": [
+      "来源记忆",
+      "来源判断"
+    ],
+    "definition": "判断记忆信息来自何处（亲身经历、听说、想象）的过程，依赖前额叶，其失败会导致来源混淆与错误记忆。",
+    "plain": "分不清“我真的做过”还是“我只是想过”。",
+    "difficulty": "advanced",
+    "tags": [
+      "记忆",
+      "元认知"
+    ],
+    "related": [
+      "memory-false-memory",
+      "anatomy-prefrontal-cortex",
+      "memory-retrieval-cue"
+    ],
+    "engineering_link": "来源监控对应信息来源追踪与可信度标注。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Cognitive Neuroscience: The Biology of the Mind (Gazzaniga et al., 5th ed., 2018)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "laiyuanjiankong",
+    "pinyin_initials": "lyjk",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "memory-prospective-memory",
+    "module": "memory",
+    "name_zh": "前瞻记忆",
+    "name_en": "Prospective Memory",
+    "aliases": [
+      "未来记忆",
+      "待办记忆"
+    ],
+    "definition": "记住在未来某时执行预定动作的能力，依赖前额叶与意图维持，分为基于事件与基于时间两类。",
+    "plain": "“出门记得带钥匙”靠的就是前瞻记忆。",
+    "difficulty": "intermediate",
+    "tags": [
+      "记忆",
+      "执行"
+    ],
+    "related": [
+      "memory-working-memory",
+      "anatomy-prefrontal-cortex",
+      "attention-cognitive-control"
+    ],
+    "engineering_link": "前瞻记忆对应定时任务与意图队列的调度。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Cognitive Neuroscience: The Biology of the Mind (Gazzaniga et al., 5th ed., 2018)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "qianzhanjiyi",
+    "pinyin_initials": "qzjy",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "memory-autobiographical-memory",
+    "module": "memory",
+    "name_zh": "自传体记忆",
+    "name_en": "Autobiographical Memory",
+    "aliases": [
+      "人生记忆",
+      "个人史记忆"
+    ],
+    "definition": "关于个人经历与自我历史的记忆复合体，融合情景细节与语义知识，并受自我图式与情绪重构影响。",
+    "plain": "关于“我是谁、我经历过什么”的整套个人故事。",
+    "difficulty": "advanced",
+    "tags": [
+      "记忆",
+      "自我"
+    ],
+    "related": [
+      "memory-episodic-memory",
+      "memory-semantic-memory",
+      "anatomy-precuneus"
+    ],
+    "engineering_link": "自传体记忆是长期个性化记忆体的雏形，涉及持续更新与自我一致性约束。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Cognitive Neuroscience: The Biology of the Mind (Gazzaniga et al., 5th ed., 2018)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "zizhuantijiyi",
+    "pinyin_initials": "zztjy",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "memory-interference",
+    "module": "memory",
+    "name_zh": "记忆干扰",
+    "name_en": "Memory Interference",
+    "aliases": [
+      "干扰理论",
+      "前摄抑制"
+    ],
+    "definition": "相似记忆之间相互削弱的现象，分为前摄干扰（旧记忆妨碍新学习）与倒摄干扰（新学习破坏旧记忆）。",
+    "plain": "学完法语再学西班牙语，两套词会互相打架。",
+    "difficulty": "intermediate",
+    "tags": [
+      "记忆",
+      "遗忘"
+    ],
+    "related": [
+      "memory-forgetting-curve",
+      "memory-retrieval-cue",
+      "memory-consolidation"
+    ],
+    "engineering_link": "干扰现象对应持续学习中的灾难性遗忘，是增量训练的核心难题。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Cognitive Neuroscience: The Biology of the Mind (Gazzaniga et al., 5th ed., 2018)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "jiyiganrao",
+    "pinyin_initials": "jygr",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "memory-hippocampal-replay",
+    "module": "memory",
+    "name_zh": "海马重放",
+    "name_en": "Hippocampal Replay",
+    "aliases": [
+      "记忆重放",
+      "离线重放"
+    ],
+    "definition": "睡眠或静息时海马位置细胞序列以压缩时间尺度重新激活经历路径的现象，被认为支持记忆巩固与规划。",
+    "plain": "睡觉时海马会把白天的路线“快进重播”很多遍。",
+    "difficulty": "advanced",
+    "tags": [
+      "海马",
+      "巩固",
+      "睡眠"
+    ],
+    "related": [
+      "memory-place-cell",
+      "memory-consolidation",
+      "memory-grid-cell"
+    ],
+    "engineering_link": "重放机制对应经验回放缓冲区，是深度强化学习稳定训练的关键组件。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Cognitive Neuroscience: The Biology of the Mind (Gazzaniga et al., 5th ed., 2018)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "haimazhongfang",
+    "pinyin_initials": "hmzf",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "memory-engram",
+    "module": "memory",
+    "name_zh": "记忆痕迹",
+    "name_en": "Engram",
+    "aliases": [
+      "印迹",
+      "记忆印迹细胞"
+    ],
+    "definition": "存储特定记忆的神经元群及其突触改变，实验上可通过即刻早期基因标记并在光遗传学激活时诱发记忆提取。",
+    "plain": "记忆在大脑里留下的那组“物理脚印”。",
+    "difficulty": "advanced",
+    "tags": [
+      "记忆",
+      "机制"
+    ],
+    "related": [
+      "memory-consolidation",
+      "synapse-synaptic-plasticity",
+      "anatomy-hippocampus"
+    ],
+    "engineering_link": "印迹细胞的稀疏分布式编码对应稀疏表示与模式完成。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Cognitive Neuroscience: The Biology of the Mind (Gazzaniga et al., 5th ed., 2018)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "jiyihenji",
+    "pinyin_initials": "jyhj",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "memory-aging",
+    "module": "memory",
+    "name_zh": "记忆老化",
+    "name_en": "Memory Aging",
+    "aliases": [
+      "老年记忆衰退",
+      "年龄相关记忆下降"
+    ],
+    "definition": "随年龄增长出现的记忆功能变化，情景记忆与来源记忆下降较明显，语义知识与程序性技能相对保持。",
+    "plain": "年纪大了容易忘事，但老本行的知识和手艺反而更稳。",
+    "difficulty": "intermediate",
+    "tags": [
+      "记忆",
+      "老化"
+    ],
+    "related": [
+      "memory-episodic-memory",
+      "memory-semantic-memory",
+      "memory-working-memory"
+    ],
+    "engineering_link": "老化模式说明不同记忆子系统有不同的衰减曲线，可用于分层缓存设计。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Cognitive Neuroscience: The Biology of the Mind (Gazzaniga et al., 5th ed., 2018)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "jiyilaohua",
+    "pinyin_initials": "jylh",
+    "updated_at": "2026-11-20T00:00:00Z"
   }
 ]

@@ -285,5 +285,705 @@
       }
     ],
     "updated_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "methods-eeg",
+    "module": "methods",
+    "name_zh": "脑电图",
+    "name_en": "Electroencephalography (EEG)",
+    "aliases": [
+      "EEG",
+      "头皮脑电"
+    ],
+    "definition": "在头皮放置电极记录大脑皮层群体突触后电位总和的技术，时间分辨率达毫秒级、空间分辨率较低，广泛用于睡眠、癫痫与认知研究。",
+    "plain": "在头上贴电极，听大脑“嗡嗡”的整体电流声，能看清节奏但看不清具体位置。",
+    "difficulty": "intro",
+    "tags": [
+      "方法",
+      "电生理"
+    ],
+    "related": [
+      "methods-erp",
+      "methods-ecog",
+      "attention-attentional-oscillation"
+    ],
+    "engineering_link": "EEG 的高时间—低空间特性决定了它在脑机接口中更适合节律与诱发成分解码。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "naodiantu",
+    "pinyin_initials": "ndt",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "methods-erp",
+    "module": "methods",
+    "name_zh": "事件相关电位",
+    "name_en": "Event-Related Potential (ERP)",
+    "aliases": [
+      "ERP",
+      "诱发电位"
+    ],
+    "definition": "对与特定事件时间锁定的 EEG 片段进行多次叠加平均得到的电位波形，用以提取感觉与认知加工的时间进程。",
+    "plain": "把很多次“同一声响后的脑电”叠起来平均，噪声被抹平，留下事件专属的波形。",
+    "difficulty": "intro",
+    "tags": [
+      "方法",
+      "电生理"
+    ],
+    "related": [
+      "methods-eeg",
+      "language-n400",
+      "bci-erp-based"
+    ],
+    "engineering_link": "ERP 叠加平均是信噪比提升的经典范式，也是锁时平均滤波的原型。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "shijianxiangguandianwei",
+    "pinyin_initials": "sjxgdw",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "methods-tms",
+    "module": "methods",
+    "name_zh": "经颅磁刺激",
+    "name_en": "Transcranial Magnetic Stimulation (TMS)",
+    "aliases": [
+      "TMS",
+      "磁刺激"
+    ],
+    "definition": "用快速变化的磁场在皮层诱导电流、暂时兴奋或抑制局部脑区的非侵入技术，可用于因果性功能定位与治疗。",
+    "plain": "用磁脉冲“敲一下”某块脑区，看行为和脑活动怎么变。",
+    "difficulty": "intermediate",
+    "tags": [
+      "方法",
+      "神经调控"
+    ],
+    "related": [
+      "methods-tdcs",
+      "methods-fmri",
+      "bci-neurofeedback"
+    ],
+    "engineering_link": "TMS 提供因果扰动能力，弥补了纯相关观测的不足。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "jingluciciji",
+    "pinyin_initials": "jlccj",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "methods-tdcs",
+    "module": "methods",
+    "name_zh": "经颅直流电刺激",
+    "name_en": "Transcranial Direct Current Stimulation (tDCS)",
+    "aliases": [
+      "tDCS",
+      "直流电刺激"
+    ],
+    "definition": "通过头皮电极施加微弱直流电，改变皮层兴奋性的非侵入调控技术，效应温和且依赖刺激极性、时长与个体差异。",
+    "plain": "用很弱的电流给脑区“轻轻调一下音量”。",
+    "difficulty": "intermediate",
+    "tags": [
+      "方法",
+      "神经调控"
+    ],
+    "related": [
+      "methods-tms",
+      "bci-neurofeedback",
+      "motor-motor-learning"
+    ],
+    "engineering_link": "tDCS 的低成本与便携性使其成为消费级神经增强的热点，但效应量争议较大。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "jingluzhiliudianciji",
+    "pinyin_initials": "jlzldcj",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "methods-pet",
+    "module": "methods",
+    "name_zh": "正电子发射断层成像",
+    "name_en": "Positron Emission Tomography (PET)",
+    "aliases": [
+      "PET",
+      "正电子断层扫描"
+    ],
+    "definition": "注射放射性示踪剂后探测正电子湮灭产生的光子对，重建脑内代谢或受体分布的成像技术，可测葡萄糖代谢与神经递质受体。",
+    "plain": "给大脑“打标记”，看哪块区域在烧糖、哪种受体多。",
+    "difficulty": "intermediate",
+    "tags": [
+      "方法",
+      "成像"
+    ],
+    "related": [
+      "methods-fmri",
+      "emotion-dopamine-reward",
+      "methods-fnirs"
+    ],
+    "engineering_link": "PET 的分子特异性弥补了 fMRI 只能测血氧的局限。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "zhengdianzifasheduancengchengxiang",
+    "pinyin_initials": "zdzfsdccx",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "methods-dti",
+    "module": "methods",
+    "name_zh": "弥散张量成像",
+    "name_en": "Diffusion Tensor Imaging (DTI)",
+    "aliases": [
+      "DTI",
+      "弥散成像"
+    ],
+    "definition": "利用水分子沿白质纤维扩散的各向异性重建纤维束走行的磁共振技术，用于评估白质完整性与结构连接。",
+    "plain": "通过“水往哪儿流”画出大脑里的白质电缆走向。",
+    "difficulty": "intermediate",
+    "tags": [
+      "方法",
+      "成像",
+      "白质"
+    ],
+    "related": [
+      "methods-fmri",
+      "methods-connectomics",
+      "anatomy-corpus-callosum"
+    ],
+    "engineering_link": "DTI 是结构连接组的主要数据来源，对应网络的物理布线图。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "misanzhangliangchengxiang",
+    "pinyin_initials": "mszlcx",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "methods-structural-mri",
+    "module": "methods",
+    "name_zh": "结构磁共振",
+    "name_en": "Structural MRI",
+    "aliases": [
+      "sMRI",
+      "解剖磁共振"
+    ],
+    "definition": "利用组织磁弛豫差异获取高分辨率脑解剖图像的磁共振技术，用于形态测量、皮层厚度与病灶定位。",
+    "plain": "给大脑拍高清“解剖照”，看结构长什么样、哪里萎缩了。",
+    "difficulty": "intro",
+    "tags": [
+      "方法",
+      "成像",
+      "解剖"
+    ],
+    "related": [
+      "methods-fmri",
+      "methods-dti",
+      "anatomy-cerebral-cortex"
+    ],
+    "engineering_link": "结构像是个体化头模型与源定位的先验基础。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "jiegoucigongzhen",
+    "pinyin_initials": "jgcgz",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "methods-single-unit-recording",
+    "module": "methods",
+    "name_zh": "单细胞记录",
+    "name_en": "Single-Unit Recording",
+    "aliases": [
+      "单单位记录",
+      "单位放电记录"
+    ],
+    "definition": "用微电极贴近单个神经元记录其动作电位发放的技术，是揭示感受野、方向调谐与位置细胞等基础现象的核心方法。",
+    "plain": "把“麦克风”贴到一个神经元旁边，只听它一个人说话。",
+    "difficulty": "intermediate",
+    "tags": [
+      "方法",
+      "电生理"
+    ],
+    "related": [
+      "methods-intracortical-recording",
+      "memory-place-cell",
+      "motor-mirror-neuron"
+    ],
+    "engineering_link": "单细胞记录是侵入式脑机接口最高信噪比的信号来源。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "danxibaojilu",
+    "pinyin_initials": "dxbjl",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "methods-calcium-imaging",
+    "module": "methods",
+    "name_zh": "钙成像",
+    "name_en": "Calcium Imaging",
+    "aliases": [
+      "钙荧光成像",
+      "GCaMP 成像"
+    ],
+    "definition": "用基因编码钙指示剂把神经元放电引起的钙内流转换为荧光变化，从而同时观测数百至数千个细胞活动的技术。",
+    "plain": "让神经元“放电时发亮”，用显微镜一次看一大片细胞在干什么。",
+    "difficulty": "advanced",
+    "tags": [
+      "方法",
+      "光学成像"
+    ],
+    "related": [
+      "methods-optogenetics",
+      "methods-single-unit-recording",
+      "neuron-ion-channel"
+    ],
+    "engineering_link": "钙成像提供了大规模群体活动的观测手段，是神经解码数据集的重要来源。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "gaichengxiang",
+    "pinyin_initials": "gcx",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "methods-optogenetics",
+    "module": "methods",
+    "name_zh": "光遗传学",
+    "name_en": "Optogenetics",
+    "aliases": [
+      "光控神经调控",
+      "optogenetic"
+    ],
+    "definition": "把光敏感通道或泵表达在特定神经元中，用光精确控制其兴奋或抑制的技术，实现细胞类型特异的因果操控。",
+    "plain": "给特定神经元装“光控开关”，一照就开、一关灯就停。",
+    "difficulty": "advanced",
+    "tags": [
+      "方法",
+      "神经调控",
+      "因果"
+    ],
+    "related": [
+      "methods-calcium-imaging",
+      "methods-chemogenetics",
+      "memory-engram"
+    ],
+    "engineering_link": "光遗传学是因果推断的黄金标准，但也提示了光传输深度与热效应的工程边界。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "guangyichuanxue",
+    "pinyin_initials": "gycx",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "methods-chemogenetics",
+    "module": "methods",
+    "name_zh": "化学遗传学",
+    "name_en": "Chemogenetics",
+    "aliases": [
+      "DREADD",
+      "化学遗传调控"
+    ],
+    "definition": "通过工程化受体使特定神经元对惰性小分子配体敏感，从而实现长时间、可逆的细胞类型特异调控。",
+    "plain": "给神经元装“药物遥控器”，吃一颗药就开或关一段时间。",
+    "difficulty": "advanced",
+    "tags": [
+      "方法",
+      "神经调控"
+    ],
+    "related": [
+      "methods-optogenetics",
+      "methods-tms",
+      "neuron-glia"
+    ],
+    "engineering_link": "化学遗传学的时间尺度适合慢性调控，与光遗传的毫秒级形成互补。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "huaxueyichuanxue",
+    "pinyin_initials": "hxycx",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "methods-lesion-method",
+    "module": "methods",
+    "name_zh": "损伤法",
+    "name_en": "Lesion Method",
+    "aliases": [
+      "病灶法",
+      "脑损伤研究"
+    ],
+    "definition": "通过观察脑损伤患者的特异缺陷推断脑区功能的经典方法，结合现代影像可做病灶—症状映射。",
+    "plain": "看“哪块坏了导致哪种能力丢失”，反推这块脑区管什么。",
+    "difficulty": "intro",
+    "tags": [
+      "方法",
+      "因果"
+    ],
+    "related": [
+      "language-broca-aphasia",
+      "memory-episodic-memory",
+      "methods-tms"
+    ],
+    "engineering_link": "病灶—症状映射是天然的“消融实验”，但受个体差异与代偿干扰。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "sunshangfa",
+    "pinyin_initials": "ssf",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "methods-neuropsychological-test",
+    "module": "methods",
+    "name_zh": "神经心理测验",
+    "name_en": "Neuropsychological Test",
+    "aliases": [
+      "神经心理评估",
+      "认知测验"
+    ],
+    "definition": "标准化测量注意、记忆、语言、执行等认知功能的测验组合，用于临床评估与损伤定位的辅助判断。",
+    "plain": "用一套标准题目测大脑的“各项能力分数”。",
+    "difficulty": "intro",
+    "tags": [
+      "方法",
+      "评估"
+    ],
+    "related": [
+      "methods-lesion-method",
+      "memory-span",
+      "attention-attention-network"
+    ],
+    "engineering_link": "标准化测验提供了可比较的行为基准，是认知能力量化的基础。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "shenjingxinliceyan",
+    "pinyin_initials": "sjxlcy",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "methods-eye-tracking",
+    "module": "methods",
+    "name_zh": "眼动追踪",
+    "name_en": "Eye Tracking",
+    "aliases": [
+      "视线追踪",
+      "眼动记录"
+    ],
+    "definition": "通过角膜反射或视频图像测量注视点与眼动轨迹的技术，用于研究视觉注意、阅读与交互意图。",
+    "plain": "看你的眼睛往哪儿看，就知道你的注意力在哪儿。",
+    "difficulty": "intro",
+    "tags": [
+      "方法",
+      "行为"
+    ],
+    "related": [
+      "attention-orienting",
+      "language-reading",
+      "methods-pupillometry"
+    ],
+    "engineering_link": "眼动是低成本、高采样率的意图通道，常与脑机接口融合。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "yandongzhuizong",
+    "pinyin_initials": "ydzz",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "methods-pupillometry",
+    "module": "methods",
+    "name_zh": "瞳孔测量",
+    "name_en": "Pupillometry",
+    "aliases": [
+      "瞳孔直径测量",
+      "瞳孔反应"
+    ],
+    "definition": "测量瞳孔直径随时间变化的方法，瞳孔大小受亮度、认知负荷与情绪唤醒调节，是自主神经活动的窗口。",
+    "plain": "瞳孔不只随光线变，脑子越费力、情绪越激动，它也会放大。",
+    "difficulty": "intermediate",
+    "tags": [
+      "方法",
+      "生理"
+    ],
+    "related": [
+      "methods-eye-tracking",
+      "attention-attention-load",
+      "emotion-stress-response"
+    ],
+    "engineering_link": "瞳孔测量是低成本认知负荷与唤醒水平的实时指标。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "tongkongceliang",
+    "pinyin_initials": "tkcl",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "methods-motion-capture",
+    "module": "methods",
+    "name_zh": "动作捕捉",
+    "name_en": "Motion Capture",
+    "aliases": [
+      "动捕",
+      "mocap"
+    ],
+    "definition": "用光学标记、惯性传感器或视频估计记录身体与手部运动轨迹的技术，用于运动学分析与脑机接口的行为标签。",
+    "plain": "给身体动作“录像 + 数字化”，得到精确的关节轨迹。",
+    "difficulty": "intro",
+    "tags": [
+      "方法",
+      "行为"
+    ],
+    "related": [
+      "motor-motor-learning",
+      "bci-decoding-algorithm",
+      "methods-emg"
+    ],
+    "engineering_link": "动捕数据是运动解码模型的主要监督信号来源。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "dongzuobuzhuo",
+    "pinyin_initials": "dzbz",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "methods-granger-causality",
+    "module": "methods",
+    "name_zh": "格兰杰因果",
+    "name_en": "Granger Causality",
+    "aliases": [
+      "Granger 因果分析",
+      "预测因果"
+    ],
+    "definition": "基于时间序列预测增益判断方向性影响的分析方法：若 X 的过去能改进对 Y 的预测，则称 X 格兰杰因果于 Y。",
+    "plain": "如果“知道 A 之前发生了什么”能更好地猜 B 接下来怎样，就说 A 对 B 有预测性影响。",
+    "difficulty": "advanced",
+    "tags": [
+      "方法",
+      "分析",
+      "连接"
+    ],
+    "related": [
+      "methods-connectomics",
+      "methods-decoding-analysis",
+      "methods-fmri"
+    ],
+    "engineering_link": "格兰杰因果是有效连接分析的常用工具，但需警惕共同驱动与采样率陷阱。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "gelanjieyinguo",
+    "pinyin_initials": "gljyg",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "methods-decoding-analysis",
+    "module": "methods",
+    "name_zh": "解码分析",
+    "name_en": "Decoding Analysis",
+    "aliases": [
+      "多变量模式分析",
+      "MVPA"
+    ],
+    "definition": "用机器学习从神经活动模式预测刺激、行为或心理状态的分析框架，强调信息存在于分布式模式而非单点激活。",
+    "plain": "不看“哪块亮”，而看“整片的图案像不像某类信息”，再用分类器猜。",
+    "difficulty": "intermediate",
+    "tags": [
+      "方法",
+      "分析",
+      "机器学习"
+    ],
+    "related": [
+      "methods-rsa",
+      "methods-machine-learning-classification",
+      "bci-decoding-algorithm"
+    ],
+    "engineering_link": "解码分析是脑机接口解码器的研究版原型。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "jiemafenxi",
+    "pinyin_initials": "jmfx",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "methods-rsa",
+    "module": "methods",
+    "name_zh": "表征相似性分析",
+    "name_en": "Representational Similarity Analysis (RSA)",
+    "aliases": [
+      "RSA",
+      "表征相似度分析"
+    ],
+    "definition": "用条件间的神经模式距离矩阵（RDM）比较不同脑区、物种或模型表征结构的分析方法，可跨模态对齐。",
+    "plain": "不比“具体信号”，只比“两两之间的相似程度”，看两套系统的心智地图像不像。",
+    "difficulty": "advanced",
+    "tags": [
+      "方法",
+      "分析",
+      "表征"
+    ],
+    "related": [
+      "methods-decoding-analysis",
+      "methods-fmri",
+      "methods-connectomics"
+    ],
+    "engineering_link": "RSA 是模型—大脑对齐（brain-score）的核心评估手段。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "biaozhengxiangsixingfenxi",
+    "pinyin_initials": "bzxsxfx",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "methods-connectomics",
+    "module": "methods",
+    "name_zh": "连接组学",
+    "name_en": "Connectomics",
+    "aliases": [
+      "连接组",
+      "神经连接图谱"
+    ],
+    "definition": "系统绘制神经元或脑区之间结构或功能连接图谱的学科，涵盖电镜重建、弥散成像与功能连接分析。",
+    "plain": "给整个大脑画一张“线路连接总图”。",
+    "difficulty": "advanced",
+    "tags": [
+      "方法",
+      "连接",
+      "图谱"
+    ],
+    "related": [
+      "methods-dti",
+      "methods-granger-causality",
+      "methods-fmri"
+    ],
+    "engineering_link": "连接组为神经网络架构搜索提供了生物先验的拓扑约束。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "lianjiezuxue",
+    "pinyin_initials": "ljzx",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "methods-machine-learning-classification",
+    "module": "methods",
+    "name_zh": "机器学习分类",
+    "name_en": "Machine Learning Classification",
+    "aliases": [
+      "分类器",
+      "监督分类"
+    ],
+    "definition": "用标注数据训练模型把神经或行为特征映射到类别标签的方法，常用交叉验证评估泛化，需防止信息泄漏。",
+    "plain": "拿一堆“已知答案”的样本训练程序，让它以后自动分类。",
+    "difficulty": "intermediate",
+    "tags": [
+      "方法",
+      "机器学习"
+    ],
+    "related": [
+      "methods-decoding-analysis",
+      "methods-common-spatial-pattern",
+      "bci-decoding-algorithm"
+    ],
+    "engineering_link": "分类器是脑机接口从特征到命令的最后一环，交叉验证是防过拟合的底线。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "jiqixuexifenlei",
+    "pinyin_initials": "jqxxfl",
+    "updated_at": "2026-11-20T00:00:00Z"
   }
 ]

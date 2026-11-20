@@ -278,5 +278,739 @@
       }
     ],
     "updated_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "bci-motor-imagery-bci",
+    "module": "bci",
+    "name_zh": "运动想象脑机接口",
+    "name_en": "Motor Imagery BCI",
+    "aliases": [
+      "运动想象接口",
+      "MI-BCI"
+    ],
+    "definition": "利用想象肢体运动时感觉运动皮层的节律变化（如 μ/β 事件相关去同步）解码运动意图的非侵入式脑机接口。",
+    "plain": "不用真动，只在脑子里“想象抬手”，系统就能读出你的意图。",
+    "difficulty": "intermediate",
+    "tags": [
+      "脑机接口",
+      "运动想象"
+    ],
+    "related": [
+      "motor-motor-imagery",
+      "bci-eeg-based",
+      "methods-common-spatial-pattern"
+    ],
+    "engineering_link": "运动想象是免手术接口最成熟的范式，但个体差异与训练成本高。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Brain-Computer Interfaces: Principles and Practice (Wolpaw & Wolpaw, 2012)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "yundongxiangxiangnaojijiekou",
+    "pinyin_initials": "ydxxnjjk",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "bci-speech-decoding",
+    "module": "bci",
+    "name_zh": "言语解码",
+    "name_en": "Speech Decoding",
+    "aliases": [
+      "语音解码",
+      "语言脑机接口"
+    ],
+    "definition": "从皮层活动（尤其运动皮层与语言区）解码音素、词或句子意图的技术，近年已实现较高词错误率下的实时合成语音。",
+    "plain": "把“想说的话”直接从大脑信号翻译成声音。",
+    "difficulty": "advanced",
+    "tags": [
+      "脑机接口",
+      "语言"
+    ],
+    "related": [
+      "language-speech-production",
+      "language-inner-speech",
+      "bci-intracortical-interface"
+    ],
+    "engineering_link": "言语解码是低带宽接口向高带宽通信突破的关键方向。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Brain-Computer Interfaces: Principles and Practice (Wolpaw & Wolpaw, 2012)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "yanyujiema",
+    "pinyin_initials": "yyjm",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "bci-eeg-based",
+    "module": "bci",
+    "name_zh": "脑电脑机接口",
+    "name_en": "EEG-Based BCI",
+    "aliases": [
+      "EEG 接口",
+      "头皮脑电接口"
+    ],
+    "definition": "以头皮脑电为信号源的非侵入式脑机接口，成本低、便携，但受容积传导与肌电干扰影响，带宽有限。",
+    "plain": "戴个电极帽就能用的接口，方便但信号比较“糊”。",
+    "difficulty": "intro",
+    "tags": [
+      "脑机接口",
+      "非侵入"
+    ],
+    "related": [
+      "methods-eeg",
+      "bci-motor-imagery-bci",
+      "bci-erp-based"
+    ],
+    "engineering_link": "EEG 接口的核心矛盾是便携性与信噪比，决定了其应用多集中在低频命令与状态监测。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Brain-Computer Interfaces: Principles and Practice (Wolpaw & Wolpaw, 2012)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "naodiannaojijiekou",
+    "pinyin_initials": "ndnjjk",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "bci-fnirs-based",
+    "module": "bci",
+    "name_zh": "近红外脑机接口",
+    "name_en": "fNIRS-Based BCI",
+    "aliases": [
+      "fNIRS 接口",
+      "光学脑机接口"
+    ],
+    "definition": "用近红外光谱测量皮层血氧变化构建的脑机接口，抗电磁干扰、可穿戴性好，但时间常数达数秒。",
+    "plain": "用光看脑子“哪儿在耗氧”，反应慢但不怕电磁干扰。",
+    "difficulty": "intermediate",
+    "tags": [
+      "脑机接口",
+      "非侵入",
+      "光学"
+    ],
+    "related": [
+      "methods-fnirs",
+      "bci-eeg-based",
+      "bci-hybrid-bci"
+    ],
+    "engineering_link": "fNIRS 适合慢速状态型命令，与 EEG 融合可互补时间尺度。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Brain-Computer Interfaces: Principles and Practice (Wolpaw & Wolpaw, 2012)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "jinhongwainaojijiekou",
+    "pinyin_initials": "jhwnjjk",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "bci-ecog-based",
+    "module": "bci",
+    "name_zh": "皮层脑电接口",
+    "name_en": "ECoG-Based BCI",
+    "aliases": [
+      "ECoG 接口",
+      "硬膜下脑电接口"
+    ],
+    "definition": "以硬膜下电极阵列记录皮层表面场电位构建的脑机接口，信噪比与空间分辨率优于头皮 EEG，需开颅植入。",
+    "plain": "把电极贴在脑表面，信号比头皮清楚得多，但要开刀。",
+    "difficulty": "intermediate",
+    "tags": [
+      "脑机接口",
+      "半侵入"
+    ],
+    "related": [
+      "methods-ecog",
+      "bci-intracortical-interface",
+      "bci-speech-decoding"
+    ],
+    "engineering_link": "ECoG 在信噪比与手术风险之间取得折中，是临床转化较快的路线。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Brain-Computer Interfaces: Principles and Practice (Wolpaw & Wolpaw, 2012)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "picengnaodianjiekou",
+    "pinyin_initials": "pcndjk",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "bci-intracortical-interface",
+    "module": "bci",
+    "name_zh": "皮层内脑机接口",
+    "name_en": "Intracortical BCI",
+    "aliases": [
+      "皮层内接口",
+      "植入式微电极接口"
+    ],
+    "definition": "把微电极阵列插入皮层记录单个或多个神经元放电的脑机接口，带宽与精度最高，但长期稳定性与生物相容性是主要挑战。",
+    "plain": "直接把“麦克风”插进脑组织听单个神经元说话，最清楚也最脆弱。",
+    "difficulty": "advanced",
+    "tags": [
+      "脑机接口",
+      "侵入"
+    ],
+    "related": [
+      "methods-intracortical-recording",
+      "bci-electrode-array",
+      "bci-chronic-stability"
+    ],
+    "engineering_link": "皮层内接口的性能上限由电极密度、组织反应与解码算法共同决定。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Brain-Computer Interfaces: Principles and Practice (Wolpaw & Wolpaw, 2012)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "picengneinaojijiekou",
+    "pinyin_initials": "pcnnjjk",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "bci-decoding-algorithm",
+    "module": "bci",
+    "name_zh": "解码算法",
+    "name_en": "Decoding Algorithm",
+    "aliases": [
+      "神经解码器",
+      "译码器"
+    ],
+    "definition": "把神经特征映射为运动、语言或状态输出的模型，从线性判别到卡尔曼滤波、循环网络与深度模型不等。",
+    "plain": "把脑信号“翻译”成机器能执行的命令的那套规则。",
+    "difficulty": "intermediate",
+    "tags": [
+      "脑机接口",
+      "算法"
+    ],
+    "related": [
+      "methods-decoding-analysis",
+      "methods-machine-learning-classification",
+      "bci-adaptive-calibration"
+    ],
+    "engineering_link": "解码器的泛化能力决定了接口跨天、跨会话的可用性。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Brain-Computer Interfaces: Principles and Practice (Wolpaw & Wolpaw, 2012)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "jiemasuanfa",
+    "pinyin_initials": "jmsf",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "bci-feature-extraction",
+    "module": "bci",
+    "name_zh": "特征提取",
+    "name_en": "Feature Extraction",
+    "aliases": [
+      "信号特征",
+      "特征工程"
+    ],
+    "definition": "从原始神经信号中计算频带功率、时域波形、空间模式或深度表征的过程，直接决定解码器的上限。",
+    "plain": "先把原始信号“提炼成有用的指标”，再交给解码器。",
+    "difficulty": "intro",
+    "tags": [
+      "脑机接口",
+      "信号处理"
+    ],
+    "related": [
+      "bci-signal-processing-pipeline",
+      "methods-common-spatial-pattern",
+      "bci-spatial-filter"
+    ],
+    "engineering_link": "特征工程的质量往往比模型复杂度更影响接口性能。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Brain-Computer Interfaces: Principles and Practice (Wolpaw & Wolpaw, 2012)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "tezhengtiqu",
+    "pinyin_initials": "tztq",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "bci-spatial-filter",
+    "module": "bci",
+    "name_zh": "空间滤波",
+    "name_en": "Spatial Filter",
+    "aliases": [
+      "空间滤波器",
+      "通道加权"
+    ],
+    "definition": "对多通道信号做线性组合以增强目标源、抑制干扰与噪声的技术，CSP、CAR 与 Laplacian 是常用方法。",
+    "plain": "把多个电极的信号“按配方混合”，让想看的那一路更突出。",
+    "difficulty": "intermediate",
+    "tags": [
+      "脑机接口",
+      "信号处理"
+    ],
+    "related": [
+      "methods-common-spatial-pattern",
+      "bci-feature-extraction",
+      "methods-artifact-removal"
+    ],
+    "engineering_link": "空间滤波是低成本提升信噪比的首选手段，先于复杂模型。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Brain-Computer Interfaces: Principles and Practice (Wolpaw & Wolpaw, 2012)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "kongjianlvbo",
+    "pinyin_initials": "kjlb",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "bci-adaptive-calibration",
+    "module": "bci",
+    "name_zh": "自适应校准",
+    "name_en": "Adaptive Calibration",
+    "aliases": [
+      "在线校准",
+      "自适应解码"
+    ],
+    "definition": "在长期使用中根据信号漂移与用户状态变化在线更新解码参数，减少重复校准负担的技术。",
+    "plain": "接口会“边用边学”，不用每次重新训练。",
+    "difficulty": "advanced",
+    "tags": [
+      "脑机接口",
+      "自适应"
+    ],
+    "related": [
+      "bci-decoding-algorithm",
+      "bci-user-training",
+      "bci-chronic-stability"
+    ],
+    "engineering_link": "自适应校准对应在线学习中的非平稳分布适应与灾难性遗忘控制。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Brain-Computer Interfaces: Principles and Practice (Wolpaw & Wolpaw, 2012)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "zishiyingjiaozhun",
+    "pinyin_initials": "zsyjz",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "bci-mutual-information",
+    "module": "bci",
+    "name_zh": "互信息",
+    "name_en": "Mutual Information",
+    "aliases": [
+      "信息增益",
+      "MI"
+    ],
+    "definition": "衡量两个变量共享信息量的指标，常用于评估神经特征与目标之间的可解码性，以及通道选择的依据。",
+    "plain": "衡量“知道脑信号后，对目标的不确定性减少了多少”。",
+    "difficulty": "advanced",
+    "tags": [
+      "脑机接口",
+      "信息论"
+    ],
+    "related": [
+      "bci-information-transfer-rate",
+      "bci-feature-extraction",
+      "methods-decoding-analysis"
+    ],
+    "engineering_link": "互信息是无模型的特征相关性度量，适合非线性关系的初筛。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Brain-Computer Interfaces: Principles and Practice (Wolpaw & Wolpaw, 2012)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "huxinxi",
+    "pinyin_initials": "hxx",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "bci-information-transfer-rate",
+    "module": "bci",
+    "name_zh": "信息传输率",
+    "name_en": "Information Transfer Rate (ITR)",
+    "aliases": [
+      "ITR",
+      "比特率"
+    ],
+    "definition": "单位时间内成功传输的信息量（bit/min），综合准确率、目标数与决策时间，是评价脑机接口通信能力的标准指标。",
+    "plain": "衡量这个接口“每分钟能传多少比特”，比单看准确率更全面。",
+    "difficulty": "intermediate",
+    "tags": [
+      "脑机接口",
+      "评价"
+    ],
+    "related": [
+      "bci-mutual-information",
+      "bci-decoding-algorithm",
+      "bci-signal-processing-pipeline"
+    ],
+    "engineering_link": "ITR 把准确率与速度统一到一个可比标尺，是接口选型的核心指标。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Brain-Computer Interfaces: Principles and Practice (Wolpaw & Wolpaw, 2012)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "xinxichuanshulv",
+    "pinyin_initials": "xxcsl",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "bci-false-positive-control",
+    "module": "bci",
+    "name_zh": "误报控制",
+    "name_en": "False Positive Control",
+    "aliases": [
+      "虚警抑制",
+      "误触发控制"
+    ],
+    "definition": "在连续控制的脑机接口中抑制无意图时被误判为命令的机制，常通过空闲状态检测、置信度阈值与 dwell time 实现。",
+    "plain": "防止“你没想操作，设备却自己动了”的安全阀。",
+    "difficulty": "intermediate",
+    "tags": [
+      "脑机接口",
+      "安全"
+    ],
+    "related": [
+      "bci-decoding-algorithm",
+      "bci-closed-loop",
+      "bci-ethical-issues"
+    ],
+    "engineering_link": "误报控制本质是精确率—召回率的运行点选择，需按后果不对称设定。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Brain-Computer Interfaces: Principles and Practice (Wolpaw & Wolpaw, 2012)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "wubaokongzhi",
+    "pinyin_initials": "wbkz",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "bci-user-training",
+    "module": "bci",
+    "name_zh": "用户训练",
+    "name_en": "User Training",
+    "aliases": [
+      "受试者训练",
+      "接口学习"
+    ],
+    "definition": "用户通过练习学会稳定产生可被解码的神经模式的过程，与机器侧校准共同构成“人机共适应”。",
+    "plain": "接口要练，人也要练，练到双方“对上调”。",
+    "difficulty": "intro",
+    "tags": [
+      "脑机接口",
+      "人因"
+    ],
+    "related": [
+      "bci-adaptive-calibration",
+      "motor-motor-imagery",
+      "attention-attention-training"
+    ],
+    "engineering_link": "人机共适应是双向优化问题，忽略用户侧学习会低估接口潜力。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Brain-Computer Interfaces: Principles and Practice (Wolpaw & Wolpaw, 2012)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "yonghuxunlian",
+    "pinyin_initials": "yhxl",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "bci-assistive-robot",
+    "module": "bci",
+    "name_zh": "辅助机器人",
+    "name_en": "Assistive Robot",
+    "aliases": [
+      "康复机器人",
+      "辅助设备"
+    ],
+    "definition": "由脑机接口或残余运动能力控制、帮助重度运动障碍者完成抓取、移动与交流的机器人系统。",
+    "plain": "用“想法”指挥的机械臂或轮椅，帮行动不便的人拿东西、走动。",
+    "difficulty": "intermediate",
+    "tags": [
+      "脑机接口",
+      "应用",
+      "康复"
+    ],
+    "related": [
+      "bci-decoding-algorithm",
+      "motor-motor-rehabilitation",
+      "bci-closed-loop"
+    ],
+    "engineering_link": "辅助机器人把解码误差转化为物理风险，对可靠性要求远高于实验室演示。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Brain-Computer Interfaces: Principles and Practice (Wolpaw & Wolpaw, 2012)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "fuzhujiqiren",
+    "pinyin_initials": "fzjqr",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "bci-neuroprosthetics",
+    "module": "bci",
+    "name_zh": "神经假体",
+    "name_en": "Neuroprosthetics",
+    "aliases": [
+      "神经修复装置",
+      "神经义肢"
+    ],
+    "definition": "替代或恢复受损神经功能的植入装置，如人工耳蜗、视网膜假体与运动神经假体，通过电刺激或记录实现感觉或运动的闭环。",
+    "plain": "用电子装置“顶替”坏掉的神经功能，比如人工耳蜗。",
+    "difficulty": "intermediate",
+    "tags": [
+      "脑机接口",
+      "植入",
+      "康复"
+    ],
+    "related": [
+      "bci-intracortical-interface",
+      "sensory-cochlea",
+      "bci-closed-loop"
+    ],
+    "engineering_link": "神经假体是脑机接口中临床落地最成熟的品类。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Brain-Computer Interfaces: Principles and Practice (Wolpaw & Wolpaw, 2012)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "shenjingjiati",
+    "pinyin_initials": "sjjt",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "bci-deep-brain-stimulation",
+    "module": "bci",
+    "name_zh": "深部脑刺激",
+    "name_en": "Deep Brain Stimulation (DBS)",
+    "aliases": [
+      "DBS",
+      "脑深部电刺激"
+    ],
+    "definition": "通过植入丘脑底核、苍白球内侧部等靶点的电极施加高频电刺激，治疗帕金森病、震颤与部分难治性精神障碍。",
+    "plain": "往大脑深处放一根“电极针”，持续放电把异常的环路压下去。",
+    "difficulty": "intermediate",
+    "tags": [
+      "脑机接口",
+      "神经调控",
+      "临床"
+    ],
+    "related": [
+      "anatomy-globus-pallidus",
+      "anatomy-substantia-nigra",
+      "bci-closed-loop"
+    ],
+    "engineering_link": "闭环 DBS 依据实时生物标志物调整刺激，是神经调控的“自适应控制”范例。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Brain-Computer Interfaces: Principles and Practice (Wolpaw & Wolpaw, 2012)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "shenbunaociji",
+    "pinyin_initials": "sbncj",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "bci-vagus-nerve-stimulation",
+    "module": "bci",
+    "name_zh": "迷走神经刺激",
+    "name_en": "Vagus Nerve Stimulation (VNS)",
+    "aliases": [
+      "VNS",
+      "迷走神经电刺激"
+    ],
+    "definition": "刺激颈部迷走神经以调节孤束核及上行网络的植入式疗法，用于难治性癫痫与部分抑郁，也用于探索炎症调控。",
+    "plain": "刺激脖子里的“迷走神经主干”，间接给大脑和内脏“调频”。",
+    "difficulty": "intermediate",
+    "tags": [
+      "脑机接口",
+      "神经调控",
+      "临床"
+    ],
+    "related": [
+      "bci-deep-brain-stimulation",
+      "emotion-mood-disorder",
+      "emotion-stress-response"
+    ],
+    "engineering_link": "VNS 展示了外周神经刺激对中枢状态的间接调控能力。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Brain-Computer Interfaces: Principles and Practice (Wolpaw & Wolpaw, 2012)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "mizoushenjingciji",
+    "pinyin_initials": "mzsjcj",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "bci-spinal-cord-stimulation",
+    "module": "bci",
+    "name_zh": "脊髓刺激",
+    "name_en": "Spinal Cord Stimulation (SCS)",
+    "aliases": [
+      "SCS",
+      "脊髓电刺激"
+    ],
+    "definition": "在硬膜外或椎管内放置电极刺激脊髓背柱或背根，用于镇痛与恢复部分运动/自主功能的技术。",
+    "plain": "在脊髓外面放电，既能“盖住疼痛信号”，也能帮受损的走路回路重新启动。",
+    "difficulty": "advanced",
+    "tags": [
+      "脑机接口",
+      "神经调控",
+      "康复"
+    ],
+    "related": [
+      "anatomy-spinal-cord",
+      "motor-motor-rehabilitation",
+      "bci-closed-loop"
+    ],
+    "engineering_link": "SCS 与脑机接口结合可形成“脑—脊髓”跨损伤旁路。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Brain-Computer Interfaces: Principles and Practice (Wolpaw & Wolpaw, 2012)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "jisuiciji",
+    "pinyin_initials": "jscj",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "bci-chronic-stability",
+    "module": "bci",
+    "name_zh": "长期稳定性",
+    "name_en": "Chronic Stability",
+    "aliases": [
+      "慢性稳定性",
+      "电极寿命"
+    ],
+    "definition": "植入电极与解码器在数月到数年内保持信号质量与性能的能力，受组织反应、电极退化、信号漂移与设备故障影响。",
+    "plain": "植入的东西能不能“用几年还不坏”，是接口能否真正落地的关键。",
+    "difficulty": "advanced",
+    "tags": [
+      "脑机接口",
+      "可靠性"
+    ],
+    "related": [
+      "bci-intracortical-interface",
+      "bci-adaptive-calibration",
+      "neuron-microglia"
+    ],
+    "engineering_link": "长期稳定性是侵入式接口最硬的工程约束，直接决定维护成本与临床可行性。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Brain-Computer Interfaces: Principles and Practice (Wolpaw & Wolpaw, 2012)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "changqiwendingxing",
+    "pinyin_initials": "cqwdx",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "bci-security-privacy",
+    "module": "bci",
+    "name_zh": "脑机接口安全与隐私",
+    "name_en": "BCI Security and Privacy",
+    "aliases": [
+      "神经数据隐私",
+      "脑机接口安全"
+    ],
+    "definition": "保护神经数据不被未授权读取、推断或篡改，并防止接口被恶意控制的技术与治理问题，涉及神经数据的人格属性与知情同意。",
+    "plain": "脑信号可能泄露你的想法和健康信息，必须像保护密码一样保护它。",
+    "difficulty": "intermediate",
+    "tags": [
+      "脑机接口",
+      "伦理",
+      "隐私"
+    ],
+    "related": [
+      "bci-ethical-issues",
+      "bci-false-positive-control",
+      "emotion-affective-computing"
+    ],
+    "engineering_link": "神经数据兼具生物特征与思想内容属性，需要端侧加密与最小化采集。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Brain-Computer Interfaces: Principles and Practice (Wolpaw & Wolpaw, 2012)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "naojijiekouanquanyuyinsi",
+    "pinyin_initials": "njjkaqyys",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "bci-clinical-translation",
+    "module": "bci",
+    "name_zh": "临床转化",
+    "name_en": "Clinical Translation",
+    "aliases": [
+      "临床落地",
+      "转化研究"
+    ],
+    "definition": "把实验室脑机接口转化为可监管审批、可规模化使用的临床产品的过程，涉及有效性证据、安全性、可用性与支付体系。",
+    "plain": "把“实验室里能用”变成“医院里能开、病人用得起”。",
+    "difficulty": "advanced",
+    "tags": [
+      "脑机接口",
+      "转化",
+      "临床"
+    ],
+    "related": [
+      "bci-chronic-stability",
+      "bci-ethical-issues",
+      "motor-motor-rehabilitation"
+    ],
+    "engineering_link": "临床转化的瓶颈常不在算法，而在可靠性、可用性与监管路径。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Brain-Computer Interfaces: Principles and Practice (Wolpaw & Wolpaw, 2012)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "linchuangzhuanhua",
+    "pinyin_initials": "lczh",
+    "updated_at": "2026-11-20T00:00:00Z"
   }
 ]

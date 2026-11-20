@@ -311,5 +311,699 @@
       }
     ],
     "updated_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "language-speech-perception",
+    "module": "language",
+    "name_zh": "言语知觉",
+    "name_en": "Speech Perception",
+    "aliases": [
+      "语音知觉",
+      "听觉言语加工"
+    ],
+    "definition": "把连续声学信号切分并映射为音位、音节与词的过程，涉及初级听皮层、颞上沟与左侧颞叶的层级加工。",
+    "plain": "把一串连续的声音“切词”，听成一句有意义的话。",
+    "difficulty": "intro",
+    "tags": [
+      "语言",
+      "知觉"
+    ],
+    "related": [
+      "language-phoneme",
+      "language-categorical-perception",
+      "sensory-auditory-pathway"
+    ],
+    "engineering_link": "言语知觉的切分问题对应语音识别中的声学前端与端点检测。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Cognitive Neuroscience: The Biology of the Mind (Gazzaniga et al., 5th ed., 2018)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "yanyuzhijue",
+    "pinyin_initials": "yyzj",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "language-categorical-perception",
+    "module": "language",
+    "name_zh": "范畴知觉",
+    "name_en": "Categorical Perception",
+    "aliases": [
+      "类别知觉",
+      "范畴化知觉"
+    ],
+    "definition": "对连续变化的语音刺激按音位边界做离散分类的现象：边界附近辨别敏感，范畴内差异难以察觉。",
+    "plain": "声音本来是连续渐变的，耳朵却硬把它分成“ba”和“pa”两格。",
+    "difficulty": "intermediate",
+    "tags": [
+      "语言",
+      "知觉"
+    ],
+    "related": [
+      "language-speech-perception",
+      "language-phoneme",
+      "sensory-just-noticeable-difference"
+    ],
+    "engineering_link": "范畴知觉对应分类器决策边界附近的敏感度提升。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Cognitive Neuroscience: The Biology of the Mind (Gazzaniga et al., 5th ed., 2018)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "fanchouzhijue",
+    "pinyin_initials": "fczj",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "language-phonology",
+    "module": "language",
+    "name_zh": "音系",
+    "name_en": "Phonology",
+    "aliases": [
+      "音系学",
+      "语音系统"
+    ],
+    "definition": "研究语言中音位如何组织、组合与变化的规则系统，决定哪些声音组合在特定语言中合法。",
+    "plain": "每种语言对“哪些音能拼在一起”都有一套潜规则。",
+    "difficulty": "intermediate",
+    "tags": [
+      "语言",
+      "语言学"
+    ],
+    "related": [
+      "language-phoneme",
+      "language-morpheme-syntax",
+      "language-speech-perception"
+    ],
+    "engineering_link": "音系规则对应语言模型中的合法序列约束。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Cognitive Neuroscience: The Biology of the Mind (Gazzaniga et al., 5th ed., 2018)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "yinxi",
+    "pinyin_initials": "yx",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "language-syntax-processing",
+    "module": "language",
+    "name_zh": "句法加工",
+    "name_en": "Syntactic Processing",
+    "aliases": [
+      "语法分析",
+      "句法分析"
+    ],
+    "definition": "依据词序、功能词与形态标记构建短语结构和句子意义的过程，主要依赖左侧额下回与颞上回。",
+    "plain": "把一串词按语法“搭积木”，搭出谁对谁做了什么。",
+    "difficulty": "intermediate",
+    "tags": [
+      "语言",
+      "句法"
+    ],
+    "related": [
+      "language-morpheme-syntax",
+      "language-p600",
+      "anatomy-broca-area"
+    ],
+    "engineering_link": "句法加工对应句法分析器与依存句法树构建。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Cognitive Neuroscience: The Biology of the Mind (Gazzaniga et al., 5th ed., 2018)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "jufajiagong",
+    "pinyin_initials": "jfjg",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "language-semantic-processing",
+    "module": "language",
+    "name_zh": "语义加工",
+    "name_en": "Semantic Processing",
+    "aliases": [
+      "意义加工",
+      "语义整合"
+    ],
+    "definition": "把词形与语音映射到概念意义，并在句子语境中整合为整体含义的过程，涉及颞叶前部、角回与额下回。",
+    "plain": "把“字面”翻译成“意思”，还要结合上下文理解。",
+    "difficulty": "intermediate",
+    "tags": [
+      "语言",
+      "语义"
+    ],
+    "related": [
+      "language-n400",
+      "memory-semantic-memory",
+      "anatomy-angular-gyrus"
+    ],
+    "engineering_link": "语义加工对应词向量与上下文表示。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Cognitive Neuroscience: The Biology of the Mind (Gazzaniga et al., 5th ed., 2018)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "yuyijiagong",
+    "pinyin_initials": "yyjg",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "language-grammar",
+    "module": "language",
+    "name_zh": "语法",
+    "name_en": "Grammar",
+    "aliases": [
+      "文法",
+      "语言规则"
+    ],
+    "definition": "语言中关于词形变化与组词成句的规则总称，包括形态学与句法两部分，是语言生成与理解的结构约束。",
+    "plain": "一门语言“怎么把词拼成句子”的说明书。",
+    "difficulty": "intro",
+    "tags": [
+      "语言",
+      "语言学"
+    ],
+    "related": [
+      "language-morpheme-syntax",
+      "language-syntax-processing",
+      "language-phonology"
+    ],
+    "engineering_link": "语法对应形式文法与句法约束，是结构化解析的基础。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Cognitive Neuroscience: The Biology of the Mind (Gazzaniga et al., 5th ed., 2018)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "yufa",
+    "pinyin_initials": "yf",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "language-reading",
+    "module": "language",
+    "name_zh": "阅读",
+    "name_en": "Reading",
+    "aliases": [
+      "文字阅读",
+      "视觉词形加工"
+    ],
+    "definition": "把视觉字形映射到语音与语义的过程，依赖左侧枕颞区的视觉词形区（VWFA）与颞顶、额下语言区。",
+    "plain": "眼睛看到字，大脑把它“念出来”并理解意思。",
+    "difficulty": "intro",
+    "tags": [
+      "语言",
+      "阅读"
+    ],
+    "related": [
+      "language-dyslexia",
+      "language-phonology",
+      "sensory-visual-cortex"
+    ],
+    "engineering_link": "阅读通路对应 OCR 到语言模型的级联。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Cognitive Neuroscience: The Biology of the Mind (Gazzaniga et al., 5th ed., 2018)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "yuedu",
+    "pinyin_initials": "yd",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "language-dyslexia",
+    "module": "language",
+    "name_zh": "阅读障碍",
+    "name_en": "Dyslexia",
+    "aliases": [
+      "失读症",
+      "发展性阅读障碍"
+    ],
+    "definition": "智力与教育机会正常但阅读成绩显著落后的神经发育障碍，核心缺陷常在于音位意识与字形—语音映射。",
+    "plain": "不是不努力，而是大脑把“字”转成“音”的那一步特别吃力。",
+    "difficulty": "intermediate",
+    "tags": [
+      "语言",
+      "障碍"
+    ],
+    "related": [
+      "language-reading",
+      "language-phonology",
+      "anatomy-angular-gyrus"
+    ],
+    "engineering_link": "阅读障碍的亚型划分对应不同的解码失败模式，可用于诊断模型设计。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Cognitive Neuroscience: The Biology of the Mind (Gazzaniga et al., 5th ed., 2018)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "yueduzhangai",
+    "pinyin_initials": "ydza",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "language-speech-production",
+    "module": "language",
+    "name_zh": "言语产生",
+    "name_en": "Speech Production",
+    "aliases": [
+      "语言产出",
+      "说话过程"
+    ],
+    "definition": "从概念意图到词汇选择、句法编码、音韵编码再到发音动作的序列过程，依赖左侧额下回与运动皮层。",
+    "plain": "先想“要说什么”，再选词、造句、编排发音，最后嘴动起来。",
+    "difficulty": "intermediate",
+    "tags": [
+      "语言",
+      "产出"
+    ],
+    "related": [
+      "language-articulation",
+      "anatomy-broca-area",
+      "language-inner-speech"
+    ],
+    "engineering_link": "言语产生的多阶段流水线对应文本到语音的级联架构。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Cognitive Neuroscience: The Biology of the Mind (Gazzaniga et al., 5th ed., 2018)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "yanyuchansheng",
+    "pinyin_initials": "yycs",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "language-articulation",
+    "module": "language",
+    "name_zh": "发音",
+    "name_en": "Articulation",
+    "aliases": [
+      "构音",
+      "发音动作"
+    ],
+    "definition": "通过唇、舌、下颌与声带的协调运动产生语音的末段过程，由运动皮层与脑神经运动核控制。",
+    "plain": "嘴巴和舌头的“精细体操”，把音真正发出来。",
+    "difficulty": "intro",
+    "tags": [
+      "语言",
+      "运动"
+    ],
+    "related": [
+      "language-speech-production",
+      "motor-primary-motor-cortex",
+      "language-prosody"
+    ],
+    "engineering_link": "发音器官的协调是语音合成中声道建模的物理基础。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Cognitive Neuroscience: The Biology of the Mind (Gazzaniga et al., 5th ed., 2018)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "fayin",
+    "pinyin_initials": "fy",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "language-prosody",
+    "module": "language",
+    "name_zh": "韵律",
+    "name_en": "Prosody",
+    "aliases": [
+      "语调",
+      "超音段特征"
+    ],
+    "definition": "语音中重音、语调、节奏与停顿的模式，承载句法边界、情绪态度与语义重点，右半球参与较多。",
+    "plain": "同一句话换个语调，意思可能完全相反。",
+    "difficulty": "intermediate",
+    "tags": [
+      "语言",
+      "语音"
+    ],
+    "related": [
+      "language-articulation",
+      "language-speech-perception",
+      "emotion-emotional-expression"
+    ],
+    "engineering_link": "韵律是语音合成自然度的关键，对应韵律建模与情感 TTS。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Cognitive Neuroscience: The Biology of the Mind (Gazzaniga et al., 5th ed., 2018)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "yunlv",
+    "pinyin_initials": "yl",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "language-bilingualism",
+    "module": "language",
+    "name_zh": "双语",
+    "name_en": "Bilingualism",
+    "aliases": [
+      "双语现象",
+      "双语言者"
+    ],
+    "definition": "个体使用两种语言的能力与状态，涉及语言选择、抑制控制与共享语义系统的协同，长期双语经验影响执行功能。",
+    "plain": "脑子里装了两套语言系统，说话时要随时“切频道”。",
+    "difficulty": "intermediate",
+    "tags": [
+      "语言",
+      "双语"
+    ],
+    "related": [
+      "language-second-language-acquisition",
+      "language-language-lateralization",
+      "attention-cognitive-control"
+    ],
+    "engineering_link": "双语切换对应多任务模型中的语言选择与干扰抑制。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Cognitive Neuroscience: The Biology of the Mind (Gazzaniga et al., 5th ed., 2018)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "shuangyu",
+    "pinyin_initials": "sy",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "language-second-language-acquisition",
+    "module": "language",
+    "name_zh": "第二语言习得",
+    "name_en": "Second Language Acquisition",
+    "aliases": [
+      "二语习得",
+      "外语学习"
+    ],
+    "definition": "在母语之后学习另一种语言的过程，其神经基础与起始年龄、熟练度相关，晚期学习者更多依赖显性规则与额外控制资源。",
+    "plain": "长大了再学外语，靠的是“背规则 + 使劲想”，不像母语那样自然。",
+    "difficulty": "intermediate",
+    "tags": [
+      "语言",
+      "学习"
+    ],
+    "related": [
+      "language-critical-period",
+      "language-bilingualism",
+      "memory-procedural-memory"
+    ],
+    "engineering_link": "二语习得的年龄效应为持续学习中的可塑性衰减提供证据。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Cognitive Neuroscience: The Biology of the Mind (Gazzaniga et al., 5th ed., 2018)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "dieryuyanxide",
+    "pinyin_initials": "deyyxd",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "language-word-frequency-effect",
+    "module": "language",
+    "name_zh": "词频效应",
+    "name_en": "Word Frequency Effect",
+    "aliases": [
+      "频率效应",
+      "高频词优势"
+    ],
+    "definition": "高频词比低频词识别更快、反应时更短的现象，反映词汇通达受长期使用频率调节。",
+    "plain": "常用词一眼就认出来，生僻词得多看两秒。",
+    "difficulty": "intro",
+    "tags": [
+      "语言",
+      "词汇"
+    ],
+    "related": [
+      "language-lexical-access",
+      "language-semantic-processing",
+      "memory-semantic-memory"
+    ],
+    "engineering_link": "词频效应说明先验概率直接影响检索速度，对应语言模型的频率偏置。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Cognitive Neuroscience: The Biology of the Mind (Gazzaniga et al., 5th ed., 2018)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "cipinxiaoying",
+    "pinyin_initials": "cpxy",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "language-garden-path-effect",
+    "module": "language",
+    "name_zh": "花园路径效应",
+    "name_en": "Garden Path Effect",
+    "aliases": [
+      "花园小径句",
+      "误导性句法"
+    ],
+    "definition": "句子初始结构引导读者走向错误解析、随后需要重新分析的现象，揭示句法分析的即时性与修正代价。",
+    "plain": "读到一半以为懂了，读到后面才发现“上当了”，得回头重读。",
+    "difficulty": "advanced",
+    "tags": [
+      "语言",
+      "句法"
+    ],
+    "related": [
+      "language-syntax-processing",
+      "language-p600",
+      "language-semantic-processing"
+    ],
+    "engineering_link": "花园路径对应增量解析中的回溯代价，是流式理解的核心挑战。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Cognitive Neuroscience: The Biology of the Mind (Gazzaniga et al., 5th ed., 2018)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "huayuanlujingxiaoying",
+    "pinyin_initials": "hyljxy",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "language-p600",
+    "module": "language",
+    "name_zh": "P600 成分",
+    "name_en": "P600 Component",
+    "aliases": [
+      "P600 波",
+      "句法正波"
+    ],
+    "definition": "句法违反或结构重新分析时在刺激后约 600 ms 出现的正向事件相关电位，反映句法整合与修复过程。",
+    "plain": "句子“语法不对劲”时，脑电图上约 0.6 秒后会冒出一个正波。",
+    "difficulty": "advanced",
+    "tags": [
+      "语言",
+      "脑电"
+    ],
+    "related": [
+      "language-syntax-processing",
+      "language-n400",
+      "methods-ecog"
+    ],
+    "engineering_link": "P600 提供了句法异常的实时检测指标，可用于语言接口的置信度估计。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Cognitive Neuroscience: The Biology of the Mind (Gazzaniga et al., 5th ed., 2018)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "chengfen",
+    "pinyin_initials": "cf",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "language-mmn",
+    "module": "language",
+    "name_zh": "失匹配负波",
+    "name_en": "Mismatch Negativity",
+    "aliases": [
+      "MMN",
+      "失匹配阴性波"
+    ],
+    "definition": "在重复标准刺激中出现偏差刺激时，约 100–250 ms 出现的负波，反映听觉系统对规则偏离的自动检测，无需注意参与。",
+    "plain": "耳朵会自动发现“这个音和刚才不一样”，不用你刻意听。",
+    "difficulty": "advanced",
+    "tags": [
+      "语言",
+      "脑电",
+      "听觉"
+    ],
+    "related": [
+      "language-speech-perception",
+      "methods-ecog",
+      "attention-bottom-up-capture"
+    ],
+    "engineering_link": "MMN 是免注意的偏差检测指标，可用于被动式脑机接口与意识评估。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Cognitive Neuroscience: The Biology of the Mind (Gazzaniga et al., 5th ed., 2018)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "shipipeifubo",
+    "pinyin_initials": "sppfb",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "language-inner-speech",
+    "module": "language",
+    "name_zh": "内部言语",
+    "name_en": "Inner Speech",
+    "aliases": [
+      "内心独白",
+      "默语"
+    ],
+    "definition": "不出声的自我言语活动，激活与外部言语部分重叠的运动与听觉语言区，参与思考、工作记忆与自我调节。",
+    "plain": "脑子里那个“自言自语”的声音。",
+    "difficulty": "intermediate",
+    "tags": [
+      "语言",
+      "认知"
+    ],
+    "related": [
+      "language-speech-production",
+      "memory-working-memory",
+      "language-speech-production"
+    ],
+    "engineering_link": "内部言语是言语脑机接口的重要信号源，可在无发声条件下解码。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Cognitive Neuroscience: The Biology of the Mind (Gazzaniga et al., 5th ed., 2018)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "neibuyanyu",
+    "pinyin_initials": "nbyy",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "language-sign-language",
+    "module": "language",
+    "name_zh": "手语",
+    "name_en": "Sign Language",
+    "aliases": [
+      "手势语言",
+      "视觉语言"
+    ],
+    "definition": "以手势、面部表情与空间位置表达的语言系统，具有完整的音系、形态与句法，其神经加工与口语共享左侧语言网络。",
+    "plain": "用手“说”的语言，语法一样完整，大脑用的是同一套语言区。",
+    "difficulty": "intermediate",
+    "tags": [
+      "语言",
+      "手语"
+    ],
+    "related": [
+      "language-language-lateralization",
+      "language-grammar",
+      "motor-mirror-neuron"
+    ],
+    "engineering_link": "手语的视觉—空间语法为多模态语言模型提供了结构参照。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Cognitive Neuroscience: The Biology of the Mind (Gazzaniga et al., 5th ed., 2018)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "shouyu",
+    "pinyin_initials": "sy",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "language-language-lateralization",
+    "module": "language",
+    "name_zh": "语言侧化",
+    "name_en": "Language Lateralization",
+    "aliases": [
+      "左半球优势",
+      "半球偏侧化"
+    ],
+    "definition": "语言功能在多数右利手个体中主要定位于左半球的现象，约 95% 右利手者左侧优势，左利手者比例略低。",
+    "plain": "大多数人“说话”的功能主要住在左脑。",
+    "difficulty": "intro",
+    "tags": [
+      "语言",
+      "偏侧化"
+    ],
+    "related": [
+      "anatomy-broca-area",
+      "language-wernicke-aphasia",
+      "language-sign-language"
+    ],
+    "engineering_link": "侧化提示功能分区与并行处理，对双通道架构有启发。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Cognitive Neuroscience: The Biology of the Mind (Gazzaniga et al., 5th ed., 2018)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "yuyancehua",
+    "pinyin_initials": "yych",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "language-aphasia-recovery",
+    "module": "language",
+    "name_zh": "失语症恢复",
+    "name_en": "Aphasia Recovery",
+    "aliases": [
+      "语言功能恢复",
+      "失语康复"
+    ],
+    "definition": "卒中或脑损伤后语言功能随时间与训练部分恢复的过程，依赖病灶周围与对侧半球的重组，受年龄、病灶大小与训练强度影响。",
+    "plain": "语言区受损后，大脑会尝试“换条线路”把说话能力找回来。",
+    "difficulty": "advanced",
+    "tags": [
+      "语言",
+      "康复"
+    ],
+    "related": [
+      "language-broca-aphasia",
+      "language-wernicke-aphasia",
+      "bci-closed-loop"
+    ],
+    "engineering_link": "失语康复的可塑性窗口是语言脑机接口介入时机的重要依据。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Cognitive Neuroscience: The Biology of the Mind (Gazzaniga et al., 5th ed., 2018)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "shiyuzhenghuifu",
+    "pinyin_initials": "syzhf",
+    "updated_at": "2026-11-20T00:00:00Z"
   }
 ]

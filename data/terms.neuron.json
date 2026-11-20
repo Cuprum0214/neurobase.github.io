@@ -265,5 +265,676 @@
       }
     ],
     "updated_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "neuron-soma",
+    "module": "neuron",
+    "name_zh": "胞体",
+    "name_en": "Soma (Cell Body)",
+    "aliases": [
+      "细胞体",
+      "神经元胞体",
+      "核周体"
+    ],
+    "definition": "神经元中含细胞核与主要细胞器的部分，负责能量代谢、蛋白质合成与维持细胞生存，并对来自树突的突触输入进行整合。",
+    "plain": "神经元的“躯干和厨房”：既撑起整个细胞，也负责合成蛋白质供树突和轴突使用。",
+    "difficulty": "intro",
+    "tags": [
+      "神经元",
+      "结构"
+    ],
+    "related": [
+      "neuron-dendrite",
+      "neuron-axon",
+      "neuron-soma"
+    ],
+    "engineering_link": "胞体的膜面积与离子通道密度决定输入整合的增益，是神经元模型中的求和节点。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "baoti",
+    "pinyin_initials": "bt",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "neuron-axon-hillock",
+    "module": "neuron",
+    "name_zh": "轴突丘",
+    "name_en": "Axon Hillock",
+    "aliases": [
+      "轴丘",
+      "轴突起始段"
+    ],
+    "definition": "胞体与轴突相接的锥形区域，电压门控钠通道密度极高，是动作电位最常起始的位置，因而被称为神经元的“触发区”。",
+    "plain": "神经元的“发令枪扳机”：所有输入在这里汇总，累积到阈值就打出第一个动作电位。",
+    "difficulty": "intro",
+    "tags": [
+      "神经元",
+      "结构",
+      "兴奋性"
+    ],
+    "related": [
+      "neuron-soma",
+      "neuron-ion-channel",
+      "neuron-threshold-potential",
+      "neuron-axon"
+    ],
+    "engineering_link": "轴突丘的低阈值使其成为脉冲神经网络中最合理的“发放节点”建模位置。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "zhoutuqiu",
+    "pinyin_initials": "ztq",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "neuron-axon-transport",
+    "module": "neuron",
+    "name_zh": "轴突运输",
+    "name_en": "Axonal Transport",
+    "aliases": [
+      "轴浆运输",
+      "顺向运输",
+      "逆向运输"
+    ],
+    "definition": "沿微管由马达蛋白驱动的物质运输：顺向运输把囊泡与蛋白质从胞体送往轴突末梢，逆向运输把神经营养信号与回收物质送回胞体。",
+    "plain": "轴突里的“高速公路货运”：顺向送货到末梢，逆向把回执和废弃物运回总部。",
+    "difficulty": "intermediate",
+    "tags": [
+      "神经元",
+      "运输",
+      "细胞骨架"
+    ],
+    "related": [
+      "neuron-axon",
+      "neuron-soma"
+    ],
+    "engineering_link": "轴突运输速度与带宽约束了长投射神经元的维护成本，是类脑硬件布线长度的重要参考。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "zhoutuyunshu",
+    "pinyin_initials": "ztys",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "neuron-node-of-ranvier",
+    "module": "neuron",
+    "name_zh": "郎飞结",
+    "name_en": "Node of Ranvier",
+    "aliases": [
+      "郎氏结",
+      "神经纤维结"
+    ],
+    "definition": "有髓轴突上髓鞘周期性中断形成的裸露小段，钠通道在此高度聚集，动作电位以跳跃式传导从一个结跳到下一个结，显著提高传导速度。",
+    "plain": "髓鞘像电线绝缘皮，郎飞结是每隔一段的“接线口”，信号在这些口之间跳跃前进。",
+    "difficulty": "intermediate",
+    "tags": [
+      "神经元",
+      "髓鞘",
+      "传导"
+    ],
+    "related": [
+      "neuron-myelin-sheath",
+      "neuron-ion-channel",
+      "neuron-oligodendrocyte"
+    ],
+    "engineering_link": "跳跃式传导是生物版的“分段中继”，为低功耗长距离信号传输提供了仿生范式。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "langfeijie",
+    "pinyin_initials": "lfj",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "neuron-oligodendrocyte",
+    "module": "neuron",
+    "name_zh": "少突胶质细胞",
+    "name_en": "Oligodendrocyte",
+    "aliases": [
+      "寡突胶质细胞",
+      "少突细胞"
+    ],
+    "definition": "中枢神经系统中的髓鞘形成细胞，一个细胞可伸出多个突起包裹多条轴突，形成绝缘层并支持轴突代谢。",
+    "plain": "中枢神经里的“绝缘材料供应商”：一个人同时给好几根电线包绝缘皮。",
+    "difficulty": "intermediate",
+    "tags": [
+      "胶质细胞",
+      "髓鞘",
+      "中枢神经"
+    ],
+    "related": [
+      "neuron-myelin-sheath",
+      "neuron-node-of-ranvier",
+      "neuron-schwann-cell"
+    ],
+    "engineering_link": "多轴突共用髓鞘的结构提示了线缆束共享屏蔽层的工程优化思路。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "shaotujiaozhixibao",
+    "pinyin_initials": "stjzxb",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "neuron-schwann-cell",
+    "module": "neuron",
+    "name_zh": "施万细胞",
+    "name_en": "Schwann Cell",
+    "aliases": [
+      "雪旺细胞",
+      "施旺细胞"
+    ],
+    "definition": "周围神经系统中的髓鞘形成细胞，一个细胞只包裹一段轴突；在损伤后还参与清理碎片并引导轴突再生。",
+    "plain": "外周神经的“绝缘工兼修理工”：包一段线，出事时还负责清障和指路。",
+    "difficulty": "intermediate",
+    "tags": [
+      "胶质细胞",
+      "髓鞘",
+      "外周神经"
+    ],
+    "related": [
+      "neuron-myelin-sheath",
+      "neuron-oligodendrocyte",
+      "neuron-axon"
+    ],
+    "engineering_link": "外周神经可再生而中枢神经难以再生，差异主要来自胶质环境，是神经修复工程的关注点。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "shiwanxibao",
+    "pinyin_initials": "swxb",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "neuron-astrocyte",
+    "module": "neuron",
+    "name_zh": "星形胶质细胞",
+    "name_en": "Astrocyte",
+    "aliases": [
+      "星形细胞",
+      "星状胶质细胞"
+    ],
+    "definition": "中枢神经系统中最丰富的胶质细胞，通过突起接触血管与突触，参与血脑屏障维持、钾离子缓冲、递质回收与代谢支持。",
+    "plain": "神经元的“后勤 + 环境管家”：管供水供电、清理垃圾，还维持周围环境稳定。",
+    "difficulty": "intermediate",
+    "tags": [
+      "胶质细胞",
+      "稳态",
+      "血脑屏障"
+    ],
+    "related": [
+      "neuron-blood-brain-barrier",
+      "synapse-neurotransmitter",
+      "neuron-microglia"
+    ],
+    "engineering_link": "星形胶质细胞的三方突触参与信号调控，提示计算单元不必局限于神经元本身。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "xingxingjiaozhixibao",
+    "pinyin_initials": "xxjzxb",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "neuron-microglia",
+    "module": "neuron",
+    "name_zh": "小胶质细胞",
+    "name_en": "Microglia",
+    "aliases": [
+      "小胶质",
+      "中枢免疫细胞"
+    ],
+    "definition": "中枢神经系统的固有免疫细胞，源自胚胎卵黄囊，负责监视微环境、吞噬病原与凋亡碎片，并参与突触修剪。",
+    "plain": "大脑里的“保安 + 保洁”：巡逻、抓入侵者，顺手修剪用不上的连接。",
+    "difficulty": "intermediate",
+    "tags": [
+      "胶质细胞",
+      "免疫",
+      "突触修剪"
+    ],
+    "related": [
+      "neuron-astrocyte",
+      "synapse-synaptic-plasticity",
+      "neuron-blood-brain-barrier"
+    ],
+    "engineering_link": "发育期的突触修剪提示了“用进废退”的硬件优化策略，可类比神经网络的剪枝。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "xiaojiaozhixibao",
+    "pinyin_initials": "xjzxb",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "neuron-sodium-potassium-pump",
+    "module": "neuron",
+    "name_zh": "钠钾泵",
+    "name_en": "Sodium-Potassium Pump",
+    "aliases": [
+      "Na+/K+ ATPase",
+      "钠钾 ATP 酶",
+      "钠钾交换泵"
+    ],
+    "definition": "消耗 ATP 主动将 3 个钠离子泵出、2 个钾离子泵入的膜蛋白，维持细胞内高钾、细胞外高钠的浓度梯度，是静息电位与动作电位的基础。",
+    "plain": "细胞膜上的“耗电水泵”：一边抽钠出去，一边送钾进来，长期维持电池的电荷差。",
+    "difficulty": "intro",
+    "tags": [
+      "离子通道",
+      "静息电位",
+      "代谢"
+    ],
+    "related": [
+      "neuron-ion-channel"
+    ],
+    "engineering_link": "钠钾泵占脑能量消耗的显著比例，是低功耗神经形态芯片必须模拟的“维持开销”。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "najiabeng",
+    "pinyin_initials": "njb",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "neuron-threshold-potential",
+    "module": "neuron",
+    "name_zh": "阈电位",
+    "name_en": "Threshold Potential",
+    "aliases": [
+      "阈值电位",
+      "发放阈值"
+    ],
+    "definition": "使电压门控钠通道大量开放、触发动作电位所需的膜电位临界值，通常在静息电位之上约 10–20 mV。",
+    "plain": "神经元的“及格线”：膜电位攒过这条线，就直接“开闸”放电。",
+    "difficulty": "intro",
+    "tags": [
+      "兴奋性",
+      "动作电位"
+    ],
+    "related": [
+      "neuron-ion-channel",
+      "neuron-axon-hillock",
+      "neuron-temporal-summation"
+    ],
+    "engineering_link": "阈值机制对应人工神经元中的激活函数门限，是脉冲编码的核心假设之一。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "yudianwei",
+    "pinyin_initials": "ydw",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "neuron-depolarization",
+    "module": "neuron",
+    "name_zh": "去极化",
+    "name_en": "Depolarization",
+    "aliases": [
+      "除极化",
+      "去极化电位"
+    ],
+    "definition": "膜电位向正值方向变化的过程，通常由钠离子内流或正电荷注入引起，使神经元更接近阈电位。",
+    "plain": "把电池的“负更多”变成“负更少”，相当于给神经元加了一把向上的推力。",
+    "difficulty": "intro",
+    "tags": [
+      "膜电位",
+      "兴奋性"
+    ],
+    "related": [
+      "neuron-hyperpolarization",
+      "neuron-ion-channel",
+      "neuron-threshold-potential"
+    ],
+    "engineering_link": "去极化对应输入信号的正向累加，是兴奋性突触后电位叠加的物理基础。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "qujihua",
+    "pinyin_initials": "qjh",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "neuron-hyperpolarization",
+    "module": "neuron",
+    "name_zh": "超极化",
+    "name_en": "Hyperpolarization",
+    "aliases": [
+      "过极化",
+      "超极化电位"
+    ],
+    "definition": "膜电位向更负方向变化的过程，常由氯离子内流或钾离子外流引起，使神经元更难达到阈电位。",
+    "plain": "把电池的“负值”推得更负，相当于给神经元踩了一脚刹车。",
+    "difficulty": "intro",
+    "tags": [
+      "膜电位",
+      "抑制"
+    ],
+    "related": [
+      "neuron-depolarization",
+      "neuron-ion-channel",
+      "neuron-refractory-period"
+    ],
+    "engineering_link": "超极化对应抑制性输入，是神经网络中负权重与侧抑制的生理来源。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "chaojihua",
+    "pinyin_initials": "cjh",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "neuron-temporal-summation",
+    "module": "neuron",
+    "name_zh": "时间总和",
+    "name_en": "Temporal Summation",
+    "aliases": [
+      "时间叠加",
+      "时间性总和"
+    ],
+    "definition": "同一突触在短时间内连续产生多个突触后电位，由于电位尚未衰减而逐次叠加，最终可能达到阈电位触发动作电位。",
+    "plain": "同一扇门被连续快速敲几下，震动叠在一起，终于把门震开。",
+    "difficulty": "intro",
+    "tags": [
+      "整合",
+      "突触"
+    ],
+    "related": [
+      "neuron-spatial-summation",
+      "neuron-threshold-potential",
+      "synapse-postsynaptic-potential"
+    ],
+    "engineering_link": "时间总和等价于神经元具有膜时间常数的一阶低通记忆，是循环网络短期记忆的基础。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "shijianzonghe",
+    "pinyin_initials": "sjzh",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "neuron-spatial-summation",
+    "module": "neuron",
+    "name_zh": "空间总和",
+    "name_en": "Spatial Summation",
+    "aliases": [
+      "空间叠加",
+      "空间性总和"
+    ],
+    "definition": "不同位置的突触同时产生突触后电位，在胞体与轴突丘处叠加，决定是否达到发放阈值。",
+    "plain": "好几个人同时推同一张桌子，各自力气不大，合起来就能推动。",
+    "difficulty": "intro",
+    "tags": [
+      "整合",
+      "突触"
+    ],
+    "related": [
+      "neuron-temporal-summation",
+      "neuron-dendrite",
+      "neuron-axon-hillock"
+    ],
+    "engineering_link": "空间总和对应神经网络中的加权求和，权重由突触位置与强度共同决定。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "kongjianzonghe",
+    "pinyin_initials": "kjzh",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "neuron-cable-theory",
+    "module": "neuron",
+    "name_zh": "电缆理论",
+    "name_en": "Cable Theory",
+    "aliases": [
+      "电缆模型",
+      "电缆方程"
+    ],
+    "definition": "把神经突起视为有漏电的电缆，用膜电阻、膜电容与轴向电阻描述电信号随距离和时间的衰减，用于解释树突整合与电紧张扩布。",
+    "plain": "把树突当成一根会漏电的水管：离源头越远，压力越小、反应越慢。",
+    "difficulty": "advanced",
+    "tags": [
+      "建模",
+      "树突",
+      "电紧张"
+    ],
+    "related": [
+      "neuron-dendrite",
+      "neuron-temporal-summation",
+      "neuron-spatial-summation"
+    ],
+    "engineering_link": "电缆方程是神经形态电路与树突计算模型的基础微分方程。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "dianlanlilun",
+    "pinyin_initials": "dlll",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "neuron-classification",
+    "module": "neuron",
+    "name_zh": "神经元分类",
+    "name_en": "Neuronal Classification",
+    "aliases": [
+      "神经元类型",
+      "神经元形态分类"
+    ],
+    "definition": "按形态（单极、双极、多极）、功能（感觉、运动、中间）或递质与放电特征对神经元进行的系统划分。",
+    "plain": "给神经元“分班级”：按长相、干活方式或说话方式归类。",
+    "difficulty": "intro",
+    "tags": [
+      "神经元",
+      "分类"
+    ],
+    "related": [
+      "neuron-sensory-neuron",
+      "neuron-motor-neuron",
+      "neuron-interneuron"
+    ],
+    "engineering_link": "细胞类型多样性是神经形态硬件“多种计算单元”设计的生物学依据。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "shenjingyuanfenlei",
+    "pinyin_initials": "sjyfl",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "neuron-sensory-neuron",
+    "module": "neuron",
+    "name_zh": "感觉神经元",
+    "name_en": "Sensory Neuron",
+    "aliases": [
+      "传入神经元",
+      "感觉神经细胞"
+    ],
+    "definition": "把光、声、机械、温度或化学等外部刺激转换为电信号并传向中枢的神经元，其末梢常直接充当感受器。",
+    "plain": "身体里的“记者”：负责把外面发生的事写成电信号稿发回总部。",
+    "difficulty": "intro",
+    "tags": [
+      "神经元",
+      "感觉"
+    ],
+    "related": [
+      "neuron-motor-neuron",
+      "neuron-interneuron",
+      "sensory-somatosensory-system"
+    ],
+    "engineering_link": "感觉神经元是生物传感器的原型，决定了采集端的动态范围与噪声特性。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "ganjueshenjingyuan",
+    "pinyin_initials": "gjsjy",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "neuron-motor-neuron",
+    "module": "neuron",
+    "name_zh": "运动神经元",
+    "name_en": "Motor Neuron",
+    "aliases": [
+      "传出神经元",
+      "运动神经细胞"
+    ],
+    "definition": "将中枢指令传向肌肉或腺体的神经元；脊髓前角的α运动神经元直接支配骨骼肌纤维，是运动输出的最后通路。",
+    "plain": "身体里的“执行员”：把总部的命令送到肌肉，让动作真的发生。",
+    "difficulty": "intro",
+    "tags": [
+      "神经元",
+      "运动"
+    ],
+    "related": [
+      "neuron-sensory-neuron",
+      "neuron-interneuron",
+      "neuron-axon"
+    ],
+    "engineering_link": "运动神经元是脑机接口输出端的天然执行通道，直接关系到解码后的控制精度。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "yundongshenjingyuan",
+    "pinyin_initials": "ydsjy",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "neuron-interneuron",
+    "module": "neuron",
+    "name_zh": "中间神经元",
+    "name_en": "Interneuron",
+    "aliases": [
+      "联络神经元",
+      "局部环路神经元"
+    ],
+    "definition": "位于感觉与运动通路之间、在局部环路内完成整合与调制的神经元，中枢神经系统中的数量远多于感觉与运动神经元。",
+    "plain": "系统里的“协调员”：既不是记者也不是执行员，负责在中间传话、比较和踩刹车。",
+    "difficulty": "intro",
+    "tags": [
+      "神经元",
+      "环路"
+    ],
+    "related": [
+      "neuron-sensory-neuron",
+      "neuron-motor-neuron",
+      "synapse-neurotransmitter"
+    ],
+    "engineering_link": "中间神经元构成隐藏层，是神经网络的生物学对应物。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "zhongjianshenjingyuan",
+    "pinyin_initials": "zjsjy",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "neuron-blood-brain-barrier",
+    "module": "neuron",
+    "name_zh": "血脑屏障",
+    "name_en": "Blood-Brain Barrier",
+    "aliases": [
+      "血脑障壁",
+      "BBB"
+    ],
+    "definition": "由脑毛细血管内皮细胞紧密连接、基底膜与星形胶质细胞终足共同构成的选择性屏障，限制多数大分子与病原进入脑组织。",
+    "plain": "大脑的“海关”：只放行必要的物资，把大部分外来物挡在门外。",
+    "difficulty": "intermediate",
+    "tags": [
+      "屏障",
+      "血管",
+      "稳态"
+    ],
+    "related": [
+      "neuron-astrocyte",
+      "neuron-microglia",
+      "anatomy-brainstem"
+    ],
+    "engineering_link": "血脑屏障是脑内药物递送与植入式电极长期稳定性的核心工程约束。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "xuenaopingzhang",
+    "pinyin_initials": "xnpz",
+    "updated_at": "2026-11-20T00:00:00Z"
   }
 ]

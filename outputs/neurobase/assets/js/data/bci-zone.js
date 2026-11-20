@@ -64,7 +64,7 @@ window.NB_BCI_ZONE = {
       "desc_en": "How decoded intent drives external devices, and how feedback returns to the user to close the loop.",
       "terms": [
         "bci-closed-loop",
-        "motor-motor-cortex",
+        "motor-primary-motor-cortex",
         "motor-corticospinal-tract",
         "methods-emg"
       ]
@@ -144,7 +144,7 @@ window.NB_BCI_ZONE = {
       "desc_zh": "指令驱动光标、机械臂、轮椅、外骨骼或语音合成器，完成一次可观察的行为。",
       "desc_en": "Commands drive a cursor, robotic arm, wheelchair, exoskeleton or speech synthesizer to produce observable behavior.",
       "terms": [
-        "motor-motor-cortex",
+        "motor-primary-motor-cortex",
         "methods-emg"
       ]
     },

@@ -1,4 +1,4 @@
-# DEV_LOG · 开发日志
+﻿# DEV_LOG · 开发日志
 
 > 回答一个问题：**每个阶段做了什么？**
 > 字段固定为：完成事项、遇到的问题、下一步（附解决方式与相关文件）。
@@ -43,7 +43,9 @@
 
 | 版本 | 日期 | 阶段 / 主题 | 关键产出 | 决策 | 错误 |
 | --- | --- | --- | --- | --- | --- |
+| V5.0.0（补记） | 2026-11-20 | Docs · 课程项目报告（PDF）交付 | 新增 `outputs/Wang Tong_NeuroBase.pdf`（A4 / 19 页）：背景与动机、V0–V5 历程与 6 张截图、功能与想法来源、6 个五问案例、108 条反馈分类与 9 条代表性决策、反思与附录；站点未改、指纹不变；`verify-native` 1138 全绿 | D-097 | E-061 |
 | V5.0.0 | 2026-11-20 | V5 · 发布：版本体系 V0–V5 + README + GitHub Pages | 版本号 `v1.25.4` → `V5.0.0` 并给出 V0–V5 与 Phase 0–9 映射；新增根 `README.md`、`VERSION`、页脚版本标识、Pages 工作流；修正 PLAN / DEV_LOG / PROJECT_SCOPE 的 Phase 6 / 8 / 9 状态漂移；`verify-native` **1138** 全绿 | D-096 | E-060 |
+| v1.25.5 | 2026-11-20 | Phase 9 · 词库扩容至 333 条 | 正式词库 110 → 333（11 模块 29–32 条，+223）；拼音与首字母由 pypinyin 生成并逐条校验（333/333）；sources.json 重建（333 词条 / 41 来源）；清除 sample 与 phase1 的重复条目并统一 motor 引用；verify 断言改为动态计算；`verify-native` **1138 项全绿**；指纹 `?v=1195` → `?v=1196`（364 处） | D-098 | 本轮无高价值错误 |
 | v1.25.4 | 2026-11-20 | Phase 9 · 交付形态确定：仅本地离线，不部署 Vercel | 交付物锁定 `outputs/neurobase/**`，`file://` 直接使用；取消 Vercel / 线上发布（`vercel.json` 仅历史保留）；清理 2026-11-19 旧站副本 `.deepworks/tmp/citest`（62 文件）；`verify-native` 全绿 | D-095 | 本轮无高价值错误 |
 | v1.25.3 | 2026-11-20 | Phase 8 · 帮助导览定位校准 + 讲解区块 + 全站字号 / 按键基线 | 导览气泡新增「讲解」区块（每步 2–3 条要点，中英各 20 键）与步骤进度条；高亮改为「即时滚动 → 可视带居中 → 双帧 + 700ms 逐帧校准」，修复 smooth 滚动中间帧、窄屏重复 ID 取到隐藏节点、贴边溢出、跳过按钮空白；新增 `--nb-read-boost: 1.1` / `--nb-read-scale`（正文 17.6px、`--t-sm` 15.4px、`--t-xs` 13.2px），按键统一 17.6px + `.55rem 1rem` 内边距、chip 升到 `--t-sm`；补齐 `.sp-select` / `.sp-label`（原本未定义，渲染成原生小下拉框）与 `.qz-opt` / `.qz-letter`（选项曾渲染成裸单选框），两个「开始」按钮升级为主色实心；Edge CDP 实测 1440 宽 8 步 / 390 宽 7 步高亮偏差 0；`verify-native` **1138** 全绿；指纹 `?v=1183` → `?v=1184`（364 处；并行轮次继续推进，交付时全站统一（364 处取值一致）） | D-093 / D-094 | E-059 |
 | v1.25.2 | 2026-11-20 | Phase 9 · 适配与发布（代码与文档就绪，线上待发布） | 27 页 × 7 档（320–1920）响应式审计：**0 页面级横向滚动 / 0 控制台错误 / 0 页面异常**（修复前 26 页 × 5 档共 130 个溢出单元）；导航断点 767 → 1199；窄屏工具栏换行 + 按钮去固定宽；≤420px 搜索框堆叠、主题/语言只留图标；`.select` 限宽、社区筛选换行；`docs.html` / `lab-anatomy.html` 大脚本 `defer`；`vercel.json` 资源 1 年 immutable + HTML 重新验证；新增 `guide.html`（使用指南 / 免责 / 来源，45 个 `manual.*` 键、`page-guide.js`）；首屏 591KB、FCP 272–320ms、60fps；死链 0；`verify-native` **1132** 全绿、`a11y-check` 27 页；指纹 `?v=1181` → `?v=1182`（363 处） | D-090–D-092 | E-058 |
@@ -166,6 +168,21 @@
 ---
 
 ## 日志
+
+### 2026-11-20 · V5 · 课程项目报告（PDF）交付（V5.0.0 交付物补充）
+
+- 需求：按课程「第二个自由项目」的提交要求，撰写一份 PDF 报告，覆盖 a) 项目背景与动机、b) 开发历程（版本、截图）、c) 新增或修改的主要功能（想法来源）、d) 遇到的问题及解决方法（理解原因与解决方式）、e) 收集到的反馈与决策（原因与讨论），并按 `Firstname Lastname_project name.pdf` 命名。
+- 完成：
+  - **素材盘点**：从 `docs/` 五个档案与 `data/` 实际数据重新统计，而不是凭记忆复述——27 个 HTML 页、110 条词条（11 模块 × 10）、303 条别名、41 个来源 / 111 条引用、968 个中英 i18n 键、103 条版本记录、96 条决策、59 条错误档案、1138 项断言；难度分布 52 / 44 / 14 由词条数据现场统计。
+  - **截图**：保留 1 张本人历史截图（2026-10-26 早期横幅），并在 V5.0.0 上重新抓取 5 张当前界面（首页 / 检索 / 3D 解剖 / 论坛 / 手机端）；抓取用无头 Edge + CDP（`Emulation.setEmulatedMedia` 固定浅色、deviceScaleFactor 2），论坛截图注入本地演示数据并在报告中注明。
+  - **排版与导出**：报告写成 A4 打印版 HTML（`@page` + 分栏图 + 五问卡片 + 条形图），用 `Page.printToPDF`（`preferCSSPageSize`、`printBackground`、页脚页码）导出；按内容与图幅迭代三轮，最终 19 页、6 图、0 截断。
+  - **命名与元数据**：交付为 `outputs/Wang Tong_NeuroBase.pdf`；用 PyMuPDF 写入 ASCII 标题 / 作者并回读校验。
+- 遇到问题：① 首次导出 26 页，原因是每个续页小节都强制分页、表格整块不拆，产生大量半空页；② 图幅过大导致多页只剩 40–50% 内容；③ 通过 PowerShell 内联 `python -c` 写中文 PDF 元数据时，中文被写成乱码（见 E-061）。
+- 解决方式：① 只让章级标题分页，表格允许跨页并重复表头（`display: table-header-group`），图幅按可读性分级（全宽 / 72% / 44%）；② 对 3D 解剖与手机截图做有边界的裁切（保留控件与导航），既放大主体又不丢证据；③ 元数据改由 UTF-8 脚本文件写入，并且只用 ASCII 值（E-061）。
+- 三档案判定：**有决策**（报告形态：HTML → 无头 Edge 导出 A4 PDF；命名按课程规则；源文件不入库，见 D-097）；**有可复用教训**（PowerShell 传参写非 ASCII 元数据会静默损坏，见 E-061）。
+- 下一步：① 按课程要求提交 PDF 与访问方式（在线 GitHub Pages + 本地离线）；② 回收教师与同学反馈后，在 V5.x 内容扩容轮同步修订报告的数据口径。
+- 相关文件：`outputs/Wang Tong_NeuroBase.pdf`、`.deepworks/tmp/report-work/report.html`（过程源）、`.deepworks/tmp/report-work/make-pdf.mjs`、`docs/CHANGELOG.md`、`docs/PLAN.md`、`docs/PROJECT_SCOPE.md`、`docs/DECISIONS.md`（D-097）、`docs/ERROR_LOG.md`（E-061）。
+
 ### 2026-11-20 · V5 · 发布收口：版本体系 V0–V5 + README + GitHub Pages（V5.0.0）
 
 - 需求：用户要求「检测未完成任务，统一完成并处理问题；按版本合理分配 V0–V5、修改版本号；按最新版本补充 README 并同步 md；以 Cuprum0214 身份推送到 GitHub 仓库，且不上传 API 等机密信息」。
@@ -180,6 +197,14 @@
 - 三档案判定：**有决策**（V0–V5 阶段版本 + GitHub Pages 发布通道，见 D-096，取代 D-095 中「不发布」的口径但保留本地离线优先）；**有可复用教训**（多文档状态漂移与版本轴缺失，见 E-060）。
 - 下一步：① 仓库已推送（`a78b0bb`）、Pages 已启用（build_type = workflow）且两次部署均成功，线上 27 页 / 23 个资源验收通过；后续每次 push 到 `main` 自动发布；② V5.x 启动 110 → 300+ 词条扩容（分模块产出、逐条来源核验、重建数据与断言）；③ 若启用云端，按 DEPLOY §10.4 执行 schema 并复验换设备同步。
 - 相关文件：`README.md`、`VERSION`、`outputs/neurobase/assets/js/core.js`、`outputs/neurobase/assets/css/style.css`、`.github/workflows/pages.yml`、`.gitignore`、`docs/CHANGELOG.md`、`docs/PLAN.md`、`docs/PROJECT_SCOPE.md`、`docs/DECISIONS.md`、`docs/ERROR_LOG.md`、`docs/DEPLOY.md`、`docs/DEV_LOG.md`。
+
+### 2026-11-20 · Phase 9 · 词库扩容至 333 条（v1.25.5）
+- 需求：用户要求「按照这个（300+）词条规模更新词库」，并把新版本以 Cuprum0214 身份推送到 GitHub。
+- 完成：11 个模块各补约 21 条，总数 110 → 333；每条新增词条含中英文名、别名、定义、通俗解释、难度、标签、关联与教材来源；拼音与首字母由 `pypinyin` 自动生成，脚本逐条校验首字母长度 = 汉字数。
+- 关键判断：`references` 只写真实教材（Kandel 6th、Gazzaniga 5th、Wolpaw & Wolpaw 2012），不编造页码；`related` 只指向真实存在的 id，先 dry-run 检测再写入。
+- 遇到的问题：① `terms.sample.json`（演示库）与 `terms.phase1.json`（首批快照）与正式库存在重复 id，导致校验失败；② 删除 `motor-motor-cortex` 后，frontier / bci_zone / engineering_map / 10 处 related 出现悬空引用；③ verify 中大量硬编码 110 / 每模块 10 条的断言全部失败。
+- 解决方式：从 sample 移除 eeg / erp、从 phase1 移除 motor-motor-cortex；全库统一把该 id 映射为 `motor-primary-motor-cortex`；把 verify 断言改为 `TOTAL` 与 `MOD_N(module)` 动态计算，之后扩容不再需要改自测。最终 `validate-terms` 全通过、来源自检 360 项通过、`verify-native` **1138 项全绿**。
+- 相关文件：`data/terms.*.json`、`neurobase/src/data/terms.*.json`、`data/sources.json`、`data/frontier.json`、`data/bci_zone.json`、`data/engineering_map.json`、`outputs/neurobase/assets/js/data/terms.js`、`.deepworks/tmp/checks/verify-native.mjs`、`.deepworks/tmp/terms-expand/apply-seeds.py`。
 
 ### 2026-11-20 · Phase 9 · 交付形态确定：仅本地离线，不部署（v1.25.4）
 - 需求：用户明确「不需要 vercel，只要本地」。
@@ -1571,4 +1596,5 @@
 - 相关文件：`outputs/neurobase/learn.html`、`data/i18n/zh.json` / `en.json`、`outputs/neurobase/assets/js/data/i18n.js`（重建）、26 个 HTML 指纹、`docs/*`。
 
 <!-- 从这里继续往下追加 -->
+
 

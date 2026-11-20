@@ -312,5 +312,705 @@
       }
     ],
     "updated_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "emotion-valence-arousal",
+    "module": "emotion",
+    "name_zh": "效价与唤醒",
+    "name_en": "Valence and Arousal",
+    "aliases": [
+      "效价—唤醒模型",
+      "情绪二维模型"
+    ],
+    "definition": "用愉悦度（效价）与激活强度（唤醒）两个正交维度描述情绪状态的理论框架，可解释大多数情绪体验的差异。",
+    "plain": "给情绪打两个分：舒服不舒服、激动不激动。",
+    "difficulty": "intro",
+    "tags": [
+      "情绪",
+      "理论"
+    ],
+    "related": [
+      "emotion-basic-emotions",
+      "emotion-affective-computing",
+      "emotion-emotional-awareness"
+    ],
+    "engineering_link": "二维效价—唤醒空间是情感计算中最常用的标注与回归目标。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Cognitive Neuroscience: The Biology of the Mind (Gazzaniga et al., 5th ed., 2018)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "xiaojiayuhuanxing",
+    "pinyin_initials": "xjyhx",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "emotion-emotional-expression",
+    "module": "emotion",
+    "name_zh": "情绪表达",
+    "name_en": "Emotional Expression",
+    "aliases": [
+      "情绪表现",
+      "情感表达"
+    ],
+    "definition": "通过面部、声音、姿态与生理反应把内部情绪状态外显的过程，具有沟通功能并受文化与展示规则调节。",
+    "plain": "把“心里的感觉”变成别人看得见、听得出的信号。",
+    "difficulty": "intro",
+    "tags": [
+      "情绪",
+      "表达"
+    ],
+    "related": [
+      "emotion-facial-expression",
+      "language-prosody",
+      "emotion-emotional-contagion"
+    ],
+    "engineering_link": "多通道情绪表达是情感识别系统的输入来源。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Cognitive Neuroscience: The Biology of the Mind (Gazzaniga et al., 5th ed., 2018)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "qingxubiaoda",
+    "pinyin_initials": "qxbd",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "emotion-facial-expression",
+    "module": "emotion",
+    "name_zh": "面部表情",
+    "name_en": "Facial Expression",
+    "aliases": [
+      "表情",
+      "面部情绪表达"
+    ],
+    "definition": "面部肌肉组合产生的情绪信号，基本情绪表情具有跨文化可识别性，由面神经与脑干、皮层环路控制。",
+    "plain": "脸上的“情绪显示屏”，全世界的人基本都读得懂。",
+    "difficulty": "intro",
+    "tags": [
+      "情绪",
+      "表情"
+    ],
+    "related": [
+      "emotion-emotional-expression",
+      "emotion-basic-emotions",
+      "anatomy-superior-temporal-sulcus"
+    ],
+    "engineering_link": "面部动作单元（AU）编码是人脸情绪识别的标准特征体系。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Cognitive Neuroscience: The Biology of the Mind (Gazzaniga et al., 5th ed., 2018)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "mianbubiaoqing",
+    "pinyin_initials": "mbbq",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "emotion-emotional-memory",
+    "module": "emotion",
+    "name_zh": "情绪记忆",
+    "name_en": "Emotional Memory",
+    "aliases": [
+      "情绪性记忆",
+      "情感记忆"
+    ],
+    "definition": "带情绪色彩的记忆，其编码与提取受杏仁核—海马相互作用调节，情绪唤醒通常增强记忆的巩固。",
+    "plain": "越刺激的经历越难忘：吓一跳的事往往记得特别牢。",
+    "difficulty": "intermediate",
+    "tags": [
+      "情绪",
+      "记忆"
+    ],
+    "related": [
+      "memory-consolidation",
+      "emotion-fear-conditioning",
+      "memory-flashbulb-memory"
+    ],
+    "engineering_link": "情绪调制记忆对应重要性加权采样与优先回放。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Cognitive Neuroscience: The Biology of the Mind (Gazzaniga et al., 5th ed., 2018)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "qingxujiyi",
+    "pinyin_initials": "qxjy",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "emotion-stress-response",
+    "module": "emotion",
+    "name_zh": "应激反应",
+    "name_en": "Stress Response",
+    "aliases": [
+      "压力反应",
+      "应激"
+    ],
+    "definition": "面对威胁或挑战时，交感—肾上腺髓质轴快速释放儿茶酚胺、下丘脑—垂体—肾上腺轴较慢释放糖皮质激素的全身适应反应。",
+    "plain": "遇到危险时身体“一键进入战斗模式”：心跳加快、血糖升高。",
+    "difficulty": "intermediate",
+    "tags": [
+      "情绪",
+      "应激",
+      "生理"
+    ],
+    "related": [
+      "emotion-hpa-axis",
+      "emotion-cortisol",
+      "synapse-norepinephrine"
+    ],
+    "engineering_link": "快慢双通路是典型的两级响应架构：快速保命 + 持续调度资源。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Cognitive Neuroscience: The Biology of the Mind (Gazzaniga et al., 5th ed., 2018)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "yingjifanying",
+    "pinyin_initials": "yjfy",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "emotion-hpa-axis",
+    "module": "emotion",
+    "name_zh": "下丘脑—垂体—肾上腺轴",
+    "name_en": "Hypothalamic-Pituitary-Adrenal Axis",
+    "aliases": [
+      "HPA 轴",
+      "应激轴"
+    ],
+    "definition": "由下丘脑释放 CRH、垂体释放 ACTH、肾上腺皮质释放皮质醇构成的内分泌轴，是慢性应激反应的核心通路并受负反馈调节。",
+    "plain": "身体的“慢速压力系统”：从大脑一路通知到肾上腺，让皮质醇升高。",
+    "difficulty": "advanced",
+    "tags": [
+      "情绪",
+      "内分泌",
+      "应激"
+    ],
+    "related": [
+      "emotion-stress-response",
+      "emotion-cortisol",
+      "anatomy-hypothalamus"
+    ],
+    "engineering_link": "HPA 轴的负反馈是内分泌闭环控制的经典模型。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Cognitive Neuroscience: The Biology of the Mind (Gazzaniga et al., 5th ed., 2018)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "xiaqiunaochuitishenshangxianzhou",
+    "pinyin_initials": "xqnctssxz",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "emotion-cortisol",
+    "module": "emotion",
+    "name_zh": "皮质醇",
+    "name_en": "Cortisol",
+    "aliases": [
+      "氢化可的松",
+      "应激激素"
+    ],
+    "definition": "肾上腺皮质分泌的糖皮质激素，升高血糖、抑制免疫并影响海马与前额叶功能，长期过高与记忆和情绪问题相关。",
+    "plain": "身体里的“长期压力荷尔蒙”，短时间帮忙，长期过量伤脑。",
+    "difficulty": "intermediate",
+    "tags": [
+      "情绪",
+      "激素"
+    ],
+    "related": [
+      "emotion-hpa-axis",
+      "emotion-stress-response",
+      "memory-aging"
+    ],
+    "engineering_link": "皮质醇可作为慢性压力的可量化生物标志物。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Cognitive Neuroscience: The Biology of the Mind (Gazzaniga et al., 5th ed., 2018)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "pizhichun",
+    "pinyin_initials": "pzc",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "emotion-reward-circuit",
+    "module": "emotion",
+    "name_zh": "奖赏回路",
+    "name_en": "Reward Circuit",
+    "aliases": [
+      "中脑边缘奖赏系统",
+      "奖赏系统"
+    ],
+    "definition": "由腹侧被盖区多巴胺神经元投射到伏隔核、前额叶与杏仁核构成的环路，编码奖赏预期、动机与强化学习信号。",
+    "plain": "大脑的“想要更多”系统：一有好事情，就催你去重复。",
+    "difficulty": "intermediate",
+    "tags": [
+      "情绪",
+      "奖赏",
+      "多巴胺"
+    ],
+    "related": [
+      "emotion-dopamine-reward",
+      "emotion-nucleus-accumbens",
+      "anatomy-substantia-nigra"
+    ],
+    "engineering_link": "奖赏回路是强化学习奖励信号与价值函数的生物原型。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Cognitive Neuroscience: The Biology of the Mind (Gazzaniga et al., 5th ed., 2018)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "jiangshanghuilu",
+    "pinyin_initials": "jshl",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "emotion-nucleus-accumbens",
+    "module": "emotion",
+    "name_zh": "伏隔核",
+    "name_en": "Nucleus Accumbens",
+    "aliases": [
+      "NAc",
+      "伏核"
+    ],
+    "definition": "腹侧纹状体的核心结构，接收多巴胺投射并输出到基底神经节，参与奖赏、动机、成瘾与快感体验。",
+    "plain": "大脑的“快乐与上瘾开关”。",
+    "difficulty": "intermediate",
+    "tags": [
+      "情绪",
+      "奖赏",
+      "成瘾"
+    ],
+    "related": [
+      "emotion-reward-circuit",
+      "emotion-dopamine-reward",
+      "anatomy-striatum"
+    ],
+    "engineering_link": "伏隔核是深部脑刺激治疗难治性抑郁的研究靶点。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Cognitive Neuroscience: The Biology of the Mind (Gazzaniga et al., 5th ed., 2018)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "fugehe",
+    "pinyin_initials": "fgh",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "emotion-ventromedial-prefrontal",
+    "module": "emotion",
+    "name_zh": "腹内侧前额叶",
+    "name_en": "Ventromedial Prefrontal Cortex",
+    "aliases": [
+      "vmPFC",
+      "腹内侧前额皮层"
+    ],
+    "definition": "位于前额叶腹内侧的区域，整合情绪价值与情境信息以指导决策，损伤后社会情绪判断与风险决策受损。",
+    "plain": "把“感觉值不值”和“理性算一算”合在一起做决定的那块脑区。",
+    "difficulty": "advanced",
+    "tags": [
+      "情绪",
+      "决策",
+      "前额叶"
+    ],
+    "related": [
+      "anatomy-prefrontal-cortex",
+      "emotion-emotion-regulation",
+      "emotion-orbitofrontal-cortex"
+    ],
+    "engineering_link": "vmPFC 的价值整合对应效用函数与情绪先验的联合建模。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Cognitive Neuroscience: The Biology of the Mind (Gazzaniga et al., 5th ed., 2018)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "funeiceqianeye",
+    "pinyin_initials": "fncqey",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "emotion-orbitofrontal-cortex",
+    "module": "emotion",
+    "name_zh": "眶额皮层",
+    "name_en": "Orbitofrontal Cortex",
+    "aliases": [
+      "OFC",
+      "眶额前额叶"
+    ],
+    "definition": "位于前额叶眶面的区域，编码刺激的奖赏价值并随结果更新，参与反转学习、味觉与惩罚预期的调整。",
+    "plain": "大脑里的“价值评估员”：这东西现在值多少，随时按结果改。",
+    "difficulty": "advanced",
+    "tags": [
+      "情绪",
+      "价值",
+      "前额叶"
+    ],
+    "related": [
+      "emotion-ventromedial-prefrontal",
+      "emotion-reward-circuit",
+      "emotion-emotion-regulation"
+    ],
+    "engineering_link": "OFC 的价值更新对应模型基强化学习中的状态价值重估。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Cognitive Neuroscience: The Biology of the Mind (Gazzaniga et al., 5th ed., 2018)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "kuangepiceng",
+    "pinyin_initials": "kepc",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "emotion-social-emotion",
+    "module": "emotion",
+    "name_zh": "社会情绪",
+    "name_en": "Social Emotions",
+    "aliases": [
+      "社会性情绪",
+      "道德情绪"
+    ],
+    "definition": "由社会情境与他人评价引发的高级情绪，如内疚、羞耻、自豪与嫉妒，依赖心理理论、自我参照与社会规范加工。",
+    "plain": "不是怕老虎，而是怕“别人怎么看自己”那种情绪。",
+    "difficulty": "intermediate",
+    "tags": [
+      "情绪",
+      "社会认知"
+    ],
+    "related": [
+      "emotion-empathy",
+      "anatomy-superior-temporal-sulcus",
+      "anatomy-prefrontal-cortex"
+    ],
+    "engineering_link": "社会情绪建模需要引入他人模型与规范约束，是社交智能体的难点。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Cognitive Neuroscience: The Biology of the Mind (Gazzaniga et al., 5th ed., 2018)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "shehuiqingxu",
+    "pinyin_initials": "shqx",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "emotion-empathy",
+    "module": "emotion",
+    "name_zh": "共情",
+    "name_en": "Empathy",
+    "aliases": [
+      "同理心",
+      "移情"
+    ],
+    "definition": "理解并分享他人情绪状态的能力，包含情感共情（感同身受）与认知共情（推断他人想法），涉及前岛叶、前扣带与颞顶联合区。",
+    "plain": "看到别人疼，自己也会“心里一紧”。",
+    "difficulty": "intermediate",
+    "tags": [
+      "情绪",
+      "社会认知"
+    ],
+    "related": [
+      "emotion-insula",
+      "emotion-social-emotion",
+      "emotion-interoception"
+    ],
+    "engineering_link": "共情的能力分解（情感 + 认知）对应情感识别与心理理论两个模块。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Cognitive Neuroscience: The Biology of the Mind (Gazzaniga et al., 5th ed., 2018)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "gongqing",
+    "pinyin_initials": "gq",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "emotion-disgust",
+    "module": "emotion",
+    "name_zh": "厌恶",
+    "name_en": "Disgust",
+    "aliases": [
+      "恶心感",
+      "嫌恶"
+    ],
+    "definition": "对污染物、腐败物或违反规范的事物产生的回避性情绪，具有保护性功能并涉及岛叶与前扣带。",
+    "plain": "看到变质食物时那种“想躲开”的感觉。",
+    "difficulty": "intro",
+    "tags": [
+      "情绪",
+      "基本情绪"
+    ],
+    "related": [
+      "emotion-basic-emotions",
+      "emotion-insula",
+      "emotion-social-emotion"
+    ],
+    "engineering_link": "厌恶的污染扩散逻辑对应风险传播与 contagion 模型。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Cognitive Neuroscience: The Biology of the Mind (Gazzaniga et al., 5th ed., 2018)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "yanwu",
+    "pinyin_initials": "yw",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "emotion-anger",
+    "module": "emotion",
+    "name_zh": "愤怒",
+    "name_en": "Anger",
+    "aliases": [
+      "生气",
+      "怒"
+    ],
+    "definition": "目标受阻或受到不公对待时产生的攻击性准备状态，伴随交感激活与前额叶—杏仁核环路的调控变化。",
+    "plain": "被挡了路、被欺负时，那股“想反击”的劲儿。",
+    "difficulty": "intro",
+    "tags": [
+      "情绪",
+      "基本情绪"
+    ],
+    "related": [
+      "emotion-basic-emotions",
+      "emotion-emotion-regulation",
+      "emotion-prefrontal-amygdala-circuit"
+    ],
+    "engineering_link": "愤怒的调节失败是冲动控制研究与人机冲突管理的典型案例。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Cognitive Neuroscience: The Biology of the Mind (Gazzaniga et al., 5th ed., 2018)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "fennu",
+    "pinyin_initials": "fn",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "emotion-emotional-contagion",
+    "module": "emotion",
+    "name_zh": "情绪传染",
+    "name_en": "Emotional Contagion",
+    "aliases": [
+      "情绪感染",
+      "情感传染"
+    ],
+    "definition": "个体自动模仿他人表情、语调与姿态并随之产生相似情绪的现象，是群体情绪同步的微观机制。",
+    "plain": "别人打哈欠你也想打，别人笑你也跟着笑。",
+    "difficulty": "intermediate",
+    "tags": [
+      "情绪",
+      "社会"
+    ],
+    "related": [
+      "emotion-facial-expression",
+      "emotion-empathy",
+      "motor-mirror-neuron"
+    ],
+    "engineering_link": "情绪传染是社交网络中情绪传播建模的基础机制。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Cognitive Neuroscience: The Biology of the Mind (Gazzaniga et al., 5th ed., 2018)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "qingxuchuanran",
+    "pinyin_initials": "qxcr",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "emotion-mood-disorder",
+    "module": "emotion",
+    "name_zh": "心境障碍",
+    "name_en": "Mood Disorder",
+    "aliases": [
+      "情感障碍",
+      "情绪障碍"
+    ],
+    "definition": "以持续的情绪低落或高涨为核心特征的精神障碍，包括抑郁障碍与双相障碍，涉及前额叶—边缘系统环路与单胺系统失调。",
+    "plain": "情绪调节系统“卡住”了，长期偏低或忽高忽低。",
+    "difficulty": "intermediate",
+    "tags": [
+      "情绪",
+      "临床"
+    ],
+    "related": [
+      "emotion-emotion-regulation",
+      "emotion-stress-response",
+      "bci-neurofeedback"
+    ],
+    "engineering_link": "心境障碍的环路模型是神经调控治疗靶点选择的依据。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Cognitive Neuroscience: The Biology of the Mind (Gazzaniga et al., 5th ed., 2018)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "xinjingzhangai",
+    "pinyin_initials": "xjza",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "emotion-anxiety",
+    "module": "emotion",
+    "name_zh": "焦虑",
+    "name_en": "Anxiety",
+    "aliases": [
+      "焦虑情绪",
+      "担忧"
+    ],
+    "definition": "对未来威胁的预期性紧张与担忧状态，适度的焦虑提升准备性，过度且持续则构成焦虑障碍，涉及杏仁核—前额叶失衡。",
+    "plain": "事情还没发生，心里已经开始“预演最坏结果”。",
+    "difficulty": "intro",
+    "tags": [
+      "情绪",
+      "临床"
+    ],
+    "related": [
+      "emotion-fear-conditioning",
+      "emotion-stress-response",
+      "emotion-prefrontal-amygdala-circuit"
+    ],
+    "engineering_link": "焦虑对应不确定性下的风险厌恶参数升高。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Cognitive Neuroscience: The Biology of the Mind (Gazzaniga et al., 5th ed., 2018)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "jiaolv",
+    "pinyin_initials": "jl",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "emotion-emotional-awareness",
+    "module": "emotion",
+    "name_zh": "情绪觉察",
+    "name_en": "Emotional Awareness",
+    "aliases": [
+      "情绪意识",
+      "情绪识别能力"
+    ],
+    "definition": "准确识别与命名自身情绪状态的能力，是情绪调节的前提，依赖前岛叶与内侧前额叶对身体信号的整合。",
+    "plain": "能说清“我现在到底是生气还是委屈”，才谈得上调节。",
+    "difficulty": "intermediate",
+    "tags": [
+      "情绪",
+      "元认知"
+    ],
+    "related": [
+      "emotion-interoception",
+      "emotion-emotion-regulation",
+      "emotion-insula"
+    ],
+    "engineering_link": "情绪觉察对应系统的自监控与状态自报告能力。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Cognitive Neuroscience: The Biology of the Mind (Gazzaniga et al., 5th ed., 2018)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "qingxujuecha",
+    "pinyin_initials": "qxjc",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "emotion-interoception",
+    "module": "emotion",
+    "name_zh": "内感受",
+    "name_en": "Interoception",
+    "aliases": [
+      "内感受性",
+      "内脏感觉"
+    ],
+    "definition": "对身体内部状态（心跳、呼吸、胃肠、温度）的感知，经岛叶整合后参与情绪体验、渴求与自我意识。",
+    "plain": "能感觉到自己心跳快、胃发紧，这是情绪体验的“身体底噪”。",
+    "difficulty": "advanced",
+    "tags": [
+      "情绪",
+      "身体",
+      "岛叶"
+    ],
+    "related": [
+      "emotion-insula",
+      "emotion-emotional-awareness",
+      "sensory-proprioception"
+    ],
+    "engineering_link": "内感受建模提示情绪不只来自外部刺激，还来自内部状态估计。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Cognitive Neuroscience: The Biology of the Mind (Gazzaniga et al., 5th ed., 2018)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "neiganshou",
+    "pinyin_initials": "ngs",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "emotion-affective-forecasting",
+    "module": "emotion",
+    "name_zh": "情感预测",
+    "name_en": "Affective Forecasting",
+    "aliases": [
+      "情绪预测",
+      "情感预报"
+    ],
+    "definition": "个体对未来事件将带来何种情绪及其强度与持续时间的预测，常出现高估强度与低估适应的偏差。",
+    "plain": "我们总以为“中奖会开心很久”，其实很快就习惯了。",
+    "difficulty": "advanced",
+    "tags": [
+      "情绪",
+      "决策"
+    ],
+    "related": [
+      "emotion-valence-arousal",
+      "emotion-emotion-regulation",
+      "emotion-reward-circuit"
+    ],
+    "engineering_link": "情感预测偏差对应价值估计中的系统性乐观/悲观偏置。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Cognitive Neuroscience: The Biology of the Mind (Gazzaniga et al., 5th ed., 2018)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "qingganyuce",
+    "pinyin_initials": "qgyc",
+    "updated_at": "2026-11-20T00:00:00Z"
   }
 ]

@@ -21,7 +21,7 @@
     ],
     "related": [
       "anatomy-prefrontal-cortex",
-      "motor-motor-cortex",
+      "motor-primary-motor-cortex",
       "anatomy-broca-area"
     ],
     "engineering_link": "EEG/MEG 的主要信号源是皮层锥体细胞群的同步突触后电位，理解皮层分层有助于解释脑电的空间特性。",
@@ -183,7 +183,7 @@
       "运动"
     ],
     "related": [
-      "motor-motor-cortex",
+      "motor-primary-motor-cortex",
       "anatomy-brainstem",
       "synapse-synaptic-plasticity"
     ],
@@ -217,7 +217,7 @@
       "运动"
     ],
     "related": [
-      "motor-motor-cortex",
+      "motor-primary-motor-cortex",
       "anatomy-thalamus",
       "emotion-amygdala"
     ],
@@ -298,5 +298,678 @@
       }
     ],
     "updated_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "anatomy-frontal-lobe",
+    "module": "anatomy",
+    "name_zh": "额叶",
+    "name_en": "Frontal Lobe",
+    "aliases": [
+      "前额叶区",
+      "额部皮层"
+    ],
+    "definition": "大脑半球最前部的皮层区域，包含初级运动皮层、前运动区与前额叶，负责运动执行、计划、工作记忆与抑制控制。",
+    "plain": "大脑的“指挥部与刹车片”：既下命令做动作，也负责忍住不该做的事。",
+    "difficulty": "intro",
+    "tags": [
+      "脑区",
+      "皮层"
+    ],
+    "related": [
+      "anatomy-prefrontal-cortex",
+      "anatomy-cerebral-cortex",
+      "anatomy-motor-cortex"
+    ],
+    "engineering_link": "额叶的执行控制功能对应强化学习中的策略选择与动作门控。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "eye",
+    "pinyin_initials": "ey",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "anatomy-parietal-lobe",
+    "module": "anatomy",
+    "name_zh": "顶叶",
+    "name_en": "Parietal Lobe",
+    "aliases": [
+      "顶区",
+      "头顶叶"
+    ],
+    "definition": "位于中央沟之后的皮层区域，包含初级躯体感觉皮层与后顶叶联合区，负责躯体感觉、空间注意与感觉—运动整合。",
+    "plain": "大脑的“空间与触觉地图”：告诉你身体在哪、东西离你多远。",
+    "difficulty": "intro",
+    "tags": [
+      "脑区",
+      "皮层",
+      "空间"
+    ],
+    "related": [
+      "anatomy-somatosensory-cortex",
+      "attention-dorsal-ventral-network",
+      "anatomy-cerebral-cortex"
+    ],
+    "engineering_link": "后顶叶的空间编码启发了机器人导航与空间注意力机制的设计。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "dingye",
+    "pinyin_initials": "dy",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "anatomy-temporal-lobe",
+    "module": "anatomy",
+    "name_zh": "颞叶",
+    "name_en": "Temporal Lobe",
+    "aliases": [
+      "颞区",
+      "太阳穴叶"
+    ],
+    "definition": "位于外侧裂下方的皮层区域，包含初级听皮层、Wernicke 区与内侧颞叶结构，参与听觉、语言理解与陈述性记忆。",
+    "plain": "大脑的“耳朵与记忆库入口”：管听、管听懂话，也管把经历存起来。",
+    "difficulty": "intro",
+    "tags": [
+      "脑区",
+      "皮层",
+      "语言",
+      "记忆"
+    ],
+    "related": [
+      "anatomy-hippocampus",
+      "anatomy-medial-temporal-lobe",
+      "language-wernicke-area"
+    ],
+    "engineering_link": "颞叶同时承载语音与语义处理，是语音识别前端与语义网络分层的生物参照。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "nieye",
+    "pinyin_initials": "ny",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "anatomy-occipital-lobe",
+    "module": "anatomy",
+    "name_zh": "枕叶",
+    "name_en": "Occipital Lobe",
+    "aliases": [
+      "枕区",
+      "后脑叶"
+    ],
+    "definition": "大脑半球最后部的皮层区域，以初级视皮层（V1）为核心，负责视觉信息的初级加工与早期视觉特征提取。",
+    "plain": "大脑的“图像处理芯片”，所有看到的东西都先送到这里解码。",
+    "difficulty": "intro",
+    "tags": [
+      "脑区",
+      "皮层",
+      "视觉"
+    ],
+    "related": [
+      "sensory-visual-pathway",
+      "sensory-visual-cortex",
+      "anatomy-cerebral-cortex"
+    ],
+    "engineering_link": "枕叶的视网膜拓扑映射启发了卷积网络中的空间权重共享。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "zhenye",
+    "pinyin_initials": "zy",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "anatomy-motor-cortex",
+    "module": "anatomy",
+    "name_zh": "运动皮层",
+    "name_en": "Motor Cortex",
+    "aliases": [
+      "初级运动皮层区",
+      "皮质运动区"
+    ],
+    "definition": "位于中央前回的皮层区域，按躯体拓扑组织，直接或经下行通路控制对侧肌肉的随意运动。",
+    "plain": "大脑的“动作键盘”：每个区域对应身体一块肌肉，按下就动。",
+    "difficulty": "intro",
+    "tags": [
+      "脑区",
+      "运动"
+    ],
+    "related": [
+      "motor-motor-homunculus",
+      "anatomy-frontal-lobe",
+      "motor-corticospinal-tract"
+    ],
+    "engineering_link": "运动皮层的躯体拓扑与放电方向调谐是脑机接口解码手部动作的基础。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "yundongpiceng",
+    "pinyin_initials": "ydpc",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "anatomy-somatosensory-cortex",
+    "module": "anatomy",
+    "name_zh": "躯体感觉皮层",
+    "name_en": "Somatosensory Cortex",
+    "aliases": [
+      "初级躯体感觉皮层",
+      "S1",
+      "体感皮层"
+    ],
+    "definition": "位于中央后回的皮层区域，按躯体拓扑接收来自皮肤、肌肉与关节的触觉、本体感觉与痛温觉信息。",
+    "plain": "大脑的“身体触觉地图”：哪里被摸到，地图上对应的一块就亮。",
+    "difficulty": "intro",
+    "tags": [
+      "脑区",
+      "感觉",
+      "躯体"
+    ],
+    "related": [
+      "sensory-somatosensory-system",
+      "anatomy-parietal-lobe",
+      "anatomy-motor-cortex"
+    ],
+    "engineering_link": "皮层拓扑图的“小人”比例反映使用频率，是输入分辨率按需分配的生物学证据。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "qutiganjuepiceng",
+    "pinyin_initials": "qtgjpc",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "anatomy-striatum",
+    "module": "anatomy",
+    "name_zh": "纹状体",
+    "name_en": "Striatum",
+    "aliases": [
+      "新纹状体",
+      "纹状核"
+    ],
+    "definition": "基底神经节的主要输入核团，包括尾状核与壳核，接收皮层投射并通过直接与间接通路调节运动选择与奖赏学习。",
+    "plain": "动作选择的“投票大厅”：各路想法在这里竞争，赢的那个被执行。",
+    "difficulty": "intermediate",
+    "tags": [
+      "脑区",
+      "基底神经节",
+      "运动"
+    ],
+    "related": [
+      "anatomy-basal-ganglia",
+      "anatomy-globus-pallidus",
+      "emotion-dopamine-reward"
+    ],
+    "engineering_link": "纹状体的多巴胺调制对应强化学习中的价值更新与动作选择。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "wenzhuangti",
+    "pinyin_initials": "wzt",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "anatomy-globus-pallidus",
+    "module": "anatomy",
+    "name_zh": "苍白球",
+    "name_en": "Globus Pallidus",
+    "aliases": [
+      "苍白核",
+      "外侧苍白球"
+    ],
+    "definition": "基底神经节的核心输出结构之一，内侧苍白球经丘脑向皮层发送抑制性输出，参与运动 initiation 与肌张力调节。",
+    "plain": "基底神经节的“闸门”：平时压住动作，需要放行时才松手。",
+    "difficulty": "intermediate",
+    "tags": [
+      "脑区",
+      "基底神经节"
+    ],
+    "related": [
+      "anatomy-basal-ganglia",
+      "anatomy-striatum",
+      "anatomy-thalamus"
+    ],
+    "engineering_link": "苍白球的抑制性门控是深部脑刺激治疗帕金森病的常用靶点。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "cangbaiqiu",
+    "pinyin_initials": "cbq",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "anatomy-substantia-nigra",
+    "module": "anatomy",
+    "name_zh": "黑质",
+    "name_en": "Substantia Nigra",
+    "aliases": [
+      "黑质致密部",
+      "黑质网状部"
+    ],
+    "definition": "中脑的核团，致密部多巴胺神经元投射到纹状体调节运动与奖赏，网状部参与基底神经节输出；其退变是帕金森病的核心病理。",
+    "plain": "中脑里的“多巴胺工厂”，一旦停产，动作就会变得迟缓僵硬。",
+    "difficulty": "intermediate",
+    "tags": [
+      "脑区",
+      "多巴胺",
+      "运动"
+    ],
+    "related": [
+      "anatomy-basal-ganglia",
+      "anatomy-striatum",
+      "emotion-dopamine-reward"
+    ],
+    "engineering_link": "黑质多巴胺能神经元的退变是神经假体与细胞替代治疗的重点靶区。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "heizhi",
+    "pinyin_initials": "hz",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "anatomy-midbrain",
+    "module": "anatomy",
+    "name_zh": "中脑",
+    "name_en": "Midbrain",
+    "aliases": [
+      "中脑部",
+      "mesencephalon"
+    ],
+    "definition": "脑干最上部的部分，包含上丘、下丘、黑质与红核，参与眼动、听觉反射、运动调控与多巴胺能投射。",
+    "plain": "脑干的“中层枢纽”：管眼球转动、声音反射和动作启动。",
+    "difficulty": "intermediate",
+    "tags": [
+      "脑区",
+      "脑干"
+    ],
+    "related": [
+      "anatomy-brainstem",
+      "anatomy-substantia-nigra",
+      "anatomy-pons"
+    ],
+    "engineering_link": "上丘的视觉—运动映射是眼动追踪与仿生视觉注意的神经基础。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "zhongnao",
+    "pinyin_initials": "zn",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "anatomy-pons",
+    "module": "anatomy",
+    "name_zh": "脑桥",
+    "name_en": "Pons",
+    "aliases": [
+      "桥脑",
+      "pons varolii"
+    ],
+    "definition": "位于中脑与延髓之间的脑干结构，含大量横行纤维连接小脑与大脑皮层，并参与呼吸节律、睡眠与面部感觉运动。",
+    "plain": "脑干里的“立交桥”：把大脑和小脑的线路大量接在一起。",
+    "difficulty": "intermediate",
+    "tags": [
+      "脑区",
+      "脑干"
+    ],
+    "related": [
+      "anatomy-brainstem",
+      "anatomy-midbrain",
+      "anatomy-cerebellum"
+    ],
+    "engineering_link": "脑桥—小脑通路是运动协调的前馈通道，对机器人的预测控制有参考价值。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "naoqiao",
+    "pinyin_initials": "nq",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "anatomy-medulla",
+    "module": "anatomy",
+    "name_zh": "延髓",
+    "name_en": "Medulla Oblongata",
+    "aliases": [
+      "延脑",
+      "球部"
+    ],
+    "definition": "脑干最下段，连接脊髓，含呼吸、心血管与吞咽等生命中枢，并是多数上行感觉与下行运动纤维的必经通路。",
+    "plain": "生命维持的“总开关区”：呼吸心跳的基本节律都在这里。",
+    "difficulty": "intermediate",
+    "tags": [
+      "脑区",
+      "脑干",
+      "生命中枢"
+    ],
+    "related": [
+      "anatomy-brainstem",
+      "anatomy-spinal-cord",
+      "anatomy-pons"
+    ],
+    "engineering_link": "延髓的自主节律发生器是低层生命维持控制的生物原型。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "yansui",
+    "pinyin_initials": "ys",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "anatomy-spinal-cord",
+    "module": "anatomy",
+    "name_zh": "脊髓",
+    "name_en": "Spinal Cord",
+    "aliases": [
+      "脊索",
+      "脊髓段"
+    ],
+    "definition": "位于椎管内的中枢神经结构，按节段发出脊神经，既传导脑与躯体之间的信号，也独立完成牵张反射等脊髓环路。",
+    "plain": "身体的“主干电缆 + 本地处理器”：既传话，也能自己处理简单反射。",
+    "difficulty": "intro",
+    "tags": [
+      "脑区",
+      "脊髓",
+      "反射"
+    ],
+    "related": [
+      "motor-stretch-reflex",
+      "motor-motor-unit",
+      "anatomy-medulla"
+    ],
+    "engineering_link": "脊髓的节段性反射环路是分层控制架构（高层意图 + 低层反射）的典型范例。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "jisui",
+    "pinyin_initials": "js",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "anatomy-ventricular-system",
+    "module": "anatomy",
+    "name_zh": "脑室系统",
+    "name_en": "Ventricular System",
+    "aliases": [
+      "脑室",
+      "脑室腔"
+    ],
+    "definition": "脑内相互连通的腔隙系统，包括侧脑室、第三与第四脑室，充满脑脊液并由脉络丛分泌，起缓冲、运输与代谢清除作用。",
+    "plain": "大脑内部的“水循环系统”：给脑子做减震、送营养、带走废物。",
+    "difficulty": "intro",
+    "tags": [
+      "脑区",
+      "脑脊液"
+    ],
+    "related": [
+      "anatomy-meninges",
+      "anatomy-brainstem",
+      "anatomy-cerebral-cortex"
+    ],
+    "engineering_link": "脑脊液循环也是脑内药物递送与颅内压监测的解剖基础。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "naoshixitong",
+    "pinyin_initials": "nsxt",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "anatomy-meninges",
+    "module": "anatomy",
+    "name_zh": "脑膜",
+    "name_en": "Meninges",
+    "aliases": [
+      "硬脑膜",
+      "蛛网膜",
+      "软脑膜"
+    ],
+    "definition": "覆盖脑与脊髓的三层结缔组织膜（硬膜、蛛网膜、软膜），起保护、支撑与脑脊液分隔作用。",
+    "plain": "大脑的“三层包装”：硬壳、缓冲泡沫和最贴身的一层保鲜膜。",
+    "difficulty": "intro",
+    "tags": [
+      "脑区",
+      "保护结构"
+    ],
+    "related": [
+      "anatomy-ventricular-system",
+      "anatomy-cerebral-cortex",
+      "anatomy-spinal-cord"
+    ],
+    "engineering_link": "硬膜外/硬膜下电极的放置层次直接决定侵入式脑机接口的手术风险。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "naomo",
+    "pinyin_initials": "nm",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "anatomy-fornix",
+    "module": "anatomy",
+    "name_zh": "穹窿",
+    "name_en": "Fornix",
+    "aliases": [
+      "穹窿体",
+      "海马穹窿"
+    ],
+    "definition": "由海马输出的轴突束构成，经穹窿把信息传向乳头体与下丘脑，是 Papez 环路的关键连接。",
+    "plain": "海马伸出的“主输出线”，把记忆信号送往大脑的其他站点。",
+    "difficulty": "intermediate",
+    "tags": [
+      "脑区",
+      "白质",
+      "记忆环路"
+    ],
+    "related": [
+      "anatomy-hippocampus",
+      "anatomy-hypothalamus",
+      "memory-consolidation"
+    ],
+    "engineering_link": "穹窿是记忆环路中的高带宽通道，损伤会导致顺行性遗忘。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "qionglong",
+    "pinyin_initials": "ql",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "anatomy-precuneus",
+    "module": "anatomy",
+    "name_zh": "楔前叶",
+    "name_en": "Precuneus",
+    "aliases": [
+      "楔前区",
+      "precuneus"
+    ],
+    "definition": "位于顶叶内侧后部的皮层，是默认模式网络的核心节点，参与自我相关加工、情景记忆提取与空间导航。",
+    "plain": "大脑“走神网络”的核心座位：发呆、回忆、想象未来时特别活跃。",
+    "difficulty": "advanced",
+    "tags": [
+      "脑区",
+      "默认网络"
+    ],
+    "related": [
+      "anatomy-parietal-lobe",
+      "memory-long-term-memory",
+      "attention-dorsal-ventral-network"
+    ],
+    "engineering_link": "默认模式网络为“任务无关”状态提供了可测量的基线，是脑机接口静息态校准的参考。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "xieqianye",
+    "pinyin_initials": "xqy",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "anatomy-medial-temporal-lobe",
+    "module": "anatomy",
+    "name_zh": "内侧颞叶",
+    "name_en": "Medial Temporal Lobe",
+    "aliases": [
+      "MTL",
+      "颞叶内侧"
+    ],
+    "definition": "包含海马、内嗅皮层、海马旁回与杏仁核的颞叶内侧区域，是陈述性记忆形成与情景记忆提取的核心结构。",
+    "plain": "记忆的“归档室”：新经历先在这里打包，再慢慢转存到皮层。",
+    "difficulty": "intermediate",
+    "tags": [
+      "脑区",
+      "记忆"
+    ],
+    "related": [
+      "anatomy-hippocampus",
+      "anatomy-temporal-lobe",
+      "memory-consolidation"
+    ],
+    "engineering_link": "内侧颞叶的快速学习—慢速巩固分工，对应神经网络中的双系统记忆架构。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "neicenieye",
+    "pinyin_initials": "ncny",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "anatomy-angular-gyrus",
+    "module": "anatomy",
+    "name_zh": "角回",
+    "name_en": "Angular Gyrus",
+    "aliases": [
+      "角回区",
+      "Brodmann 39 区"
+    ],
+    "definition": "位于顶下小叶后部的联合皮层，参与阅读、语义整合、数字加工与跨模态（视—听—语义）信息转换。",
+    "plain": "大脑的“翻译中转站”：把看到的字、听到的音和它的意思对上号。",
+    "difficulty": "intermediate",
+    "tags": [
+      "脑区",
+      "语言",
+      "语义"
+    ],
+    "related": [
+      "language-semantic-priming",
+      "anatomy-parietal-lobe",
+      "language-wernicke-area"
+    ],
+    "engineering_link": "角回的跨模态整合对应多模态模型中的对齐层。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "jiaohui",
+    "pinyin_initials": "jh",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "anatomy-superior-temporal-sulcus",
+    "module": "anatomy",
+    "name_zh": "颞上沟",
+    "name_en": "Superior Temporal Sulcus",
+    "aliases": [
+      "STS",
+      "上颞沟"
+    ],
+    "definition": "分隔颞上回与颞中回的沟，其后部参与生物运动、面孔与声音的社会性知觉，是联结听觉与视觉社会线索的枢纽。",
+    "plain": "大脑的“社交雷达区”：专门看别人的动作、表情和语气。",
+    "difficulty": "advanced",
+    "tags": [
+      "脑区",
+      "社会认知"
+    ],
+    "related": [
+      "anatomy-temporal-lobe",
+      "emotion-basic-emotions",
+      "sensory-visual-pathway"
+    ],
+    "engineering_link": "STS 对生物运动的选择性反应是社交机器人动作识别的重要参考。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "nieshanggou",
+    "pinyin_initials": "nsg",
+    "updated_at": "2026-11-20T00:00:00Z"
   }
 ]

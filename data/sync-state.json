@@ -97,7 +97,7 @@
       "journal": "Nature",
       "term_ids": [
         "anatomy-cerebral-cortex",
-        "motor-motor-cortex"
+        "motor-primary-motor-cortex"
       ],
       "local": false
     },
@@ -107,7 +107,7 @@
       "precision": 3,
       "journal": "Nature",
       "term_ids": [
-        "motor-motor-cortex",
+        "motor-primary-motor-cortex",
         "anatomy-cerebral-cortex"
       ],
       "local": false
@@ -119,7 +119,7 @@
       "journal": "Nature",
       "term_ids": [
         "methods-intracortical-recording",
-        "motor-motor-cortex",
+        "motor-primary-motor-cortex",
         "bci-signal-processing-pipeline"
       ],
       "local": false
@@ -155,7 +155,7 @@
       "journal": "Nature",
       "term_ids": [
         "methods-intracortical-recording",
-        "motor-motor-cortex",
+        "motor-primary-motor-cortex",
         "bci-signal-processing-pipeline"
       ],
       "local": false

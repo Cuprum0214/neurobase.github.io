@@ -147,6 +147,7 @@ npx.cmd serve outputs/neurobase
 │  ├─ READING_LIST.md/.json   # 教材 / 文献基准
 │  └─ supabase/               # schema.sql / community-v2.sql / 说明
 ├─ outputs/neurobase/         # 交付站点（27 页 + assets，file:// 直接打开）
+├─ outputs/Wang Tong_NeuroBase.pdf  # 课程项目报告（A4 / 19 页，V5.0.0 交付物补充）
 ├─ data/                      # 词条、来源、教材、内容生态数据源
 ├─ scripts/                   # 构建与来源同步脚本（Node）
 ├─ workers/                   # Cloudflare Workers（AI 助教 / 来源巡检）

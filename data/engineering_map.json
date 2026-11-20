@@ -173,7 +173,7 @@
           "id": "motor-kinematics",
           "neural_zh": "初级运动皮层群体放电",
           "neural_en": "Population Activity in Primary Motor Cortex",
-          "term_id": "motor-motor-cortex",
+          "term_id": "motor-primary-motor-cortex",
           "eng_zh": "速度 / 位置回归与群体向量",
           "eng_en": "Velocity / Position Regression & Population Vector",
           "note_zh": "运动皮层神经元的调谐方向构成群体向量，可直接回归手部速度；这是机械臂与光标控制解码器的经典起点。",

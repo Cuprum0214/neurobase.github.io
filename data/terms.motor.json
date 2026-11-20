@@ -18,7 +18,7 @@
       "通路"
     ],
     "related": [
-      "motor-motor-cortex",
+      "motor-primary-motor-cortex",
       "anatomy-brainstem",
       "motor-motor-unit",
       "neuron-myelin-sheath"
@@ -52,7 +52,7 @@
       "肌肉"
     ],
     "related": [
-      "motor-motor-cortex",
+      "motor-primary-motor-cortex",
       "motor-corticospinal-tract",
       "neuron-refractory-period",
       "synapse-chemical-synapse"
@@ -225,7 +225,7 @@
       "皮层"
     ],
     "related": [
-      "motor-motor-cortex",
+      "motor-primary-motor-cortex",
       "attention-top-down-control",
       "anatomy-prefrontal-cortex",
       "motor-motor-imagery"
@@ -259,7 +259,7 @@
       "皮层"
     ],
     "related": [
-      "motor-motor-cortex",
+      "motor-primary-motor-cortex",
       "sensory-receptive-field",
       "motor-motor-imagery"
     ],
@@ -293,7 +293,7 @@
       "脑机接口"
     ],
     "related": [
-      "motor-motor-cortex",
+      "motor-primary-motor-cortex",
       "motor-supplementary-motor-area",
       "bci-p300",
       "methods-eeg"
@@ -307,5 +307,703 @@
       }
     ],
     "updated_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "motor-primary-motor-cortex",
+    "module": "motor",
+    "name_zh": "初级运动皮层",
+    "name_en": "Primary Motor Cortex",
+    "aliases": [
+      "M1",
+      "中央前回运动区"
+    ],
+    "definition": "位于中央前回的皮层区域，直接经皮层脊髓束控制对侧肢体运动，神经元放电与肌肉力量、方向和关节角度相关。",
+    "plain": "大脑里直接“按下肌肉开关”的那块皮层。",
+    "difficulty": "intro",
+    "tags": [
+      "运动",
+      "皮层"
+    ],
+    "related": [
+      "motor-motor-homunculus",
+      "motor-corticospinal-tract",
+      "anatomy-motor-cortex"
+    ],
+    "engineering_link": "M1 的方向调谐与群体向量解码是运动脑机接口最经典的特征来源。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "chujiyundongpiceng",
+    "pinyin_initials": "cjydpc",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "motor-premotor-cortex",
+    "module": "motor",
+    "name_zh": "前运动皮层",
+    "name_en": "Premotor Cortex",
+    "aliases": [
+      "前运动区",
+      "PMC"
+    ],
+    "definition": "位于初级运动皮层前方的区域，负责按感觉线索与情境准备动作、选择动作方案，并与镜像神经元系统密切相关。",
+    "plain": "动作的“排练室”：还没动，先在这里把动作方案彩排一遍。",
+    "difficulty": "intermediate",
+    "tags": [
+      "运动",
+      "计划"
+    ],
+    "related": [
+      "motor-primary-motor-cortex",
+      "motor-motor-planning",
+      "motor-mirror-neuron"
+    ],
+    "engineering_link": "前运动皮层的准备活动可用于提前解码运动意图，降低接口延迟。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "qianyundongpiceng",
+    "pinyin_initials": "qydpc",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "motor-motor-planning",
+    "module": "motor",
+    "name_zh": "运动计划",
+    "name_en": "Motor Planning",
+    "aliases": [
+      "动作计划",
+      "运动规划"
+    ],
+    "definition": "在执行动作前确定目标、轨迹、力度与时序的过程，涉及前运动皮层、辅助运动区、顶叶与小脑的协同。",
+    "plain": "动手之前的“路线规划”：先想好怎么拿、走哪条线、用多大力。",
+    "difficulty": "intermediate",
+    "tags": [
+      "运动",
+      "计划"
+    ],
+    "related": [
+      "motor-premotor-cortex",
+      "motor-supplementary-motor-area",
+      "motor-motor-learning"
+    ],
+    "engineering_link": "运动规划对应机器人的轨迹生成与代价优化。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "yundongjihua",
+    "pinyin_initials": "ydjh",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "motor-motor-learning",
+    "module": "motor",
+    "name_zh": "运动学习",
+    "name_en": "Motor Learning",
+    "aliases": [
+      "动作学习",
+      "技能学习"
+    ],
+    "definition": "通过练习获得或改进运动技能的过程，分为认知、联结与自动化阶段，依赖小脑、基底神经节与运动皮层的可塑性。",
+    "plain": "从“手忙脚乱”到“闭眼也会”的练习过程。",
+    "difficulty": "intermediate",
+    "tags": [
+      "运动",
+      "学习",
+      "可塑性"
+    ],
+    "related": [
+      "motor-cerebellar-coordination",
+      "motor-basalganglia-motor-loop",
+      "memory-procedural-memory"
+    ],
+    "engineering_link": "运动学习的误差驱动更新对应迭代学习控制（ILC）。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "yundongxuexi",
+    "pinyin_initials": "ydxx",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "motor-cerebellar-coordination",
+    "module": "motor",
+    "name_zh": "小脑运动协调",
+    "name_en": "Cerebellar Motor Coordination",
+    "aliases": [
+      "小脑协调",
+      "小脑定时"
+    ],
+    "definition": "小脑通过比较运动指令与感觉反馈、预测误差并实时校正，保证动作平滑、准确与定时。",
+    "plain": "动作的“自动纠偏器”：发现偏了就立刻微调，让动作不抖不飘。",
+    "difficulty": "intermediate",
+    "tags": [
+      "小脑",
+      "协调"
+    ],
+    "related": [
+      "anatomy-cerebellum",
+      "motor-motor-learning",
+      "motor-ataxia"
+    ],
+    "engineering_link": "小脑是前馈—反馈复合控制的生物原型，对应模型预测控制。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "xiaonaoyundongxietiao",
+    "pinyin_initials": "xnydxt",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "motor-basalganglia-motor-loop",
+    "module": "motor",
+    "name_zh": "基底神经节运动环路",
+    "name_en": "Basal Ganglia Motor Loop",
+    "aliases": [
+      "皮质—基底节—丘脑环路",
+      "运动环路"
+    ],
+    "definition": "皮层经纹状体、苍白球、丘脑回到皮层的闭环，通过直接与间接通路选择要执行的动作并抑制竞争动作。",
+    "plain": "动作的“选秀节目”：多个动作候选上台，最后只有一个被放行。",
+    "difficulty": "advanced",
+    "tags": [
+      "基底神经节",
+      "运动选择"
+    ],
+    "related": [
+      "anatomy-basal-ganglia",
+      "anatomy-striatum",
+      "anatomy-globus-pallidus"
+    ],
+    "engineering_link": "该环路的门控机制对应动作选择中的抑制性竞争网络。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "jidishenjingjieyundonghuanlu",
+    "pinyin_initials": "jdsjjydhl",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "motor-upper-motor-neuron",
+    "module": "motor",
+    "name_zh": "上运动神经元",
+    "name_en": "Upper Motor Neuron",
+    "aliases": [
+      "中枢运动神经元",
+      "皮质脊髓神经元"
+    ],
+    "definition": "位于运动皮层或脑干、向下投射控制下运动神经元的神经元，损伤导致痉挛性瘫痪与腱反射亢进。",
+    "plain": "发号施令的“上级”，自己不直接接肌肉。",
+    "difficulty": "intermediate",
+    "tags": [
+      "运动",
+      "通路"
+    ],
+    "related": [
+      "motor-corticospinal-tract",
+      "motor-lower-motor-neuron",
+      "motor-spasticity"
+    ],
+    "engineering_link": "上、下运动神经元损伤的体征差异是神经定位诊断的经典判据。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "shangyundongshenjingyuan",
+    "pinyin_initials": "sydsjy",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "motor-lower-motor-neuron",
+    "module": "motor",
+    "name_zh": "下运动神经元",
+    "name_en": "Lower Motor Neuron",
+    "aliases": [
+      "α 运动神经元",
+      "脊髓运动神经元"
+    ],
+    "definition": "位于脊髓前角或脑神经运动核、轴突直接支配骨骼肌纤维的神经元，是运动输出的最后公共通路。",
+    "plain": "真正“插到肌肉上”的那根线。",
+    "difficulty": "intro",
+    "tags": [
+      "运动",
+      "通路"
+    ],
+    "related": [
+      "motor-motor-unit",
+      "motor-upper-motor-neuron",
+      "motor-neuromuscular-junction"
+    ],
+    "engineering_link": "下运动神经元是神经假体与肌肉电刺激的直接作用靶点。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "xiayundongshenjingyuan",
+    "pinyin_initials": "xydsjy",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "motor-neuromuscular-junction",
+    "module": "motor",
+    "name_zh": "神经肌肉接头",
+    "name_en": "Neuromuscular Junction",
+    "aliases": [
+      "NMJ",
+      "运动终板"
+    ],
+    "definition": "运动神经元轴突末梢与骨骼肌纤维之间的化学突触，乙酰胆碱释放引起终板电位并触发肌肉动作电位与收缩。",
+    "plain": "神经和肌肉之间的“插座”：插上就通电，肌肉就收缩。",
+    "difficulty": "intermediate",
+    "tags": [
+      "运动",
+      "突触",
+      "肌肉"
+    ],
+    "related": [
+      "synapse-acetylcholine",
+      "motor-motor-unit",
+      "motor-lower-motor-neuron"
+    ],
+    "engineering_link": "NMJ 的可靠性与安全系数是神经—机器接口设计的重要参考。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "shenjingjiroujietou",
+    "pinyin_initials": "sjjrjt",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "motor-motor-unit-recruitment",
+    "module": "motor",
+    "name_zh": "运动单位募集",
+    "name_en": "Motor Unit Recruitment",
+    "aliases": [
+      "运动单位激活",
+      "募集顺序"
+    ],
+    "definition": "随用力增大，运动神经元按从小到大的顺序被逐步激活（Henneman 大小原则），实现力量的分级输出。",
+    "plain": "要使劲时先叫小兵，不够再叫大兵，力量一层层加上去。",
+    "difficulty": "intermediate",
+    "tags": [
+      "运动",
+      "力量"
+    ],
+    "related": [
+      "motor-motor-unit",
+      "motor-muscle-fiber-type",
+      "motor-force-velocity-relation"
+    ],
+    "engineering_link": "大小原则是一种天然的增量式功率控制策略。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "yundongdanweimuji",
+    "pinyin_initials": "yddwmj",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "motor-muscle-fiber-type",
+    "module": "motor",
+    "name_zh": "肌纤维类型",
+    "name_en": "Muscle Fiber Type",
+    "aliases": [
+      "慢肌纤维",
+      "快肌纤维"
+    ],
+    "definition": "骨骼肌纤维按收缩速度与代谢方式分为慢氧化型（I 型）、快氧化型（IIa）与快酵解型（IIx），决定耐力与爆发力的权衡。",
+    "plain": "肌肉里的“耐力型”和“爆发型”两种发动机。",
+    "difficulty": "intermediate",
+    "tags": [
+      "运动",
+      "肌肉"
+    ],
+    "related": [
+      "motor-motor-unit-recruitment",
+      "motor-force-velocity-relation",
+      "motor-motor-unit"
+    ],
+    "engineering_link": "纤维类型的功能分工对应执行器的功率—效率权衡设计。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "jixianweileixing",
+    "pinyin_initials": "jxwlx",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "motor-force-velocity-relation",
+    "module": "motor",
+    "name_zh": "力—速度关系",
+    "name_en": "Force-Velocity Relation",
+    "aliases": [
+      "力量速度曲线",
+      "Hill 曲线"
+    ],
+    "definition": "肌肉收缩时力量与缩短速度呈反比关系：负载越大收缩越慢，零负载时速度最大，是肌肉力学的基本规律。",
+    "plain": "越用力推，动得越慢；想快，就使不上那么大劲。",
+    "difficulty": "intermediate",
+    "tags": [
+      "运动",
+      "力学"
+    ],
+    "related": [
+      "motor-muscle-fiber-type",
+      "motor-motor-unit-recruitment",
+      "motor-motor-learning"
+    ],
+    "engineering_link": "力—速度曲线是电机与人工肌肉选型时的核心性能边界。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "lisuduguanxi",
+    "pinyin_initials": "lsdgx",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "motor-flexor-reflex",
+    "module": "motor",
+    "name_zh": "屈曲反射",
+    "name_en": "Flexor Reflex",
+    "aliases": [
+      "撤回反射",
+      "屈肌反射"
+    ],
+    "definition": "肢体受到伤害性刺激时，屈肌收缩、伸肌放松使肢体迅速回撤的多突触脊髓反射。",
+    "plain": "手碰到烫的东西会“嗖”地缩回来，这是脊髓自己做的决定。",
+    "difficulty": "intro",
+    "tags": [
+      "运动",
+      "反射"
+    ],
+    "related": [
+      "motor-stretch-reflex",
+      "anatomy-spinal-cord",
+      "sensory-nociception"
+    ],
+    "engineering_link": "撤回反射是分层控制中“低层急停”的典型实现。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "ququfanshe",
+    "pinyin_initials": "qqfs",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "motor-postural-control",
+    "module": "motor",
+    "name_zh": "姿势控制",
+    "name_en": "Postural Control",
+    "aliases": [
+      "姿势调节",
+      "平衡控制"
+    ],
+    "definition": "在静止或运动中维持身体重心稳定与身体节段对齐的过程，依赖前庭、本体感觉、视觉与预测性姿势调整。",
+    "plain": "站着不动其实很忙：全身肌肉一直在微调，防止你倒下。",
+    "difficulty": "intermediate",
+    "tags": [
+      "运动",
+      "平衡"
+    ],
+    "related": [
+      "sensory-vestibular-system",
+      "sensory-proprioception",
+      "motor-gait-control"
+    ],
+    "engineering_link": "姿势控制对应倒立摆平衡与全身控制（WBC）问题。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "zishikongzhi",
+    "pinyin_initials": "zskz",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "motor-gait-control",
+    "module": "motor",
+    "name_zh": "步态控制",
+    "name_en": "Gait Control",
+    "aliases": [
+      "行走控制",
+      "步态周期"
+    ],
+    "definition": "由脊髓中枢模式发生器产生基本节律、再由脑干与皮层根据感觉反馈和目标调整的行走控制过程。",
+    "plain": "走路的基本节拍由脊髓打，脑子负责看路和改方向。",
+    "difficulty": "intermediate",
+    "tags": [
+      "运动",
+      "步态"
+    ],
+    "related": [
+      "motor-central-pattern-generator",
+      "motor-postural-control",
+      "anatomy-cerebellum"
+    ],
+    "engineering_link": "CPG + 高层调制的架构是四足/双足机器人步态控制的常用分层方案。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "butaikongzhi",
+    "pinyin_initials": "btkz",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "motor-mirror-neuron",
+    "module": "motor",
+    "name_zh": "镜像神经元",
+    "name_en": "Mirror Neuron",
+    "aliases": [
+      "镜像细胞",
+      "mirror cell"
+    ],
+    "definition": "在个体执行某动作以及观察他人执行同一动作时都放电的神经元，最早在猕猴前运动皮层 F5 区发现。",
+    "plain": "看到别人做动作，自己脑子里“跟着做一遍”的细胞。",
+    "difficulty": "advanced",
+    "tags": [
+      "运动",
+      "社会认知"
+    ],
+    "related": [
+      "motor-premotor-cortex",
+      "emotion-basic-emotions",
+      "anatomy-superior-temporal-sulcus"
+    ],
+    "engineering_link": "镜像机制为示范学习与模仿学习提供了神经层面的解释。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "jingxiangshenjingyuan",
+    "pinyin_initials": "jxsjy",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "motor-motor-sequence-learning",
+    "module": "motor",
+    "name_zh": "动作序列学习",
+    "name_en": "Motor Sequence Learning",
+    "aliases": [
+      "序列学习",
+      "运动序列习得"
+    ],
+    "definition": "把单个动作按顺序组合成流畅序列的学习过程，早期依赖前额叶与注意，后期转为基底神经节与小脑主导的自动化。",
+    "plain": "从“一个键一个键找”到“整段流畅弹下来”的过程。",
+    "difficulty": "advanced",
+    "tags": [
+      "运动",
+      "学习"
+    ],
+    "related": [
+      "motor-motor-learning",
+      "motor-basalganglia-motor-loop",
+      "memory-procedural-memory"
+    ],
+    "engineering_link": "序列学习的自动化过程对应技能编译与执行计划的固化。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "dongzuoxuliexuexi",
+    "pinyin_initials": "dzxlxx",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "motor-beta-oscillation",
+    "module": "motor",
+    "name_zh": "感觉运动 β 振荡",
+    "name_en": "Sensorimotor Beta Oscillation",
+    "aliases": [
+      "β 节律",
+      "运动皮层 β 波"
+    ],
+    "definition": "感觉运动皮层在 13–30 Hz 出现的节律性活动，与维持当前运动状态、抑制新动作相关，动作执行前减弱、结束后反弹。",
+    "plain": "运动皮层的“保持现状”信号：动之前先关小，动完再开大。",
+    "difficulty": "advanced",
+    "tags": [
+      "运动",
+      "脑电",
+      "节律"
+    ],
+    "related": [
+      "methods-ecog",
+      "motor-primary-motor-cortex",
+      "motor-motor-imagery"
+    ],
+    "engineering_link": "β 反弹可作为运动意图与执行状态的实时标志，用于接口状态机切换。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "ganjueyundongzhendang",
+    "pinyin_initials": "gjydzd",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "motor-spasticity",
+    "module": "motor",
+    "name_zh": "痉挛",
+    "name_en": "Spasticity",
+    "aliases": [
+      "肌张力增高",
+      "痉挛状态"
+    ],
+    "definition": "上运动神经元损伤后出现的速度依赖性肌张力增高与腱反射亢进，源于下行抑制减少与牵张反射环路过度兴奋。",
+    "plain": "刹车失灵后肌肉一直“绷着”，越拉越紧。",
+    "difficulty": "advanced",
+    "tags": [
+      "运动",
+      "病理"
+    ],
+    "related": [
+      "motor-upper-motor-neuron",
+      "motor-stretch-reflex",
+      "anatomy-spinal-cord"
+    ],
+    "engineering_link": "痉挛评估是康复机器人与外骨骼力矩控制的常见约束条件。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "jingluan",
+    "pinyin_initials": "jl",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "motor-ataxia",
+    "module": "motor",
+    "name_zh": "共济失调",
+    "name_en": "Ataxia",
+    "aliases": [
+      "运动失调",
+      "协调障碍"
+    ],
+    "definition": "小脑或其通路受损导致的动作笨拙、辨距不良、意向性震颤与步态不稳，反映运动协调与误差校正失败。",
+    "plain": "想拿杯子却总是“过了头”，动作像喝醉一样不准。",
+    "difficulty": "advanced",
+    "tags": [
+      "运动",
+      "病理",
+      "小脑"
+    ],
+    "related": [
+      "motor-cerebellar-coordination",
+      "anatomy-cerebellum",
+      "motor-gait-control"
+    ],
+    "engineering_link": "共济失调的症状谱对应控制系统中前馈模型失效的表现。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "gongjishitiao",
+    "pinyin_initials": "gjst",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "motor-motor-rehabilitation",
+    "module": "motor",
+    "name_zh": "运动康复",
+    "name_en": "Motor Rehabilitation",
+    "aliases": [
+      "康复训练",
+      "运动功能恢复"
+    ],
+    "definition": "通过重复训练、任务导向练习与神经调控促进卒中、脊髓损伤等患者运动功能恢复的干预体系。",
+    "plain": "用大量有针对性的练习，帮大脑和身体重新“接线”。",
+    "difficulty": "intermediate",
+    "tags": [
+      "运动",
+      "康复",
+      "应用"
+    ],
+    "related": [
+      "motor-motor-learning",
+      "bci-closed-loop",
+      "motor-spasticity"
+    ],
+    "engineering_link": "康复训练是闭环神经调控与脑机接口最成熟的应用场景之一。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "yundongkangfu",
+    "pinyin_initials": "ydkf",
+    "updated_at": "2026-11-20T00:00:00Z"
   }
 ]

@@ -309,5 +309,634 @@
       }
     ],
     "updated_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "id": "sensory-rod-cell",
+    "module": "sensory",
+    "name_zh": "视杆细胞",
+    "name_en": "Rod Cell",
+    "aliases": [
+      "视杆",
+      "暗视感光细胞"
+    ],
+    "definition": "视网膜中数量最多的感光细胞，含视紫红质，对弱光极敏感但无色觉，主要负责暗视觉与运动检测。",
+    "plain": "夜视摄像头：光线很暗也能看见轮廓，但分不清颜色。",
+    "difficulty": "intro",
+    "tags": [
+      "视觉",
+      "感光细胞"
+    ],
+    "related": [
+      "sensory-photoreceptor",
+      "sensory-cone-cell",
+      "sensory-retina"
+    ],
+    "engineering_link": "视杆细胞的高增益与慢恢复特性，是低照度传感器噪声—灵敏度权衡的生物样本。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "shiganxibao",
+    "pinyin_initials": "sgxb",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "sensory-cone-cell",
+    "module": "sensory",
+    "name_zh": "视锥细胞",
+    "name_en": "Cone Cell",
+    "aliases": [
+      "视锥",
+      "明视觉感光细胞"
+    ],
+    "definition": "视网膜中负责明视觉与色觉的感光细胞，按视蛋白类型分为对短、中、长波敏感的三类，空间与时间分辨率高于视杆细胞。",
+    "plain": "彩色高清摄像头：亮处看得清、颜色分得细，但暗处就不行了。",
+    "difficulty": "intro",
+    "tags": [
+      "视觉",
+      "感光细胞",
+      "颜色"
+    ],
+    "related": [
+      "sensory-rod-cell",
+      "sensory-color-vision",
+      "sensory-retina"
+    ],
+    "engineering_link": "三类视锥的光谱响应曲线是彩色图像传感器滤色阵列的设计参照。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "shizhuixibao",
+    "pinyin_initials": "szxb",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "sensory-bipolar-cell",
+    "module": "sensory",
+    "name_zh": "双极细胞",
+    "name_en": "Bipolar Cell",
+    "aliases": [
+      "视网膜双极细胞",
+      "双极神经元"
+    ],
+    "definition": "视网膜内连接感光细胞与神经节细胞的中继神经元，分为给光型与撤光型，是中心—周边拮抗感受野形成的第一站。",
+    "plain": "视网膜里的“第一道转接器”，把光信号整理成开/关两种版本。",
+    "difficulty": "intermediate",
+    "tags": [
+      "视觉",
+      "视网膜"
+    ],
+    "related": [
+      "sensory-retina",
+      "sensory-center-surround",
+      "sensory-retinal-ganglion-cell"
+    ],
+    "engineering_link": "给光/撤光双通道是早期视觉特征检测的经典实现，对应卷积核的正负权重。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "shuangjixibao",
+    "pinyin_initials": "sjxb",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "sensory-retinal-ganglion-cell",
+    "module": "sensory",
+    "name_zh": "视网膜神经节细胞",
+    "name_en": "Retinal Ganglion Cell",
+    "aliases": [
+      "RGC",
+      "神经节细胞"
+    ],
+    "definition": "视网膜的输出神经元，把整合后的视觉信息经视神经送往丘脑与上丘，其轴突是视神经的组成部分。",
+    "plain": "眼睛的“出口打包员”：把处理好的图像压成脉冲，沿视神经发出去。",
+    "difficulty": "intermediate",
+    "tags": [
+      "视觉",
+      "视网膜",
+      "输出"
+    ],
+    "related": [
+      "sensory-retina",
+      "sensory-visual-pathway",
+      "sensory-lateral-geniculate-nucleus"
+    ],
+    "engineering_link": "神经节细胞的稀疏与瞬变响应提示了事件相机（event camera）的编码方式。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "shiwangmoshenjingjiexibao",
+    "pinyin_initials": "swmsjjxb",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "sensory-lateral-geniculate-nucleus",
+    "module": "sensory",
+    "name_zh": "外侧膝状体",
+    "name_en": "Lateral Geniculate Nucleus",
+    "aliases": [
+      "LGN",
+      "外膝体"
+    ],
+    "definition": "丘脑中的视觉中继核团，接收视网膜投射并按眼与视野分层重组，再投射到初级视皮层，同时受皮层反馈调制。",
+    "plain": "视觉信号的“中转站”：把两只眼睛的线路重新排好，再送去皮层。",
+    "difficulty": "intermediate",
+    "tags": [
+      "视觉",
+      "丘脑"
+    ],
+    "related": [
+      "sensory-visual-pathway",
+      "anatomy-thalamus",
+      "sensory-visual-cortex"
+    ],
+    "engineering_link": "LGN 的反馈调制说明感觉中继不是被动转发，而是带先验的主动滤波。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "waicexizhuangti",
+    "pinyin_initials": "wcxzt",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "sensory-cochlea",
+    "module": "sensory",
+    "name_zh": "耳蜗",
+    "name_en": "Cochlea",
+    "aliases": [
+      "耳蜗管",
+      "蜗牛壳"
+    ],
+    "definition": "内耳的螺旋形听觉器官，基底膜按频率位置化分解声音，毛细胞把机械振动转换为电信号。",
+    "plain": "耳朵里的“钢琴键盘”：不同位置负责不同音高，声音进来就被拆成频谱。",
+    "difficulty": "intro",
+    "tags": [
+      "听觉",
+      "内耳"
+    ],
+    "related": [
+      "sensory-hair-cell",
+      "sensory-auditory-pathway",
+      "sensory-tonotopy"
+    ],
+    "engineering_link": "耳蜗的机械频谱分解是人工耳蜗与滤波器组前端设计的直接蓝本。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "erwo",
+    "pinyin_initials": "ew",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "sensory-hair-cell",
+    "module": "sensory",
+    "name_zh": "毛细胞",
+    "name_en": "Hair Cell",
+    "aliases": [
+      "内耳毛细胞",
+      "听觉毛细胞"
+    ],
+    "definition": "内耳中的机械感受细胞，静纤毛偏转使机械门控通道开放、产生感受器电位，是听觉与平衡觉的换能器。",
+    "plain": "耳朵里的“麦克风膜片”：声音振动一推，它就发电。",
+    "difficulty": "intermediate",
+    "tags": [
+      "听觉",
+      "机械转导"
+    ],
+    "related": [
+      "sensory-cochlea",
+      "sensory-vestibular-system",
+      "sensory-sensory-transduction"
+    ],
+    "engineering_link": "毛细胞的机械—电换能是 MEMS 麦克风与仿生振动传感器的原型。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "maoxibao",
+    "pinyin_initials": "mxb",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "sensory-auditory-pathway",
+    "module": "sensory",
+    "name_zh": "听觉通路",
+    "name_en": "Auditory Pathway",
+    "aliases": [
+      "听觉传导通路",
+      "听路"
+    ],
+    "definition": "从耳蜗核经上橄榄复合体、下丘、内侧膝状体到听皮层的多级通路，逐级提取双耳时间差、强度差与复杂声学特征。",
+    "plain": "声音的“多级流水线”：从耳蜗一路加工到大脑，越往上级处理越抽象。",
+    "difficulty": "intermediate",
+    "tags": [
+      "听觉",
+      "通路"
+    ],
+    "related": [
+      "sensory-cochlea",
+      "sensory-tonotopy",
+      "anatomy-temporal-lobe"
+    ],
+    "engineering_link": "多级听觉通路的层级特征提取，对应语音识别中的分层声学模型。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "tingjuetonglu",
+    "pinyin_initials": "tjtl",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "sensory-tonotopy",
+    "module": "sensory",
+    "name_zh": "频率拓扑",
+    "name_en": "Tonotopy",
+    "aliases": [
+      "音调拓扑",
+      "频率位置图"
+    ],
+    "definition": "听觉系统从耳蜗到听皮层按声音频率有序排列的空间组织方式，相邻神经元偏好相近频率。",
+    "plain": "听觉版的“键盘排列”：从低音到高音在大脑里排成一条有序的带。",
+    "difficulty": "intermediate",
+    "tags": [
+      "听觉",
+      "拓扑"
+    ],
+    "related": [
+      "sensory-cochlea",
+      "sensory-auditory-pathway",
+      "sensory-visual-cortex"
+    ],
+    "engineering_link": "频率拓扑与视觉的视网膜拓扑同构，说明大脑偏好保拓扑的映射。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "pinlvtuopu",
+    "pinyin_initials": "pltp",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "sensory-olfactory-system",
+    "module": "sensory",
+    "name_zh": "嗅觉系统",
+    "name_en": "Olfactory System",
+    "aliases": [
+      "嗅系统",
+      "嗅觉通路"
+    ],
+    "definition": "由嗅上皮受体神经元经嗅球投射到梨状皮层等结构的系统，是唯一不经过丘脑中继直接进入皮层的感觉通路。",
+    "plain": "唯一“直通大脑”的感觉：气味不用中转，直接送到情绪与记忆区。",
+    "difficulty": "intermediate",
+    "tags": [
+      "嗅觉",
+      "化学感觉"
+    ],
+    "related": [
+      "sensory-gustatory-system",
+      "emotion-limbic-system",
+      "memory-long-term-memory"
+    ],
+    "engineering_link": "嗅觉受体阵列的 combinatorial 编码是电子鼻高维化学传感的设计思路。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "xiujuexitong",
+    "pinyin_initials": "xjxt",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "sensory-gustatory-system",
+    "module": "sensory",
+    "name_zh": "味觉系统",
+    "name_en": "Gustatory System",
+    "aliases": [
+      "味系统",
+      "味觉通路"
+    ],
+    "definition": "由舌与口腔味蕾受体经脑神经传入、在孤束核与岛叶皮层加工的系统，编码甜、咸、酸、苦、鲜等基本味质。",
+    "plain": "舌头上的“五种基本味道检测器”，结果送到脑岛变成“好吃/难吃”。",
+    "difficulty": "intro",
+    "tags": [
+      "味觉",
+      "化学感觉"
+    ],
+    "related": [
+      "sensory-olfactory-system",
+      "emotion-insula",
+      "sensory-sensory-transduction"
+    ],
+    "engineering_link": "味觉的少数基本维度编码，对应传感器阵列 + 低维特征映射的工程范式。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "weijuexitong",
+    "pinyin_initials": "wjxt",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "sensory-nociception",
+    "module": "sensory",
+    "name_zh": "痛觉",
+    "name_en": "Nociception",
+    "aliases": [
+      "伤害感受",
+      "疼痛感觉"
+    ],
+    "definition": "由伤害性刺激激活游离神经末梢、经脊髓背角上行到丘脑与皮层的感官过程，具有保护性并受下行调制。",
+    "plain": "身体的“危险报警器”：不是单纯的触觉，而是带情绪和躲避冲动的警告。",
+    "difficulty": "intermediate",
+    "tags": [
+      "痛觉",
+      "保护"
+    ],
+    "related": [
+      "sensory-somatosensory-system",
+      "emotion-anterior-cingulate-cortex",
+      "sensory-mechanoreceptor"
+    ],
+    "engineering_link": "痛觉的门控与下行抑制是“可调增益报警系统”的生物实现。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "tongjue",
+    "pinyin_initials": "tj",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "sensory-proprioception",
+    "module": "sensory",
+    "name_zh": "本体感觉",
+    "name_en": "Proprioception",
+    "aliases": [
+      "本体感受",
+      "身体位置感"
+    ],
+    "definition": "来自肌梭、腱器官与关节感受器的信息，提供肢体位置、运动方向与用力程度，是运动控制与身体图式的基础。",
+    "plain": "闭着眼也知道手在哪的“身体 GPS”。",
+    "difficulty": "intermediate",
+    "tags": [
+      "躯体感觉",
+      "运动"
+    ],
+    "related": [
+      "motor-muscle-spindle",
+      "motor-golgi-tendon-organ",
+      "sensory-somatosensory-system"
+    ],
+    "engineering_link": "本体感觉是机器人关节编码器与力反馈的生物学对应物。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "bentiganjue",
+    "pinyin_initials": "btgj",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "sensory-mechanoreceptor",
+    "module": "sensory",
+    "name_zh": "机械感受器",
+    "name_en": "Mechanoreceptor",
+    "aliases": [
+      "机械敏感感受器",
+      "触觉感受器"
+    ],
+    "definition": "皮肤与内脏中对机械形变敏感的传入末梢，如梅斯纳小体、帕西尼小体与默克尔盘，分别编码振动、压力与皮肤拉伸。",
+    "plain": "皮肤里的“压力与振动传感器”，不同型号负责不同频率的触感。",
+    "difficulty": "intermediate",
+    "tags": [
+      "触觉",
+      "机械转导"
+    ],
+    "related": [
+      "sensory-somatosensory-system",
+      "sensory-sensory-adaptation",
+      "sensory-proprioception"
+    ],
+    "engineering_link": "不同适应速度的机械感受器对应多时间尺度的触觉采样策略。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "jixieganshouqi",
+    "pinyin_initials": "jxgsq",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "sensory-lateral-inhibition",
+    "module": "sensory",
+    "name_zh": "侧抑制",
+    "name_en": "Lateral Inhibition",
+    "aliases": [
+      "旁侧抑制",
+      "邻近抑制"
+    ],
+    "definition": "相邻感觉通路之间通过抑制性连接相互削弱响应的机制，增强空间对比与边缘检测，如马赫带现象。",
+    "plain": "邻居之间互相“压低音量”，结果边界反而更突出。",
+    "difficulty": "intermediate",
+    "tags": [
+      "感觉编码",
+      "对比增强"
+    ],
+    "related": [
+      "sensory-center-surround",
+      "sensory-receptive-field",
+      "synapse-inhibitory-synapse"
+    ],
+    "engineering_link": "侧抑制是图像锐化与边缘检测算子的生理原型。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "ceyizhi",
+    "pinyin_initials": "cyz",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "sensory-color-vision",
+    "module": "sensory",
+    "name_zh": "颜色视觉",
+    "name_en": "Color Vision",
+    "aliases": [
+      "色觉",
+      "色彩视觉"
+    ],
+    "definition": "由三类视锥细胞的光谱响应差异，经视网膜与皮层的对立色加工，产生对色调、饱和度与明度的知觉。",
+    "plain": "眼睛用三种“颜料”调配出所有颜色，大脑再解码成红绿蓝黄的感觉。",
+    "difficulty": "intermediate",
+    "tags": [
+      "视觉",
+      "颜色"
+    ],
+    "related": [
+      "sensory-cone-cell",
+      "sensory-visual-cortex",
+      "sensory-receptive-field"
+    ],
+    "engineering_link": "三色编码与对立色加工对应 RGB 采集 + 色度空间转换的两级流水线。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "yanseshijue",
+    "pinyin_initials": "yssj",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "sensory-depth-perception",
+    "module": "sensory",
+    "name_zh": "深度知觉",
+    "name_en": "Depth Perception",
+    "aliases": [
+      "立体视觉",
+      "深度感"
+    ],
+    "definition": "利用双眼视差、遮挡、透视、纹理梯度与运动视差等线索推断物体远近的能力，其中双眼视差在皮层被显式编码。",
+    "plain": "用两只眼睛的“角度差”算出东西有多远，相当于天生的双目测距。",
+    "difficulty": "intermediate",
+    "tags": [
+      "视觉",
+      "空间"
+    ],
+    "related": [
+      "sensory-visual-cortex",
+      "sensory-receptive-field",
+      "sensory-visual-pathway"
+    ],
+    "engineering_link": "双眼视差计算是立体视觉与双目深度估计的经典算法来源。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "shenduzhijue",
+    "pinyin_initials": "sdzj",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "sensory-multisensory-integration",
+    "module": "sensory",
+    "name_zh": "多感觉整合",
+    "name_en": "Multisensory Integration",
+    "aliases": [
+      "跨模态整合",
+      "多感官融合"
+    ],
+    "definition": "大脑把来自不同感觉通道、在时间与空间上一致的信息加权融合，提升知觉精度与反应速度的过程，如麦格克效应。",
+    "plain": "眼睛、耳朵、皮肤的信息一起投票，比单独任何一路都更靠谱。",
+    "difficulty": "advanced",
+    "tags": [
+      "感觉整合",
+      "跨模态"
+    ],
+    "related": [
+      "sensory-receptive-field",
+      "attention-bottom-up-capture",
+      "anatomy-superior-temporal-sulcus"
+    ],
+    "engineering_link": "多感觉整合的最大似然加权是传感器融合（如卡尔曼滤波）的生物学对应。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "duoganjuezhenghe",
+    "pinyin_initials": "dgjzh",
+    "updated_at": "2026-11-20T00:00:00Z"
+  },
+  {
+    "id": "sensory-vestibular-system",
+    "module": "sensory",
+    "name_zh": "前庭系统",
+    "name_en": "Vestibular System",
+    "aliases": [
+      "前庭觉",
+      "平衡觉系统"
+    ],
+    "definition": "内耳中的半规管与耳石器检测头部角加速度与线性加速度，经前庭核参与平衡、眼动稳定与空间定向。",
+    "plain": "脑袋里的“陀螺仪”：告诉你是在转头、加速还是倾斜。",
+    "difficulty": "intermediate",
+    "tags": [
+      "平衡",
+      "内耳"
+    ],
+    "related": [
+      "sensory-hair-cell",
+      "sensory-proprioception",
+      "motor-central-pattern-generator"
+    ],
+    "engineering_link": "前庭系统与 IMU 的对应关系使其成为姿态估计与机器人平衡控制的直接参照。",
+    "references": [
+      {
+        "type": "textbook",
+        "title": "Principles of Neural Science (Kandel et al., 6th ed., 2021)",
+        "verified_at": "2026-11-20"
+      }
+    ],
+    "pinyin": "qiantingxitong",
+    "pinyin_initials": "qtxt",
+    "updated_at": "2026-11-20T00:00:00Z"
   }
 ]
