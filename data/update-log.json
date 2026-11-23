@@ -1,12 +1,26 @@
 {
   "meta": {
     "version": 1,
-    "updated_at": "2026-11-18",
+    "updated_at": "2026-11-23",
     "note": "同步记录与待审队列；仅追加，不覆盖历史。",
-    "last_run": "run-20261118174746122",
-    "last_status": "ok"
+    "last_run": "run-20261123125049929",
+    "last_status": "degraded"
   },
   "runs": [
+    {
+      "id": "run-20261123125049929",
+      "started_at": "2026-11-23T12:50:49.929Z",
+      "finished_at": "2026-11-23T12:50:50.652Z",
+      "trigger": "manual",
+      "mode": "online",
+      "checked": 13,
+      "changed": 1,
+      "queued": 1,
+      "links_checked": 0,
+      "links_failed": 0,
+      "status": "degraded",
+      "note": "Crossref 请求失败，已降级为本地核对：HTTP 429"
+    },
     {
       "id": "run-20261118174746122",
       "started_at": "2026-11-18T17:47:46.122Z",
@@ -49,6 +63,19 @@
       "reviewed_at": "",
       "reviewer": "",
       "note": "经血管植入的支架电极：不开颅的神经接口"
+    },
+    {
+      "id": "q-20261123125049929-002",
+      "kind": "frontier",
+      "target_id": "hochberg-2012",
+      "field": "date",
+      "old_value": "2012-05-01",
+      "new_value": "2012-05-16",
+      "status": "pending",
+      "detected_at": "2026-11-23T12:50:49.929Z",
+      "reviewed_at": "",
+      "reviewer": "",
+      "note": "四肢瘫痪者用神经信号控制机械臂抓取"
     }
   ]
 }
