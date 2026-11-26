@@ -116,6 +116,9 @@
 | E-061 | 2026-11-20 | PDF 元数据里的中文被写成乱码 | 非 ASCII 内容不要经 shell 参数传递，改用 UTF-8 脚本文件 |
 | E-062 | 2026-11-20 | 规范结构都在，但缺定义表、正文数字停在 110 条、索引编号错位 | 「结构齐全」要能被机器核对；索引必须脚本排序；版本升级要回扫正文旧数字 |
 | E-063 | 2026-11-20 | 报告交付后词库扩容到 333 条，PDF 仍写 110 条 / 303 别名 / 19 条命中，截图仍是 `0/110` | 交付物是数据快照：数字要现算，图要重抓，版本与日期要绑定同一基线 |
+| E-064 | 2026-11-21 | 重出报告时 Edge 报 `EDGE_NOT_READY`，换到可用权限后写盘又报 `EBUSY`（目标 PDF 正被阅读器占用） | 交付文件可能被外部占用：构建产物先落临时文件，回读校验后再替换 |
+| E-065 | 2026-11-26 | 工作区迁移到 D 盘后，`verify-native.mjs` / `build-docs.mjs` 仍指向旧 Desktop 绝对路径，基线直接断链 | 校验 / 构建脚本按自身位置解析工作区根，不写死盘符与用户名 |
+| E-066 | 2026-11-26 | 解剖页桌面两列布局失效，讲解面板落到解剖图下方 | 删除弹窗节点时多留了一个闭合 `</div>`，`.anatomy-stage` 提前闭合，`aside` 变成第 4 个 grid item | 改完 HTML 结构后先用 jsdom 打印容器 children 核对层级；verify 断言容器父子关系 |
 
 ---
 
@@ -540,7 +543,7 @@
 4. **How was it fixed?** 把写元数据的逻辑落到 `.deepworks/tmp/report-work/meta.py`（UTF-8 无 BOM）再执行；同时把标题 / 作者收敛为 ASCII（`NeuroBase - Project Report (V5.0.0)`、`Wang Tong`），彻底规避编码依赖；导出后用 PyMuPDF 回读，把五个字段写进 `meta-check.txt` 人工确认。
 5. **What did I learn?** ① 中文不要走 shell 参数，尤其是嵌套一层解释器时；② 「工具支持中文」不等于「传递链路支持中文」，编码问题会伪装成库的缺陷；③ 交付类文件要有回读校验——写成功、页面能打开，都不代表内容正确。
 
-> 注：课程报告正文的产品错误统计口径为 59 条（E-001–E-060，截至本条补记前）；E-061 属报告工具链错误，E-062（文档索引）/ E-063（报告数据过期）属维护与交付问题，均单独记录，不计入该分布。
+> 注：课程报告正文的产品错误统计口径为 59 条（E-001–E-060，截至本条补记前）；E-061 属报告工具链错误，E-062（文档索引）/ E-063（报告数据过期）/ E-064（交付写盘被占用）属维护与交付问题，均单独记录，不计入该分布。
 
 <!-- 从这里继续往下追加 -->
 
@@ -557,3 +560,24 @@
 3. **What was the real cause?** ① 报告把规模数字当成一次性写死的正文，而不是从数据源派生的产物；② 截图是静态文件，数据变了不会自动更新；③ 「110 条打样」既是历史事实又是旧现状，全局替换会篡改历史；④ 交付物没有绑定「数据快照日期 / 版本」，所以数据迭代后没人回扫报告。
 4. **How was it fixed?** ① 新增 `stats.mjs`，按构建脚本的读取规则统计 333 / 755 / 41 / 334 / 122-153-58 与文档计数；② 逐处替换「当前规模」，保留历史口径（V0 表、170 → 303、110 打样 + 223 补齐）；③ 用 `shots-light.mjs` 重抓 5 张实机图，重裁手机端；④ 重新导出并写入 ASCII 元数据，更名 `Tong Wang_NeuroBase.pdf`；⑤ 在报告 2.6 增补扩容过程，说明 333 = 110 + 223。
 5. **What did I learn?** ① 交付物是「某一时刻的数据快照」，必须写明版本与日期，并在数据变化后整体重出，而不是局部改字；② 规模数字要从唯一数据源现算，写死就会漂移；③ 截图与图表是证据的一部分，数字改了图没改，比不改更糟。
+
+### E-064 · 重出报告时 Edge 起不来、写盘又 EBUSY：交付文件被阅读器占用（2026-11-21）
+1. **What happened?** 按用户要求删掉报告中三处表述后重新导出 PDF：第一次 `make-pdf.mjs` 在等待 `/json/list` 20 秒后打印 `EDGE_NOT_READY` 退出；换成可用权限后导出成功，但最后 `fs.writeFileSync` 写 `outputs/Tong Wang_NeuroBase.pdf` 报 `EBUSY: resource busy or locked`，脚本在最后一步失败。
+2. **What did we first think was wrong?** 先怀疑 Edge 安装路径不对、调试端口 9393 被上次运行占用，或上一轮遗留的 `edge-profile-pdf` 目录锁死；写盘失败时又先怀疑磁盘空间与目录权限。
+3. **What was the real cause?** 两件无关的环境问题叠加：① 当前执行沙箱限制子进程命名管道，Edge 的 mojo 通道建立失败（`platform_channel.cc` 访问拒绝），浏览器根本没起来，所以 `/json/list` 一直为空；② 目标 PDF 在对话开始时已被一个 13:15 启动的 Edge 进程打开预览，Windows 上阅读器以不共享写的方式持有句柄，导致替换写盘被拒——与导出逻辑无关。
+4. **How was it fixed?** 第一次导出提升执行权限后 Edge 正常启动；给 `make-pdf.mjs` 增加 `PDF_OUT` 环境变量，把产物先写到 `.deepworks/tmp/report-work/new-report.pdf`，用 PyMuPDF 回读页数 / 文本 / 元数据，`set-meta.py` 写回 ASCII 元数据后再覆盖交付文件；交付前对成品再回读一次（三处字符串命中 0、19 页、元数据正确）。
+5. **What did I learn?** ① 交付文件是「外部也会持有的资源」，生成类任务应默认「临时路径产出 → 回读校验 → 替换」，而不是直接写目标；② 报错位置在最后一步写盘时，要区分「工具坏了」与「目标被占用」，两者的修法完全不同；③ 环境级失败（沙箱限制、阅读器占用）要与产品缺陷分开记录，避免污染错误分布。
+
+### E-065 · 校验 / 构建脚本硬编码工作区绝对路径，换盘后基线静默断链（2026-11-26）
+1. **What happened?** 本轮先跑基线 `node .deepworks\tmp\checks\verify-native.mjs`，脚本在读取 `outputs/neurobase` 前就抛 `ENOENT`：其 `OUT` / `DOCS` / `PROJECT` / `schema.sql` 全部写死为 `C:\Users\WT\Desktop\神经与认知科学基础知识学习app\...`，而工作区已迁移到 `D:\王童\学校\...`；`build-docs.mjs` 的 `WS` 同样写死，无法重建 `docs-content.js`。
+2. **What did we first think was wrong?** 先看到 jsdom 的 `MODULE_NOT_FOUND: xhr-sync-worker.js`，以为只是临时依赖被清理，准备 `npm install jsdom` 了事。
+3. **What was the real cause?** 两个独立问题叠加：① 脚本把工作区根写成绝对路径，工作区换盘后路径失效，属于「环境迁移 + 硬编码根路径」；② 观察到的 jsdom 缺失是临时目录依赖不完整，与路径无关。
+4. **How was it fixed?** ① 两个脚本改用 `fileURLToPath(import.meta.url)` 上溯三级得到工作区根（`<WS>/.deepworks/tmp/checks/`、`<WS>/.deepworks/tmp/build-native/`），删除 4 处硬编码；② 在 `C:\Users\WT\AppData\Local\Temp\opencode\domcheck` 重新安装 jsdom，补回 `xhr-sync-worker.js`；重跑基线 1138 项全绿。
+5. **What did I learn?** ① 校验 / 构建脚本必须相对自身位置定位项目根，盘符、用户名、桌面路径都不能写死；② 「基线跑不起来」要分诊为路径问题、依赖问题、代码问题，逐个隔离，不能看到第一个报错就下结论；③ 换机器 / 换盘后第一件事是跑基线，基线能跑通才说明本地校验链路有效。
+
+### E-066 · 删除弹窗节点多留闭合标签，导致解剖页两列布局错位（2026-11-26）
+1. **What happened?** 桌面宽度下解剖图与讲解没有并排，讲解卡片出现在解剖图下方；2D / 矢状视图切换后结构更乱。
+2. **What did we first think was wrong?** 先怀疑 CSS 网格断点或 `.anatomy-info` 样式被覆盖，准备改 `grid-template-columns`。
+3. **What was the real cause?** 上一轮删除 `#anat3d-part-menu` 时多保留了一个闭合 `</div>`：`.anatomy-stage` 在 3D 视图后提前闭合，2D / 矢状视图变成 `.lab-anatomy` 的第 2、3 个 grid item，`aside.anatomy-info` 成为第 4 个 item 被自动排到第二行；CSS 两列本身没有坏。
+4. **How was it fixed?** 用 jsdom 打印 `.lab-anatomy` 与 `.anatomy-stage` 的 children 定位错位，删除多余 `</div>`；verifier 新增「信息面板与解剖舞台同处两列网格」断言。
+5. **What did I learn?** ① 删除 DOM 节点后必须用解析器核对容器层级，不能只看缩进或浏览器「看起来正常」；② 布局异常先查 DOM 结构再查 CSS；③ 断言要覆盖容器父子关系，而不只是节点是否存在。

@@ -203,11 +203,6 @@
   var modeRealBtn = document.getElementById('anat3d-mode-real');
   var modePartsBtn = document.getElementById('anat3d-mode-parts');
   var selectionEl = document.getElementById('anat3d-selection');
-  var partMenuEl = document.getElementById('anat3d-part-menu');
-  var partMenuNameEl = document.getElementById('anat3d-part-menu-name');
-  var partMenuTipEl = document.getElementById('anat3d-part-menu-tip');
-  var partRotateBtn = document.getElementById('anat3d-part-rotate');
-  var partResetBtn = document.getElementById('anat3d-part-reset');
 
   var currentView = VIEW3D;
   function switchView(v) {
@@ -219,7 +214,7 @@
     view2dBtn.setAttribute('aria-selected', String(v === VIEW2D));
     viewSecBtn.setAttribute('aria-selected', String(v === VIEWSEC));
     if (v === VIEW2D) paintLabels();
-    if (v !== VIEW3D) hidePartMenu();
+    if (v !== VIEW3D) endPartGesture();
     if (v === VIEW3D) { showDefault(); NB3D.startLoop(); }
     else NB3D.stopLoop();
     if (v === VIEWSEC) showDefault();
@@ -247,8 +242,7 @@
     regionFaceCounts: {}, /* key -> 真实网格三角面数 */
     cameraHome: null,
     anim: null,
-    /* 单部位操作（点击部位后的弹出菜单） */
-    rotateMode: false,    /* 旋转模式：拖拽旋转选中部件（而非平移） */
+    /* 单部件手势：左键拖动平移 / 右键拖动旋转 / 左键双击复位（不再有弹窗菜单） */
     rotating: false,
     rotPivot: null,       /* 旋转中心（世界坐标，按下时快照） */
     rotStartQuat: null,
@@ -518,88 +512,46 @@
       else mesh.material.emissive = new THREE.Color(0x000000);
     });
   }
+  /* 选中部件：高亮 + 手势目标切换 + 右侧信息面板显示名称 / 说明 / 关键词 / 相关词条 */
   function selectPart(key) {
-    if (key !== NB3D.selectedKey) setRotateMode(false);   /* 切换部位时退出旋转模式 */
     if (NB3D.selectedKey) highlightPart(NB3D.selectedKey, false);
-    NB3D.selectedKey = key;
-    if (key) {
-      highlightPart(key, true);
-      selectRegion(key);
+    NB3D.selectedKey = key || null;
+    if (selectionEl && NB3D.mode === 'parts') selectionEl.setAttribute('hidden', '');
+    if (NB3D.selectedKey) {
+      highlightPart(NB3D.selectedKey, true);
+      selectRegion(NB3D.selectedKey);
     } else {
-      hidePartMenu();
       showDefault();
     }
     scheduleSave();
   }
 
-  /* ---------- 单部位操作菜单：旋转 / 复位 ---------- */
-  function setRotateMode(on) {
-    var was = NB3D.rotateMode;
-    NB3D.rotateMode = !!on && !!NB3D.selectedKey && NB3D.mode === 'parts';
-    /* 进入旋转模式时锁住相机：暂停自动旋转与阻尼惯性，避免「转一个部位、整颗脑也跟着转」 */
-    if (NB3D.rotateMode && !was && NB3D.controls) {
-      NB3D.savedAutoRotate = !!NB3D.controls.autoRotate;
-      NB3D.savedDamping = !!NB3D.controls.enableDamping;
-      NB3D.controls.autoRotate = false;
-      NB3D.controls.enableDamping = false;
-      if (autorotateBtn) autorotateBtn.setAttribute('aria-pressed', 'false');
-    } else if (!NB3D.rotateMode && was && NB3D.controls) {
-      NB3D.controls.autoRotate = !!NB3D.savedAutoRotate;
-      NB3D.controls.enableDamping = NB3D.savedDamping !== false;
-      if (autorotateBtn) autorotateBtn.setAttribute('aria-pressed', String(!!NB3D.controls.autoRotate));
-    }
-    if (partRotateBtn) {
-      partRotateBtn.setAttribute('aria-pressed', String(NB3D.rotateMode));
-      partRotateBtn.textContent = t(NB3D.rotateMode ? 'labAnatomy3d.partRotateActive' : 'labAnatomy3d.partRotate');
-    }
-    if (partMenuTipEl) {
-      partMenuTipEl.textContent = t(NB3D.rotateMode ? 'labAnatomy3d.partRotateDragHint' : 'labAnatomy3d.partMenuTip');
-    }
-    if (NB3D.renderer && NB3D.renderer.domElement) {
-      NB3D.renderer.domElement.style.cursor = 'grab';
-    }
-    scheduleSave();
-    return NB3D.rotateMode;
+  /* ---------- 单部件手势：左键拖动平移 / 右键拖动旋转 / 左键双击复位 ---------- */
+  function setCanvasCursor(c) {
+    if (NB3D.renderer && NB3D.renderer.domElement) NB3D.renderer.domElement.style.cursor = c;
   }
-  function hidePartMenu() {
-    setRotateMode(false);
-    if (partMenuEl) {
-      partMenuEl.setAttribute('hidden', '');
-      partMenuEl.removeAttribute('data-region');
-    }
-    scheduleSave();
-  }
-  function placePartMenu(ev) {
-    if (!partMenuEl) return;
-    var box = document.getElementById('anatomy-3d-canvas-box');
-    if (!box) return;
-    var rect = box.getBoundingClientRect();
-    var x = (ev && typeof ev.clientX === 'number') ? ev.clientX - rect.left : rect.width / 2;
-    var y = (ev && typeof ev.clientY === 'number') ? ev.clientY - rect.top : 12;
-    var mw = partMenuEl.offsetWidth || 168;
-    var mh = partMenuEl.offsetHeight || 104;
-    x = Math.max(8, Math.min(x + 12, rect.width - mw - 8));
-    y = Math.max(8, Math.min(y + 12, rect.height - mh - 8));
-    partMenuEl.style.left = Math.round(x) + 'px';
-    partMenuEl.style.top = Math.round(y) + 'px';
-  }
-  function showPartMenu(key, ev) {
-    if (!partMenuEl || !key || NB3D.mode !== 'parts') return;
-    partMenuEl.setAttribute('data-region', key);
-    if (partMenuNameEl) partMenuNameEl.textContent = t('labAnatomy.region' + pascal(key));
-    partMenuEl.removeAttribute('hidden');
-    placePartMenu(ev);
+  /* 结束单部件手势：清空旋转快照并恢复相机控制 */
+  function endPartGesture() {
+    NB3D.dragging = false;
+    NB3D.rotating = false;
+    NB3D.rotPivot = null;
+    NB3D.rotStartQuat = null;
+    NB3D.rotStartPos = null;
+    NB3D.rotStartPointer = null;
+    NB3D.dragStartHit = null;
+    NB3D.dragStartPos = null;
+    if (NB3D.controls) NB3D.controls.enabled = true;
+    setCanvasCursor('grab');
     scheduleSave();
   }
 
-  /* 单部位复位：只恢复该部件的位置与旋转，不影响整体视角与「全部拆分」状态 */
+  /* 单部件复位：只恢复该部件的位置与旋转，不影响整体视角与「全部拆分」状态 */
   function resetPart(key) {
     var group = NB3D.parts[key];
     if (!group) return false;
     group.position.set(0, 0, 0);
     group.quaternion.set(0, 0, 0, 1);
     group.updateMatrixWorld(true);
-    if (key === NB3D.selectedKey) setRotateMode(false);
     scheduleSave();
     return true;
   }
@@ -645,6 +597,8 @@
 
     NB3D.controls = new THREE.OrbitControls(NB3D.camera, renderer.domElement);
     NB3D.controls.target.copy(CAM_TARGET);
+    /* 右键专供「拖动旋转部件」：取消 OrbitControls 默认的右键平移，避免两种手势互相抢事件 */
+    if (NB3D.controls.mouseButtons) NB3D.controls.mouseButtons.RIGHT = null;
     NB3D.controls.enableDamping = true;
     NB3D.controls.dampingFactor = 0.08;
     NB3D.controls.minDistance = 1.7;
@@ -776,35 +730,34 @@
       try { dom.setPointerCapture(ev.pointerId); } catch (e) {}
     }
     var hit = pick(ev);
-    /* 单部位旋转模式：只有该部位可操作；点到其他部位 / 空白处 → 退出旋转，其他部位保持锁定不动 */
-    if (NB3D.rotateMode && NB3D.selectedKey) {
-      if (!hit || hit.key !== NB3D.selectedKey) {
-        setRotateMode(false);
-        selectPart(null);
-        if (NB3D.controls) NB3D.controls.enabled = true;
+
+    /* 右键拖动：分区部件模式下旋转命中的部件（不改变整体视角） */
+    if (ev.button === 2) {
+      if (NB3D.mode === 'parts' && hit) {
+        selectPart(hit.key);
+        startPartRotate(ev);
+        setCanvasCursor('grabbing');
         ev.preventDefault();
-        return;
       }
-      showPartMenu(hit.key, ev);
-      startPartRotate(ev);
-      ev.preventDefault();
       return;
     }
+    /* 只处理左键；中键留给相机推拉 */
+    if (typeof ev.button === 'number' && ev.button !== 0) return;
+
     if (!hit) {
       if (NB3D.mode === 'real') showSurfaceDefault();
       selectPart(null);
       return;
     }
     if (NB3D.mode === 'real') {
-      selectSurfaceRegion(hit.key);
+      selectSurfaceRegion(hit.key);   /* 右侧信息面板同步显示脑区名称与基本知识 */
       ev.preventDefault();
       return;   /* 真实表面整体不拖动，仅查看说明 */
     }
-    selectPart(hit.key);
+    selectPart(hit.key);   /* 点击部件 → 高亮 + 右侧信息面板讲解 */
     var group = NB3D.parts[hit.key];
     if (!group) return;
-    showPartMenu(hit.key, ev);   /* 点选部位 → 弹出该部位的「旋转 / 复位」选择 */
-    /* 拖动平面：过部件包围盒中心、法线 = 相机视线方向；拖动期间保持同一平面，深度不变 */
+    /* 左键拖动平移：拖动平面过部件包围盒中心、法线 = 相机视线方向；拖动期间保持同一平面，深度不变 */
     var center = partCenter(group);
     var camDir = NB3D.camera.getWorldDirection(new THREE.Vector3());
     NB3D.dragPlane.setFromNormalAndCoplanarPoint(camDir, center);
@@ -814,13 +767,15 @@
     NB3D.dragStartHit = startHit.clone();
     NB3D.dragStartPos = group.position.clone();
     NB3D.dragging = true;
-    NB3D.controls.enabled = false;
+    if (NB3D.controls) NB3D.controls.enabled = false;
+    setCanvasCursor('move');
     ev.preventDefault();
   }
   function on3dMove(ev) {
     if (!NB3D.renderer) return;
     if (NB3D.rotating) {
       movePartRotate(ev);
+      setCanvasCursor('grabbing');
       ev.preventDefault();
     } else if (NB3D.dragging && NB3D.selectedKey && NB3D.dragStartHit && NB3D.dragStartPos) {
       /* 相对位移：同一固定平面上的交点差 → 平移 group.position；部件深度不变，不会因透视产生缩放 */
@@ -830,10 +785,11 @@
         cur.sub(NB3D.dragStartHit);
         NB3D.parts[NB3D.selectedKey].position.copy(NB3D.dragStartPos).add(cur);
       }
+      setCanvasCursor('move');
       ev.preventDefault();
     } else {
       var hit = pick(ev);
-      NB3D.renderer.domElement.style.cursor = hit ? 'pointer' : 'grab';
+      setCanvasCursor(hit ? (NB3D.mode === 'parts' ? 'grab' : 'pointer') : 'grab');
     }
   }
   function on3dUp(ev) {
@@ -841,16 +797,22 @@
       ev && typeof ev.pointerId === 'number') {
       try { NB3D.renderer.domElement.releasePointerCapture(ev.pointerId); } catch (e) {}
     }
-    NB3D.dragging = false;
-    NB3D.rotating = false;
-    NB3D.rotPivot = null;
-    NB3D.rotStartQuat = null;
-    NB3D.rotStartPos = null;
-    NB3D.rotStartPointer = null;
-    NB3D.dragStartHit = null;
-    NB3D.dragStartPos = null;
-    if (NB3D.controls) NB3D.controls.enabled = true;
+    endPartGesture();
     saveViewState();   /* 拖拽 / 旋转结束后立即存档，避免快速点词条时丢失 */
+  }
+  /* 左键双击命中部件 → 复位该部件（位置与角度，不改变整体视角） */
+  function on3dDblClick(ev) {
+    if (!NB3D.renderer) return;
+    if (NB3D.mode !== 'parts') return;
+    if (typeof ev.button === 'number' && ev.button !== 0) return;
+    var hit = pick(ev);
+    if (!hit) return;
+    selectPart(hit.key);
+    if (resetPart(hit.key) && selectionEl) {
+      selectionEl.textContent = t('labAnatomy.region' + pascal(hit.key)) + ' ' + t('labAnatomy3d.partResetDone');
+      selectionEl.removeAttribute('hidden');
+    }
+    ev.preventDefault();
   }
   function attach3DHandlers() {
     var dom = NB3D.renderer.domElement;
@@ -858,6 +820,9 @@
     dom.addEventListener('pointermove', on3dMove);
     dom.addEventListener('pointerup', on3dUp);
     dom.addEventListener('pointerleave', on3dUp);
+    dom.addEventListener('pointercancel', on3dUp);
+    dom.addEventListener('dblclick', on3dDblClick);
+    dom.addEventListener('contextmenu', function (ev) { ev.preventDefault(); });
   }
 
   /* ---------- 拆分 / 合并 / 复位 / 自动旋转 ---------- */
@@ -906,11 +871,10 @@
     } else {
       showSurfaceDefault();
     }
-    hidePartMenu();
+    endPartGesture();
     scheduleSave();
   }
   function toggleAutoRotate() {
-    if (NB3D.rotateMode) setRotateMode(false);   /* 单部位旋转期间相机被锁定，先退出再恢复自动旋转 */
     var on = autorotateBtn.getAttribute('aria-pressed') === 'true';
     autorotateBtn.setAttribute('aria-pressed', String(!on));
     if (NB3D.controls) NB3D.controls.autoRotate = !on;
@@ -920,14 +884,6 @@
   explodeBtn.addEventListener('click', explode);
   resetBtn.addEventListener('click', reset);
   autorotateBtn.addEventListener('click', toggleAutoRotate);
-  if (partRotateBtn) partRotateBtn.addEventListener('click', function () {
-    if (!NB3D.selectedKey) return;
-    setRotateMode(!NB3D.rotateMode);
-  });
-  if (partResetBtn) partResetBtn.addEventListener('click', function () {
-    if (!NB3D.selectedKey) return;
-    resetPart(NB3D.selectedKey);
-  });
   if (modeRealBtn) modeRealBtn.addEventListener('click', function () { setMode('real'); });
   if (modePartsBtn) modePartsBtn.addEventListener('click', function () { setMode('parts'); });
 
@@ -990,22 +946,12 @@
       region: infoRegion,
       approx: !!infoApprox,
       part: NB3D.selectedKey,
-      rotate: !!NB3D.rotateMode,
-      menu: null,
       explode: !!explodeState,
       autoRotate: !!(NB3D.controls && NB3D.controls.autoRotate),
-      autoResume: !!NB3D.savedAutoRotate,   /* 单部位旋转期间被暂停的自动旋转（退出旋转时恢复） */
       cam: null,
       parts: {},
       scroll: Math.max(0, Math.round(window.pageYOffset || document.documentElement.scrollTop || 0))
     };
-    if (partMenuEl && !partMenuEl.hasAttribute('hidden')) {
-      st.menu = {
-        key: partMenuEl.getAttribute('data-region') || null,
-        left: partMenuEl.style.left || '',
-        top: partMenuEl.style.top || ''
-      };
-    }
     if (NB3D.camera) {
       var tg = (NB3D.controls && NB3D.controls.target) || NB3D.focus || CAM_TARGET;
       st.cam = {
@@ -1118,7 +1064,7 @@
       /* 视图切换会重置信息面板 / 收起部位菜单，必须排在选择恢复之前 */
       switchView(st.view === VIEW2D ? VIEW2D : (st.view === VIEWSEC ? VIEWSEC : VIEW3D));
 
-      /* 选中部位（含高亮）→ 信息面板脑区 → 单部位旋转模式 → 部位操作菜单 */
+      /* 选中部位（含高亮）→ 右侧信息面板脑区；旧存档里的 rotate / menu 字段直接忽略 */
       if (st.mode === 'parts' && st.part && NB3D.parts[st.part]) {
         selectPart(st.part);
         if (!st.region) showDefault();   /* 离开时右侧面板是默认态（选中部位仍在，但不显示说明） */
@@ -1126,16 +1072,6 @@
       if (st.region && BY_KEY[st.region]) {
         if (st.view === VIEW3D && st.mode === 'real') selectSurfaceRegion(st.region);
         else selectRegion(st.region);
-      }
-      if (st.mode === 'parts' && st.part && st.rotate) {
-        setRotateMode(true);
-        /* 旋转模式会暂停自动旋转；存档里记的「退出旋转后是否恢复」也要还原 */
-        if (NB3D.controls && NB3D.rotateMode) NB3D.savedAutoRotate = !!st.autoResume;
-      }
-      if (st.menu && st.menu.key && st.mode === 'parts' && st.view === VIEW3D) {
-        showPartMenu(st.menu.key, null);
-        if (st.menu.left) partMenuEl.style.left = st.menu.left;
-        if (st.menu.top) partMenuEl.style.top = st.menu.top;
       }
       if (autorotateBtn) {
         autorotateBtn.setAttribute('aria-pressed',
@@ -1231,10 +1167,12 @@
     merge: function () { if (explodeState) explode(); },
     reset: reset,
     resetPart: resetPart,
-    rotateMode: function () { return NB3D.rotateMode; },
-    setRotateMode: setRotateMode,
-    partMenuVisible: function () { return !!partMenuEl && !partMenuEl.hidden; },
-    partMenuRegion: function () { return partMenuEl ? partMenuEl.getAttribute('data-region') : null; },
+    /* 兼容旧调用：单部件弹窗菜单已取消，旋转 / 复位改为鼠标手势 */
+    rotateMode: function () { return false; },
+    setRotateMode: function () { return false; },
+    partMenuVisible: function () { return false; },
+    partMenuRegion: function () { return null; },
+    resetSelectedPart: function () { return NB3D.selectedKey ? resetPart(NB3D.selectedKey) : false; },
     partState: function (key) {
       var g = NB3D.parts[key];
       if (!g) return null;

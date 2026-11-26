@@ -2,7 +2,7 @@
 
 > 面向脑机接口（BCI）方向的神经与认知科学**中英双语**学习平台：术语检索、科普说明、学习自测、互动可视化、内容生态与学习社区。
 >
-> **当前版本：V5.0.0**（2026-11-20；词库已扩至 333 条，迭代文档至 V5.0.2） · 原生 HTML/CSS/JS · 27 页 · 333 条词条 · 可完全离线使用
+> **当前版本：V5.0.0**（2026-11-20；词库已扩至 333 条，迭代文档至 V5.0.5） · 原生 HTML/CSS/JS · 27 页 · 333 条词条 · 可完全离线使用
 
 ---
 
@@ -147,7 +147,7 @@ npx.cmd serve outputs/neurobase
 │  ├─ READING_LIST.md/.json   # 教材 / 文献基准
 │  └─ supabase/               # schema.sql / community-v2.sql / 说明
 ├─ outputs/neurobase/         # 交付站点（27 页 + assets，file:// 直接打开）
-├─ outputs/Tong Wang_NeuroBase.pdf  # 课程项目报告（A4 / 19 页，V5.0.2 同步 333 条词库）
+├─ outputs/Tong Wang_NeuroBase.pdf  # 课程项目报告（A4 / 19 页，V5.0.3 删减未闭环表述）
 ├─ data/                      # 词条、来源、教材、内容生态数据源
 ├─ scripts/                   # 构建与来源同步脚本（Node）
 ├─ workers/                   # Cloudflare Workers（AI 助教 / 来源巡检）

@@ -4367,44 +4367,17 @@ html.dark .qz-back-btn--outline:focus-visible {
 .anatomy-3d-controls .anatomy-group-label {
   margin-left: auto;
 }
-/* 点选部位后弹出的单部位操作菜单（旋转 / 复位） */
-.anatomy-3d-part-menu {
-  position: absolute;
-  z-index: 5;
-  min-width: 9.5rem;
-  max-width: 15rem;
-  padding: 0.55rem 0.6rem;
-  border: 1px solid var(--line);
-  border-radius: 0.625rem;
-  background: var(--card);
-  box-shadow: 0 10px 24px rgba(8, 32, 60, 0.18);
-}
-.anatomy-3d-part-menu[hidden] {
-  display: none;
-}
-.anatomy-3d-part-menu-name {
-  margin: 0 0 0.4rem;
-  font-size: var(--t-sm);
-  font-weight: 700;
-  color: var(--ink);
-}
-.anatomy-3d-part-menu-actions {
-  display: flex;
-  gap: 0.35rem;
-}
-.anatomy-3d-part-btn {
-  flex: 1 1 auto;
-}
-.anatomy-3d-part-btn[aria-pressed='true'] {
-  background: var(--primary);
-  color: #fff;
-  border-color: var(--primary);
-}
-.anatomy-3d-part-menu-tip {
+/* 3D 操作提示：标题下方常驻的鼠标手势说明（取代原单部件弹窗） */
+.anatomy-3d-tip {
   margin: 0.4rem 0 0;
-  font-size: var(--t-xs);
-  line-height: 1.5;
+  padding: 0.45rem 0.7rem;
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--primary);
+  border-radius: 0.5rem;
+  background: var(--surface-2);
   color: var(--muted-2);
+  font-size: var(--t-sm);
+  line-height: 1.6;
 }
 @media (max-width: 560px) {
   .anatomy-3d-canvas-box {

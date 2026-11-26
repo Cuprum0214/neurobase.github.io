@@ -1,4 +1,4 @@
-﻿# NeuroBase 版本迭代日志（CHANGELOG）
+# NeuroBase 版本迭代日志（CHANGELOG）
 
 > 本文件记录 NeuroBase 每次产品迭代的版本变更。**维护约定（必须遵守）**：
 > 1. **每一次更新**（新增功能 / 修复缺陷 / 数据或文档变更 / 自测扩充 / 流程约定，无论大小）完成后，**必须**在本文件顶部新增一条版本记录（放在当前最新版本之前），**以日期为单位**：每条记录标注本次更新发生的日期（YYYY-MM-DD）；不同日期的更新不得合并为一条版本记录；同一天的多项更新可各自成条，或合并为当日一条并逐条列出变更明细。
@@ -6,6 +6,65 @@
 > 3. 同步动作：同一轮迭代还必须更新 `docs/PLAN.md` 变更记录、`docs/PROJECT_SCOPE.md` 变更管理（如涉及范围/交付物）、`docs/DEV_LOG.md`（以日期为单位在顶部追加条目），并重跑 `verify-native.mjs` 至全绿。
 > 4. 相关自动化流程见 `.opencode/skills/version-changelog/SKILL.md`。
 ---
+
+## [V5.0.5] - 2026-11-26 · 交互式脑解剖：修复左图右讲解布局 + 恢复点击部件联动
+
+### Added
+- **点击部件 → 右侧讲解**：分区部件被点击后，右侧信息面板显示该部件名称、说明、关键词与相关词条（`selectPart` 恢复调用 `selectRegion`）；2D / 矢状剖面与真实皮层表面的点选联动不变。
+
+### Changed
+- **布局修复（左图右讲解）**：删除 `#anatomy-3d-wrap` 之后多余的闭合 `</div>`，`.anatomy-stage` 重新包含 3D 全景 / 2D 解剖图 / 矢状剖面三个视图；`aside.anatomy-info` 回到 `.lab-anatomy` 两列网格的第二列，桌面呈现「左侧解剖图 + 右侧讲解」，≤860px 仍单列堆叠。
+- **取消选中回到默认**：切换真实解剖模式或清空选择时，右侧仍回到「交互式脑解剖」默认说明。
+- **默认说明文案**：labAnatomy3d.regionNone 中英改为「点击左侧解剖图中的脑区或部件查看说明」，与左图右讲解布局一致。
+
+### Fixed
+- 上一轮删除单部件弹窗时多留一个闭合标签，导致 2D / 矢状视图被挤出 `.anatomy-stage`、讲解卡片落到页面下方的 DOM 结构问题（E-066）。
+
+### Docs
+- 同步 `DEV_LOG`（当日条目 + 阶段总览行）/ `PLAN`（v129 + §10）/ `PROJECT_SCOPE`（v7.7 + §11）/ `DECISIONS`（D-102）/ `ERROR_LOG`（E-066）。
+- 重建 `outputs/neurobase/assets/js/data/docs-content.js` / `docs-meta.js`；27 页缓存指纹 `?v=1203` → `?v=1204`（364 处）。
+
+### 自测
+- `verify-native` 全绿（1137 项，失败 0）：新增「点击部件后右侧显示对应名称（海马）」「关键词与相关词条可见」「信息面板与解剖舞台同处两列网格」3 项，删除 2 项旧「未联动」断言，净增 1。
+- 改动的 `page-lab-anatomy.js`、`verify-native.mjs` 均通过 `node --check`。
+
+## [V5.0.4] - 2026-11-26 · 交互式脑解剖：取消单部件弹窗，改鼠标手势 + 标题下提示
+
+### Added
+- **标题下方常驻操作提示**：`lab-anatomy.html` 在 `h1` 下新增 `#anat3d-tip`（`.anatomy-3d-tip`），写明「左键拖动部件移动 · 右键拖动旋转部件 · 左键双击复位部件 · 滚轮缩放」；新增 i18n `labAnatomy3d.dragTip`（中 / 英）。
+- **双击复位反馈**：左键双击部件复位后，画布下方状态行显示「<部件名> 已复位到初始位置与角度」（i18n `labAnatomy3d.partResetDone`）。
+- **兼容接口**：`NB.labAnatomy3d.resetSelectedPart()` 复位当前选中部件；`rotateMode()` / `setRotateMode()` / `partMenuVisible()` / `partMenuRegion()` 保留为恒 `false` / `null` 的兼容桩。
+
+### Changed
+- **取消单部件「旋转 / 复位」弹窗**：删除 `#anat3d-part-menu` 节点、`.anatomy-3d-part-menu*` / `.anatomy-3d-part-btn` 样式与 `setRotateMode` / `showPartMenu` / `placePartMenu` / `hidePartMenu` 状态机；`i18n` 移除 `partMenuLabel` / `partRotate` / `partRotateActive` / `partReset` / `partMenuTip` / `partRotateDragHint` 6 键。
+- **分区部件模式改为鼠标手势**：左键拖动平移部件（沿用原拖动平面算法）、右键拖动绕部件自身中心旋转、左键双击复位；右键不再触发 OrbitControls 平移（`mouseButtons.RIGHT = null`），避免与旋转部件抢事件；左键拖动期间仍暂停相机控制，松手恢复。
+- **点击部件不联动右侧面板（本轮先不做）**：分区部件被点击后只做高亮与手势目标切换，`selectPart` 不再调用 `selectRegion`，右侧信息面板保持当前/默认说明；真实皮层表面的「脑区近似归属」提示与 2D 点选行为不变；会话存档只保留部件姿态，不再写 `rotate` / `menu` 字段，读取旧存档时忽略这两个字段。
+- **文案与元信息**：更新 `labAnatomy3d.rotateHint` / `moveHint` / `engineNote` / `partInfo` 与页面 meta description，去掉「弹窗点选旋转复位」的旧描述。
+
+### Fixed
+- **校验 / 构建脚本路径不再硬编码**：`verify-native.mjs` 的 `OUT` / `DOCS` / `PROJECT` / `schema.sql` 与 `build-docs.mjs` 的 `WS` 改为按脚本位置（`.deepworks/tmp/checks/`、`.deepworks/tmp/build-native/`）解析工作区根，修复工作区从 `C:\Users\WT\Desktop\...` 迁移到 D 盘后脚本报「路径不存在」的问题。
+
+### Docs
+- 同步 `DEV_LOG`（当日条目 + 阶段总览行）/ `PLAN`（v128 + §10）/ `PROJECT_SCOPE`（v7.6 + §11）/ `DECISIONS`（D-101）/ `ERROR_LOG`（E-065）。
+- 重建 `outputs/neurobase/assets/js/data/docs-content.js`；27 页缓存指纹 `?v=1202` → `?v=1203`（364 处）。
+
+### 自测
+- `verify-native` 全绿（1136 项，失败 0）：新增「弹窗已移除」「标题提示含左键 / 右键 / 双击」「点击部件后右侧仍为默认说明（未联动）」「旧存档 rotate / menu 字段被忽略」等断言，删除弹窗与旋转模式旧断言，净减 2。
+- 改动的 `page-lab-anatomy.js`、`verify-native.mjs`、`build-docs.mjs` 均通过 `node --check`。
+
+## [V5.0.3] - 2026-11-21 · 交付物：课程报告删除三处未闭环表述
+
+### Changed
+- **摘要结论段删去「短板」句**：删除「项目当前的短板同样明确——333 条词条虽已达成 300+ 的规模目标，但逐条复核与新词维护是长期工作；云端多人场景也尚未在真实设备上复验。」，结论只保留「判断密度 + 可复现验收标准」。
+- **5.5「仍未闭环的问题」删除两行**：移除「云端多人场景复验 / 待复验」（论坛 6 表 + RLS + Realtime 已建，但「换设备登录同步」「多人同时发帖」尚缺真实设备与并发验证）与「课程评分反馈 / 待提交」（报告与访问方式按课程要求提交后回收意见再迭代）；表格由 5 行收为 3 行（词条规模 333 / 300+、内容准确性、无障碍持续复核）。
+- **重新导出 PDF**：由更新后的 `report.html` 重出 `outputs/Tong Wang_NeuroBase.pdf`（A4 / 19 页 / 2.81 MB），回写 ASCII 元数据（title `NeuroBase - Project Report (V5.0.1)`、author `Tong Wang`）；页脚页码与其后章节顺延不变。
+
+### Docs
+- 同步 `DEV_LOG`（当日条目 + 阶段总览行）/ `PLAN`（v127 + §10）/ `PROJECT_SCOPE`（v7.5 + §11）/ `ERROR_LOG`（E-064）；本轮无新增决策——删减报告表述属交付内容调整，未改变技术选型。
+- 重建 `outputs/neurobase/assets/js/data/docs-content.js`；27 页缓存指纹 `?v=1201` → `?v=1202`。
+
+### 自测
+- `verify-native` 全绿（1138 项，失败 0）；PDF 文本回读三处字符串命中 0；页数 19、元数据回读正常；第 2 页（摘要 / 目录）与第 17 页（5.5 表）渲染复查无截断、无错位。
 
 ## [V5.0.2] - 2026-11-20 · 交付物：课程报告同步 333 条词库并更名为 Tong Wang_NeuroBase.pdf
 

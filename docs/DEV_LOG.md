@@ -1,4 +1,4 @@
-﻿# DEV_LOG · 开发日志
+# DEV_LOG · 开发日志
 
 > 回答一个问题：**每个阶段做了什么？**
 > 字段固定为：完成事项、遇到的问题、下一步（附解决方式与相关文件）。
@@ -43,6 +43,9 @@
 
 | 版本 | 日期 | 阶段 / 主题 | 关键产出 | 决策 | 错误 |
 | --- | --- | --- | --- | --- | --- |
+| V5.0.5 | 2026-11-26 | 交互 · 脑解剖左图右讲解 + 点击部件联动 | 删除 `#anatomy-3d-wrap` 后多余 `</div>`，`.anatomy-stage` 重新包含 3D / 2D / 矢状三视图；`.anatomy-info` 回到两列网格第二列；`selectPart` 恢复 `selectRegion`，点击部件右侧显示名称 / 说明 / 关键词 / 相关词条；新增 DOM 层级断言；`verify-native` 1137 全绿；指纹 `?v=1203` → `?v=1204`（364 处） | D-102 | E-066 |
+| V5.0.4 | 2026-11-26 | 交互 · 脑解剖取消单部件弹窗，改鼠标手势 | 删除 `#anat3d-part-menu` 与旋转 / 复位状态机；分区部件模式左键拖动平移、右键拖动旋转、左键双击复位；`OrbitControls` 右键平移关闭；标题下新增手势提示（中英 `dragTip` / `partResetDone`）；点击分区部件不联动右侧面板（本轮先不做）；旧存档 `rotate` / `menu` 字段忽略；修复 verify / build-docs 硬编码路径；`verify-native` 1136 全绿；指纹 `?v=1202` → `?v=1203`（364 处） | D-101 | E-065 |
+| V5.0.3 | 2026-11-21 | Docs · 课程报告删除三处未闭环表述 | `report.html` 删摘要「短板」句与 5.5 两行（云端多人场景复验 / 课程评分反馈），表格 5 行 → 3 行；重出 PDF 19 页 / 2.81 MB 并回写 ASCII 元数据；重建 docs-content，指纹 `?v=1201` → `?v=1202` | 本轮无新增决策 | E-064 |
 | V5.0.2 | 2026-11-20 | Docs · 课程报告同步 333 条词库并更名 | 报告数字由脚本重算（333 词条 / 755 别名 / 41 来源 / 334 引用 / 难度 122-153-58 / 文档 105-99-61）；新增 2.6 扩容段；首页 / 检索 / 手机端 3 张截图重抓（解剖 / 论坛沿用）；更名 `outputs/Tong Wang_NeuroBase.pdf` + ASCII 元数据；PDF 19 页 / 2.81 MB；重建 docs-content，指纹 `?v=1200` → `?v=1201` | D-100 | E-063 |
 | V5.0.1 | 2026-11-20 | Docs · 迭代文档按课程四张规范对齐 | ERROR_LOG 五问表格化 + 索引 61 行按编号升序（E-055 / E-057 归位）；PLAN §5 六要素定义表 + Phase 1 补现行 333 条；SCOPE 文首八项表 + §4.11 / §八 改 333 条；DECISIONS 索引 99 行排序、D-098 行列表格修正；重建 `docs-content.js`，指纹 `?v=1196` → `?v=1200`（364 处）；`verify-native` 全绿 | D-099 | E-062 |
 | V5.0.0（补记） | 2026-11-20 | Docs · 课程项目报告（PDF）交付 | 新增 `outputs/Wang Tong_NeuroBase.pdf`（A4 / 19 页）：背景与动机、V0–V5 历程与 6 张截图、功能与想法来源、6 个五问案例、108 条反馈分类与 9 条代表性决策、反思与附录；站点未改、指纹不变；`verify-native` 1138 全绿 | D-097 | E-061 |
@@ -170,6 +173,45 @@
 ---
 
 ## 日志
+
+### 2026-11-26 · 交互式脑解剖：修复左图右讲解布局 + 恢复点击部件联动（V5.0.5）
+- 需求：所有解剖图放在左侧，点击部件弹出的讲解放右侧、不要放在下面；同时恢复「点击部件 → 右侧显示名称 / 说明 / 关键词 / 相关词条」。
+- 完成：删除 `#anatomy-3d-wrap` 后多余的闭合 `</div>`，`.anatomy-stage` 重新包含 3D / 2D / 矢状三个视图；`aside.anatomy-info` 回到 `.lab-anatomy` 两列网格第二列；`selectPart` 恢复调用 `selectRegion`；标题下常驻手势提示保留。
+- 遇到问题：上一轮删除单部件弹窗时多留一个关闭标签，`.anatomy-stage` 在 3D 视图后提前闭合，2D / 矢状视图成为 `.lab-anatomy` 的第 2、3 个子项，`aside` 变成第 4 个 grid item 被排到下一行，讲解因此显示在图下方。
+- 解决方式：用 jsdom 打印 `.lab-anatomy` / `.anatomy-stage` 的 children 定位结构错位，删除多余 `</div>`；verify 新增「信息面板与解剖舞台同处两列网格」断言防回归。
+- 下一步：在桌面与 ≤860px 宽度下人工复核左图右讲解、点击部件联动与三视图切换。
+- 相关文件：`outputs/neurobase/lab-anatomy.html`、`outputs/neurobase/assets/js/page-lab-anatomy.js`、`.deepworks/tmp/checks/verify-native.mjs`、`docs/CHANGELOG.md`、`docs/PLAN.md`、`docs/PROJECT_SCOPE.md`、`docs/DECISIONS.md`、`docs/ERROR_LOG.md`。
+
+### 2026-11-26 · 交互式脑解剖：取消单部件弹窗，改鼠标手势 + 标题下提示（V5.0.4）
+
+- 需求：取消交互式脑解剖里「部件旋转 / 复位」弹窗，改为鼠标左键拖动（移动部件）、右键拖动（旋转部件）、左键双击（复位部件），并把三条手势写在标题下方作为提示；「点击部件后右侧显示名称与基本知识」本轮暂不实现。
+- 完成：
+  - **移除弹窗**：`lab-anatomy.html` 删除 `#anat3d-part-menu` 节点（含名称、旋转 / 复位按钮与提示）；`style.css` 删除 `.anatomy-3d-part-menu*` / `.anatomy-3d-part-btn` 样式；`page-lab-anatomy.js` 删除 `setRotateMode` / `showPartMenu` / `placePartMenu` / `hidePartMenu` 及 `rotateMode` 状态机；i18n 删除 6 个弹窗专用键。
+  - **手势接线**：`on3dDown` 按 `event.button` 分流——右键（`button === 2`）命中部件的分区模式调用 `startPartRotate` 绕部件中心旋转；左键（`button === 0`）沿用原拖动平面做平移；新增 `dblclick` 监听调用 `resetPart` 并把「已复位到初始位置与角度」写到画布状态行；`contextmenu` 统一 `preventDefault`，`pointercancel` 与 `pointerleave` 复用 `on3dUp` 收尾。
+  - **避免相机抢事件**：`OrbitControls.mouseButtons.RIGHT = null`，右键不再平移相机；左键拖动部件期间沿用 `controls.enabled = false`，松手由 `endPartGesture()` 恢复。
+  - **点击联动暂不启用**：`selectPart` 只做高亮与手势目标切换，不再调用 `selectRegion`；3D 分区部件点击后右侧保持默认说明。真实皮层表面（`selectSurfaceRegion`）与 2D 点选路径保持原行为，不改动。
+  - **标题下提示**：`h1` 下新增 `#anat3d-tip`（`.anatomy-3d-tip`，浅底 + 主色左边框），文案「左键拖动部件移动 · 右键拖动旋转部件 · 左键双击复位部件 · 滚轮缩放」，i18n 新增 `labAnatomy3d.dragTip`（中 / 英）与 `partResetDone`。
+  - **会话存档兼容**：`snapshotView` 不再写 `rotate` / `menu` 字段；`applyViewState` 读取旧存档时忽略这两个字段，避免旧存档恢复出不存在的弹窗。
+  - **校验脚本修复**：`verify-native.mjs` 的 `OUT` / `DOCS` / `PROJECT` / `schema.sql` 路径与 `build-docs.mjs` 的 `WS` 改为按脚本位置解析工作区根。
+- 遇到问题：① 当前工作区已从 `C:\Users\WT\Desktop\...` 迁移到 `D:\王童\学校\...`，`verify-native.mjs` 与 `build-docs.mjs` 内硬编码的旧根路径导致基线无法启动；② 临时目录 `domcheck` 里的 jsdom 缺 `xhr-sync-worker.js`，报 `MODULE_NOT_FOUND`。
+- 解决方式：① 两个脚本改用 `fileURLToPath(import.meta.url)` 定位 `.deepworks/tmp/checks/`、`.deepworks/tmp/build-native/` 的上三级作为工作区根，删除 4 处硬编码；② 在 `C:\Users\WT\AppData\Local\Temp\opencode\domcheck` 重新 `npm install jsdom`，补回缺失文件。
+- 自测：`verify-native` **1136 项全绿**，失败 0；新增「单部件弹窗已移除」「标题下方提示含左键拖动 / 右键旋转 / 左键双击复位」「旧弹窗 API 兼容为已取消」「点击部件后右侧仍为默认说明（未联动）」「旧存档 rotate / menu 字段被忽略」等断言，删除弹窗与旋转模式旧断言，净减 2；`page-lab-anatomy.js`、`verify-native.mjs`、`build-docs.mjs` 均通过 `node --check`。
+- 三档案判定：**有方案取舍** → 新增 **D-101**（取消弹窗改鼠标手势：直接操作、减少遮挡，代价是可发现性依赖标题提示，且右键手势在触屏不可用，需保留左键操作路径）；**有可复用教训** → 新增 **E-065**（校验 / 构建脚本硬编码工作区根路径，环境迁移后基线静默断链）。
+- 下一步：在支持 WebGL 的浏览器中人工验证三种手势（左键拖动平移、右键拖动旋转、左键双击复位）与标题下提示，并确认触屏设备仍可通过左键拖动 / 双击完成主要操作；右侧知识联动的需求待后续单独排期。
+- 相关文件：`outputs/neurobase/lab-anatomy.html`、`outputs/neurobase/assets/js/page-lab-anatomy.js`、`outputs/neurobase/assets/css/style.css`、`outputs/neurobase/assets/js/data/i18n.js`、`outputs/neurobase/assets/js/data/docs-content.js`（重建）、`.deepworks/tmp/checks/verify-native.mjs`、`.deepworks/tmp/build-native/build-docs.mjs`、27 个 HTML 指纹、`docs/*`。
+
+### 2026-11-21 · Docs · 课程报告删除三处未闭环表述（V5.0.3）
+
+- 需求：用户指定删除报告里的三段内容——摘要「结论」中的「项目当前的短板同样明确——333 条词条虽已达成 300+ 的规模目标……」整句，以及 5.5 表格的「云端多人场景复验 / 待复验」「课程评分反馈 / 待提交」两行。
+- 完成：
+  - **源文件删减**：`.deepworks/tmp/report-work/report.html` 删除 1 句 + 2 行；5.5「仍未闭环的问题」表保留「词条规模 333 / 300+（已达成）」「内容准确性（长期）」「无障碍持续复核（长期）」3 行。
+  - **重出 PDF**：`make-pdf.mjs` 重跑，先写临时文件（`PDF_OUT` 环境变量），再由 `set-meta.py` 回写 ASCII 元数据（title `NeuroBase - Project Report (V5.0.1)`、author `Tong Wang`）并替换交付文件；结果 19 页 / 2.81 MB，页码 `x / 19` 与后续章节未变。
+  - **文档同步**：`CHANGELOG`（V5.0.3）、`PLAN`（v127 + §10）、`PROJECT_SCOPE`（v7.5 + §11）、`ERROR_LOG`（E-064）、本条日志与阶段总览行；重建 `docs-content.js`，27 页指纹 `?v=1201` → `?v=1202`。
+- 遇到问题：① 首次导出报 `EDGE_NOT_READY`——当前 DSH 沙箱内 Edge 启动时 mojo 管道被拒（`platform_channel.cc` 访问拒绝）；② 拿到更宽权限后导出成功、写盘却报 `EBUSY`——目标 PDF 正被一个 13:15 启动的 Edge 进程打开。
+- 解决方式：① 该次导出提升执行权限后 Edge 正常启动；② 导出改为先落到 `.deepworks/tmp/report-work/` 临时 PDF，回读校验文本 / 页数 / 元数据后再覆盖交付文件，替换成功。
+- 三档案判定：**本轮无新增决策**（删减报告表述属交付内容调整，未改变技术选型或方案取舍）；**有可复用教训**（E-064：交付文件可能被阅读器占用，构建产物先落临时文件、校验后再替换）。
+- 下一步：交付 PDF 供课程提交；以后「改报告 → 重出 PDF」固定「临时文件 → 回读校验 → 替换」三步。
+- 相关文件：`outputs/Tong Wang_NeuroBase.pdf`、`.deepworks/tmp/report-work/report.html`、`make-pdf.mjs`、`set-meta.py`、`docs/CHANGELOG.md`、`docs/ERROR_LOG.md`（E-064）、`docs/PLAN.md`、`docs/PROJECT_SCOPE.md`、`README.md`。
 
 ### 2026-11-20 · Docs · 课程报告同步 333 条词库并更名（V5.0.2）
 
@@ -1626,6 +1668,12 @@
 - 下一步：人工打开「学习中心」确认标题下无副标题、工具卡前无说明段落，卡片间距正常；英文界面无残留空行。
 - 相关文件：`outputs/neurobase/learn.html`、`data/i18n/zh.json` / `en.json`、`outputs/neurobase/assets/js/data/i18n.js`（重建）、26 个 HTML 指纹、`docs/*`。
 
+### 2026-11-26 · Phase 9 · 交互式脑解剖：修复左图右讲解布局 + 恢复点击部件联动（V5.0.5）
+- 需求：所有解剖图放在左侧，点击部件弹出的讲解放右侧、不要放在下面；同时恢复「点击部件 → 右侧显示名称 / 说明 / 关键词 / 相关词条」。
+- 完成：删除 `#anatomy-3d-wrap` 后多余的闭合 `</div>`，`.anatomy-stage` 重新包含 3D / 2D / 矢状三个视图；`aside.anatomy-info` 回到 `.lab-anatomy` 两列网格第二列；`selectPart` 恢复调用 `selectRegion`；标题下常驻手势提示保留。
+- 遇到问题：上一轮删除单部件弹窗时多留一个关闭标签，`.anatomy-stage` 在 3D 视图后提前闭合，2D / 矢状视图成为 `.lab-anatomy` 的第 2、3 个子项，`aside` 变成第 4 个 grid item 被排到下一行，讲解因此显示在图下方。
+- 解决方式：用 jsdom 打印 `.lab-anatomy` / `.anatomy-stage` 的 children 定位结构错位，删除多余 `</div>`；verify 新增「信息面板与解剖舞台同处两列网格」断言防回归。
+- 下一步：在桌面与 ≤860px 宽度下人工复核左图右讲解、点击部件联动与三视图切换。
+- 相关文件：`outputs/neurobase/lab-anatomy.html`、`outputs/neurobase/assets/js/page-lab-anatomy.js`、`.deepworks/tmp/checks/verify-native.mjs`、`docs/CHANGELOG.md`、`docs/PLAN.md`、`docs/PROJECT_SCOPE.md`、`docs/DECISIONS.md`、`docs/ERROR_LOG.md`。
+
 <!-- 从这里继续往下追加 -->
-
-
